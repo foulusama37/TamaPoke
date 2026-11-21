@@ -1,0 +1,40 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial BADGES 0
+wait 150
+serial BADGES 1
+wait 150
+serial BADGES 2
+wait 150
+serial BADGES 3
+wait 150
+serial BADGES 4
+wait 150
+serial BADGES 5
+wait 150
+serial BADGES 6
+wait 150
+serial BADGES 7
+wait 150
+serial BADGES 8
+wait 150
+wait 300

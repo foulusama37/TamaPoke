@@ -1,0 +1,49 @@
+# La pagina de equipo y banco.
+wait 500
+tap 233 223
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial LVL 30
+wait 300
+
+serial PARTY 25 18
+serial PARTY 95 22
+serial PARTY 143 30
+serial PARTY 9 16
+serial PARTY 65 40
+serial PARTY 130 35
+serial PARTY 6 50
+serial PARTY 149 60
+wait 500
+
+serial CARD 4
+wait 300
+shot eq_1_equipo
+
+# mandar el segundo al banco
+tap 400 161
+wait 400
+shot eq_2_al_banco
+
+# ver el banco
+tap 292 82
+wait 400
+shot eq_3_banco
+
+# traerlo de vuelta
+tap 200 120
+wait 400
+shot eq_4_devuelta
+
+# volver al equipo y cambiar de titular
+tap 172 82
+wait 400
+tap 200 199
+wait 500
+shot eq_5_nuevo_titular
+wait 400

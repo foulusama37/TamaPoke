@@ -1,0 +1,33 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial LVL 20
+wait 600
+tap 233 205
+wait 700
+tap 233 232
+wait 1200
+
+wait 1500
+
+wait 1500
+
+wait 2000

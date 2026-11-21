@@ -1,0 +1,45 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial LVL 40
+wait 300
+serial SPEC 9
+wait 600
+serial FIGHT 143 40
+wait 1200
+serial MOVE 0 0 SWEETSCENT
+wait 200
+serial MOVE 1 0 SPLASH
+wait 200
+serial MOVE 1 1 SPLASH
+wait 400
+tap 233 377
+wait 2600
+tap 233 377
+wait 2600
+tap 233 377
+wait 2600
+tap 233 377
+wait 2600
+tap 233 377
+wait 2600
+tap 233 377
+wait 2600

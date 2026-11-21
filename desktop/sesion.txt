@@ -1,0 +1,77 @@
+# Sesion de ejemplo del simulador.
+# Pantalla redonda 466x466, centro (233,233).
+# Filas del inicial (STARTER_ROW_Y 110, alto 70, hueco 8): y = 145 / 223 / 301
+# Arco de botones (BTN_HALF 26): comer 140,390 | jugar 202,404 | luz 264,404 | bano 326,390
+
+wait 600
+shot 01_elige_inicial
+
+# --- Charmander ---
+tap 233 223
+wait 800
+shot 02_huevo
+
+# --- tres toques y eclosiona ---
+tap 233 240
+wait 400
+tap 233 240
+wait 400
+tap 233 240
+wait 3000
+shot 03_eclosionado
+
+# --- pasear ---
+wait 8000
+shot 04_paseando
+
+# --- caricia: corazon ---
+tap 233 250
+wait 500
+shot 05_corazon
+
+# --- comer ---
+tap 140 390
+wait 800
+shot 06_menu_comida
+tap 150 300
+wait 2000
+shot 07_comiendo
+
+# --- ficha (deslizar arriba) y sus paginas ---
+wait 1500
+swipe 233 330 233 130 400
+wait 900
+shot 08_ficha
+swipe 330 233 120 233 400
+wait 700
+shot 09_ficha_pag2
+
+# --- cerrar y abrir la pokedex (deslizar horizontal) ---
+swipe 233 130 233 330 400
+wait 600
+swipe 90 233 380 233 400
+wait 1000
+shot 10_pokedex
+
+# --- ajustes (deslizar abajo) ---
+swipe 380 233 90 233 400
+wait 800
+swipe 233 130 233 330 400
+wait 1000
+shot 11_ajustes
+swipe 233 330 233 130 400
+wait 600
+
+# --- bajarle las estadisticas por consola: deberia salir el globo ---
+serial SPEC 133
+wait 1200
+shot 12_eevee
+serial LVL 12
+wait 800
+
+# --- a dormir: de espaldas + Zzz ---
+tap 264 404
+wait 3000
+shot 13_durmiendo
+wait 5000
+shot 14_durmiendo_mas

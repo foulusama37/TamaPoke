@@ -1,0 +1,51 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial SPEC 133
+wait 500
+serial LVL 40
+wait 300
+serial CARD 7
+wait 800
+shot pe_1_precisa
+wait 300
+serial GIVE 61
+wait 150
+serial GIVE 62
+wait 150
+serial GIVE 63
+wait 150
+serial GIVE 67
+wait 300
+serial CARD 3
+wait 500
+tap 198 85
+wait 400
+tap 300 85
+wait 700
+shot pe_2_bolsa
+wait 300
+tap 200 180
+wait 1400
+shot pe_3_evoluiu
+wait 600
+serial STATS
+wait 400

@@ -1,0 +1,33 @@
+# artefactos de compilacion
+build/
+
+# cacheas y artefactos regenerables del taller
+tools/downloads/
+tools/__pycache__/
+__pycache__/
+tools/sheet.png
+tools/import_sheet.png
+tools/emitted_sprites.js
+tools/demo_anim.js
+tools/demo_compare.js
+
+.DS_Store
+tools/pmd_cache/
+test/build/
+# fondos de combate: 17 MB de RGB565 en crudo que sale de pack_bg.py
+tools/sdcard/bg/
+# sonido: 11 MB de PCM crudo que sale de pack_audio.py
+tools/sdcard/snd/
+
+# borrador local de la ficha de MakerWorld y modelado abandonado de la carcasa
+MAKERWORLD.md
+case/
+
+# nosso: rascunhos, capturas do simulador e caches locais
+_claude_scratch/
+.ruff_cache/
+desktop/frames*/
+*.gcov
+*.gcda
+*.gcno
+.github/workflows/

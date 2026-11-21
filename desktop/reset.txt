@@ -1,0 +1,31 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+serial SETTINGS
+wait 700
+shot rs_1_ajustes
+wait 300
+tap 233 311
+wait 600
+shot rs_2_pregunta1
+wait 300
+tap 143 300
+wait 600
+shot rs_3_pregunta2
+wait 300
+tap 143 300
+wait 600
+shot rs_4_cancelado
+wait 400

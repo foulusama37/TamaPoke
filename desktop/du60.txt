@@ -1,0 +1,70 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 6
+wait 400
+serial LVL 30
+serial IDIOMA 5
+wait 1200
+tap 40 250
+wait 2500
+tap 233 233
+serial PARTY 131 28
+serial PARTY 135 22
+serial PARTY 59 31
+wait 500
+serial CARD 4
+wait 400
+tap 233 365
+wait 1600
+wait 600
+convida 137
+wait 1500
+shot c_0_convite
+tap 162 338
+wait 1800
+tap 233 113
+wait 200
+tap 233 189
+wait 200
+tap 233 227
+wait 400
+tap 162 368
+wait 3000
+shot c_1_abriu
+wait 3000
+shot c_2_minha_vez
+tap 233 377
+wait 1500
+shot c_3a
+wait 700
+shot c_3b
+wait 700
+shot c_3c
+wait 700
+shot c_3d
+wait 6000
+shot c_4_turno2
+tap 40 316
+wait 500
+shot c_5_time
+wait 300
+shot fim

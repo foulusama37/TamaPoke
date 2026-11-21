@@ -1,0 +1,71 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 9
+wait 300
+serial LVL 25
+wait 300
+serial GIVE 57
+wait 200
+serial GIVE 57
+wait 200
+serial GIVE 57
+wait 200
+serial WILD 25 8
+wait 500
+tap 380 172
+wait 3200
+tap 400 296
+wait 900
+tap 233 160
+wait 120
+shot c01
+wait 110
+shot c02
+wait 110
+shot c03
+wait 110
+shot c04
+wait 110
+shot c05
+wait 110
+shot c06
+wait 110
+shot c07
+wait 110
+shot c08
+wait 110
+shot c09
+wait 110
+shot c10
+wait 110
+shot c11
+wait 110
+shot c12
+wait 110
+shot c13
+wait 110
+shot c14
+wait 600
+shot c15
+wait 600
+shot c16
+wait 800

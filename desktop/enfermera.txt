@@ -1,0 +1,39 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 6
+wait 400
+serial LVL 40
+wait 1200
+tap 40 250
+wait 2500
+tap 233 233
+wait 2000
+serial PC
+wait 1200
+shot a_enfermera
+wait 300
+tap 86 250
+wait 1000
+shot b_curado
+wait 400
+shot b_curado2
+wait 400

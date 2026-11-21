@@ -1,0 +1,71 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 155
+wait 300
+serial LVL 30
+wait 300
+serial REG 152 153 154 155 156 157 158 159 160 161
+wait 400
+serial REG 243 244 245 246 247 248 249 250 251
+wait 400
+
+serial CARD 5
+wait 700
+shot j1_gym_kanto
+wait 300
+serial BADGES 13
+wait 400
+serial CARD 5
+wait 700
+shot j2_campeon_kanto
+wait 300
+tap 233 339
+wait 800
+shot j3_johto
+wait 400
+serial WINS 9
+wait 300
+serial CARD 5
+wait 700
+shot j4_falkner
+wait 400
+tap 233 339
+wait 3000
+shot j4b_combate_falkner
+wait 600
+serial WILD
+wait 300
+
+tap 233 400
+wait 500
+serial GAL 0
+wait 700
+shot j5_dex_kanto
+wait 400
+serial GAL 9
+wait 700
+shot j6_dex_frontera
+wait 400
+serial GAL 15
+wait 700
+shot j7_dex_johto_final
+wait 400

@@ -1,0 +1,40 @@
+# Combate contra un Gengar (fantasma/veneno): sus golpes envenenan y bajan
+# stats, asi se ven el chip rotativo y el desgaste de fin de turno.
+wait 500
+tap 233 145
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial SPEC 3
+wait 400
+serial LVL 60
+wait 600
+serial FIGHT 94 55
+wait 2200
+shot 01_elegir
+tap 233 377
+wait 900
+shot 02_anuncio
+wait 700
+shot 03_efetividade
+wait 1000
+shot 04_estado
+wait 1200
+shot 05_rival
+wait 3500
+shot 06_chip
+tap 233 377
+wait 2500
+shot 07_chip2
+wait 3000
+shot 08_desgaste
+tap 233 377
+wait 4000
+shot 09_mais
+tap 233 377
+wait 4000
+shot 10_final

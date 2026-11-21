@@ -1,0 +1,123 @@
+# Barrido completo: intro, casa, comida, ficha (8 paginas), Pokedex,
+# ajustes, saco de pancada y un combate con objeto, relevo y terreno.
+# Busca cuelgues y pantallas rotas; se corre con --every para revisarlo.
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+
+# --- estado de partida avanzada ---
+serial LVL 34
+wait 200
+serial WINS 9
+wait 200
+serial PARTY 9 30
+wait 200
+serial PARTY 25 28
+wait 200
+serial GIVE 57
+wait 200
+serial GIVE 57
+wait 200
+serial GIVE 25
+wait 200
+serial GIVE 96
+wait 200
+serial REG 1 4 7 25 6 9 3 12 16 19 21 23
+wait 400
+
+# --- comida ---
+tap 140 390
+wait 700
+tap 134 317
+wait 900
+
+# --- las ocho paginas de la ficha ---
+serial CARD 0
+wait 600
+serial CARD 1
+wait 600
+serial CARD 2
+wait 600
+tap 200 180
+wait 500
+serial CARD 3
+wait 600
+serial CARD 4
+wait 600
+serial CARD 5
+wait 600
+serial CARD 6
+wait 600
+serial CARD 7
+wait 600
+
+# --- Pokedex: rejilla y detalle ---
+serial GAL
+wait 800
+tap 120 150
+wait 1000
+tap 233 420
+wait 700
+
+# --- ajustes ---
+serial SETTINGS
+wait 700
+tap 80 306
+wait 400
+tap 80 306
+wait 400
+tap 380 306
+wait 400
+tap 233 355
+wait 700
+
+# --- saco de pancada ---
+tap 202 404
+wait 900
+tap 150 155
+wait 1500
+tap 81 378
+wait 600
+tap 185 378
+wait 600
+tap 289 378
+wait 4000
+
+# --- combate: objeto, terreno y relevo ---
+serial FIGHT 74 22
+wait 2600
+serial MOVE 0 0 GRASSYTERRAIN
+wait 300
+tap 233 377
+wait 4200
+tap 404 296
+wait 900
+tap 233 150
+wait 1200
+tap 400 232
+wait 900
+tap 233 216
+wait 3000
+tap 233 377
+wait 5000
+tap 233 377
+wait 6000
+wait 4000

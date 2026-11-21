@@ -1,0 +1,37 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 14
+wait 900
+shot k1_kakuna_casa
+wait 400
+serial SPEC 15
+wait 900
+shot k2_beedrill_casa
+wait 400
+serial REG 14 15
+wait 300
+serial GAL 1
+wait 900
+tap 170 180
+wait 1200
+shot k3_dex_kakuna
+wait 500

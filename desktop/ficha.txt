@@ -1,0 +1,61 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial LVL 32
+wait 300
+serial PARTY 130 30
+wait 300
+serial GIVE 57
+wait 300
+serial WINS 9
+wait 400
+serial CARD 0
+wait 800
+shot fc_0
+wait 200
+serial CARD 1
+wait 800
+shot fc_1
+wait 200
+serial CARD 2
+wait 800
+shot fc_2
+wait 200
+serial CARD 3
+wait 800
+shot fc_3
+wait 200
+serial CARD 4
+wait 800
+shot fc_4
+wait 200
+serial CARD 5
+wait 800
+shot fc_5
+wait 200
+serial CARD 6
+wait 800
+shot fc_6
+wait 200
+serial CARD 7
+wait 800
+shot fc_7
+wait 400

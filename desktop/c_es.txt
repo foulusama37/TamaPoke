@@ -1,0 +1,13 @@
+serial IDIOMA 0
+wait 150
+tap 233 233
+wait 200
+tap 233 233
+wait 200
+tap 233 233
+wait 200
+tap 233 233
+wait 200
+tap 233 233
+wait 300
+shot sexo

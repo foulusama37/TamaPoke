@@ -1,0 +1,41 @@
+wait 900
+shot gr_1_titulo
+wait 300
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial LVL 35
+wait 300
+serial CARD 2
+wait 900
+shot gr_2_golpes
+wait 300
+tap 200 180
+wait 700
+shot gr_3_golpes_desc
+wait 300
+serial CARD 5
+wait 900
+shot gr_4_ginasio
+wait 300
+serial FIGHT 94 35
+wait 2500
+shot gr_5_combate
+wait 400

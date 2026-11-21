@@ -1,0 +1,95 @@
+# Los cuatro golpes que duran mas de un turno: agarre, furia, recarga y carga.
+# Al Snorlax se le dejan solo Tackles: con sus golpes de verdad mata al
+# Charmander antes de que a los efectos les de tiempo a verse.
+#
+# Tarjeta de golpe: y 334..420. Centro (x=233) = usar; x=320 = flecha derecha.
+# Tiempos de un turno, contados desde el toque: 850 el anuncio, 320+420 el
+# golpe, y de ahi en adelante 900 por cada aviso de la cola. Un turno entero
+# (los dos bandos + el desgaste) sale por unos 5000.
+
+wait 500
+tap 233 223          # Charmander
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial LVL 60
+wait 600
+
+# ------------------------------------------- 1) Fire Spin: atrapa y va royendo
+serial FIGHT 143 60
+wait 2200
+serial MOVE 0 0 FIRESPIN
+serial MOVE 1 0 TACKLE
+serial MOVE 1 1 TACKLE
+serial MOVE 1 2 TACKLE
+serial MOVE 1 3 TACKLE
+wait 400
+tap 233 377
+wait 2000
+shot mt_01_atrapado       # "SNORLAX can't escape!"
+wait 2400
+shot mt_02_mordisco       # "SNORLAX is hurt by the hold"
+wait 1000
+tap 233 377
+wait 5000                 # y el mordisco se repite sin volver a avisar
+
+# ------------------------------------------- 2) Outrage: furia forzada y mareo
+serial FIGHT 143 60
+wait 2200
+serial MOVE 0 0 OUTRAGE
+serial MOVE 0 1 TACKLE
+serial MOVE 1 0 TACKLE
+serial MOVE 1 1 TACKLE
+serial MOVE 1 2 TACKLE
+serial MOVE 1 3 TACKLE
+wait 400
+tap 233 377
+wait 6500
+
+# se elige Tackle a proposito: la caja tiene que seguir diciendo OUTRAGE
+tap 320 377
+wait 600
+tap 233 377
+wait 500
+shot mt_03_furia_forzada  # "CHARMANDER used OUTRAGE!" aunque se pidio Tackle
+wait 1400
+shot mt_04_mareo          # "CHARMANDER became confused!"
+wait 4000
+
+# ------------------------------------------- 3) Hyper Beam: el turno perdido
+serial FIGHT 143 60
+wait 2200
+serial MOVE 0 0 HYPERBEAM
+serial MOVE 1 0 TACKLE
+serial MOVE 1 1 TACKLE
+serial MOVE 1 2 TACKLE
+serial MOVE 1 3 TACKLE
+wait 400
+tap 233 377
+wait 5200
+tap 233 377
+wait 2000
+shot mt_05_recargando     # "CHARMANDER must recharge!"
+wait 4000
+
+# ------------------------------------------- 4) Solar Beam: un turno cargando
+serial FIGHT 143 60
+wait 2200
+serial MOVE 0 0 SOLARBEAM
+serial MOVE 1 0 TACKLE
+serial MOVE 1 1 TACKLE
+serial MOVE 1 2 TACKLE
+serial MOVE 1 3 TACKLE
+wait 400
+tap 233 377
+wait 1800
+shot mt_06_cargando       # "CHARMANDER is charging up!", y nadie pierde PS
+wait 4000
+tap 233 377
+wait 600
+shot mt_07_remate         # ahora si sale el rayo
+wait 4000

@@ -1,0 +1,53 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 6
+wait 400
+serial LVL 40
+wait 1200
+tap 40 250
+wait 2500
+tap 233 233
+wait 1500
+shot a_casa
+shot a_casa
+wait 300
+serial BADGES 3
+wait 400
+swipe 110 233 340 233 300
+wait 1200
+shot b_mapa_botoes
+tap 172 392
+wait 1200
+shot c_ginasio
+swipe 233 330 233 90 300
+wait 1200
+shot d_volta_mapa
+tap 294 392
+wait 1200
+shot e_medalhas
+swipe 233 330 233 90 300
+wait 1000
+swipe 340 233 110 233 300
+wait 800
+swipe 233 330 233 90 300
+wait 1200
+shot f_ficha_pontos

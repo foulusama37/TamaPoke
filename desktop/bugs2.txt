@@ -1,0 +1,79 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 9
+wait 300
+serial LVL 30
+wait 300
+serial GIVE 60
+wait 200
+serial GIVE 57
+wait 200
+serial GIVE 57
+wait 200
+serial WILD 16 6
+wait 500
+tap 380 172
+wait 3000
+tap 400 296
+wait 900
+tap 233 190
+wait 5200
+shot b1_capturado
+wait 2500
+serial WILD 19 8
+wait 600
+tap 380 172
+wait 3000
+shot b2_siguiente_rival
+wait 600
+tap 400 296
+wait 900
+tap 233 160
+wait 4200
+shot w01
+wait 420
+shot w02
+wait 420
+shot w03
+wait 420
+shot w04
+wait 420
+shot w05
+wait 420
+shot w06
+wait 420
+shot w07
+wait 420
+shot w08
+wait 420
+shot w09
+wait 420
+shot w10
+wait 420
+shot w11
+wait 420
+shot w12
+wait 420
+shot w13
+wait 420
+shot w14
+wait 420

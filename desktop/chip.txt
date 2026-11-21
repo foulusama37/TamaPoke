@@ -1,0 +1,44 @@
+# Fuerza estados y stages para ver el chip rotativo sin depender del azar.
+wait 500
+tap 233 145
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial SPEC 3
+wait 400
+serial LVL 60
+wait 600
+serial FIGHT 94 55
+wait 2200
+
+# Venusaur quemado, y con el ataque bajado y la defensa subida: el chip
+# tiene que ir rotando entre BRN, ATK- y DEF+
+serial STATUS 0 1
+wait 300
+serial STAGE 0 0 -2
+wait 300
+serial STAGE 0 1 2
+wait 400
+shot 01_chip_a
+wait 1300
+shot 02_chip_b
+wait 1300
+shot 03_chip_c
+wait 1300
+shot 04_chip_d
+
+# el rival paralizado
+serial STATUS 1 4
+wait 500
+shot 05_rival_par
+
+# y ahora un turno, para ver el desgaste de la quemadura al cerrar
+tap 233 377
+wait 5500
+shot 06_desgaste
+wait 2500
+shot 07_despues

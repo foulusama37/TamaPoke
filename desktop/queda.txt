@@ -1,0 +1,33 @@
+# La caida del derrotado, cuadro a cuadro. Antes se seguia dibujando por
+# debajo de la plataforma (que es una elipse, no una banda), asi que el bicho
+# salia por el borde y parecia atravesar el suelo. Ahora se recorta en la
+# linea del suelo y se mete DENTRO.
+wait 500
+tap 233 223
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial LVL 70
+wait 600
+
+# Magikarp de nivel bajo: 60 PS, cae de un golpe. Un Snorlax nivel 5 NO vale,
+# tiene 340 PS: en la formula los PS base pesan mas que el nivel.
+serial FIGHT 129 5
+wait 2500
+tap 233 377
+wait 1600
+shot qu_1_golpe
+wait 500
+shot qu_2_empieza
+wait 200
+shot qu_3_medio
+wait 250
+shot qu_4_casi
+wait 250
+shot qu_5_dentro
+wait 900
+shot qu_6_fuera

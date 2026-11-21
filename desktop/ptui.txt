@@ -1,0 +1,17 @@
+serial IDIOMA 5
+wait 400
+tap 233 233
+wait 400
+shot a1
+tap 233 233
+wait 400
+shot a2
+tap 233 233
+wait 400
+shot a3
+tap 233 233
+wait 400
+shot a4
+tap 233 233
+wait 400
+shot a5

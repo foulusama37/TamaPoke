@@ -1,0 +1,33 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial CARD 2
+wait 900
+shot ficha_2_golpes
+wait 300
+serial CARD 4
+wait 900
+shot ficha_4_equipo
+wait 300
+serial CARD 0
+wait 900
+shot ficha_0_perfil
+wait 300

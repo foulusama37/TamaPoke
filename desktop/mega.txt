@@ -1,0 +1,50 @@
+# Intro -> inicial -> eclosion -> Arcanine com a Arcanite -> combate.
+# Para ver onde cabe o botao de mega sem pisar na mochila.
+wait 1200
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 357
+wait 600
+tap 233 145
+wait 800
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 900
+serial SPEC 59
+wait 300
+serial LVL 40
+wait 300
+serial GIVE 139
+wait 300
+serial HOLD 139
+wait 400
+serial FIGHT 143 35
+wait 1800
+shot mega_antes
+tap 50 188
+wait 150
+shot cena1
+wait 200
+shot cena2
+wait 250
+shot cena3
+wait 250
+shot cena4
+wait 400
+shot cena5
+wait 600
+shot cena6
+wait 400

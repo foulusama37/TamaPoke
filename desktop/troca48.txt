@@ -1,0 +1,51 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 6
+wait 400
+serial LVL 30
+wait 1200
+tap 40 250
+wait 2500
+tap 233 233
+serial PARTY 16 12
+serial PARTY 25 14
+wait 500
+serial CARD 4
+wait 400
+shot tr_0_equipe
+tap 233 365
+wait 1600
+shot tr_1_procura
+tap 233 132
+wait 2000
+shot tr_2_escolha
+tap 233 113
+wait 1200
+shot tr_3_outro_meu
+tap 162 338
+wait 2500
+shot tr_4_chegou
+tap 233 338
+wait 600
+serial CARD 4
+wait 400
+shot tr_5_equipe_depois

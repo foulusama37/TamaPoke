@@ -1,0 +1,37 @@
+# Los PP con los numeros de siempre, y sobre todo: que NO se rellenan solos
+# entre un combate y el siguiente. Lo que los devuelve es dormir y las bayas.
+wait 500
+tap 233 223
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial LVL 45
+wait 600
+
+serial FIGHT 143 45
+wait 2500
+shot pp_1_lleno           # "PP 25/25" o lo que toque, de entrada
+wait 200
+
+# tres turnos gastando el mismo golpe
+tap 233 377
+wait 5200
+tap 233 377
+wait 5200
+tap 233 377
+wait 5200
+shot pp_2_gastado         # tres menos
+
+# se cierra el combate y se abre otro: los PP tienen que seguir gastados
+serial FIGHT 129 20
+wait 3000
+shot pp_3_otro_combate    # el numero NO ha vuelto a subir
+wait 200
+
+# una baya repone un poco
+serial FIGHT 0 0          # no abre nada: solo para cerrar limpio si hiciera falta
+wait 300

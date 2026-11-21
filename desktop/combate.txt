@@ -1,0 +1,69 @@
+# Sesion de prueba del combate.
+# Filas del inicial: y = 145 / 223 / 301
+# Tarjeta de golpe: y 334..420; flechas en los 52 px de cada extremo,
+# el centro es "usar". Con la tarjeta a 257 px: izq < x=157, der > x=309.
+
+wait 500
+tap 233 223          # Charmander
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+
+# subir de nivel para tener los cuatro golpes y aguantar mas de un turno
+serial LVL 45
+wait 600
+shot 00_antes
+
+# un Blastoise salvaje: agua contra fuego, para ver "super effective" en contra
+serial FIGHT 9 40
+wait 400
+shot 01_intro
+wait 1600
+shot 02_elegir
+
+# pasear por los golpes con la flecha derecha
+tap 320 377
+wait 400
+shot 03_golpe2
+tap 320 377
+wait 400
+shot 04_golpe3
+tap 320 377
+wait 400
+shot 05_golpe4
+tap 146 377
+wait 400
+shot 06_volvi
+
+# atacar
+tap 233 377
+wait 300
+shot 07_ataque
+wait 500
+shot 08_impacto
+wait 900
+shot 09_mensaje
+wait 1500
+shot 10_turno2
+
+# unos cuantos turnos mas
+tap 233 377
+wait 2600
+tap 233 377
+wait 2600
+tap 233 377
+wait 2600
+shot 11_avanzado
+tap 233 377
+wait 2600
+tap 233 377
+wait 2600
+tap 233 377
+wait 3000
+shot 12_final
+wait 3000
+shot 13_despues

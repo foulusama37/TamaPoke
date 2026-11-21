@@ -1,0 +1,39 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial LVL 70
+wait 300
+serial WINS 5
+wait 200
+serial CARD 5
+wait 800
+shot cp_1_cap_ginasio
+wait 300
+serial CARD 7
+wait 800
+shot cp_2_progresso
+wait 300
+serial CARD 5
+wait 500
+tap 233 339
+wait 1600
+shot cp_3_combate_capado
+wait 400

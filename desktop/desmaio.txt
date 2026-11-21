@@ -1,0 +1,50 @@
+# El ciclo entero: pelear gasta PS, caer desmaya (se duerme solo y cuenta
+# como error de cuidado), y lo que devuelve los PS es cuidar al bicho.
+wait 500
+tap 233 223
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial LVL 25
+wait 600
+shot ds_1_entero          # sin franja de PS: esta a tope
+
+# un rival muy por encima: el combate se pierde
+serial FIGHT 143 70
+wait 2500
+serial MOVE 1 0 BODYSLAM
+serial MOVE 1 1 BODYSLAM
+serial MOVE 1 2 BODYSLAM
+serial MOVE 1 3 BODYSLAM
+wait 400
+tap 233 377
+wait 6000
+tap 233 377
+wait 6000
+tap 233 377
+wait 9000
+shot ds_2_cayo            # "CHARMANDER fainted!"
+wait 4000
+shot ds_3_desmayado       # de vuelta en casa, durmiendo solo, con la franja roja
+
+# intentar pelear otra vez: se niega
+serial FIGHT 129 5
+wait 1500
+shot ds_4_se_niega        # no se abre nada, sigue en casa
+
+# la ficha: deslizar hacia ARRIBA la abre (hacia abajo sale el reloj)
+swipe 233 290 233 70 250
+wait 1000
+shot ds_5_ficha0          # pagina 0: perfil
+tap 400 233
+wait 1000
+shot ds_6_ficha1          # pagina 1: combate, con "HP" arriba del todo
+wait 300
+
+# dormir lo cura
+wait 20000
+shot ds_6_curandose

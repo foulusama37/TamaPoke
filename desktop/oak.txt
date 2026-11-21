@@ -1,0 +1,5 @@
+wait 900
+tap 233 233
+wait 700
+shot ok_1_oak
+wait 300

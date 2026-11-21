@@ -1,0 +1,69 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial GIVE 57
+wait 150
+serial GIVE 57
+wait 150
+serial GIVE 59
+wait 300
+serial WILD 19 6
+wait 400
+tap 380 168
+wait 2200
+tap 400 296
+wait 700
+tap 233 150
+wait 800
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+tap 233 240
+wait 80
+shot cq_1_forcejeo
+wait 1800
+shot cq_2_resultado
+wait 3000
+serial PARTY
+wait 400

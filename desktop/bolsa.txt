@@ -1,0 +1,84 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial GIVE 1
+wait 90
+serial GIVE 2
+wait 90
+serial GIVE 3
+wait 90
+serial GIVE 4
+wait 90
+serial GIVE 5
+wait 90
+serial GIVE 6
+wait 90
+serial GIVE 7
+wait 90
+serial GIVE 8
+wait 90
+serial GIVE 9
+wait 90
+serial GIVE 10
+wait 90
+serial GIVE 11
+wait 90
+serial GIVE 12
+wait 90
+serial GIVE 13
+wait 90
+serial GIVE 14
+wait 90
+serial GIVE 20
+wait 90
+serial GIVE 21
+wait 90
+serial GIVE 22
+wait 90
+serial GIVE 23
+wait 90
+serial GIVE 24
+wait 90
+serial GIVE 25
+wait 90
+serial GIVE 26
+wait 90
+serial GIVE 27
+wait 90
+serial GIVE 28
+wait 90
+serial GIVE 29
+wait 90
+serial GIVE 30
+wait 90
+wait 300
+serial CARD 3
+wait 800
+shot bo_1_seguraveis
+wait 300
+tap 120 85
+wait 700
+shot bo_2_batalha
+wait 300
+tap 198 85
+wait 700
+shot bo_3_bolas
+wait 400

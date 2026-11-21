@@ -1,0 +1,87 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 94
+wait 300
+serial LVL 42
+wait 300
+serial BADGES 5
+wait 300
+serial WINS 9
+wait 300
+serial PARTY 143 40
+wait 300
+serial PARTY 149 38
+wait 300
+serial GIVE 1
+wait 200
+serial GIVE 12
+wait 200
+serial GIVE 20
+wait 200
+serial GIVE 28
+wait 200
+serial GIVE 35
+wait 200
+serial GIVE 44
+wait 200
+serial GIVE 57
+wait 200
+serial GIVE 61
+wait 200
+serial HOLD 1
+wait 300
+serial CARD 0
+wait 700
+shot q0_perfil
+wait 300
+serial CARD 1
+wait 700
+shot q1_stats
+wait 300
+serial CARD 2
+wait 700
+shot q2_golpes
+wait 300
+serial CARD 3
+wait 700
+shot q3_bolsa
+wait 300
+serial CARD 4
+wait 700
+shot q4_equipo
+wait 300
+serial CARD 5
+wait 700
+shot q5_gimnasios
+wait 300
+serial CARD 6
+wait 700
+shot q6_medallas
+wait 300
+serial CARD 7
+wait 700
+shot q7_progreso
+wait 400
+serial SETTINGS
+wait 900
+shot q8_ajustes
+wait 400

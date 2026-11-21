@@ -1,0 +1,50 @@
+tap 233 233
+tap 233 233
+tap 233 233
+tap 233 233
+tap 233 233
+tap 142 356
+tap 233 240
+tap 233 200
+tap 233 200
+tap 233 200
+tap 142 356
+wait 300
+tap 233 233
+tap 233 233
+wait 300
+serial HATCH
+serial SPEC 6
+serial LVL 40
+serial REG 6 95 25 131
+wait 200
+serial GAL 0
+wait 200
+serial GAL
+wait 200
+serial CARD 1
+wait 500
+shot ficha_combate
+wait 400
+serial GAL 0
+wait 400
+tap 193 204
+wait 600
+shot dex_charizard
+wait 400
+tap 233 408
+wait 300
+serial GAL 1
+wait 400
+tap 113 284
+wait 600
+shot dex_pikachu
+wait 400
+tap 233 408
+wait 300
+serial GAL 8
+wait 400
+tap 193 124
+wait 600
+shot dex_wailord
+wait 400

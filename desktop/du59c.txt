@@ -1,0 +1,85 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 6
+wait 400
+serial LVL 30
+serial IDIOMA 5
+serial GIVE 29
+serial GIVE 29
+serial GIVE 29
+serial GIVE 45
+serial GIVE 45
+wait 1200
+tap 40 250
+wait 2500
+tap 233 233
+serial PARTY 131 28
+serial PARTY 135 22
+serial PARTY 59 31
+wait 500
+serial CARD 4
+wait 400
+tap 233 365
+wait 1600
+tap 233 132
+wait 600
+tap 304 282
+wait 600
+tap 233 212
+wait 300
+shot b_regras
+tap 162 338
+wait 1800
+tap 233 113
+wait 200
+tap 233 189
+wait 200
+tap 233 227
+wait 400
+tap 162 368
+wait 3000
+shot b_0_rede
+tap 233 377
+wait 12000
+shot b_1_turno2
+tap 400 296
+wait 500
+shot b_2_bolsa
+tap 233 181
+wait 500
+shot b_3_lista
+tap 233 146
+wait 300
+shot b_4_esperando
+wait 800
+shot b_5a
+wait 400
+shot b_5b
+wait 400
+shot b_5c
+wait 9000
+shot b_6_turno3
+tap 400 296
+wait 500
+shot b_7_bolsa2
+wait 300
+shot fim

@@ -1,0 +1,26 @@
+tap 233 233
+tap 233 233
+tap 233 233
+tap 233 233
+tap 233 233
+tap 142 356
+tap 233 240
+tap 233 200
+tap 233 200
+tap 233 200
+tap 142 356
+wait 300
+tap 233 233
+tap 233 233
+wait 300
+serial HATCH
+serial SPEC 6
+serial LVL 60
+serial IDIOMA 5
+wait 300
+serial REG 25
+wait 500
+tap 355 120
+wait 400
+wait 400
+shot dexdet

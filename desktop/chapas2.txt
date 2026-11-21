@@ -1,0 +1,29 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial LVL 35
+wait 400
+tap 202 404
+wait 1000
+tap 150 155
+wait 1500
+shot gy_1_saco
+wait 300

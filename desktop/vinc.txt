@@ -1,0 +1,23 @@
+wait 500
+tap 233 223
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2000
+serial CARD 0
+wait 700
+shot vi_1_vinculo_sano
+wait 300
+serial BOND 18
+wait 300
+serial CARD 0
+wait 700
+shot vi_2_desobedece
+wait 300
+serial CARD 1
+wait 700
+shot vi_3_pagina_combate
+wait 300

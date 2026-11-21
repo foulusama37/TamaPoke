@@ -1,0 +1,33 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial LVL 35
+wait 300
+serial CARD 1
+wait 800
+shot st_1_stats
+wait 300
+serial LANG 6
+wait 400
+serial CARD 1
+wait 800
+shot st_2_ja
+wait 400

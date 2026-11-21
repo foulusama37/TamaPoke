@@ -1,0 +1,242 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 1
+wait 900
+serial TALLA
+wait 400
+serial SPEC 6
+wait 900
+serial TALLA
+wait 400
+serial SPEC 10
+wait 900
+serial TALLA
+wait 400
+serial SPEC 16
+wait 900
+serial TALLA
+wait 400
+serial SPEC 17
+wait 900
+serial TALLA
+wait 400
+serial SPEC 25
+wait 900
+serial TALLA
+wait 400
+serial SPEC 50
+wait 900
+serial TALLA
+wait 400
+serial SPEC 59
+wait 900
+serial TALLA
+wait 400
+serial SPEC 92
+wait 900
+serial TALLA
+wait 400
+serial SPEC 93
+wait 900
+serial TALLA
+wait 400
+serial SPEC 94
+wait 900
+serial TALLA
+wait 400
+serial SPEC 95
+wait 900
+serial TALLA
+wait 400
+serial SPEC 129
+wait 900
+serial TALLA
+wait 400
+serial SPEC 130
+wait 900
+serial TALLA
+wait 400
+serial SPEC 131
+wait 900
+serial TALLA
+wait 400
+serial SPEC 143
+wait 900
+serial TALLA
+wait 400
+serial SPEC 147
+wait 900
+serial TALLA
+wait 400
+serial SPEC 149
+wait 900
+serial TALLA
+wait 400
+serial SPEC 150
+wait 900
+serial TALLA
+wait 400
+serial SPEC 151
+wait 900
+serial TALLA
+wait 400
+serial SPEC 172
+wait 900
+serial TALLA
+wait 400
+serial SPEC 196
+wait 900
+serial TALLA
+wait 400
+serial SPEC 212
+wait 900
+serial TALLA
+wait 400
+serial SPEC 248
+wait 900
+serial TALLA
+wait 400
+serial SPEC 257
+wait 900
+serial TALLA
+wait 400
+serial SPEC 282
+wait 900
+serial TALLA
+wait 400
+serial SPEC 321
+wait 900
+serial TALLA
+wait 400
+serial SPEC 350
+wait 900
+serial TALLA
+wait 400
+serial SPEC 376
+wait 900
+serial TALLA
+wait 400
+serial SPEC 384
+wait 900
+serial TALLA
+wait 400
+serial SPEC 393
+wait 900
+serial TALLA
+wait 400
+serial SPEC 448
+wait 900
+serial TALLA
+wait 400
+serial SPEC 445
+wait 900
+serial TALLA
+wait 400
+serial SPEC 493
+wait 900
+serial TALLA
+wait 400
+serial SPEC 495
+wait 900
+serial TALLA
+wait 400
+serial SPEC 555
+wait 900
+serial TALLA
+wait 400
+serial SPEC 595
+wait 900
+serial TALLA
+wait 400
+serial SPEC 635
+wait 900
+serial TALLA
+wait 400
+serial SPEC 658
+wait 900
+serial TALLA
+wait 400
+serial SPEC 681
+wait 900
+serial TALLA
+wait 400
+serial SPEC 700
+wait 900
+serial TALLA
+wait 400
+serial SPEC 724
+wait 900
+serial TALLA
+wait 400
+serial SPEC 745
+wait 900
+serial TALLA
+wait 400
+serial SPEC 778
+wait 900
+serial TALLA
+wait 400
+serial SPEC 800
+wait 900
+serial TALLA
+wait 400
+serial SPEC 812
+wait 900
+serial TALLA
+wait 400
+serial SPEC 849
+wait 900
+serial TALLA
+wait 400
+serial SPEC 887
+wait 900
+serial TALLA
+wait 400
+serial SPEC 892
+wait 900
+serial TALLA
+wait 400
+serial SPEC 900
+wait 900
+serial TALLA
+wait 400
+serial SPEC 959
+wait 900
+serial TALLA
+wait 400
+serial SPEC 977
+wait 900
+serial TALLA
+wait 400
+serial SPEC 1000
+wait 900
+serial TALLA
+wait 400
+serial SPEC 1007
+wait 900
+serial TALLA
+wait 400
+serial SPEC 1017
+wait 900
+serial TALLA
+wait 400
+wait 600

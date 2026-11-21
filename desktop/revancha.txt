@@ -1,0 +1,47 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 9
+wait 300
+serial LVL 40
+wait 300
+serial BADGES 13
+wait 400
+swipe 120 233 380 233 260
+wait 900
+shot rev_0_mapa
+wait 400
+tap 233 282
+wait 900
+shot rev_1_lista
+wait 400
+tap 316 380
+wait 500
+shot rev_2_abajo
+wait 400
+tap 316 380
+wait 500
+shot rev_3_elite
+wait 400
+tap 233 140
+wait 2600
+shot rev_4_combate
+wait 900

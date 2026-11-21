@@ -1,0 +1,55 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial QUIZ
+wait 700
+shot quiz_0_marca
+wait 300
+tap 380 250
+wait 800
+shot quiz_1_pregunta
+wait 300
+tap 233 213
+wait 600
+shot quiz_2_respondida
+wait 900
+tap 233 440
+wait 700
+shot quiz_3_siguiente
+wait 300
+tap 233 275
+wait 1000
+tap 233 440
+wait 700
+tap 233 337
+wait 1000
+tap 233 440
+wait 700
+tap 233 213
+wait 1000
+tap 233 440
+wait 700
+tap 233 275
+wait 1000
+tap 233 440
+wait 900
+shot quiz_4_final
+wait 300

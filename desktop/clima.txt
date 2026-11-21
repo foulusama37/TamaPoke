@@ -1,0 +1,72 @@
+# Los golpes de apoyo, que hasta ahora no existian (el generador tiraba todo
+# lo que tuviera potencia 0). Lo que mas cambia es el clima: afecta al combate
+# ENTERO, no solo al turno en que se usa.
+wait 500
+tap 233 223
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial LVL 55
+wait 600
+
+# ---------------------------------------------- Sunny Day + Solar Beam
+serial FIGHT 143 55
+wait 2500
+serial MOVE 0 0 SUNNYDAY
+serial MOVE 0 1 SOLARBEAM
+serial MOVE 1 0 TACKLE
+serial MOVE 1 1 TACKLE
+serial MOVE 1 2 TACKLE
+serial MOVE 1 3 TACKLE
+wait 400
+
+tap 233 377
+wait 1900
+shot cl_1_sale_el_sol     # "The sunlight turned harsh!"
+wait 5000
+
+# ahora Solar Beam: con el sol NO tiene que gastar el turno de carga
+tap 320 377
+wait 500
+tap 233 377
+wait 1000
+shot cl_2_solarbeam       # "CHARMANDER used SOLARBEAM!"
+wait 900
+shot cl_3_sin_cargar      # y ya esta pegando, sin "is charging up!"
+wait 5000
+
+# ---------------------------------------------- Swords Dance
+serial FIGHT 143 55
+wait 2500
+serial MOVE 0 0 SWORDSDANCE
+serial MOVE 1 0 TACKLE
+serial MOVE 1 1 TACKLE
+serial MOVE 1 2 TACKLE
+serial MOVE 1 3 TACKLE
+wait 400
+shot cl_4_tarjeta_apoyo   # la tarjeta dice SUPPORT, no "POW 0"
+wait 300
+tap 233 377
+wait 2000
+shot cl_5_ataque_sube     # "CHARMANDER's Attack rose!" y el chip ATK+
+wait 5000
+
+# ---------------------------------------------- tormenta de arena
+serial FIGHT 143 55
+wait 2500
+serial MOVE 0 0 SANDSTORM
+serial MOVE 1 0 TACKLE
+serial MOVE 1 1 TACKLE
+serial MOVE 1 2 TACKLE
+serial MOVE 1 3 TACKLE
+wait 400
+tap 233 377
+wait 1900
+shot cl_6_arena
+wait 6000
+shot cl_7_roe
+wait 3000

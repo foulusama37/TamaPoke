@@ -1,0 +1,35 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial BADGES 8
+wait 300
+serial WILD 130 20
+wait 400
+tap 380 168
+wait 2200
+shot sg_1_normal
+wait 500
+serial WILD 130 20 S
+wait 400
+tap 380 168
+wait 2200
+shot sg_2_shiny
+wait 600

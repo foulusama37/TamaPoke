@@ -1,0 +1,37 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial SPEC 130
+wait 400
+serial LVL 35
+wait 300
+serial SHINY
+wait 900
+shot sh_1_casa
+wait 300
+serial CARD 0
+wait 900
+shot sh_2_ficha
+wait 300
+serial FIGHT 94 35 S
+wait 2600
+shot sh_3_combate
+wait 400

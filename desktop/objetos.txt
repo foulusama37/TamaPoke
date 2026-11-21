@@ -1,0 +1,42 @@
+# Objetos que el bicho lleva encima, y la segunda tanda de golpes de apoyo.
+wait 500
+tap 233 223
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial LVL 50
+wait 600
+
+# la bolsa empieza vacia
+serial ITEMS
+wait 200
+serial GIVE 1
+wait 200
+serial HOLD 1
+wait 300
+serial ITEMS
+wait 300
+
+# ------------------------------------------- Protect y Leech Seed
+serial FIGHT 143 50
+wait 2500
+serial MOVE 0 0 PROTECT
+serial MOVE 0 1 LEECHSEED
+serial MOVE 1 0 BODYSLAM
+serial MOVE 1 1 BODYSLAM
+serial MOVE 1 2 BODYSLAM
+serial MOVE 1 3 BODYSLAM
+wait 400
+
+tap 233 377
+wait 9000
+tap 320 377
+wait 500
+tap 233 377
+wait 9000
+tap 233 377
+wait 9000

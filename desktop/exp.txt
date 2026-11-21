@@ -1,0 +1,27 @@
+wait 500
+tap 233 223
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial CARD 3
+wait 200
+serial CARD 5
+wait 400
+shot ex_1_progreso
+wait 600
+serial FIGHT 129 12
+wait 2500
+tap 233 377
+wait 7000
+tap 233 377
+wait 7000
+tap 233 377
+wait 9000
+serial CARD 5
+wait 400
+shot ex_2_depois
+wait 600

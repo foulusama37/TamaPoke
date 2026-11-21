@@ -1,0 +1,120 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 9
+wait 300
+serial LVL 30
+wait 200
+serial WINS 9
+wait 300
+serial CARD 5
+wait 800
+shot gb_1_antes
+wait 300
+tap 233 340
+wait 2800
+serial MOVE 0 0 SURF
+wait 400
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+tap 233 377
+wait 6500
+wait 4000
+serial CARD 5
+wait 1200
+shot gb_2_despues
+wait 600

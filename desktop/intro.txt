@@ -1,0 +1,25 @@
+wait 900
+shot it_1_portada
+wait 400
+tap 233 233
+wait 500
+shot it_2_oak1
+wait 300
+tap 233 233
+wait 400
+shot it_3_oak2
+wait 300
+tap 233 233
+wait 400
+tap 233 233
+wait 400
+shot it_4_oak4
+wait 300
+tap 233 233
+wait 500
+shot it_5_genero
+wait 300
+tap 142 356
+wait 700
+shot it_6_inicial
+wait 400

@@ -1,0 +1,21 @@
+wait 500
+tap 233 223
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+shot en_1_com_fuelle
+wait 300
+serial BARS 60 60 12 60
+wait 600
+shot en_2_sem_fuelle
+wait 300
+tap 202 404
+wait 900
+shot en_3_nao_abre
+wait 300
+serial FIGHT 16 5
+wait 800

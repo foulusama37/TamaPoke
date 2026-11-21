@@ -1,0 +1,67 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 6
+wait 400
+serial LVL 30
+wait 1200
+tap 40 250
+wait 2500
+tap 233 233
+serial PARTY 131 28
+serial PARTY 135 22
+serial PARTY 59 31
+wait 500
+serial CARD 4
+wait 400
+tap 233 365
+wait 1600
+shot du_1_procura
+tap 233 132
+wait 600
+shot du_2_trocar_ou_batalhar
+tap 304 282
+wait 600
+shot du_3_regras
+tap 233 212
+wait 400
+shot du_4_regras_ate3
+tap 162 338
+wait 300
+shot du_5_convidei
+wait 1500
+shot du_6_escolha
+tap 233 113
+wait 200
+tap 233 189
+wait 200
+tap 233 227
+wait 400
+shot du_7_escolhidos
+tap 162 368
+wait 150
+shot du_8_espera
+wait 2500
+shot du_9_vs
+wait 3000
+shot du_9_vs
+wait 500
+shot du_10

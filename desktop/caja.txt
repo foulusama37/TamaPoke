@@ -1,0 +1,46 @@
+# Intro -> inicial -> eclosion -> ficha (pagina 4) -> pestana BANCO.
+# Para mirar la barra de la caja y sus flechas.
+wait 1200
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 357
+wait 600
+tap 233 145
+wait 800
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 900
+serial CARD 3
+wait 500
+shot bolsa1
+wait 200
+tap 233 120
+wait 500
+shot bolsa2
+wait 200
+tap 233 120
+wait 500
+shot bolsa3
+wait 300
+serial CARD 4
+wait 500
+tap 300 82
+wait 600
+shot caja
+wait 200
+tap 365 110
+wait 600
+shot caja2

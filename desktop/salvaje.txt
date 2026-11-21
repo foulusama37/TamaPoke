@@ -1,0 +1,31 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial BADGES 0
+wait 200
+serial WILD
+wait 500
+shot sv_1_aviso
+wait 400
+tap 380 168
+wait 1400
+shot sv_2_combate
+wait 400

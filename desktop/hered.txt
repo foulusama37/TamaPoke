@@ -1,0 +1,39 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1500
+serial SPEC 6
+wait 400
+serial LVL 60
+wait 300
+serial BADGES 8
+wait 300
+serial BOND 100
+wait 300
+serial AGE 9
+wait 600
+serial LEGACY
+wait 400
+shot he_1_listo
+wait 300
+tap 233 205
+wait 900
+shot he_2_dialogo
+wait 500

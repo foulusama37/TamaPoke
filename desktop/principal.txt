@@ -1,0 +1,27 @@
+wait 500
+tap 233 223
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial LVL 30
+wait 300
+serial PARTY 25 18
+serial PARTY 95 22
+serial PARTY 143 30
+wait 400
+serial CARD 4
+wait 300
+shot pr_1_principal
+# tocar el CUERPO de una fila: no debe cambiar nada
+tap 200 199
+wait 400
+shot pr_2_cuerpo_no_hace_nada
+# tocar el circulo: ahora si
+tap 44 199
+wait 500
+shot pr_3_cambiado
+wait 400

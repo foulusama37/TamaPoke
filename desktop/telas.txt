@@ -1,0 +1,29 @@
+wait 900
+tap 233 233
+wait 700
+shot in_1_oak
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 700
+shot in_2_genero
+wait 300
+tap 142 356
+wait 900
+shot in_3_inicial
+wait 300
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SETTINGS
+wait 900
+shot in_4_ajustes
+wait 400

@@ -1,0 +1,42 @@
+
+wait 500
+tap 233 145
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+serial SPEC 3
+wait 400
+serial LVL 50
+wait 600
+serial FIGHT 129 20
+wait 500
+shot 01_intro
+wait 1700
+shot 02_elegir
+tap 233 377
+wait 400
+shot 03_anuncio
+wait 700
+shot 04_ataque
+wait 500
+shot 05_impacto
+wait 800
+shot 06_efetividade
+wait 1000
+shot 07_dreno
+wait 1200
+shot 08_anuncio_rival
+wait 3000
+tap 233 377
+wait 4000
+tap 233 377
+wait 1500
+shot 09_desmaio
+wait 700
+shot 10_caindo
+wait 900
+shot 11_fainted

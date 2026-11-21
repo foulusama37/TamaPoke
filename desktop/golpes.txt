@@ -1,0 +1,95 @@
+wait 900
+tap 233 233
+wait 400
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 300
+tap 233 233
+wait 400
+tap 142 356
+wait 600
+tap 233 240
+wait 900
+tap 233 200
+wait 400
+tap 233 200
+wait 400
+tap 233 200
+wait 1800
+serial SPEC 9
+wait 300
+serial LVL 30
+wait 300
+serial PARTY 7 20
+wait 400
+
+# --- bug 3: los golpes de un SUPLENTE desde la lista del equipo ---
+serial CARD 4
+wait 600
+shot g1_equipo
+wait 200
+tap 220 161
+wait 600
+shot g2_golpes_suplente
+wait 200
+tap 300 80
+wait 500
+tap 220 180
+wait 500
+shot g3_suplente_cambiado
+wait 300
+tap 233 400
+wait 500
+shot g4_vuelve_al_equipo
+wait 400
+
+# --- bug 2: lo elegido para el TITULAR llega al combate ---
+serial CARD 2
+wait 600
+shot g5_golpes_titular
+wait 200
+tap 150 80
+wait 400
+tap 150 108
+wait 400
+tap 150 123
+wait 400
+tap 150 138
+wait 500
+shot g6_titular_vaciado
+wait 300
+tap 220 180
+wait 500
+tap 220 214
+wait 500
+shot g7_titular_elegido
+wait 400
+tap 233 400
+wait 800
+serial WILD 19 20
+wait 600
+tap 380 172
+wait 3000
+shot g8_combate
+wait 2500
+shot g9_golpe_1
+wait 200
+tap 338 377
+wait 300
+shot g10_golpe_2
+wait 200
+tap 338 377
+wait 300
+shot g11_golpe_3
+wait 200
+tap 338 377
+wait 300
+shot g12_golpe_4
+wait 200
+tap 338 377
+wait 300
+shot g13_golpe_vuelta
+wait 400

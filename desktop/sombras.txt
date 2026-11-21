@@ -1,0 +1,63 @@
+# Los bichos que peor llevaban la sombra, medidos en tools/: huella minima
+# contra lienzo enorme (Aerodactyl apoya en 7 px de 93) y frames que se
+# despegan hasta 26 filas del suelo.
+#
+# El prologo de antes se quedaba en la intro (era de una version vieja
+# de intro.ino). Este es el que vale hoy: 5 toques de portada/profesor,
+# el boton de sexo, el inicial y tres para cascar el huevo.
+tap 233 233
+tap 233 233
+tap 233 233
+tap 233 233
+tap 233 233
+tap 142 356
+tap 233 240
+tap 233 200
+tap 233 200
+tap 233 200
+tap 142 356
+wait 300
+tap 233 233
+tap 233 233
+wait 300
+serial HATCH
+wait 400
+serial LVL 40
+wait 1500
+tap 233 233
+wait 800
+tap 233 233
+wait 800
+
+serial FIGHT 142 40      # Aerodactyl: huella 7 de 93, se despega 26 filas
+wait 2500
+shot so_142_aerodactyl
+wait 400
+serial FIGHT 15 40       # Beedrill: huella 6 de 74
+wait 2500
+shot so_015_beedrill
+wait 400
+serial FIGHT 130 40      # Gyarados: huella 11 de 102
+wait 2500
+shot so_130_gyarados
+wait 400
+serial FIGHT 73 40       # Tentacruel: huella 9 de 84
+wait 2500
+shot so_073_tentacruel
+wait 400
+serial FIGHT 151 40      # Mew: huella 8 de 78
+wait 2500
+shot so_151_mew
+wait 400
+serial FIGHT 50 40       # Diglett: al reves, huella mas ancha que la sombra
+wait 2500
+shot so_050_diglett
+wait 400
+serial FIGHT 95 40       # Onix: bicho largo, apoyo normal
+wait 2500
+shot so_095_onix
+wait 400
+serial FIGHT 143 40      # Snorlax: el caso sano, de control
+wait 2500
+shot so_143_snorlax
+wait 400

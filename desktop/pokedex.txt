@@ -1,0 +1,47 @@
+# La Pokedex: rejilla con los iconos de Anil (quieta, que son 16 a la vez) y
+# la vista de detalle con el battler animado y la entrada de texto debajo.
+#
+# OJO con el orden de `shot`: marca el SIGUIENTE volcado de pantalla, no el
+# actual. Y la rejilla solo se redibuja cuando esta "sucia". Asi que hay que
+# armar el shot ANTES de lo que la ensucia (y antes del wait que deja correr
+# el bucle), o se queda esperando y acaba cayendo en otra pantalla.
+wait 500
+tap 233 223
+wait 600
+tap 233 240
+wait 300
+tap 233 240
+wait 300
+tap 233 240
+wait 2500
+
+# media pagina registrada, para ver criados y "???" en la misma pantalla
+serial REG 1 2 3 4 5 6 7 8 143
+wait 300
+
+serial GAL
+wait 600
+# La rejilla se dibuja UNA vez y ya no vuelve a volcar pantalla, asi que un
+# shot detras se queda esperando. Pasar de pagina la ensucia y la obliga a
+# redibujar: ahi si hay volcado que capturar.
+swipe 350 233 120 233 250
+shot px_0_pagina2
+wait 600
+swipe 120 233 350 233 250
+shot px_1_rejilla         # 16 iconos de Anil, todos quietos
+wait 600
+
+# detalle de uno registrado (fila 1, columna 2 = dex 2)
+tap 190 150
+shot px_2_detalle         # battler animado + entrada de Pokedex debajo
+wait 1000
+shot px_3_detalle_mueve   # otro frame: se mueve el bicho, el texto no
+wait 600
+
+# volver y abrir el de la ficha mas larga que hay
+tap 233 420
+wait 600
+serial GAL
+wait 200
+serial GAL
+wait 400
