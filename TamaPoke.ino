@@ -37,6 +37,7 @@
 #include "audio.h"
 #include "intro.h"        // intro de primera partida (creditos, profesor)
 #include "bgs.h"          // que escenario de /bg va en cada sitio
+#include "qr_manual.h"    // o QR do manual (tools/gen_qr_manual.py)
 
 // Version del firmware. Subir este numero en cada release (y manifest.json para
 // el instalador web). Se muestra en la pantalla de ajustes y por serie al arrancar.
@@ -344,6 +345,7 @@ uint8_t bagPocket = 0;        // BP_*: pestana abierta en la bolsa
 #define SLOT_W 152
 #define SLOT_H 28
 bool clockOpen = false;       // pantalla de ajuste de hora (deslizar abajo)
+bool manualQrOpen = false;    // o QR do manual, aberto pelo botao do topo dos ajustes
 int clockH = 12, clockM = 0;  // hora en edicion
 // Borrado de fabrica: 0 = nada, 1 = primera pregunta, 2 = segunda. Son DOS
 // porque no se deshace, y una sola confirmacion la despacha cualquiera sin
@@ -2231,6 +2233,7 @@ void onSwipeV(int dir) {
   if (btBagSwipeV(dir)) return;     // la bolsa del combate: mueve la lista
   if (rematchSwipeV(dir)) return;   // y la de la revancha
   if (gymOpen || galleryOpen || kbOpen || pet.ceremony) return;
+  if (clockOpen && manualQrOpen) { manualQrOpen = false; return; }  // so fecha o QR
   if (clockOpen) { clockOpen = false; resetStep = 0; return; }
   if (cardOpen) {
     if (dir < 0) cardOpen = false;  // arriba cierra la ficha
@@ -4236,6 +4239,7 @@ void openClock() {
   uint32_t e = pet.lastSeenEpoch ? pet.lastSeenEpoch : rtcEpoch();
   clockH = (e / 3600) % 24;
   clockM = (e / 60) % 60;
+  manualQrOpen = false;
   clockOpen = true;
 }
 
@@ -4267,8 +4271,62 @@ void drawClockBtn(int x, int y, const char *l) {
 #define RESET_PILL_W 162
 static const char *const LANG_CODES[LANG_COUNT] = { "ES", "EN", "FR", "DE", "IT", "PT", "JA", "KO" };
 
+// O botao do manual, no topo dos ajustes. Desenhado pequeno (o circulo
+// ali e estreito), mas o toque vale ate a hora: em cima nao ha mais nada.
+#define MANUAL_PILL_Y 8
+#define MANUAL_PILL_H 28
+#define MANUAL_PILL_W 132
+
+// A tela do QR: fundo branco com a margem de 4 modulos que o leitor pede,
+// modulos de 6 px (37 x 6 = 222; com a margem, 270 -- cabe no circulo com
+// os cantos ainda dentro). Portugues leva ao LEIAME; o resto, ao README.
+#define QR_MOD 6
+void renderManualQr() {
+  gfx->fillScreen(RGB565_BLACK);
+  const int lado = (QR_MANUAL_N + 8) * QR_MOD;
+  const int x0 = CX - lado / 2, y0 = CY - lado / 2;
+  gfx->fillRoundRect(x0, y0, lado, lado, 10, RGB565_WHITE);
+  const uint8_t *qr = (gLang == LANG_PT) ? QR_MANUAL_PT : QR_MANUAL_EN;
+  for (int r = 0; r < QR_MANUAL_N; r++)
+    for (int c = 0; c < QR_MANUAL_N; c++)
+      if (qr[r * QR_MANUAL_BPL + c / 8] & (0x80 >> (c % 8)))
+        gfx->fillRect(x0 + (c + 4) * QR_MOD, y0 + (r + 4) * QR_MOD, QR_MOD, QR_MOD,
+                      RGB565_BLACK);
+  gfx->setTextColor(UI_WHITE);
+  const char *tit = T(S_MANUAL);
+  uint8_t ts = tallaQueCabe(tit, y0 - 52, 3, 0);
+  setSize(ts);
+  setCur(centerX(tit, ts), y0 - 52);
+  printT(tit);
+  const char *dica = T(S_QR_DICA);
+  uint8_t ds = tallaQueCabe(dica, y0 - 22, 2, 0);
+  setSize(ds);
+  setCur(centerX(dica, ds), y0 - 22);
+  printT(dica);
+  gfx->setTextColor(CARD_SOFT);
+  const char *pe = T(S_TOQUE_FECHAR);
+  uint8_t ps = tallaQueCabe(pe, y0 + lado + 14, 2, 0);
+  setSize(ps);
+  setCur(centerX(pe, ps), y0 + lado + 14);
+  printT(pe);
+  gfx->flush();
+}
+
 void renderClock() {
+  if (manualQrOpen) { renderManualQr(); return; }
   drawDexSkin();
+  {
+    const char *ml = T(S_MANUAL);
+    gfx->fillRoundRect(CX - MANUAL_PILL_W / 2, MANUAL_PILL_Y, MANUAL_PILL_W, MANUAL_PILL_H,
+                       10, C565(0x2c, 0x4a, 0x6e));
+    gfx->drawRoundRect(CX - MANUAL_PILL_W / 2, MANUAL_PILL_Y, MANUAL_PILL_W, MANUAL_PILL_H,
+                       10, CARD_INK);
+    gfx->setTextColor(UI_WHITE);
+    uint8_t mz = textW(ml, 2) <= MANUAL_PILL_W - 12 ? 2 : 1;
+    setSize(mz);
+    setCur(CX - textW(ml, mz) / 2, MANUAL_PILL_Y + (MANUAL_PILL_H - 8 * mz) / 2);
+    printT(ml);
+  }
   gfx->setTextColor(CARD_INK);
   setSize(3);
   setCur(centerX(T(S_SET_TIME), 3), 44);
@@ -4412,6 +4470,17 @@ void clockTap(int16_t x, int16_t y) {
     }
     int nx = dos ? RESET_YES_X : RESET_NO_X;
     if (x >= nx && x <= nx + RESET_BTN_W) resetStep = 0;   // NO
+    return;
+  }
+  if (manualQrOpen) {          // qualquer toque fecha o QR e volta aos ajustes
+    manualQrOpen = false;
+    sfxPlay(SFX_TAP);
+    return;
+  }
+  // o botao do manual: o toque vale ate y=72 (o titulo nao se toca)
+  if (y < 72 && x >= CX - MANUAL_PILL_W / 2 - UI_FOSO && x <= CX + MANUAL_PILL_W / 2 + UI_FOSO) {
+    manualQrOpen = true;
+    sfxPlay(SFX_TAP);
     return;
   }
   if (y >= 190 && y <= 248) {  // fila de botones +/-

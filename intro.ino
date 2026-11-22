@@ -13,7 +13,7 @@
 #define IN_TITLE 0    // creditos + portada
 #define IN_OAK 1      // el profesor habla (introPage 0..3)
 #define IN_GENDER 2   // chico o chica
-#define OAK_PAGES 4
+#define OAK_PAGES 5        // a 5a: onde fica o manual (leva 74)
 
 bool introOpen = false;
 uint8_t introStep = IN_TITLE;
@@ -184,7 +184,7 @@ static void renderIntroOak() {
   // el texto, y a esa altura la cuerda del circulo ya no da 346 px -- la
   // caja se habria salido por las esquinas de abajo.
   drawWindow(72, 306, 322, 94, 14);
-  static const StrId PAG[OAK_PAGES] = { S_OAK_1, S_OAK_2, S_OAK_3, S_OAK_4 };
+  static const StrId PAG[OAK_PAGES] = { S_OAK_1, S_OAK_2, S_OAK_3, S_OAK_4, S_OAK_5 };
   gfx->setTextColor(INK_K);
   drawWrapped(T(PAG[introPage < OAK_PAGES ? introPage : 0]), 322, 26, 18, 4, 2);
 

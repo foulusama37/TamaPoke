@@ -93,7 +93,7 @@ extern int16_t galleryDetail;
 // donde hay que tocar para usar el que esta elegido.
 // La intro: cuatro paginas del profesor y el boton de genero. Copiado de
 // intro.ino, como el resto de la geometria de este fichero.
-#define OAK_PAGES_T 4
+#define OAK_PAGES_T 5
 #define GEN_BTN_Y_T 330
 #define GEN_BTN_H_T 54
 #define BT_CARD_Y0_T 334
@@ -4818,6 +4818,7 @@ TEST(evolucao, toca_a_musica_e_depois_a_fanfarria) {
 // del panel. Ahora hay una faja entera para pasar pagina, arrastrar mueve
 // la lista y solo se cierra tocando FUERA del panel.
 extern bool clockOpen;
+extern bool manualQrOpen;   // leva 74
 TEST(combate_ui, en_la_bolsa_se_pasa_pagina_sin_que_se_cierre) {
   combateConObjetos(0, 0);
   uint8_t guardada[ITEM_COUNT];
@@ -4982,6 +4983,7 @@ static void todoCerradoT() {
   pet.avDesde = 0;
   cardOpen = false; kbOpen = false; galleryOpen = false; galleryDetail = 0;
   galleryVer = 0; mapOpen = false; rematchOpen = false; clockOpen = false;
+  manualQrOpen = false;
   quizOpen = false; gymOpen = false; choiceKind = 0; confirmUntil = 0;
   feedMenuUntil = 0; apagarUntil = 0; abilShown = false; bankView = false;
   bankSoltar = -1; bagShown = 0; moveShown = 0; movesSlot = 0xFF;
@@ -8761,6 +8763,9 @@ TEST(manual, as_fotos_do_manual) {
   openClock();
   avanza(160);
   fotoMan("ajustes");
+  manualQrOpen = true;   // o QR do manual (leva 74)
+  avanza(160);
+  fotoMan("ajustes_qr");
   todoCerradoT();
   avanza(100);
 
@@ -8889,6 +8894,9 @@ TEST(manual, as_fotos_do_manual) {
   introPage = 0;
   avanza(300);
   fotoMan("intro_professor");
+  introPage = 4;   // a 5a fala: onde fica o manual
+  avanza(300);
+  fotoMan("intro_manual");
   introStep = 2;   // IN_GENDER
   avanza(300);
   fotoMan("intro_genero");
@@ -9326,4 +9334,159 @@ TEST(telas73, os_textos_cabem_nos_botoes) {
   }
   setLang(antes);
   applyLangFont();
+}
+
+
+// ---- leva 74: o manual dentro do jogo. Um botao MANUAL no topo dos
+// ajustes abre um QR que leva ao docs/manual do repo (LEIAME em portugues,
+// README nos outros), e o Carvalho ganha uma 5a fala dizendo onde ele esta.
+// Mede-se a TELA: cada modulo do QR desenhado tem de bater com a tabela
+// gerada (e o tools/confere_qr.py le o PPM com uma camera de verdade, cv2).
+#include "../qr_manual.h"
+extern int clockH;
+uint8_t tallaQueCabe(const char *s, int y, uint8_t max, int extra);
+
+// modulos desenhados que nao batem com a tabela (+ margem que nao e branca)
+static int qrErros74(const uint8_t *qr) {
+  const uint16_t *fb = gfx->getFramebuffer();
+  const int W = gfx->width();
+  const int mod = 6, lado = (QR_MANUAL_N + 8) * mod;
+  const int x0 = 233 - lado / 2, y0 = 233 - lado / 2;
+  auto claro = [&](int x, int y) { return ((fb[y * W + x] >> 11) & 31) > 15; };
+  int erros = 0;
+  for (int r = 0; r < QR_MANUAL_N; r++)
+    for (int c = 0; c < QR_MANUAL_N; c++) {
+      bool escuro = qr[r * QR_MANUAL_BPL + c / 8] & (0x80 >> (c % 8));
+      int x = x0 + (c + 4) * mod + mod / 2, y = y0 + (r + 4) * mod + mod / 2;
+      if (escuro == claro(x, y)) erros++;
+    }
+  // a margem de 4 modulos (o leitor precisa dela): toda branca
+  for (int k = 0; k < QR_MANUAL_N + 8; k++) {
+    int p = x0 + k * mod + mod / 2;
+    if (!claro(p, y0 + mod * 2)) erros++;
+    if (!claro(p, y0 + lado - mod * 2)) erros++;
+    if (!claro(x0 + mod * 2, p)) erros++;
+    if (!claro(x0 + lado - mod * 2, p)) erros++;
+  }
+  return erros;
+}
+
+TEST(manual74, o_botao_do_topo_abre_o_qr_do_idioma) {
+  preparaElMundoT();
+  setLang(LANG_PT);
+  applyLangFont();
+  avanza(100);
+  openClock();
+  avanza(100);
+  CHECK_MSG(!manualQrOpen, "premissa: os ajustes abrem sem o QR");
+  onTap(233, 22);
+  avanza(100);
+  CHECK_MSG(manualQrOpen, "tocar MANUAL no topo dos ajustes abre o QR");
+  CHECK_MSG(qrErros74(QR_MANUAL_PT) == 0,
+            "o QR desenhado em portugues nao bate com QR_MANUAL_PT: " +
+            std::to_string(qrErros74(QR_MANUAL_PT)) + " modulos");
+  CHECK_MSG(qrErros74(QR_MANUAL_EN) > 40, "premissa: os dois QR sao diferentes");
+  volcaPantalla("qr74_pt");
+  // qualquer toque fecha o QR e continua nos ajustes
+  onTap(233, 233);
+  avanza(100);
+  CHECK_MSG(!manualQrOpen, "um toque no QR fecha o QR");
+  CHECK_MSG(clockOpen, "fechar o QR volta aos ajustes, nao a casa");
+  // em ingles (e nos outros) e o README
+  setLang(LANG_EN);
+  applyLangFont();
+  onTap(233, 22);
+  avanza(100);
+  CHECK_MSG(qrErros74(QR_MANUAL_EN) == 0,
+            "o QR em ingles nao bate com QR_MANUAL_EN: " +
+            std::to_string(qrErros74(QR_MANUAL_EN)) + " modulos");
+  volcaPantalla("qr74_en");
+  // deslizar com o QR aberto fecha so o QR
+  onSwipeV(1);
+  avanza(100);
+  CHECK_MSG(!manualQrOpen && clockOpen, "deslizar no QR fecha so o QR");
+  // fora do botao (e do foso) no topo nao abre nada
+  onTap(233 - 66 - UI_FOSO - 12, 64);
+  avanza(100);
+  CHECK_MSG(!manualQrOpen, "tocar ao lado do botao nao abre o QR");
+  // e os botoes da hora continuam la
+  int h0 = clockH;
+  onTap(199, 219);
+  CHECK_MSG(clockH == (h0 + 1) % 24, "o + da hora ainda funciona");
+  todoCerradoT();
+  avanza(100);
+}
+
+TEST(manual74, os_textos_do_qr_e_do_carvalho_cabem) {
+  for (int li = 0; li < LANG_COUNT; li++) {
+    if (LANG_IS_CJK((Lang)li)) continue;   // o simulador nao tem a fonte CJK
+    preparaElMundoT();
+    setLang((Lang)li);
+    applyLangFont();
+    avanza(100);
+    const std::string nome = std::to_string(li);
+    // o botao: o rotulo inteiro, dentro da pilula
+    mockTextoTodoReset();
+    openClock();
+    avanza(100);
+    CHECK_MSG(mockTextoTodo().find(T(S_MANUAL)) != std::string::npos,
+              "[" + nome + "] o botao MANUAL nao saiu inteiro");
+    CHECK_MSG((int)textW(T(S_MANUAL), 2) <= 132 - 12 || (int)textW(T(S_MANUAL), 1) <= 132 - 12,
+              "[" + nome + "] MANUAL nao cabe na pilula");
+    // a dica no tamanho 2: no 1 fica minuscula e ninguem le (leva 74b)
+    CHECK_MSG(tallaQueCabe(T(S_QR_DICA), 233 - (QR_MANUAL_N + 8) * 3 - 22, 2, 0) == 2,
+              "[" + nome + "] a dica do QR encolheu para o tamanho 1: " + std::string(T(S_QR_DICA)));
+    // a tela do QR: titulo, dica e rodape inteiros (sem o '..' do recorte)
+    mockTextoTodoReset();
+    onTap(233, 22);
+    avanza(100);
+    const std::string &log = mockTextoTodo();
+    for (StrId id : { S_MANUAL, S_QR_DICA, S_TOQUE_FECHAR })
+      CHECK_MSG(log.find(comoSai73(T(id))) != std::string::npos,
+                "[" + nome + "] na tela do QR nao saiu inteiro: " + comoSai73(T(id)));
+    todoCerradoT();
+    // a 5a fala do Carvalho: todas as palavras (4 linhas; o que sobra some)
+    startIntro();
+    introStep = 1;
+    introPage = 4;
+    mockTextoTodoReset();
+    avanza(300);
+    const std::string fala = comoSai73(T(S_OAK_5));
+    const std::string &lf = mockTextoTodo();
+    size_t a = 0;
+    while (a < fala.size()) {
+      size_t b = fala.find(' ', a);
+      if (b == std::string::npos) b = fala.size();
+      std::string w = fala.substr(a, b - a);
+      if (!w.empty())
+        CHECK_MSG(lf.find(w) != std::string::npos,
+                  "[" + nome + "] a 5a fala do Carvalho perdeu \"" + w + "\"");
+      a = b + 1;
+    }
+    introOpen = false;
+    todoCerradoT();
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+  avanza(100);
+}
+
+TEST(manual74, o_carvalho_fala_cinco_vezes) {
+  preparaElMundoT();
+  startIntro();
+  introStep = 1;
+  introPage = 0;
+  avanza(200);
+  for (int i = 0; i < 4; i++) {
+    onTap(233, 233);
+    avanza(200);
+    CHECK_MSG(introStep == 1, "o Carvalho parou antes da 5a fala (pagina " + std::to_string(i + 1) + ")");
+  }
+  CHECK_MSG(introPage == 4, "premissa: chegou a 5a fala");
+  onTap(233, 233);
+  avanza(200);
+  CHECK_MSG(introStep == 2, "depois da 5a fala vem menino/menina");
+  introOpen = false;
+  todoCerradoT();
+  avanza(100);
 }

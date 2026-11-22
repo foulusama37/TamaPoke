@@ -34,11 +34,12 @@ the board.
 
 The first time it powers on, the game shows the title and the Professor, then
 asks whether you are a boy or a girl. This choice changes the trainer sprite.
-Tap to turn each page.
+Tap to turn each page. His last line tells you where this manual is.
 
 <p align="center">
 <img src="img/en_intro_titulo.png" width="230" alt="Title">
 <img src="img/en_intro_professor.png" width="230" alt="Professor">
+<img src="img/en_intro_manual.png" width="230" alt="The Professor points to the manual">
 <img src="img/en_intro_genero.png" width="230" alt="Boy or girl">
 </p>
 
@@ -421,8 +422,13 @@ Swipe **down** on the home screen. There you set the hour and minutes, the volum
 (0 to 3), the **language** (ES, EN, FR, DE, IT, PT, JA, KO) and **ERASE ALL**
 (which asks twice). Tap **OK** to apply, or swipe to cancel.
 
+At the top is the **MANUAL** button: it shows a QR code. Point your phone camera
+at it to open this manual (the Portuguese LEIAME when the game is in Portuguese,
+this English README otherwise). Any tap closes the QR and returns to Settings.
+
 <p align="center">
 <img src="img/en_ajustes.png" width="250" alt="Settings">
+<img src="img/en_ajustes_qr.png" width="250" alt="Manual QR code">
 <img src="img/en_desligar.png" width="250" alt="Turn off">
 </p>
 

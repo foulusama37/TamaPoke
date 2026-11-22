@@ -180,6 +180,8 @@ enum StrId : uint16_t {
   S_AV_ENTROU_FMT, S_AV_ACHOU_FMT, S_AV_TERMINAR,
   // as abas da mochila (o POCKET_NAME de items.h fica para a serial)
   S_BOLSO_0, S_BOLSO_1, S_BOLSO_2, S_BOLSO_3, S_BOLSO_4,
+  // leva 74: o manual (QR nos ajustes e a 5a fala do Carvalho)
+  S_OAK_5, S_MANUAL, S_QR_DICA,
   STR_COUNT
 };
 

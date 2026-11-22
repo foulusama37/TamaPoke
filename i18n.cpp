@@ -169,6 +169,9 @@ static const char *const STRINGS[LANG_COUNT][STR_COUNT] = {
     "Balls",
     "Piedras",
     "Clave",
+    "\250Dudas? El manual est\240 en AJUSTES: desliza hacia abajo y lee el c\242digo QR.",
+    "MANUAL",
+    "Escan\202alo con el m\242vil",
   },
   // ---------------- EN ----------------
   {
@@ -332,6 +335,9 @@ static const char *const STRINGS[LANG_COUNT][STR_COUNT] = {
     "Balls",
     "Stones",
     "Key",
+    "Lost? The manual is in SETTINGS: swipe down and scan the QR code.",
+    "MANUAL",
+    "Scan with your phone",
   },
   // ---------------- FR ----------------
   {
@@ -495,6 +501,9 @@ static const char *const STRINGS[LANG_COUNT][STR_COUNT] = {
     "Balls",
     "Pierres",
     "Rares",
+    "Un doute ? Le manuel est dans R\220GLAGES : glisse vers le bas et scanne le QR.",
+    "MANUEL",
+    "Scanne avec ton mobile",
   },
   // ---------------- DE ----------------
   // El aleman si lleva dieresis: la fuente 5x7 del firmware es una tabla CP437
@@ -663,6 +672,9 @@ static const char *const STRINGS[LANG_COUNT][STR_COUNT] = {
     "B\204lle",
     "Steine",
     "Basis",
+    "Fragen? Das Handbuch ist in den EINSTELLUNGEN: nach unten wischen, QR scannen.",
+    "HANDBUCH",
+    "Mit dem Handy scannen",
   },
   // ---------------- IT ----------------
   {
@@ -826,6 +838,9 @@ static const char *const STRINGS[LANG_COUNT][STR_COUNT] = {
     "Ball",
     "Pietre",
     "Chiave",
+    "Dubbi? Il manuale \212 nelle IMPOSTAZIONI: scorri in basso e leggi il QR.",
+    "MANUALE",
+    "Inquadra col telefono",
   },
   // ---------------- PT ----------------
   {
@@ -986,6 +1001,9 @@ static const char *const STRINGS[LANG_COUNT][STR_COUNT] = {
     "Bolas",
     "Pedras",
     "Chave",
+    "Ficou com d\243vida? O manual est\240 nos AJUSTES: deslize para baixo e leia o QR code.",
+    "MANUAL",
+    "Aponte a c\203mera do celular",
   },
   // ---------------- JA ----------------
   {
@@ -1172,6 +1190,9 @@ static const char *const STRINGS[LANG_COUNT][STR_COUNT] = {
     "ボール",
     "いし",
     "だいじ",
+    "わからない ときは せっていに マニュアルが あるよ。 したに スワイプして QRを よんでね。",
+    "マニュアル",
+    "スマホの カメラで よんでね",
   },
   // ---------------- KO ----------------
   // Los especificadores van en el MISMO ORDEN que en la fila inglesa aunque
@@ -1340,6 +1361,9 @@ static const char *const STRINGS[LANG_COUNT][STR_COUNT] = {
     "볼",
     "돌",
     "중요",
+    "궁금하면 설정에 설명서가 있어요. 아래로 밀고 QR을 읽어요.",
+    "설명서",
+    "휴대폰 카메라로 읽어요",
   },
 };
 

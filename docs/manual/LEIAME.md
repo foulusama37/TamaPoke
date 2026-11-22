@@ -34,11 +34,12 @@ placa.
 
 Na primeira vez que liga, o jogo mostra a abertura e o Professor, e depois
 pergunta se você é menino ou menina. A escolha muda o sprite do treinador.
-Toque para passar cada página.
+Toque para passar cada página. Na última fala ele conta onde fica este manual.
 
 <p align="center">
 <img src="img/pt_intro_titulo.png" width="230" alt="Abertura">
 <img src="img/pt_intro_professor.png" width="230" alt="Professor">
+<img src="img/pt_intro_manual.png" width="230" alt="O Professor fala do manual">
 <img src="img/pt_intro_genero.png" width="230" alt="Menino ou menina">
 </p>
 
@@ -425,8 +426,13 @@ Deslize para **baixo** na tela inicial. Ali ficam a hora e os minutos, o volume
 (0 a 3), a **língua** (ES, EN, FR, DE, IT, PT, JA, KO) e **APAGAR TUDO** (pede
 duas confirmações). Toque **OK** para aplicar, ou deslize para cancelar.
 
+No topo fica o botão **MANUAL**: ele mostra um QR code. Aponte a câmera do
+celular e abre este manual (em português o LEIAME, nas outras línguas o README
+em inglês). Qualquer toque fecha o QR e volta aos ajustes.
+
 <p align="center">
 <img src="img/pt_ajustes.png" width="250" alt="Ajustes">
+<img src="img/pt_ajustes_qr.png" width="250" alt="QR do manual">
 <img src="img/pt_desligar.png" width="250" alt="Desligar">
 </p>
 
