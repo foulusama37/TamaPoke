@@ -31,3 +31,7 @@ desktop/frames*/
 *.gcda
 *.gcno
 .github/workflows/
+
+# o pacote do cartao vai no Release (tools/pack_sdcard_zip.py), nao no git
+tools/sdcard/
+dist/

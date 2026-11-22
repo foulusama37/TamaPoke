@@ -13,6 +13,7 @@ placa.
 
 ## Sumário
 
+0. [Instalar](#0-instalar)
 1. [Começando](#1-começando)
 2. [A tela inicial](#2-a-tela-inicial)
 3. [Cuidados](#3-cuidados)
@@ -27,6 +28,31 @@ placa.
 12. [Evolução, despedida, fuga e soltar](#12-evolução-despedida-fuga-e-soltar)
 13. [Ajustes e energia](#13-ajustes-e-energia)
 14. [Para quem mexe no código](#14-para-quem-mexe-no-código)
+
+---
+
+## 0. Instalar
+
+Tudo sai da página **[Releases](https://github.com/foulusama37/TamaPoke/releases)** do repositório: cada versão tem os
+arquivos prontos. Você precisa de um cartão microSD (qualquer um de 1 GB ou mais).
+
+**1. O cartão SD.** Baixe `TamaPoke-sdcard-vX.YY.zip` e extraia **tudo na raiz**
+do cartão: as pastas `mons`, `snd`, `av`... ficam direto no cartão, não dentro de
+outra pasta. São os sprites, sons, cenários e animações, já no formato da tela.
+O pacote **não** traz o save: pode extrair por cima de um cartão em uso, para
+atualizar, que o seu jogo continua.
+
+**2. O firmware.** Ligue a placa no PC pelo USB e abra o gravador da Espressif no
+Chrome ou Edge: <https://espressif.github.io/esptool-js/>. Clique em *Connect*,
+escolha a porta da placa e grave **um** destes arquivos:
+
+| Arquivo | Endereço | Quando usar |
+|---|---|---|
+| `TamaPoke-vX.YY-instalacao-completa.bin` | `0x0` | primeira vez. **Apaga tudo**, inclusive o save |
+| `TamaPoke-vX.YY-atualizacao.bin` | `0x10000` | placa que já tem o jogo. **Mantém o save** |
+
+Se a placa não conectar, segure o botão **BOOT**, aperte e solte **RESET**, e
+solte o BOOT: ela entra no modo de gravação.
 
 ---
 
@@ -464,3 +490,12 @@ cd .. && python tools/manual_fotos.py
 O teste `manual` está no fim de `test/test_ui.cpp`. Ele monta um jogo de exemplo
 e grava cada tela em `_claude_scratch/prev_man_<língua>_<tela>.ppm`.
 `tools/manual_fotos.py` recorta as fotos em círculo e as põe em `docs/manual/img/`.
+
+**Publicar uma versão** (o cartão vai no Release, não no git):
+
+```sh
+python tools/pack_sdcard_zip.py      # -> dist/TamaPoke-sdcard-vX.YY.zip (conferido)
+```
+
+Depois anexe o zip e os dois `.bin` (`build/.../TamaPoke.ino.merged.bin` como
+`instalacao-completa`, `TamaPoke.ino.bin` como `atualizacao`) num Release novo.

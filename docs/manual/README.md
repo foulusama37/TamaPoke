@@ -13,6 +13,7 @@ the board.
 
 ## Contents
 
+0. [Installing](#0-installing)
 1. [Getting started](#1-getting-started)
 2. [The home screen](#2-the-home-screen)
 3. [Care](#3-care)
@@ -27,6 +28,31 @@ the board.
 12. [Evolution, farewell, running away and release](#12-evolution-farewell-running-away-and-release)
 13. [Settings and power](#13-settings-and-power)
 14. [For developers](#14-for-developers)
+
+---
+
+## 0. Installing
+
+Everything comes from the repository's **[Releases](https://github.com/foulusama37/TamaPoke/releases)** page: each version
+has the files ready. You need a microSD card (any card of 1 GB or more).
+
+**1. The SD card.** Download `TamaPoke-sdcard-vX.YY.zip` and extract **everything
+to the root** of the card: the `mons`, `snd`, `av`... folders sit directly on the
+card, not inside another folder. These are the sprites, sounds, backgrounds and
+animations, already in the screen's format. The package does **not** include
+the save: you can extract it over a card in use to update, and your game stays.
+
+**2. The firmware.** Plug the board into the PC over USB and open Espressif's
+flasher in Chrome or Edge: <https://espressif.github.io/esptool-js/>. Click
+*Connect*, pick the board's port and flash **one** of these files:
+
+| File | Address | When |
+|---|---|---|
+| `TamaPoke-vX.YY-instalacao-completa.bin` | `0x0` | first time. **Erases everything**, save included |
+| `TamaPoke-vX.YY-atualizacao.bin` | `0x10000` | a board that already has the game. **Keeps the save** |
+
+If the board does not connect, hold **BOOT**, press and release **RESET**, then
+release BOOT: it enters flashing mode.
 
 ---
 
@@ -460,3 +486,12 @@ The `manual` test is at the end of `test/test_ui.cpp`. It builds a sample game a
 saves each screen to `_claude_scratch/prev_man_<language>_<screen>.ppm`.
 `tools/manual_fotos.py` crops the photos into circles and puts them in
 `docs/manual/img/`.
+
+**Publishing a version** (the card goes in the Release, not in git):
+
+```sh
+python tools/pack_sdcard_zip.py      # -> dist/TamaPoke-sdcard-vX.YY.zip (verified)
+```
+
+Then attach the zip and both `.bin` files (`build/.../TamaPoke.ino.merged.bin` as
+`instalacao-completa`, `TamaPoke.ino.bin` as `atualizacao`) to a new Release.

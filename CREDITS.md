@@ -29,6 +29,23 @@ Huge thanks to that whole community for an enormous amount of work.
 > package the sprites from the original sources with `tools/pack_*.py` (or the web
 > installer).
 
+## Pokémon Añil
+
+This version's battle mechanics, move animations, weather and many battle
+resources come from the fan game **Pokémon Añil (Definitive Edition)**, which
+the TamaPoke data was checked against (`tools/contraste.py`). Credit and thanks
+to its team, and to the people its own credits list for those resources:
+
+| What | Credited in Añil to |
+|---|---|
+| Engine base ("La Base de Sky", on Essentials v21.1) | Skyflyer, DPertierra (+ DarmanInigo, Nieves1236, deNombreTuri, Pokepachito, Ebaru) |
+| Move animations project | led by StCooler; DarryBD99, WolfPP, ardicoozer, riddlemeree, Kirik, Marin, Maruno, AiurJordan, Appletun, ThatWelshOne_; resources from the Reborn team |
+| Attack sound effects | BellBlitzKing (Pokemon Sound Effects Pack, Gen 1-7) |
+| Pokémon Essentials | Maruno and contributors |
+
+These resources belong to their authors; they are used here in the same
+non-commercial, personal-use spirit as the rest of this project.
+
 ## Software / hardware
 
 | Component | Author / source |
