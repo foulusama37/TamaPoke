@@ -3833,8 +3833,10 @@ HitResult Battle::useMoveDentro(uint8_t from, uint8_t slot, uint16_t forzado) {
     r.recoil = (uint16_t)(r.recoil + escupe);
     att.hp = (escupe >= att.hp) ? 1 : (uint16_t)(att.hp - escupe);
     if (bocado == 2) {
-      if (att.applyStatus(ST_PARALYSIS, terrain, weather, uproar > 0))
+      if (att.applyStatus(ST_PARALYSIS, terrain, weather, uproar > 0)) {
         r.gotStatus = ST_PARALYSIS;
+        r.statusSelf = true;
+      }
     } else {
       att.applyStage(SG_DEF, -1);
     }
@@ -3978,6 +3980,7 @@ HitResult Battle::useMoveDentro(uint8_t from, uint8_t slot, uint16_t forzado) {
         if (btRand(100) < 30 &&
             att.applyStatus(def.abilArg(), terrain, weather, uproar > 0)) {
           r.gotStatus = def.abilArg();   // se lo lleva el que PEGO
+          r.statusSelf = true;
           r.abilFired = def.ability;
           r.abilOfDef = true;
         }
@@ -4473,6 +4476,7 @@ HitResult Battle::useMoveDentro(uint8_t from, uint8_t slot, uint16_t forzado) {
         att.status = ST_SLEEP;       // pisa lo que hubiera, que es medio truco
         att.statusTurns = 2;
         r.gotStatus = ST_SLEEP;
+        r.statusSelf = true;
         break;
 
       // --- pantallas: protegen al que las pone, cinco turnos ---

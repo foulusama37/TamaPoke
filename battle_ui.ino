@@ -505,16 +505,16 @@ void battleStart(int16_t foeDex, uint16_t foeLevel, int8_t gym,
   // insignia por una tirada de dados seria rabia, no dificultad.
   bt.b.strictOrders = (gym >= 0 && gym < 1);
   if (gym >= 0)
-    snprintf(bt.msg, sizeof(bt.msg), "%s sends %s!", gymAt(pet.region, (uint8_t)gym).leader,
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_SENDS), gymAt(pet.region, (uint8_t)gym).leader,
              dexName(bt.b.side[BT_FOE].pareceDex()));
   else if (trainer >= 0)
-    snprintf(bt.msg, sizeof(bt.msg), "%s sends %s!",
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_SENDS),
              trainerAt((uint8_t)trainer).name, dexName(bt.b.side[BT_FOE].pareceDex()));
   else
     // Ya no lleva asterisco: la estrella sale en la chapa de PS (btHpBar), que
     // es donde esta en los juegos y, al contrario que el anuncio, se queda ahi
     // todo el combate.
-    snprintf(bt.msg, sizeof(bt.msg), "Wild %s appeared!", dexName(foeDex));
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WILD_APPEARED), dexName(foeDex));
 
   // La cache va por especie Y por si es shiny: mirando solo la especie,
   // pelear contra un Pikachu normal y luego contra uno shiny reutilizaba el
@@ -703,7 +703,7 @@ static void btSwitchTo(uint8_t slot, bool porGusto = false) {
   c.alliesFallen = btCaidos();
   btIlusionMia(c, slot);
   bt.b.sendOut(BT_PLAYER, c, porGusto);
-  if (regenero) snprintf(bt.msg, sizeof(bt.msg), "It regained health!");
+  if (regenero) snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IT_REGAINED_HEALTH));
   btSyncReserves();
   // el sprite y el grito tambien cambian
   {
@@ -712,12 +712,12 @@ static void btSwitchTo(uint8_t slot, bool porGusto = false) {
     else pmd.load(c.dex, c.shiny, c.sexo == 1);
   }
   cryPlay((uint16_t)c.dex);
-  snprintf(bt.msg, sizeof(bt.msg), "Go, %s!", dexName(c.pareceDex()));
+  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GO), dexName(c.pareceDex()));
   bt.sendAt = millis();                // la bola, en btSendoutFx
   bt.sendSide = BT_PLAYER;
   // Entrou com Drought & cia: a animacao do campo depois da bola abrir.
   if (btAnimDoCampo(BT_PLAYER, millis() + 900))
-    snprintf(bt.msg, sizeof(bt.msg), "Go, %s! (%s)", dexName(c.pareceDex()),
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GO_2), dexName(c.pareceDex()),
              abilAt(bt.b.startAbil[BT_PLAYER]).name);
 }
 
@@ -867,7 +867,7 @@ void btNextFoe() {
   bt.extraStep = 9;
   bt.endStep = 2;
   bt.until = millis() + 1200;
-  snprintf(bt.msg, sizeof(bt.msg), "%s sends %s!",
+  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_SENDS),
            bt.gym >= 0 ? gymAt(pet.region, (uint8_t)bt.gym).leader
                        : trainerAt((uint8_t)bt.trainer).name,
            dexName(d));
@@ -923,7 +923,7 @@ static bool btCobrarBotin() {
   }
 
   if (!bt.loot[0]) return false;
-  snprintf(bt.msg, sizeof(bt.msg), "Got %s!", itemAt(bt.loot[0]).name);
+  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GOT), itemAt(bt.loot[0]).name);
   bt.until = millis() + BT_LOOT_MS;
   return true;
 }
@@ -1053,50 +1053,50 @@ static void btEffectMsg(const HitResult &r, const char *quien) {
   // la pantalla no cuenta es, desde el sofa, un efecto que no existe —— ya
   // paso con el multigolpe, que acertaba las cinco veces en silencio.
   if (r.presentHeal) {
-    snprintf(bt.msg, sizeof(bt.msg), "%s got a healthy gift!", quien);
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GOT_A_HEALTHY_GIFT), quien);
     return;
   }
   if (r.curedTarget) {
-    snprintf(bt.msg, sizeof(bt.msg), "%s was cured of paralysis!", quien);
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_CURED_OF_PARALYSIS), quien);
     return;
   }
   if (r.fickleBig) {
-    snprintf(bt.msg, sizeof(bt.msg), "It got serious!");
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IT_GOT_SERIOUS));
     return;
   }
   if (r.stolenStages) {
-    snprintf(bt.msg, sizeof(bt.msg), "Stole the boosts!");
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_STOLE_THE_BOOSTS));
     return;
   }
   if (r.lostType) {
-    snprintf(bt.msg, sizeof(bt.msg), "It burned out its own type!");
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IT_BURNED_OUT_ITS));
     return;
   }
   // SUSTITUTO: el golpe no le llego al bicho. Sin decirlo, ver que la
   // barra no baja parece un fallo del juego.
   if (r.beakBurn) {
-    snprintf(bt.msg, sizeof(bt.msg), "%s was burned by the hot beak!",
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_BURNED_BY_THE),
              dexName(bt.b.side[bt.acting].pareceDex()));
     return;
   }
   if (r.bideRelease && r.damage) {
-    snprintf(bt.msg, sizeof(bt.msg), "%s unleashed its energy!",
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_UNLEASHED_ITS_ENERGY),
              dexName(bt.b.side[bt.acting].pareceDex()));
     return;
   }
   if (r.subBroke) {
-    snprintf(bt.msg, sizeof(bt.msg), "%s's substitute faded!", quien);
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_SUBSTITUTE_FADED), quien);
     return;
   }
   if (r.subHit) {
-    snprintf(bt.msg, sizeof(bt.msg), "The substitute took damage!");
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_THE_SUBSTITUTE_TOOK_DAMAGE));
     return;
   }
-  if (r.effect == 0)       snprintf(bt.msg, sizeof(bt.msg), "It doesn't affect %s", quien);
-  else if (r.effect > 100) snprintf(bt.msg, sizeof(bt.msg), "It's super effective!");
-  else if (r.effect < 100) snprintf(bt.msg, sizeof(bt.msg), "It's not very effective");
-  else if (r.crit)         snprintf(bt.msg, sizeof(bt.msg), "A critical hit!");
-  else if (r.coins)        snprintf(bt.msg, sizeof(bt.msg), "Coins scattered everywhere!");
+  if (r.effect == 0)       snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IT_DOESN_T_AFFECT), quien);
+  else if (r.effect > 100) snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IT_SUPER_EFFECTIVE));
+  else if (r.effect < 100) snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IT_NOT_VERY_EFFECTIVE));
+  else if (r.crit)         snprintf(bt.msg, sizeof(bt.msg), T(S_BM_A_CRITICAL_HIT));
+  else if (r.coins)        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_COINS_SCATTERED_EVERYWHERE));
   else                     bt.msg[0] = 0;
   // MULTIGOLPE. El motor SI pega las dos (o las cinco) veces —— lo hace un
   // bucle sobre `golpes` y lo deja en r.hits ——, pero nada lo decia: una
@@ -1108,7 +1108,7 @@ static void btEffectMsg(const HitResult &r, const char *quien) {
       snprintf(tmp, sizeof(tmp), "%s x%u", bt.msg, (unsigned)r.hits);
       snprintf(bt.msg, sizeof(bt.msg), "%s", tmp);
     } else {
-      snprintf(bt.msg, sizeof(bt.msg), "Hit %u times!", (unsigned)r.hits);
+      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_HIT_TIMES), (unsigned)r.hits);
     }
   }
 }
@@ -1118,13 +1118,15 @@ static void btEffectMsg(const HitResult &r, const char *quien) {
 static bool btStatusMsg(const HitResult &r) {
   const char *yo = dexName(bt.b.side[bt.acting].pareceDex());
   const char *el = dexName(bt.b.side[bt.acting ^ 1].pareceDex());
+  // o estado pode ter entrado no que PEGA (Poison Point do outro, Rest)
+  const char *quem = r.statusSelf ? yo : el;
   switch (r.gotStatus) {
-    case ST_BURN:      snprintf(bt.msg, sizeof(bt.msg), "%s was burned!", el); return true;
+    case ST_BURN:      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_BURNED), quem); return true;
     case ST_POISON:
-    case ST_BADPOISON: snprintf(bt.msg, sizeof(bt.msg), "%s was poisoned!", el); return true;
-    case ST_PARALYSIS: snprintf(bt.msg, sizeof(bt.msg), "%s is paralyzed!", el); return true;
-    case ST_SLEEP:     snprintf(bt.msg, sizeof(bt.msg), "%s fell asleep!", el); return true;
-    case ST_FREEZE:    snprintf(bt.msg, sizeof(bt.msg), "%s was frozen!", el); return true;
+    case ST_BADPOISON: snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_POISONED), quem); return true;
+    case ST_PARALYSIS: snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_PARALYZED), quem); return true;
+    case ST_SLEEP:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_FELL_ASLEEP), quem); return true;
+    case ST_FREEZE:    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_FROZEN), quem); return true;
     default: break;
   }
   if (r.stageWhich < SG_COUNT) {
@@ -1133,14 +1135,15 @@ static bool btStatusMsg(const HitResult &r) {
     // Scent anunciaba "<null> fell". El static_assert de abajo es el que
     // impide que vuelva a pasar en silencio: al anadir un stage, el build
     // rompe aqui en vez de la pantalla en mitad de un combate.
-    static const char *const NOM[] = { "Attack", "Defense", "Sp.Atk",
-                                       "Sp.Def", "Speed", "Accuracy",
-                                       "Evasion" };
+    static const StrId NOM[] = { S_BM_ATTACK, S_BM_DEFENSE, S_BM_SP_ATK,
+                                 S_BM_SP_DEF, S_BM_SPEED, S_BM_ACCURACY,
+                                 S_BM_EVASION };
     static_assert(sizeof(NOM) / sizeof(NOM[0]) == SG_COUNT,
                   "falta el nombre de algun stage");
-    snprintf(bt.msg, sizeof(bt.msg), "%s's %s %s!",
-             r.stageSelf ? yo : el, NOM[r.stageWhich],
-             r.stageDelta > 0 ? "rose" : "fell");
+    // frase inteira por sentido: "subiu"/"caiu" soltos nao se traduzem
+    // (em outras linguas o verbo nao vai no fim nem concorda igual)
+    snprintf(bt.msg, sizeof(bt.msg), T(r.stageDelta > 0 ? S_BM_STAT_UP : S_BM_STAT_DOWN),
+             r.stageSelf ? yo : el, T(NOM[r.stageWhich]));
     return true;
   }
   return false;
@@ -1154,15 +1157,15 @@ static bool btStatusMsg(const HitResult &r) {
 static bool btBlockedMsg(uint8_t corte) {
   const char *yo = dexName(bt.b.side[bt.acting].pareceDex());
   switch (corte) {
-    case BLK_SLEEP:     snprintf(bt.msg, sizeof(bt.msg), "%s is fast asleep!", yo); return true;
-    case BLK_FREEZE:    snprintf(bt.msg, sizeof(bt.msg), "%s is frozen solid!", yo); return true;
-    case BLK_PARALYSIS: snprintf(bt.msg, sizeof(bt.msg), "%s can't move!", yo); return true;
-    case BLK_FLINCH:    snprintf(bt.msg, sizeof(bt.msg), "%s flinched!", yo); return true;
-    case BLK_CONFUSED:  snprintf(bt.msg, sizeof(bt.msg), "%s is confused!", yo); return true;
-    case BLK_RECHARGE:  snprintf(bt.msg, sizeof(bt.msg), "%s must recharge!", yo); return true;
-    case BLK_DISOBEY:   snprintf(bt.msg, sizeof(bt.msg), "%s won't listen!", yo); return true;
-    case BLK_TRUANT:    snprintf(bt.msg, sizeof(bt.msg), "%s is loafing around!", yo); return true;
-    case BLK_ATTRACT:   snprintf(bt.msg, sizeof(bt.msg), "%s is in love!", yo); return true;
+    case BLK_SLEEP:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_FAST_ASLEEP), yo); return true;
+    case BLK_FREEZE:    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_FROZEN_SOLID), yo); return true;
+    case BLK_PARALYSIS: snprintf(bt.msg, sizeof(bt.msg), T(S_BM_CAN_T_MOVE), yo); return true;
+    case BLK_FLINCH:    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_FLINCHED), yo); return true;
+    case BLK_CONFUSED:  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_CONFUSED), yo); return true;
+    case BLK_RECHARGE:  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_MUST_RECHARGE), yo); return true;
+    case BLK_DISOBEY:   snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WON_T_LISTEN), yo); return true;
+    case BLK_TRUANT:    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_LOAFING_AROUND), yo); return true;
+    case BLK_ATTRACT:   snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_IN_LOVE), yo); return true;
     default: return false;
   }
 }
@@ -1204,12 +1207,12 @@ static void btLaunch(uint8_t who, uint8_t slot) {
   // 10 del nombre mas largo + " used " + 15 del golpe mas largo + "!" = 32
   // chars = 192 px a escala 1, y la caja tiene ~290: entra sin rodar texto.
   if (ord.kind == OB_IGNORE)
-    snprintf(bt.msg, sizeof(bt.msg), "%s ignores you...", dexName(att.pareceDex()));
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IGNORES_YOU), dexName(att.pareceDex()));
   else if (ord.kind == OB_OTHER)
-    snprintf(bt.msg, sizeof(bt.msg), "%s did %s instead!", dexName(att.pareceDex()),
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_DID_INSTEAD), dexName(att.pareceDex()),
              MOVE_TBL[mv < MOVE_COUNT ? mv : MOVE_STRUGGLE].name);
   else
-    snprintf(bt.msg, sizeof(bt.msg), "%s used %s!", dexName(att.pareceDex()),
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_USED), dexName(att.pareceDex()),
              MOVE_TBL[mv < MOVE_COUNT ? mv : MOVE_STRUGGLE].name);
   bt.pendingSlot = slot;
   bt.phase = BP_SAY;
@@ -1312,28 +1315,28 @@ static bool btFxSobreUnoMismo(uint16_t mv, const HitResult &r) {
 // Antes era siempre "is charging up!": Vuelo y Excavar no decian a donde
 // se iba el bicho, que es lo que explica el turno. La usan el turno de
 // carga (BP_HIT) y la carga rapida del sol/lluvia (BP_CARGA).
-static const char *btFraseCarga(uint16_t g) {
-  static const struct { const char *g, *f; } CARGA[] = {
-    { "FLY", "%s flew up high!" },
-    { "BOUNCE", "%s sprang up!" },
-    { "DIG", "%s burrowed its way under the ground!" },
-    { "DIVE", "%s hid underwater!" },
-    { "PHANTOMFORCE", "%s vanished instantly!" },
-    { "SHADOWFORCE", "%s vanished instantly!" },
-    { "SOLARBEAM", "%s took in sunlight!" },
-    { "SOLARBLADE", "%s took in sunlight!" },
-    { "RAZORWIND", "%s whipped up a whirlwind!" },
-    { "SKYATTACK", "%s became cloaked in a harsh light!" },
-    { "SKULLBASH", "%s tucked in its head!" },
-    { "METEORBEAM", "%s is overflowing with space power!" },
-    { "GEOMANCY", "%s is absorbing power!" },
-    { "ELECTROSHOT", "%s absorbed electricity!" },
-    { "FUTURESIGHT", "%s foresaw an attack!" },
-    { "DOOMDESIRE", "%s chose Doom Desire as its destiny!" },
+const char *btFraseCarga(uint16_t g) {   // sem static: a bateria troca o idioma e confere
+  static const struct { const char *g; StrId f; } CARGA[] = {
+    { "FLY", S_BM_FLEW_UP_HIGH },
+    { "BOUNCE", S_BM_SPRANG_UP },
+    { "DIG", S_BM_BURROWED_ITS_WAY_UNDER },
+    { "DIVE", S_BM_HID_UNDERWATER },
+    { "PHANTOMFORCE", S_BM_VANISHED_INSTANTLY },
+    { "SHADOWFORCE", S_BM_VANISHED_INSTANTLY },
+    { "SOLARBEAM", S_BM_TOOK_IN_SUNLIGHT },
+    { "SOLARBLADE", S_BM_TOOK_IN_SUNLIGHT },
+    { "RAZORWIND", S_BM_WHIPPED_UP_A_WHIRLWIND },
+    { "SKYATTACK", S_BM_BECAME_CLOAKED_IN_A },
+    { "SKULLBASH", S_BM_TUCKED_IN_ITS_HEAD },
+    { "METEORBEAM", S_BM_IS_OVERFLOWING_WITH_SPACE },
+    { "GEOMANCY", S_BM_IS_ABSORBING_POWER },
+    { "ELECTROSHOT", S_BM_ABSORBED_ELECTRICITY },
+    { "FUTURESIGHT", S_BM_FORESAW_AN_ATTACK },
+    { "DOOMDESIRE", S_BM_CHOSE_DOOM_DESIRE_AS },
   };
   if (g >= MOVE_COUNT) return nullptr;
   for (const auto &c : CARGA)
-    if (!strcmp(MOVE_TBL[g].name, c.g)) return c.f;
+    if (!strcmp(MOVE_TBL[g].name, c.g)) return T(c.f);
   return nullptr;
 }
 
@@ -1378,15 +1381,15 @@ static void btResolve() {
     bt.fxType = (uint8_t)T_NONE;
     bt.fxSup = 0xFF;
     if (bt.last.blocked == BLK_CONFUSED)
-      snprintf(bt.msg, sizeof(bt.msg), "%s hurt itself!",
+      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_HURT_ITSELF),
                dexName(bt.b.side[bt.acting].pareceDex()));
     // Mofa y Anticura puestas DESPUES de elegir: el golpe se anuncia y
     // no sale. Sin frase, parecia que el juego se lo comia.
     else if (bt.last.blocked == BLK_TAUNT)
-      snprintf(bt.msg, sizeof(bt.msg), "%s can't use it after the taunt!",
+      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_CAN_T_USE_IT),
                dexName(bt.b.side[bt.acting].pareceDex()));
     else if (bt.last.blocked == BLK_HEALBLOCK)
-      snprintf(bt.msg, sizeof(bt.msg), "%s is prevented from healing!",
+      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_PREVENTED_FROM_HEALING),
                dexName(bt.b.side[bt.acting].pareceDex()));
     else
       bt.msg[0] = 0;
@@ -1605,11 +1608,11 @@ void battleTick() {
         // dijera que se habia transformado. El nombre de verdad del que
         // copia vive en `dex`.
         if (abilAt(bt.b.startAbil[s]).fx == AB_IMPOSTER)
-          snprintf(bt.msg, sizeof(bt.msg), "%s transformed into %s!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_TRANSFORMED_INTO),
                    dexName(bt.b.side[s].dex),
                    dexName(bt.b.side[s ^ 1].pareceDex()));
         else
-          snprintf(bt.msg, sizeof(bt.msg), "%s's %s!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ABILITY),
                    dexName(bt.b.side[s].pareceDex()), abilAt(bt.b.startAbil[s]).name);
         bt.until = now + 1000;
         // E o clima/terreno que ela trouxe, animado (o sol do Drought...).
@@ -1647,7 +1650,7 @@ void battleTick() {
         // megas de bichos cuya piedra no te ha tocado nunca.
         if (!bt.pvp) pet.registerMega(me.megaIdx);
         snprintf(bt.msg, sizeof(bt.msg),
-                 lado == btAbajo() ? "%s MEGA EVOLVED!" : "Foe %s MEGA EVOLVED!",
+                 lado == btAbajo() ? T(S_BM_MEGA_EVOLVED) : T(S_BM_FOE_MEGA_EVOLVED),
                  dexName(me.dex));
       }
       if (lado != BT_PLAYER || bt.pvp) {
@@ -1692,12 +1695,12 @@ void battleTick() {
       if (bt.cargaPasso == 0) {
         bt.cargaPasso = 1;
         if (bt.last.magnitud) {
-          snprintf(bt.msg, sizeof(bt.msg), "Magnitude %u!", (unsigned)bt.last.magnitud);
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_MAGNITUDE), (unsigned)bt.last.magnitud);
           bt.until = now + 900;
           break;
         }
         const char *f = btFraseCarga(g);
-        snprintf(bt.msg, sizeof(bt.msg), f ? f : "%s is charging up!",
+        snprintf(bt.msg, sizeof(bt.msg), f ? f : T(S_BM_IS_CHARGING_UP),
                  dexName(cq.pareceDex()));
         bt.until = now + 900;
         if (g < MOVE_COUNT && animMove.load(g, MOVE_TBL[g].name, riv, 1)) {
@@ -1751,8 +1754,8 @@ void battleTick() {
         // La frase de CADA golpe, la del pbChargingTurnMessage del Anil.
         // Antes era siempre "is charging up!": Vuelo y Excavar no decian
         // a donde se iba el bicho, que es lo que explica el turno.
-        const char *frase = bt.last.bideStore ? "%s is storing energy!"
-                                              : "%s is charging up!";
+        const char *frase = bt.last.bideStore ? T(S_BM_IS_STORING_ENERGY)
+                                              : T(S_BM_IS_CHARGING_UP);
         const Combatant &cq = bt.b.side[bt.acting];
         uint16_t g = cq.chargingMove != 0xFFFF ? cq.chargingMove : cq.lastMove;
         if (!bt.last.bideStore && btFraseCarga(g)) frase = btFraseCarga(g);
@@ -1780,7 +1783,7 @@ void battleTick() {
         break;
       }
       if (bt.last.blockedByProtect) {
-        snprintf(bt.msg, sizeof(bt.msg), "%s protected itself!",
+        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_PROTECTED_ITSELF),
                  dexName(bt.b.side[bt.acting ^ 1].pareceDex()));
         bt.phase = BP_MSG;
         // Si se estrello contra el escudo, el paso 1 es quien lo cuenta.
@@ -1793,20 +1796,20 @@ void battleTick() {
         // que paso fue la Anulacion, se dice.
         const Combatant &q = bt.b.side[bt.acting];
         if (q.disableTurns > 0 && bt.pendingSlot == q.disabledSlot)
-          snprintf(bt.msg, sizeof(bt.msg), "%s's move is disabled!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_MOVE_IS_DISABLED),
                    dexName(q.pareceDex()));
         else if (bt.pendingSlot < q.nMoves && !bt.last.struggled &&
                  MOVE_TBL[q.moves[bt.pendingSlot]].fx == FX_SPLASH)
-          snprintf(bt.msg, sizeof(bt.msg), "But nothing happened!");
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_BUT_NOTHING_HAPPENED));
         else
-          snprintf(bt.msg, sizeof(bt.msg), "But it failed!");
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_BUT_IT_FAILED));
         bt.phase = BP_MSG;
         bt.extraStep = 9;
         bt.until = now + 900;
         break;
       }
       if (bt.last.missed) {
-        snprintf(bt.msg, sizeof(bt.msg), "%s missed!",
+        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_MISSED),
                  dexName(bt.b.side[bt.acting].pareceDex()));
         bt.phase = BP_MSG;
         bt.extraStep = bt.last.crashed ? 1 : 9;
@@ -1864,28 +1867,28 @@ void battleTick() {
         // mensaje siguiente ("Static!" y luego "X is paralyzed!").
         if (bt.last.abilFired) {
           uint8_t lado = bt.last.abilOfDef ? (bt.acting ^ 1) : bt.acting;
-          snprintf(bt.msg, sizeof(bt.msg), "%s's %s!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ABILITY),
                    dexName(bt.b.side[lado].pareceDex()), abilAt(bt.last.abilFired).name);
           bt.until = now + 900;
           break;
         }
         if (bt.last.weatherSet) {
-          static const char *CIELO[] = { "", "The sunlight turned harsh!",
-                                         "It started to rain!",
-                                         "A sandstorm kicked up!",
-                                         "It started to hail!" };
-          snprintf(bt.msg, sizeof(bt.msg), "%s", CIELO[bt.last.weatherSet]);
+          static const StrId CIELO[] = { S_BM_THE_SUNLIGHT_TURNED_HARSH,
+                                         S_BM_IT_STARTED_TO_RAIN,
+                                         S_BM_A_SANDSTORM_KICKED_UP,
+                                         S_BM_IT_STARTED_TO_HAIL };
+          snprintf(bt.msg, sizeof(bt.msg), "%s", T(CIELO[bt.last.weatherSet - 1]));
           bt.until = now + 900;
           break;
         }
         if (bt.last.terrainSet) {
-          static const char *SUELO[] = { "", "Electricity ran on the ground!",
-                                         "Grass grew on the ground!",
-                                         "Mist swirled on the ground!",
-                                         "The ground got weird!" };
-          static_assert(sizeof(SUELO) / sizeof(SUELO[0]) == TR_PSY + 1,
+          static const StrId SUELO[] = { S_BM_ELECTRICITY_RAN_ON_THE,
+                                         S_BM_GRASS_GREW_ON_THE,
+                                         S_BM_MIST_SWIRLED_ON_THE,
+                                         S_BM_THE_GROUND_GOT_WEIRD };
+          static_assert(sizeof(SUELO) / sizeof(SUELO[0]) == TR_PSY,
                         "falta el aviso de algun terreno");
-          snprintf(bt.msg, sizeof(bt.msg), "%s", SUELO[bt.last.terrainSet]);
+          snprintf(bt.msg, sizeof(bt.msg), "%s", T(SUELO[bt.last.terrainSet - 1]));
           bt.until = now + 900;
           break;
         }
@@ -1893,7 +1896,7 @@ void battleTick() {
           // drenar es quitarselo al otro; curarse es otra cosa y se cuenta
           // distinto, o parece que Recover le hace dano al rival
           snprintf(bt.msg, sizeof(bt.msg),
-                   bt.last.noDamage ? "%s regained health!" : "%s drained health!",
+                   bt.last.noDamage ? T(S_BM_REGAINED_HEALTH) : T(S_BM_DRAINED_HEALTH),
                    dexName(bt.b.side[bt.acting].pareceDex()));
           bt.until = now + 900;
           break;
@@ -1902,57 +1905,57 @@ void battleTick() {
           const char *yo = dexName(bt.b.side[bt.acting].pareceDex());
           const char *el = dexName(bt.b.side[bt.acting ^ 1].pareceDex());
           switch (bt.last.sideFx) {
-            case FX_REFLECT:     snprintf(bt.msg, sizeof(bt.msg), "Reflect went up!"); break;
-            case FX_LIGHTSCREEN: snprintf(bt.msg, sizeof(bt.msg), "Light Screen went up!"); break;
-            case FX_SAFEGUARD:   snprintf(bt.msg, sizeof(bt.msg), "%s is covered!", yo); break;
-            case FX_PROTECT:     snprintf(bt.msg, sizeof(bt.msg), "%s braced itself!", yo); break;
-            case FX_ENDURE:      snprintf(bt.msg, sizeof(bt.msg), "%s dug in!", yo); break;
-            case FX_HAZE:        snprintf(bt.msg, sizeof(bt.msg), "All stats went back!"); break;
-            case FX_CLEAR_TARGET: snprintf(bt.msg, sizeof(bt.msg), "%s's stats reset!", el); break;
-            case FX_PSYCHUP:     snprintf(bt.msg, sizeof(bt.msg), "%s copied the stats!", yo); break;
-            case FX_FOCUSENERGY: snprintf(bt.msg, sizeof(bt.msg), "%s is fired up!", yo); break;
-            case FX_LASERFOCUS:  snprintf(bt.msg, sizeof(bt.msg), "%s is focused!", yo); break;
-            case FX_MINDREADER:  snprintf(bt.msg, sizeof(bt.msg), "%s took aim!", yo); break;
-            case FX_LEECHSEED:   snprintf(bt.msg, sizeof(bt.msg), "%s was seeded!", el); break;
+            case FX_REFLECT:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_REFLECT_WENT_UP)); break;
+            case FX_LIGHTSCREEN: snprintf(bt.msg, sizeof(bt.msg), T(S_BM_LIGHT_SCREEN_WENT_UP)); break;
+            case FX_SAFEGUARD:   snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_COVERED), yo); break;
+            case FX_PROTECT:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_BRACED_ITSELF), yo); break;
+            case FX_ENDURE:      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_DUG_IN), yo); break;
+            case FX_HAZE:        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ALL_STATS_WENT_BACK)); break;
+            case FX_CLEAR_TARGET: snprintf(bt.msg, sizeof(bt.msg), T(S_BM_STATS_RESET), el); break;
+            case FX_PSYCHUP:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_COPIED_THE_STATS), yo); break;
+            case FX_FOCUSENERGY: snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_FIRED_UP), yo); break;
+            case FX_LASERFOCUS:  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_FOCUSED), yo); break;
+            case FX_MINDREADER:  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_TOOK_AIM), yo); break;
+            case FX_LEECHSEED:   snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_SEEDED), el); break;
             // Solo la pone un FANTASMA, y le cuesta media vida. Con los
             // dos nombres (15 chars el mas largo) no cabe nada mas en
             // los 44 de bt.msg: lo que paga se lee en su barra de PS.
-            case FX_CURSE:       snprintf(bt.msg, sizeof(bt.msg), "%s cursed %s!", yo, el); break;
+            case FX_CURSE:       snprintf(bt.msg, sizeof(bt.msg), T(S_BM_CURSED), yo, el); break;
             // PURIFICACION le quita el estado AL OTRO, que es lo que
             // nadie se espera de un golpe que ademas te cura: sin la
             // frase parece que solo se curo quien lo uso.
-            case FX_PURIFY:      snprintf(bt.msg, sizeof(bt.msg), "%s was purified!", el); break;
+            case FX_PURIFY:      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_PURIFIED), el); break;
             // AUTOTOMIA y LIMPIEZA cambian algo que no se ve en ninguna
             // barra —— el peso y las trampas del campo ——, asi que sin
             // frase parecen un golpe que no hizo nada.
-            case FX_AUTOTOMIZE:  snprintf(bt.msg, sizeof(bt.msg), "%s became nimble!", yo); break;
-            case FX_TIDYUP:      snprintf(bt.msg, sizeof(bt.msg), "The field was tidied up!"); break;
+            case FX_AUTOTOMIZE:  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_BECAME_NIMBLE), yo); break;
+            case FX_TIDYUP:      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_THE_FIELD_WAS_TIDIED)); break;
             // RESPIRO: lo que se ve es la cura, y lo que DECIDE el
             // turno es el tipo que acaba de perder. Sin la frase, el
             // Terremoto que de pronto le alcanza parece un fallo.
-            case FX_ROOST:       snprintf(bt.msg, sizeof(bt.msg), "%s landed to rest!", yo); break;
-            case FX_DEFOG:       snprintf(bt.msg, sizeof(bt.msg), "The field was cleared!"); break;
+            case FX_ROOST:       snprintf(bt.msg, sizeof(bt.msg), T(S_BM_LANDED_TO_REST), yo); break;
+            case FX_DEFOG:       snprintf(bt.msg, sizeof(bt.msg), T(S_BM_THE_FIELD_WAS_CLEARED)); break;
             // Los tres del lote que estaba fuera de la tabla y que
             // no cambian ninguna barra: sin frase parecen un turno
             // tirado a la basura.
-            case FX_REFRESH:     snprintf(bt.msg, sizeof(bt.msg), "%s shook it off!", yo); break;
-            case FX_RECYCLE:     snprintf(bt.msg, sizeof(bt.msg), "%s got its berry back!", yo); break;
-            case FX_MIRACLE_EYE: snprintf(bt.msg, sizeof(bt.msg), "%s was identified!", el); break;
-            case FX_HIT_AND_SEED: snprintf(bt.msg, sizeof(bt.msg), "%s was seeded!", el); break;
-            case FX_SALT_CURE:   snprintf(bt.msg, sizeof(bt.msg), "%s is being salted!", el); break;
-            case FX_AQUARING:    snprintf(bt.msg, sizeof(bt.msg), "%s made a veil!", yo); break;
-            case FX_DISABLE:     snprintf(bt.msg, sizeof(bt.msg), "%s was disabled!", el); break;
-            case FX_ENCORE:      snprintf(bt.msg, sizeof(bt.msg), "%s got an encore!", el); break;
-            case FX_SPITE:       snprintf(bt.msg, sizeof(bt.msg), "%s lost some PP!", el); break;
+            case FX_REFRESH:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_SHOOK_IT_OFF), yo); break;
+            case FX_RECYCLE:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GOT_ITS_BERRY_BACK), yo); break;
+            case FX_MIRACLE_EYE: snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_IDENTIFIED), el); break;
+            case FX_HIT_AND_SEED: snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_SEEDED), el); break;
+            case FX_SALT_CURE:   snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_BEING_SALTED), el); break;
+            case FX_AQUARING:    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_MADE_A_VEIL), yo); break;
+            case FX_DISABLE:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_DISABLED), el); break;
+            case FX_ENCORE:      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GOT_AN_ENCORE), el); break;
+            case FX_SPITE:       snprintf(bt.msg, sizeof(bt.msg), T(S_BM_LOST_SOME_PP), el); break;
             // LAZO DESTINO y RENCOR: los dos MARCAN y no pasa nada
             // visible hasta que el marcado cae. Sin la frase, usarlos
             // parece gastar el turno en nada —— que es justo lo que
             // canto la guarda de auditoria.py al implementarlos.
             case FX_DESTINY_BOND:
-              snprintf(bt.msg, sizeof(bt.msg), "%s is taking you down!", yo);
+              snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_TAKING_YOU_DOWN), yo);
               break;
             case FX_GRUDGE:
-              snprintf(bt.msg, sizeof(bt.msg), "%s bears a grudge!", yo);
+              snprintf(bt.msg, sizeof(bt.msg), T(S_BM_BEARS_A_GRUDGE), yo);
               break;
             // Los dos que COPIAN. Sin estas lineas la guarda de
             // auditoria.py salto en cuanto se implementaron, y con
@@ -1963,54 +1966,54 @@ void battleTick() {
               // acaba de cambiar, y diria "Bulbasaur se transformo en
               // Bulbasaur". El nombre de verdad del que copia vive en
               // `dex`, que es justo para esto que esta separado.
-              snprintf(bt.msg, sizeof(bt.msg), "%s transformed into %s!",
+              snprintf(bt.msg, sizeof(bt.msg), T(S_BM_TRANSFORMED_INTO),
                        dexName(bt.b.side[bt.acting].dex), el);
               break;
             case FX_SKETCH:
-              snprintf(bt.msg, sizeof(bt.msg), "%s sketched %s's move!", yo, el);
+              snprintf(bt.msg, sizeof(bt.msg), T(S_BM_SKETCHED_MOVE), yo, el);
               break;
             // Los diecinueve que se aplicaban EN SILENCIO. Los encontre
             // comparando los FX que el motor marca con los que esta
             // lista sabia contar: eran 34 contra 15. Una trampa que se
             // pone sin que nadie lo diga parece un golpe que no hizo
             // nada, y el jugador no tiene forma de enterarse.
-            case FX_TAUNT:       snprintf(bt.msg, sizeof(bt.msg), "%s fell for the taunt!", el); break;
-            case FX_TORMENT:     snprintf(bt.msg, sizeof(bt.msg), "%s was tormented!", el); break;
-            case FX_IMPRISON:    snprintf(bt.msg, sizeof(bt.msg), "%s sealed its moves!", yo); break;
-            case FX_FORESIGHT:   snprintf(bt.msg, sizeof(bt.msg), "%s was identified!", el); break;
-            case FX_TRAP:        snprintf(bt.msg, sizeof(bt.msg), "%s can't escape!", el); break;
-            case FX_ROAR:        snprintf(bt.msg, sizeof(bt.msg), "%s was blown away!", el); break;
-            case FX_DRAGONTAIL:  snprintf(bt.msg, sizeof(bt.msg), "%s was dragged out!", el); break;
-            case FX_MIST:        snprintf(bt.msg, sizeof(bt.msg), "%s is shrouded in mist!", yo); break;
-            case FX_HEAL_BELL:   snprintf(bt.msg, sizeof(bt.msg), "A bell chimed!"); break;
-            case FX_GASTRO:      snprintf(bt.msg, sizeof(bt.msg), "%s's ability was suppressed!", el); break;
-            case FX_ENTRAIN:     snprintf(bt.msg, sizeof(bt.msg), "%s got a new ability!", el); break;
-            case FX_BATON:       snprintf(bt.msg, sizeof(bt.msg), "%s passed it on!", yo); break;
-            case FX_TAILWIND:    snprintf(bt.msg, sizeof(bt.msg), "A tailwind blew!"); break;
+            case FX_TAUNT:       snprintf(bt.msg, sizeof(bt.msg), T(S_BM_FELL_FOR_THE_TAUNT), el); break;
+            case FX_TORMENT:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_TORMENTED), el); break;
+            case FX_IMPRISON:    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_SEALED_ITS_MOVES), yo); break;
+            case FX_FORESIGHT:   snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_IDENTIFIED), el); break;
+            case FX_TRAP:        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_CAN_T_ESCAPE), el); break;
+            case FX_ROAR:        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_BLOWN_AWAY), el); break;
+            case FX_DRAGONTAIL:  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_DRAGGED_OUT), el); break;
+            case FX_MIST:        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_SHROUDED_IN_MIST), yo); break;
+            case FX_HEAL_BELL:   snprintf(bt.msg, sizeof(bt.msg), T(S_BM_A_BELL_CHIMED)); break;
+            case FX_GASTRO:      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ABILITY_WAS_SUPPRESSED), el); break;
+            case FX_ENTRAIN:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GOT_A_NEW_ABILITY), el); break;
+            case FX_BATON:       snprintf(bt.msg, sizeof(bt.msg), T(S_BM_PASSED_IT_ON), yo); break;
+            case FX_TAILWIND:    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_A_TAILWIND_BLEW)); break;
             case FX_TRICKROOM:
               snprintf(bt.msg, sizeof(bt.msg), bt.b.trickRoom
-                       ? "The dimensions were twisted!"
-                       : "The twisted dimensions returned to normal!");
+                       ? T(S_BM_THE_DIMENSIONS_WERE_TWISTED)
+                       : T(S_BM_THE_TWISTED_DIMENSIONS_RETURNED));
               break;
-            case FX_YAWN:        snprintf(bt.msg, sizeof(bt.msg), "%s grew drowsy!", el); break;
-            case FX_NORETREAT:   snprintf(bt.msg, sizeof(bt.msg), "%s can no longer escape!", yo); break;
-            case FX_SUBSTITUTE:  snprintf(bt.msg, sizeof(bt.msg), "%s put in a substitute!", yo); break;
-            case FX_WISH:        snprintf(bt.msg, sizeof(bt.msg), "%s made a wish!", yo); break;
-            case FX_PERISH:      snprintf(bt.msg, sizeof(bt.msg), "All who heard the song will faint in 3 turns!"); break;
-            case FX_EMBARGO:     snprintf(bt.msg, sizeof(bt.msg), "%s can't use items anymore!", el); break;
-            case FX_HEALBLOCK:   snprintf(bt.msg, sizeof(bt.msg), "%s was prevented from healing!", el); break;
-            case FX_WATERSPORT:  snprintf(bt.msg, sizeof(bt.msg), "Fire's power weakened!"); break;
-            case FX_MUDSPORT:    snprintf(bt.msg, sizeof(bt.msg), "Electricity weakened!"); break;
-            case FX_ROCKS:       snprintf(bt.msg, sizeof(bt.msg), "Rocks float around %s!", el); break;
-            case FX_SPIKES:      snprintf(bt.msg, sizeof(bt.msg), "Spikes litter %s's side!", el); break;
-            case FX_TSPIKES:     snprintf(bt.msg, sizeof(bt.msg), "Toxic spikes were laid!"); break;
-            case FX_WEB:         snprintf(bt.msg, sizeof(bt.msg), "A sticky web was laid!"); break;
-            case FX_SOAK:        snprintf(bt.msg, sizeof(bt.msg), "%s became Water-type!", el); break;
-            case FX_WORRY_SEED:  snprintf(bt.msg, sizeof(bt.msg), "%s can't sleep now!", el); break;
-            case FX_LUCKY_CHANT: snprintf(bt.msg, sizeof(bt.msg), "No more critical hits!"); break;
-            case FX_ATTRACT:     snprintf(bt.msg, sizeof(bt.msg), "%s fell in love!", el); break;
-            case FX_MAGNET_RISE: snprintf(bt.msg, sizeof(bt.msg), "%s is floating!", yo); break;
-            case FX_QUICK_GUARD: snprintf(bt.msg, sizeof(bt.msg), "%s is braced for speed!", yo); break;
+            case FX_YAWN:        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GREW_DROWSY), el); break;
+            case FX_NORETREAT:   snprintf(bt.msg, sizeof(bt.msg), T(S_BM_CAN_NO_LONGER_ESCAPE), yo); break;
+            case FX_SUBSTITUTE:  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_PUT_IN_A_SUBSTITUTE), yo); break;
+            case FX_WISH:        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_MADE_A_WISH), yo); break;
+            case FX_PERISH:      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ALL_WHO_HEARD_THE)); break;
+            case FX_EMBARGO:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_CAN_T_USE_ITEMS), el); break;
+            case FX_HEALBLOCK:   snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_PREVENTED_FROM_HEALING), el); break;
+            case FX_WATERSPORT:  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_FIRE_POWER_WEAKENED)); break;
+            case FX_MUDSPORT:    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ELECTRICITY_WEAKENED)); break;
+            case FX_ROCKS:       snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ROCKS_FLOAT_AROUND), el); break;
+            case FX_SPIKES:      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_SPIKES_LITTER_SIDE), el); break;
+            case FX_TSPIKES:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_TOXIC_SPIKES_WERE_LAID)); break;
+            case FX_WEB:         snprintf(bt.msg, sizeof(bt.msg), T(S_BM_A_STICKY_WEB_WAS)); break;
+            case FX_SOAK:        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_BECAME_WATER_TYPE), el); break;
+            case FX_WORRY_SEED:  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_CAN_T_SLEEP_NOW), el); break;
+            case FX_LUCKY_CHANT: snprintf(bt.msg, sizeof(bt.msg), T(S_BM_NO_MORE_CRITICAL_HITS)); break;
+            case FX_ATTRACT:     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_FELL_IN_LOVE), el); break;
+            case FX_MAGNET_RISE: snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_FLOATING), yo); break;
+            case FX_QUICK_GUARD: snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_BRACED_FOR_SPEED), yo); break;
             default:             bt.msg[0] = 0; break;
           }
           if (bt.msg[0]) { bt.until = now + 900; break; }
@@ -2023,13 +2026,13 @@ void battleTick() {
         if (bt.last.itemSwap) {
           bt.last.itemSwap = false;
           bt.last.itemStolen = bt.last.itemLost = IT_NONE;
-          snprintf(bt.msg, sizeof(bt.msg), "%s switched items!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_SWITCHED_ITEMS),
                    dexName(bt.b.side[bt.acting].pareceDex()));
           bt.until = now + 900;
           break;
         }
         if (bt.last.itemStolen != IT_NONE) {
-          snprintf(bt.msg, sizeof(bt.msg), "%s stole %s!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_STOLE),
                    dexName(bt.b.side[bt.acting].pareceDex()),
                    itemAt(bt.last.itemStolen).name);
           bt.last.itemStolen = IT_NONE;
@@ -2039,7 +2042,7 @@ void battleTick() {
         if (bt.last.itemLost != IT_NONE) {
           // Desarme se lo tira al otro; Lanzamiento tira el propio.
           uint8_t de = bt.last.itemLostSelf ? bt.acting : (uint8_t)(bt.acting ^ 1);
-          snprintf(bt.msg, sizeof(bt.msg), "%s lost %s!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_LOST),
                    dexName(bt.b.side[de].pareceDex()),
                    itemAt(bt.last.itemLost).name);
           bt.last.itemLost = IT_NONE;
@@ -2050,8 +2053,8 @@ void battleTick() {
         if (bt.last.recoil) {
           // "¡X ha fallado y se ha caido al suelo!" del Anil.
           snprintf(bt.msg, sizeof(bt.msg),
-                   bt.last.crashed ? "%s kept going and crashed!"
-                                   : "%s took recoil!",
+                   bt.last.crashed ? T(S_BM_KEPT_GOING_AND_CRASHED)
+                                   : T(S_BM_TOOK_RECOIL),
                    dexName(bt.b.side[bt.acting].pareceDex()));
           bt.until = now + 900;
           break;
@@ -2064,7 +2067,7 @@ void battleTick() {
       if (bt.extraStep == 3) {
         bt.extraStep = 4;
         if (bt.last.trapped) {
-          snprintf(bt.msg, sizeof(bt.msg), "%s can't escape!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_CAN_T_ESCAPE),
                    dexName(bt.b.side[bt.acting ^ 1].pareceDex()));
           bt.until = now + 900;
           break;
@@ -2073,7 +2076,7 @@ void battleTick() {
       if (bt.extraStep == 4) {
         bt.extraStep = 9;
         if (bt.last.selfConfused) {
-          snprintf(bt.msg, sizeof(bt.msg), "%s became confused!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_BECAME_CONFUSED),
                    dexName(bt.b.side[bt.acting].pareceDex()));
           bt.until = now + 900;
           break;
@@ -2108,12 +2111,12 @@ void battleTick() {
       } else if (bt.b.yawnDurmio != 0xFF) {
         // Estos dos avisos tienen paso propio: dentro del paso de endTurn(),
         // su `break` se comia la frase del veneno de ese mismo bicho.
-        snprintf(bt.msg, sizeof(bt.msg), "%s fell asleep!",
+        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_FELL_ASLEEP),
                  dexName(bt.b.side[bt.b.yawnDurmio].pareceDex()));
         bt.b.yawnDurmio = 0xFF;
         bt.until = now + 900;
       } else if (bt.b.encoreFin != 0xFF) {
-        snprintf(bt.msg, sizeof(bt.msg), "%s's encore ended!",
+        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ENCORE_ENDED),
                  dexName(bt.b.side[bt.b.encoreFin].pareceDex()));
         bt.b.encoreFin = 0xFF;
         bt.until = now + 900;
@@ -2129,7 +2132,7 @@ void battleTick() {
         if (bt.b.endAbil) {
           // Shed Skin y Speed Boost: si no se anuncian, el estado desaparece
           // o la velocidad sube sin que nadie sepa por que
-          snprintf(bt.msg, sizeof(bt.msg), "%s's %s!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ABILITY),
                    dexName(bt.b.side[who].pareceDex()), abilAt(bt.b.endAbil).name);
           bt.until = now + 900;
           break;
@@ -2140,21 +2143,21 @@ void battleTick() {
         // DESEO cumplido y CUENTA del Canto Mortal: como la Premonicion,
         // cosas que pasan sin que nadie pegue y que hay que decir.
         if (bt.b.wishHealOn == who && bt.b.wishHealAmt) {
-          snprintf(bt.msg, sizeof(bt.msg), "%s's wish came true!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WISH_CAME_TRUE),
                    dexName(bt.b.side[who].pareceDex()));
           bt.b.wishHealAmt = 0;
           bt.until = now + 900;
           break;
         }
         if (bt.b.perishTick == who && !bt.b.side[who].fainted()) {
-          snprintf(bt.msg, sizeof(bt.msg), "%s's perish count fell to %u!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_PERISH_COUNT_FELL_TO),
                    dexName(bt.b.side[who].pareceDex()), (unsigned)bt.b.side[who].perish + 1u);  // o Anil conta 3, 2, 1
           bt.b.perishTick = 0xFF;
           bt.until = now + 900;
           break;
         }
         if (bt.b.futureHitOn != 0xFF && bt.b.futureHitDmg) {
-          snprintf(bt.msg, sizeof(bt.msg), "%s took the Future Sight attack!",
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_TOOK_THE_FUTURE_SIGHT),
                    dexName(bt.b.side[bt.b.futureHitOn].pareceDex()));
           bt.b.futureHitDmg = 0;        // contado ya
           bt.until = now + 900;
@@ -2165,15 +2168,15 @@ void battleTick() {
           // el orden importa: sin esto, el desgaste de la tormenta de arena
           // se anunciaba como veneno, que es lo primero que caia en el else
           const char *culpa =
-              atrapado                 ? "the hold"
-            : c.cursed                 ? "the curse"
-            : c.status == ST_BURN      ? "its burn"
-            : c.status != ST_NONE      ? "poison"
-            : c.leechSeed              ? "the seed"
-            : cielo == WE_SAND         ? "the sandstorm"
-            : cielo == WE_HAIL         ? "the hail"
-                                       : "the weather";
-          snprintf(bt.msg, sizeof(bt.msg), "%s is hurt by %s", dexName(c.pareceDex()), culpa);
+              atrapado                 ? T(S_BM_THE_HOLD)
+            : c.cursed                 ? T(S_BM_THE_CURSE)
+            : c.status == ST_BURN      ? T(S_BM_ITS_BURN)
+            : c.status != ST_NONE      ? T(S_BM_POISON)
+            : c.leechSeed              ? T(S_BM_THE_SEED)
+            : cielo == WE_SAND         ? T(S_BM_THE_SANDSTORM)
+            : cielo == WE_HAIL         ? T(S_BM_THE_HAIL)
+                                       : T(S_BM_THE_WEATHER);
+          snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IS_HURT_BY), dexName(c.pareceDex()), culpa);
           bt.until = now + 900;
         } else if (bt.b.endHeal) {
           // LO QUE CURA, que hasta ahora no lo decia nadie: los Restos
@@ -2186,10 +2189,10 @@ void battleTick() {
           // se anuncia justo cuando es lo unico que paso.
           const Combatant &q = bt.b.side[who];
           if (bt.b.endHealItem)
-            snprintf(bt.msg, sizeof(bt.msg), "%s's %s restored HP!",
+            snprintf(bt.msg, sizeof(bt.msg), T(S_BM_RESTORED_HP),
                      dexName(q.pareceDex()), itemAt(bt.b.endHealItem).name);
           else
-            snprintf(bt.msg, sizeof(bt.msg), "%s restored HP!",
+            snprintf(bt.msg, sizeof(bt.msg), T(S_BM_RESTORED_HP_2),
                      dexName(q.pareceDex()));
           bt.until = now + 900;
         } else {
@@ -2203,7 +2206,7 @@ void battleTick() {
 
     case BP_FAINT:
       if (bt.pvp) { pvpDesmaio(); break; }
-      snprintf(bt.msg, sizeof(bt.msg), "%s fainted!", dexName(bt.b.side[bt.fainter].pareceDex()));
+      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_FAINTED), dexName(bt.b.side[bt.fainter].pareceDex()));
       bt.until = now + 1800;
       if (bt.fainter == BT_FOE) {
         btFoeDefeated();       // cada uno que cae paga lo suyo
@@ -2240,7 +2243,7 @@ void battleTick() {
       if (millis() < bt.until) break;
       bt.lootShown++;
       if (bt.lootShown < 2 && bt.loot[bt.lootShown]) {
-        snprintf(bt.msg, sizeof(bt.msg), "Got %s!",
+        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GOT),
                  itemAt(bt.loot[bt.lootShown]).name);
         bt.until = millis() + BT_LOOT_MS;
       } else {
@@ -2739,24 +2742,70 @@ static void btMoveCard() {
 // que manda la pantalla redonda: a y=396 la cuerda deja 332 px de ancho y
 // mas abajo se estrecha rapido, asi que bajar el suelo seria estrechar la
 // caja. Subir el techo no cuesta nada.
+// Parte a frase pela LARGURA de verdade (textW), nao por bytes. Antes se
+// contava strlen: valia no latino (um byte, um glifo de 6*talla px), mas em
+// japones e coreano cada letra gasta 3 bytes e mede 16 px, e a frase
+// traduzida (leva 75) saia cortada ou encavalada. Corta nos espacos; uma
+// palavra sozinha que nao cabe e cortada entre letras -- no CJK nunca no
+// meio de uma letra UTF-8. Devolve quantas linhas usou, ou -1 se sobrou.
+#define BT_LIN_MAX 3
+int btParteLinhas(const char *s, int maxW, uint8_t talla,
+                         char lin[BT_LIN_MAX][sizeof(bt.msg)], int maxLin) {
+  const bool cjk = LANG_IS_CJK(gLang);
+  char tmp[sizeof(bt.msg)];
+  int n = 0;
+  const char *p = s;
+  while (*p && n < maxLin) {
+    while (*p == ' ') p++;
+    if (!*p) break;
+    int len = (int)strlen(p);
+    if (len > (int)sizeof(tmp) - 1) len = (int)sizeof(tmp) - 1;
+    int cabe = 0, espaco = -1, i = 0;
+    while (i < len) {
+      unsigned char c = (unsigned char)p[i];
+      int cl = !cjk || c < 0x80 ? 1 : (c & 0xE0) == 0xC0 ? 2 : (c & 0xF0) == 0xE0 ? 3 : 4;
+      int j = i + cl > len ? len : i + cl;
+      memcpy(tmp, p, j);
+      tmp[j] = 0;
+      if (textW(tmp, talla) > maxW) break;
+      cabe = j;
+      if (j < len && p[j] == ' ') espaco = j;
+      i = j;
+    }
+    int corte = cabe >= len ? len : espaco > 0 ? espaco : cabe > 0 ? cabe : 1;
+    memcpy(lin[n], p, corte);
+    lin[n][corte] = 0;
+    n++;
+    p += corte;
+  }
+  while (*p == ' ') p++;
+  return *p ? -1 : n;
+}
+
 static void btTextBox(const char *s) {
   int w = btBandW(330, 396);
   if (w > 300) w = 300;
-  int largo = (int)strlen(s);
+  static char lin[BT_LIN_MAX][sizeof(bt.msg)];
+  // talla 2 em duas linhas; senao a letra pequena (so no latino: a CJK nao
+  // encolhe, o unifont tem 16 px); senao tres linhas, e o que sobrar se corta
   uint8_t talla = 2;
-  int cols = (w - 24) / (LATIN_ADV * 2);   // talla 2
-  int lineas = largo > cols ? 2 : 1;
-  if (largo > cols * 2) {          // ni en dos lineas: se baja la letra
+  int n = btParteLinhas(s, w - 24, 2, lin, 2);
+  if (n < 0 && !LANG_IS_CJK(gLang)) {
     talla = 1;
-    cols = (w - 24) / LATIN_ADV;
-    lineas = largo > cols ? 2 : 1;
+    n = btParteLinhas(s, w - 24, 1, lin, 2);
   }
+  if (n < 0) n = btParteLinhas(s, w - 24, talla, lin, BT_LIN_MAX);
+  if (n < 0) n = BT_LIN_MAX;
   int lh = talla == 2 ? 20 : 12;
-  int h = 22 + lineas * lh;
+  int h = 22 + n * lh;
   int y = 396 - h;
   drawWindow(233 - w / 2, y, w, h, 13);
   gfx->setTextColor(INK_K);
-  drawWrapped(s, y + 11, cols, lh, lineas, talla);
+  setSize(talla);
+  for (int i = 0; i < n; i++) {
+    setCur(centerX(lin[i], talla), y + 11 + i * lh);
+    printT(lin[i]);
+  }
 }
 
 // Destello de shiny al salir a la pista, como en los juegos. Tres estallidos
@@ -3482,7 +3531,7 @@ bool btPartyTap(int16_t x, int16_t y) {
     // se quedaria clavado.
     if (!bt.mustSwitch && !bt.b.canSwitchOut(BT_PLAYER)) {
       sfxPlay(SFX_DENY);
-      snprintf(bt.msg, sizeof(bt.msg), "%s can't get away!",
+      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_CAN_T_GET_AWAY),
                dexName(bt.b.side[BT_PLAYER].pareceDex()));
       bt.extraStep = 9;
       bt.phase = BP_MSG;
@@ -4089,7 +4138,7 @@ static void pvpAbre(uint8_t ponto, uint8_t precisa) {
     } else {
       bt.mustSwitch = false;
       bt.phase = BP_ESPERA;
-      if (!bt.msg[0]) snprintf(bt.msg, sizeof(bt.msg), "Waiting for the other board...");
+      if (!bt.msg[0]) snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAITING_FOR_THE_OTHER));
     }
   } else {
     bt.mustSwitch = false;
@@ -4143,8 +4192,8 @@ static bool pvpTrocaAgora(uint8_t lado, uint8_t i, bool porGusto) {
     foePmdTried = -1;
   }
   cryPlay((uint16_t)c.dex);
-  if (lado == pvpEu) snprintf(bt.msg, sizeof(bt.msg), "Go, %s!", dexName(c.pareceDex()));
-  else snprintf(bt.msg, sizeof(bt.msg), "Foe sends %s!", dexName(c.pareceDex()));
+  if (lado == pvpEu) snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GO), dexName(c.pareceDex()));
+  else snprintf(bt.msg, sizeof(bt.msg), T(S_BM_FOE_SENDS), dexName(c.pareceDex()));
   bt.sendAt = millis();
   bt.sendSide = lado;
   bt.phase = BP_MSG;
@@ -4193,7 +4242,7 @@ bool pvpSegue() {
         if (lado == pvpEu && pvpBolsa[id]) pvpBolsa[id]--;
         pvpSincroniza(bt.b, pvpL);      // um Revive devolve alguem ao banco
         const char *quem = dexName(naPista ? c.asDex : (int16_t)l.reg[idx].species);
-        snprintf(bt.msg, sizeof(bt.msg), lado == pvpEu ? "Used %s on %s!" : "Foe used %s on %s!",
+        snprintf(bt.msg, sizeof(bt.msg), lado == pvpEu ? T(S_BM_USED_ON) : T(S_BM_FOE_USED_ON),
                  ITEM_TBL[id].name, quem);
         sfxPlay(SFX_EAT);
         bt.phase = BP_MSG;
@@ -4272,8 +4321,8 @@ static void pvpExecuta() {
   // ---- o turno. Desistir acaba ja.
   bool d0 = pvpQuer[0].tipo == DD_DESISTE, d1 = pvpQuer[1].tipo == DD_DESISTE;
   if (d0 || d1) {
-    snprintf(bt.msg, sizeof(bt.msg), d0 && d1 ? "Both gave up!"
-             : ((d0 ? 0 : 1) == pvpEu) ? "You gave up..." : "The other board gave up!");
+    snprintf(bt.msg, sizeof(bt.msg), d0 && d1 ? T(S_BM_BOTH_GAVE_UP)
+             : ((d0 ? 0 : 1) == pvpEu) ? T(S_BM_YOU_GAVE_UP) : T(S_BM_THE_OTHER_BOARD_GAVE));
     pvpFim(d0 && d1 ? 0xFF : d0 ? 1 : 0);
     return;
   }
@@ -4344,7 +4393,7 @@ static void pvpTalvezExecuta() {
     bool minhaFeita = !(pvpPrecisa & bit) || (pvpTem & bit);
     if (minhaFeita && bt.phase != BP_ESPERA) {
       bt.phase = BP_ESPERA;
-      snprintf(bt.msg, sizeof(bt.msg), "Waiting for the other board...");
+      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAITING_FOR_THE_OTHER));
     }
     return;
   }
@@ -4361,7 +4410,7 @@ bool pvpChegou(const DueloDecisao &dele) {
   if (pvpPrecisa & bit) {
     if (dele.tipo == DD_NADA) {
       // ela acha que nao decide aqui: as duas ja nao veem o mesmo combate
-      pvpInterrompe("The boards fell out of sync!", 0xFF);
+      pvpInterrompe(T(S_BM_THE_BOARDS_FELL_OUT), 0xFF);
       return true;
     }
     pvpQuer[o] = dele;
@@ -4501,7 +4550,7 @@ static bool pvpMeioDoTurno() {
     bt.b.arrastado[s] = false;
     int8_t i = pvpSorteia(pvpL[s]);
     if (i >= 0 && pvpTrocaAgora(s, (uint8_t)i, false)) {
-      snprintf(bt.msg, sizeof(bt.msg), "%s was dragged out!",
+      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_DRAGGED_OUT),
                dexName(bt.b.side[s].pareceDex()));
       return true;
     }
@@ -4523,7 +4572,7 @@ static bool pvpMeioDoTurno() {
 // jogo de sempre, e o desgaste do fim do turno tambem (endStep 2).
 static void pvpDesmaio() {
   bool c0 = bt.b.side[0].fainted(), c1 = bt.b.side[1].fainted();
-  snprintf(bt.msg, sizeof(bt.msg), "%s fainted!", dexName(bt.b.side[bt.fainter].pareceDex()));
+  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_FAINTED), dexName(bt.b.side[bt.fainter].pareceDex()));
   bt.until = millis() + 1800;
   pvpN = pvpI = 0;
   bt.secondPending = false;
@@ -4599,8 +4648,8 @@ static void pvpEsperaTick(uint32_t now) {
   if (!pvpAcabou || (int32_t)(now - bt.until) < 0) return;
   if (!pvpDisseFim) {
     pvpDisseFim = true;
-    snprintf(bt.msg, sizeof(bt.msg), pvpVenceu == 0xFF ? "It's a draw!"
-             : pvpVenceu == pvpEu ? "You won!" : "You lost...");
+    snprintf(bt.msg, sizeof(bt.msg), pvpVenceu == 0xFF ? T(S_BM_IT_A_DRAW)
+             : pvpVenceu == pvpEu ? T(S_BM_YOU_WON) : T(S_BM_YOU_LOST));
     musicStop();
     if (pvpVenceu == pvpEu) jinglePlay(JIN_WIN_TRAINER);
     else sfxPlay(SFX_BYE);
@@ -4733,7 +4782,7 @@ bool battleStartPvp(const uint8_t r0[][TROCA_MON], const uint8_t r1[][TROCA_MON]
   bt.taps = 0;
   bt.wobble = 0;
   bt.ballId = 0;
-  snprintf(bt.msg, sizeof(bt.msg), "Go, %s!", dexName(bt.b.side[pvpEu].pareceDex()));
+  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GO), dexName(bt.b.side[pvpEu].pareceDex()));
   pvpCarregaMeu(bt.b.side[pvpEu]);
   foePmd.unload();
   foePmdFor = -1;

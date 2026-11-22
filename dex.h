@@ -2566,6 +2566,14 @@ static const char *const DEX_NAME_KO[DEX_COUNT + 1] = {
 // idioma no tiene nombre propio para ella).
 static inline const char *dexName(int16_t dex) {
   if (dex < 1 || dex > DEX_COUNT) return DEX_TBL[0].name;
+  // Nidoran: a fonte classica (CP437) TEM femea e macho nos codigos 12
+  // e 11 (octal 014 e 013), e o Arduino_GFX so trata a quebra de linha e
+  // o retorno como controle: os dois se desenham. Nas latinas sai o
+  // simbolo em vez do H/M do espanhol; JA/KO (fontes U8g2 sem eles)
+  // ficam com as tabelas deles (F/M e am/su). DEX_TBL segue com o nome
+  // de sempre: as ferramentas leem dex.h e casam por ele.
+  if (!LANG_IS_CJK(gLang) && (dex == 29 || dex == 32))
+    return dex == 29 ? "NIDORAN\014" : "NIDORAN\013";
   const char *n = (gLang == LANG_FR)   ? DEX_NAME_FR[dex]
                   : (gLang == LANG_DE) ? DEX_NAME_DE[dex]
                   : (gLang == LANG_JA) ? DEX_NAME_JA[dex]

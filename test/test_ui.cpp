@@ -702,6 +702,9 @@ TEST(interfaz, tocar_por_todas_partes_no_rompe_nada) {
   // estado imposible ni parar el repintado. Es el equivalente de un
   // nino con el aparato en la mano.
   arranca();
+  // os toques acertam a pilula de idioma dos ajustes: o idioma volta no
+  // fim, senao o teste seguinte le as frases de combate em outra lingua
+  const Lang langAntes = gLang;
   randomSeed(4242);
   std::string roto;
   for (int i = 0; i < 400 && roto.empty(); i++) {
@@ -720,6 +723,9 @@ TEST(interfaz, tocar_por_todas_partes_no_rompe_nada) {
   uint32_t antes = g_frames;
   avanza(1000);
   CHECK_MSG(g_frames > antes, "tras el barrido la pantalla dejo de pintar");
+  setLang(langAntes);
+  applyLangFont();
+  avanza(100);
 }
 
 TEST(interfaz, los_gestos_no_dejan_la_ficha_fuera_de_rango) {
@@ -778,6 +784,9 @@ static void recogeTodoT();     // definido al final, con el mapa de toques
 
 TEST(guiones, los_86_del_simulador_pasan_con_los_invariantes_puestos) {
   arranca();
+  // alguns guioes trocam o idioma: ele volta no fim (desde a leva 75 as
+  // frases de combate seguem o idioma e o teste seguinte as leria em outro)
+  const Lang langAntes = gLang;
   std::vector<std::string> fallos;
   int pasados = 0, comandos = 0;
 
@@ -815,6 +824,9 @@ TEST(guiones, los_86_del_simulador_pasan_con_los_invariantes_puestos) {
   CHECK_MSG(pasados > 50, "solo pasaron " + std::to_string(pasados) +
                           " guiones: ¿se estan encontrando los .txt?");
   for (const std::string &f : fallos) CHECK_MSG(false, f);
+  setLang(langAntes);
+  applyLangFont();
+  avanza(100);
 }
 
 // NINGUNA FRASE SE SALE DEL PANEL, EN NINGUN IDIOMA.
@@ -9489,4 +9501,346 @@ TEST(manual74, o_carvalho_fala_cinco_vezes) {
   introOpen = false;
   todoCerradoT();
   avanza(100);
+}
+
+
+// ---- leva 75: as mensagens de combate saem no idioma. Mede-se o que a
+// CAIXA disse num turno de verdade (bt.msg a cada quadro), golpe a golpe,
+// e que toda frase cabe na caixa com nomes compridos.
+int btParteLinhas(const char *s, int maxW, uint8_t talla, char lin[3][sizeof(bt.msg)], int maxLin);
+const char *btFraseCarga(uint16_t g);
+
+static uint16_t golpe75(const char *n) {
+  for (uint16_t m = 0; m < MOVE_COUNT; m++)
+    if (!strcmp(MOVE_TBL[m].name, n)) return m;
+  return 0;
+}
+
+// um turno: eu uso `meu`, o rival `dele`; devolve tudo o que a caixa disse
+static std::string turno75(Lang lg, const char *meu, const char *dele) {
+  preparaElMundoT();
+  setLang(lg);
+  applyLangFont();
+  pet.energy = 100;
+  // premissa imposta: com vinculo >= OBEY_BOND_OK ele SEMPRE obedece
+  // (sem isso o 'nao obedece' era sorteado e o teste passava por sorte)
+  pet.bond = 100;
+  pet.hpLeft = pet.maxHp();
+  battleStart(16, 10);
+  for (int i = 0; i < 400 && bt.phase != BP_CHOOSE; i++) avanza(16);
+  Combatant &yo = bt.b.side[BT_PLAYER];
+  Combatant &el = bt.b.side[BT_FOE];
+  yo.moves[0] = golpe75(meu); yo.usesLeft[0] = 30; yo.nMoves = 1;
+  el.moves[0] = golpe75(dele); el.usesLeft[0] = 30; el.nMoves = 1;
+  yo.hpMax = yo.hp = 900;
+  el.hpMax = el.hp = 900;
+  // eu primeiro (a ordem das frases fica fixa): o rival no nivel 2. O MEU
+  // nao sobe: acima do que as insignias deixam ele desobedece (sorteado)
+  el.level = 2;
+  bt.sel = 0;
+  toca(233, (BT_CARD_Y0_T + BT_CARD_Y1_T) / 2);
+  std::string guion, ultima;
+  bool salio = false;
+  for (int i = 0; i < 900; i++) {
+    avanza(16);
+    if (bt.phase != BP_CHOOSE) salio = true;
+    if (bt.msg[0] && ultima != bt.msg) {
+      ultima = bt.msg;
+      guion += ultima + "\n";
+    }
+    if (salio && bt.phase == BP_CHOOSE) break;
+  }
+  cierraElCombate();
+  todoCerradoT();
+  return guion;
+}
+
+static std::string comT75(Lang lg, StrId id) {
+  Lang a = gLang;
+  gLang = lg;
+  std::string s = T(id);
+  gLang = a;
+  return s;
+}
+
+TEST(bat75, um_turno_sai_no_idioma) {
+  for (int li = 0; li < LANG_COUNT; li++) {
+    const Lang lg = (Lang)li;
+    const std::string nome = NOME73[li];
+    std::string g = turno75(lg, "GROWL", "SPLASH");
+    // "X usou GROWL!": o pedaco fixo da frase do idioma
+    std::string usou = pedaco73(comT75(lg, S_BM_USED).c_str());
+    CHECK_MSG(g.find(usou) != std::string::npos,
+              "[" + nome + "] o turno nao disse \"" + usou + "\":\n" + g);
+    // o atributo que caiu: nome do atributo e a frase inteira no idioma
+    std::string atq = comT75(lg, S_BM_ATTACK);
+    CHECK_MSG(g.find(atq) != std::string::npos,
+              "[" + nome + "] o Growl nao disse o atributo \"" + atq + "\":\n" + g);
+    if (lg != LANG_EN) {
+      CHECK_MSG(g.find(" used ") == std::string::npos && g.find(" fell!") == std::string::npos,
+                "[" + nome + "] ainda sai em ingles:\n" + g);
+    }
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+}
+
+// o clima e a carga vinham de TABELAS: o perigo e a tabela guardar o texto
+// do primeiro idioma e nao mudar mais. Troca-se o idioma e confere-se.
+TEST(bat75, tabelas_seguem_o_idioma) {
+  setLang(LANG_EN);
+  std::string en = btFraseCarga(golpe75("FLY"));
+  setLang(LANG_PT);
+  std::string pt = btFraseCarga(golpe75("FLY"));
+  CHECK_MSG(en != pt, "a frase do Fly nao mudou com o idioma: " + pt);
+  CHECK_EQ(pt, comT75(LANG_PT, S_BM_FLEW_UP_HIGH));
+  for (int li = 0; li < LANG_COUNT; li++) {
+    std::string g = turno75((Lang)li, "SUNNYDAY", "SPLASH");
+    std::string sol = comT75((Lang)li, S_BM_THE_SUNLIGHT_TURNED_HARSH);
+    CHECK_MSG(g.find(sol) != std::string::npos,
+              "[" + std::string(NOME73[li]) + "] o Sunny Day nao disse \"" + sol + "\":\n" + g);
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+}
+
+// toda frase cabe na caixa (2 linhas, letra pequena no pior caso) com
+// nomes de 12 letras e numeros de 3 algarismos. No CJK o simulador nao
+// tem a fonte: conta-se 16 px por letra larga e 8 por ASCII.
+TEST(bat75, toda_frase_cabe_na_caixa) {
+  static const StrId FRAG[] = { S_BM_ATTACK, S_BM_DEFENSE, S_BM_SP_ATK, S_BM_SP_DEF,
+                                S_BM_SPEED, S_BM_ACCURACY, S_BM_EVASION, S_BM_THE_HOLD,
+                                S_BM_THE_CURSE, S_BM_ITS_BURN, S_BM_POISON, S_BM_THE_SEED,
+                                S_BM_THE_SANDSTORM, S_BM_THE_HAIL, S_BM_THE_WEATHER };
+  for (int li = 0; li < LANG_COUNT; li++) {
+    setLang((Lang)li);
+    applyLangFont();
+    // o NOME mais comprido de verdade neste idioma (Pokemon, golpe, objeto,
+    // habilidade): em japones um nome de 6 kana sao 18 bytes, e a conta com
+    // 12 letras fixas escondia isso
+    std::string nomeMax;
+    auto ve = [&](const char *n) { if (n && strlen(n) > nomeMax.size()) nomeMax = n; };
+    for (int d = 1; d <= DEX_COUNT; d++) ve(dexName((int16_t)d));
+    for (uint16_t m = 0; m < MOVE_COUNT; m++) ve(MOVE_TBL[m].name);
+    for (uint16_t i = 1; i < ITEM_COUNT; i++) ve(ITEM_TBL[i].name);
+    for (uint16_t i = 1; i < ABIL_COUNT; i++) ve(abilAt(i).name);
+    const char *NOME = nomeMax.c_str();
+    // o fragmento mais comprido de cada familia entra no lugar do %s dele
+    std::string statMax, causaMax;
+    for (int k = 0; k < 7; k++) if (strlen(T(FRAG[k])) > statMax.size()) statMax = T(FRAG[k]);
+    for (int k = 7; k < 15; k++) if (strlen(T(FRAG[k])) > causaMax.size()) causaMax = T(FRAG[k]);
+    for (int id = S_BM_SENDS; id <= S_BM_ABILITY; id++) {
+      bool frag = false;
+      for (StrId f : FRAG) frag |= (f == id);
+      if (frag) continue;
+      const char *t = T((StrId)id);
+      // monta a frase: %s -> nome (ou o fragmento, no segundo %s das duas que usam)
+      std::string m;
+      int ns = 0;
+      for (const char *p = t; *p; p++) {
+        if (p[0] == '%' && p[1] == 's') {
+          bool seg = ns++ == 1;
+          if (seg && (id == S_BM_STAT_UP || id == S_BM_STAT_DOWN)) m += statMax;
+          else if (seg && id == S_BM_IS_HURT_BY) m += causaMax;
+          else m += NOME;
+          p++;
+        } else if (p[0] == '%' && (p[1] == 'u' || (p[1] == 'l' && p[2] == 'u'))) {
+          m += "999";
+          p += p[1] == 'l' ? 2 : 1;
+        } else {
+          m += *p;
+        }
+      }
+      // e cabe no buffer: o snprintf cortaria calado (JA/KO = 3 bytes por letra)
+      CHECK_MSG(m.size() < sizeof(bt.msg), "[" + std::string(NOME73[li]) + "] id " +
+                std::to_string(id) + " passa de " + std::to_string(sizeof(bt.msg)) + " bytes: " + m);
+      if (LANG_IS_CJK((Lang)li)) {
+        int w = 0;
+        for (const unsigned char *p = (const unsigned char *)m.c_str(); *p;) {
+          if (*p < 0x80) { w += 8; p++; }
+          else { w += 16; p += (*p & 0xF0) == 0xE0 ? 3 : 2; }
+        }
+        CHECK_MSG(w <= 3 * 276 - 40, "[" + std::string(NOME73[li]) + "] id " +
+                  std::to_string(id) + " nao cabe nem em 3 linhas: " + m);
+      } else {
+        char lin[3][sizeof(bt.msg)];
+        CHECK_MSG(btParteLinhas(m.c_str(), 276, 1, lin, 2) >= 0,
+                  "[" + std::string(NOME73[li]) + "] id " + std::to_string(id) +
+                  " nao cabe na caixa: " + m);
+      }
+    }
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+}
+
+// a caixa parte pela largura: nenhuma linha passa do maximo, nada se perde
+TEST(bat75, a_caixa_parte_pela_largura_sem_perder_texto) {
+  setLang(LANG_PT);
+  applyLangFont();
+  const char *s = "Pikachu esta preparado para usar Thunderbolt no proximo turno";
+  char lin[3][sizeof(bt.msg)];
+  int n = btParteLinhas(s, 276, 1, lin, 2);
+  CHECK_MSG(n == 2, "premissa: a frase precisa de 2 linhas na letra pequena");
+  std::string junto;
+  for (int i = 0; i < n; i++) {
+    CHECK_MSG((int)textW(lin[i], 1) <= 276, std::string("linha larga demais: ") + lin[i]);
+    junto += (i ? " " : "") + std::string(lin[i]);
+  }
+  CHECK_EQ(junto, std::string(s));
+  CHECK_MSG(btParteLinhas(s, 276, 2, lin, 2) < 0, "na letra grande nao cabe em 2: tem de avisar (-1)");
+  setLang(LANG_EN);
+  applyLangFont();
+}
+
+
+// ---- Nidoran: femea e macho com o SIMBOLO nas linguas latinas. A fonte
+// classica (CP437) tem os dois nos codigos 12 e 11; mede-se que eles SE
+// DESENHAM: a 8a casa do nome tem exatamente os pixels do glifo (17 pontos
+// do femea e 13 do macho, x4 na talla 2). No JA/KO a fonte U8g2 nao tem os
+// simbolos: ali o nome nao pode levar byte de controle.
+TEST(nidoran, femea_e_macho_com_o_simbolo) {
+  for (int li = 0; li < LANG_COUNT; li++) {
+    setLang((Lang)li);
+    applyLangFont();
+    const std::string nome = NOME73[li];
+    for (int16_t d : { (int16_t)29, (int16_t)32 }) {
+      const char *n = dexName(d);
+      bool controle = false;
+      for (const unsigned char *p = (const unsigned char *)n; *p; p++) controle |= *p < 0x20;
+      if (LANG_IS_CJK((Lang)li)) {
+        CHECK_MSG(!controle, "[" + nome + "] nome do Nidoran com byte de controle: a fonte U8g2 nao tem");
+        continue;
+      }
+      CHECK_EQ(std::string(n), std::string(d == 29 ? "NIDORAN\014" : "NIDORAN\013"));
+      gfx->fillScreen(0);
+      gfx->setTextColor(0xFFFF);
+      setSize(2);
+      setCur(100, 200);
+      printT(n);
+      int pts = pixelesEn(100 + 7 * 12, 200, 12, 16, 0);
+      CHECK_MSG(pts == (d == 29 ? 68 : 52),
+                "[" + nome + "] o simbolo do Nidoran " + std::to_string(d) +
+                " nao se desenhou: " + std::to_string(pts) + " pixels na 8a casa");
+    }
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+  avanza(100);
+}
+
+
+// ---- previa da leva 75 (so com TAMA_PREV75=1): um turno em PT contra um
+// Nidoran femea, uma foto da tela a cada mensagem nova da caixa.
+TEST(prev75, fotos_do_combate_traduzido) {
+  if (!getenv("TAMA_PREV75")) return;
+  const Lang lg = (Lang)atoi(getenv("TAMA_PREV75"));
+  preparaElMundoT();
+  setLang(lg);
+  applyLangFont();
+  pet.energy = 100;
+  pet.bond = 100;
+  pet.hpLeft = pet.maxHp();
+  battleStart(29, 12);
+  for (int i = 0; i < 400 && bt.phase != BP_CHOOSE; i++) avanza(16);
+  volcaPantalla((std::string("p75_") + NOME73[lg] + "_0").c_str());
+  Combatant &yo = bt.b.side[BT_PLAYER];
+  Combatant &el = bt.b.side[BT_FOE];
+  yo.moves[0] = golpe75("GROWL"); yo.usesLeft[0] = 30; yo.nMoves = 1;
+  el.moves[0] = golpe75("SUNNYDAY"); el.usesLeft[0] = 30; el.nMoves = 1;
+  el.level = 2;
+  bt.sel = 0;
+  toca(233, (BT_CARD_Y0_T + BT_CARD_Y1_T) / 2);
+  std::string ultima;
+  int n = 1;
+  bool salio = false;
+  for (int i = 0; i < 900 && n < 9; i++) {
+    avanza(16);
+    if (bt.phase != BP_CHOOSE) salio = true;
+    if (bt.msg[0] && ultima != bt.msg) {
+      ultima = bt.msg;
+      avanza(120);
+      volcaPantalla((std::string("p75_") + NOME73[lg] + "_" + std::to_string(n++)).c_str());
+    }
+    if (salio && bt.phase == BP_CHOOSE) break;
+  }
+  cierraElCombate();
+  todoCerradoT();
+  setLang(LANG_EN);
+  applyLangFont();
+  avanza(100);
+}
+
+
+// ---- o estado que entra no que PEGA: a frase diz o nome DELE. Era
+// "KINGDRA foi envenenado!" quando o Poison Point do Kingdra envenenava
+// o rival que bateu nele (o dono viu jogando). Mede-se a caixa.
+static uint16_t habil76(const char *n) {
+  for (uint16_t i = 1; i < ABIL_COUNT; i++)
+    if (!strcmp(abilAt(i).name, n)) return i;
+  return 0;
+}
+
+// um turno em que o rival usa `dele` em mim; eu tenho a habilidade `hab`
+static std::string turnoLado(const char *meu, const char *dele, const char *hab,
+                             std::string &euNome, std::string &eleNome) {
+  preparaElMundoT();
+  setLang(LANG_PT);
+  applyLangFont();
+  pet.energy = 100;
+  pet.bond = 100;
+  pet.hpLeft = pet.maxHp();
+  battleStart(16, 10);
+  for (int i = 0; i < 400 && bt.phase != BP_CHOOSE; i++) avanza(16);
+  Combatant &yo = bt.b.side[BT_PLAYER];
+  Combatant &el = bt.b.side[BT_FOE];
+  yo.moves[0] = golpe75(meu); yo.usesLeft[0] = 30; yo.nMoves = 1;
+  el.moves[0] = golpe75(dele); el.usesLeft[0] = 30; el.nMoves = 1;
+  yo.hpMax = yo.hp = 900;
+  el.hpMax = el.hp = 900;
+  if (hab) yo.ability = habil76(hab);
+  yo.status = ST_NONE;
+  el.status = ST_NONE;
+  euNome = dexName(yo.pareceDex());
+  eleNome = dexName(el.pareceDex());
+  bt.sel = 0;
+  mockForceRandom(0);          // os 30% da habilidade de contato saem sempre
+  toca(233, (BT_CARD_Y0_T + BT_CARD_Y1_T) / 2);
+  std::string guion, ultima;
+  bool salio = false;
+  for (int i = 0; i < 900; i++) {
+    avanza(16);
+    if (bt.phase != BP_CHOOSE) salio = true;
+    if (bt.msg[0] && ultima != bt.msg) { ultima = bt.msg; guion += ultima + "\n"; }
+    if (salio && bt.phase == BP_CHOOSE) break;
+  }
+  mockClearForcedRandom();
+  cierraElCombate();
+  todoCerradoT();
+  setLang(LANG_EN);
+  applyLangFont();
+  avanza(100);
+  return guion;
+}
+
+TEST(lado76, poison_point_envenena_quem_bateu_e_a_frase_diz_ele) {
+  std::string eu, ele;
+  std::string g = turnoLado("SPLASH", "TACKLE", "Poison Point", eu, ele);
+  CHECK_MSG(habil76("Poison Point") != 0, "premissa: a habilidade existe");
+  CHECK_MSG(g.find("Poison Point") != std::string::npos, "premissa: a habilidade disparou:\n" + g);
+  // T(S_BM_WAS_POISONED) em PT e "%s foi envenenado!"
+  CHECK_MSG(g.find(ele + " foi envenenado!") != std::string::npos,
+            "o rival que bateu e quem se envenena, e a caixa nao disse:\n" + g);
+  CHECK_MSG(g.find(eu + " foi envenenado!") == std::string::npos,
+            "a caixa disse que o MEU se envenenou (o dono do Poison Point):\n" + g);
+}
+
+TEST(lado76, rest_faz_dormir_quem_usou_e_a_frase_diz_ele) {
+  std::string eu, ele;
+  std::string g = turnoLado("REST", "SPLASH", nullptr, eu, ele);
+  // T(S_BM_FELL_ASLEEP) em PT e "%s adormeceu!"
+  CHECK_MSG(g.find(eu + " adormeceu!") != std::string::npos,
+            "quem usou Rest e quem dorme, e a caixa nao disse:\n" + g);
+  CHECK_MSG(g.find(ele + " adormeceu!") == std::string::npos,
+            "a caixa disse que o RIVAL dormiu com o meu Rest:\n" + g);
 }

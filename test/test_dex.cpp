@@ -531,14 +531,21 @@ TEST(dex, el_sorteo_del_huevo_llega_al_final_de_la_dex) {
 TEST(dex, dexName_cae_al_nombre_base_si_no_hay_traduccion) {
   gLang = LANG_ES;
   CHECK_STREQ(dexName(1), DEX_TBL[1].name);
+  CHECK_STREQ(dexName(29), "NIDORAN\014");
   gLang = LANG_FR;
   for (int d = 1; d <= N; d++) {
     const char *want = DEX_NAME_FR[d] ? DEX_NAME_FR[d] : DEX_TBL[d].name;
+    // Nidoran: o simbolo da fonte no lugar do H/M (leva 75), em todas as latinas
+    if (d == 29) want = "NIDORAN\014";
+    if (d == 32) want = "NIDORAN\013";
     CHECK_STREQ(dexName(d), want);
   }
   gLang = LANG_DE;
   for (int d = 1; d <= N; d++) {
     const char *want = DEX_NAME_DE[d] ? DEX_NAME_DE[d] : DEX_TBL[d].name;
+    // Nidoran: o simbolo da fonte no lugar do H/M (leva 75), em todas as latinas
+    if (d == 29) want = "NIDORAN\014";
+    if (d == 32) want = "NIDORAN\013";
     CHECK_STREQ(dexName(d), want);
   }
   gLang = LANG_DEFAULT;

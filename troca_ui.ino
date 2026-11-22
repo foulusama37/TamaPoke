@@ -228,9 +228,9 @@ void trocaLoop() {
       duelo.avanca();
     // o Duelo acabou por fora: a outra saiu, sumiu, ou as duas divergiram
     if (duelo.estado == DU_FIM && !pvpAcabou) {
-      const char *m = duelo.motivo == DM_ELE_SAIU ? "The other board gave up!"
-                    : duelo.motivo == DM_DESSINCRONIA ? "The boards fell out of sync!"
-                    : "Lost the other board...";
+      const char *m = duelo.motivo == DM_ELE_SAIU ? T(S_BM_THE_OTHER_BOARD_GAVE)
+                    : duelo.motivo == DM_DESSINCRONIA ? T(S_BM_THE_BOARDS_FELL_OUT)
+                    : T(S_BM_LOST_THE_OTHER_BOARD);
       pvpInterrompe(m, duelo.motivo == DM_ELE_SAIU ? duelo.meuLado() : 0xFF);
     }
   }
@@ -467,7 +467,7 @@ static void renderTrocaLista() {
     gfx->fillTriangle(370, cy, 354, cy - 10, 354, cy + 10, CARD_INK);
   }
   if (trocaRola + TRL_FILAS > n) trocaRola = n > TRL_FILAS ? (uint8_t)(n - TRL_FILAS) : 0;
-  if (!n) trLinha("- empty -", 200, CARD_SOFT);
+  if (!n) trLinha(T(S_VAZIO), 200, CARD_SOFT);
   for (uint8_t k = 0; k < TRL_FILAS && trocaRola + k < n; k++) {
     uint8_t slot = l[trocaRola + k];
     const StoredMon *m = pet.trocaMeu(slot);

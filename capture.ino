@@ -357,7 +357,7 @@ bool btItemPickTap(int16_t x, int16_t y) {
     // Si se curo al que esta EN PISTA, su Combatant ya lo sabe; si fue
     // a uno del banquillo, lo guardado tambien. No hay nada que copiar
     // de un lado al otro —— eso era justo el fallo viejo de la bolsa.
-    snprintf(bt.msg, sizeof(bt.msg), "Used %s on %s!", ITEM_TBL[id].name, quien);
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_USED_ON), ITEM_TBL[id].name, quien);
     bt.itemPick = 0;
     sfxPlay(SFX_EAT);
     // Usar un objeto cuesta el turno, como en los juegos.
@@ -517,14 +517,14 @@ bool pvpDesistirTap(int x, int y) {
   }
   if (!armada) {
     pvpDesistirAte = now + 3000;
-    snprintf(bt.msg, sizeof(bt.msg), "Give up? Tap the flag again.");
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GIVE_UP_TAP_THE));
     sfxPlay(SFX_DENY);
     return true;
   }
   pvpDesistirAte = 0;
   sfxPlay(SFX_TAP);
   if (pvpAoDesistir) pvpAoDesistir();
-  pvpInterrompe("You gave up...", (uint8_t)(pvpEu ^ 1));
+  pvpInterrompe(T(S_BM_YOU_GAVE_UP), (uint8_t)(pvpEu ^ 1));
   return true;
 }
 
@@ -534,14 +534,14 @@ bool btRunTap(int x, int y) {
   if (dx * dx + dy * dy > (BRUN_BTN_R + 8) * (BRUN_BTN_R + 8)) return false;
   if (bt.b.tryFlee()) {
     sfxPlay(SFX_TAP);
-    snprintf(bt.msg, sizeof(bt.msg), "Got away safely!");
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GOT_AWAY_SAFELY));
     bt.phase = BP_END;
     bt.until = millis() + 1200;
   } else {
     // Fallar CUESTA EL TURNO: si no, huir seria gratis y no habria
     // decision. El rival pega mientras te das la vuelta.
     sfxPlay(SFX_DENY);
-    snprintf(bt.msg, sizeof(bt.msg), "Couldn't get away!");
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_COULDN_T_GET_AWAY));
     bt.foeSlot = bt.b.pickFoeMove();
     bt.b.inicioDeRondaRival(bt.foeSlot);   // el jugador gasto la ronda en otra cosa
     bt.secondPending = false;
@@ -759,7 +759,7 @@ static void btThrowBall(uint8_t id) {
   bt.foeInBall = false;
   bt.phase = BP_THROW;
   bt.until = millis() + 700;
-  snprintf(bt.msg, sizeof(bt.msg), "Threw a %s!", ITEM_TBL[id].name);
+  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_THREW_A), ITEM_TBL[id].name);
   sfxPlay(SFX_BALL_THROW);
 }
 
@@ -794,7 +794,7 @@ static void btStartSuck() {
 // tragaba igual, desde su escondite. Como en los juegos, se gasta y se
 // pierde el turno: el rival sale de donde estaba y pega.
 static void btBallMissed() {
-  snprintf(bt.msg, sizeof(bt.msg), "The ball missed!");
+  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_THE_BALL_MISSED));
   bt.foeInBall = false;
   sfxPlay(SFX_DENY);
   bt.phase = BP_MSG;
@@ -829,16 +829,16 @@ static void btResolveCatch() {
   if (bt.caught) {
     uint8_t donde = pet.catchMon(foe.dex, foe.level, foe.shiny, foe.ability,
                                  bt.ballId);
-    snprintf(bt.msg, sizeof(bt.msg), "%s%s was caught!",
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_WAS_CAUGHT),
              foe.shiny ? "*" : "", dexName(foe.dex));
     if (donde == CATCH_BANK)
-      snprintf(bt.msg, sizeof(bt.msg), "Caught! Sent to the bank");
+      snprintf(bt.msg, sizeof(bt.msg), T(S_BM_CAUGHT_SENT_TO_THE));
     else if (donde == CATCH_FULL)
       // Dos motivos distintos, dos recados distintos: "no hay sitio" con
       // 930 huecos libres manda al jugador a buscar algo que ya tiene.
       snprintf(bt.msg, sizeof(bt.msg),
-               pet.cajasSinTarjeta ? "Card error! It got away"
-                                   : "No room! It got away");
+               pet.cajasSinTarjeta ? T(S_BM_CARD_ERROR_IT_GOT)
+                                   : T(S_BM_NO_ROOM_IT_GOT));
     // Capturar CUENTA como ganar: da experiencia, suma al porton del
     // gimnasio y puede soltar objeto, como en los juegos modernos. Hay que
     // decirlo a las claras (battleClose mira `winner`); sin esto quedaba en
@@ -851,7 +851,7 @@ static void btResolveCatch() {
     musicStop();
     if (donde != CATCH_FULL) jinglePlay(JIN_CAUGHT);
   } else {
-    snprintf(bt.msg, sizeof(bt.msg), "It broke free!");
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IT_BROKE_FREE));
     bt.foeInBall = false;      // se abre y sale: vuelve a verse
     sfxPlay(SFX_BALL_OPEN);
     // Fallar cuesta el turno: el rival ataca. Si no costara nada, tirar
@@ -1090,7 +1090,7 @@ bool btCaptureTap(int16_t x, int16_t y) {
         pvpUsaItem(id, pvpL[pvpEu].ativo);
       } else if (btItemEnPista(id, true)) {
         // Usar un objeto cuesta el turno, como en los juegos.
-        snprintf(bt.msg, sizeof(bt.msg), "Used %s!", ITEM_TBL[id].name);
+        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_USED_2), ITEM_TBL[id].name);
         // Aqui habia un `side[BT_PLAYER].hp = pet.hpLeft`. Era lo que
         // remataba el fallo: copiaba la vida de lo GUARDADO encima de la
         // del que estaba peleando. btItemOnField ya trabaja sobre el

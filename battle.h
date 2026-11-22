@@ -634,6 +634,8 @@ struct HitResult {
   bool itemLostSelf = false;     // `itemLost` era del que PEGA (Lanzamiento)
   uint8_t blocked = 0;    // BLK_*: no se movio, y por que
   uint8_t gotStatus = 0;  // ST_* que le acaba de entrar al rival, si prendio
+  bool statusSelf = false; // ...entrou no que PEGA (Poison Point do outro, Rest,
+                           // Gulp Missile): a frase tem de dizer o nome DELE
   uint8_t stageWhich = 0xFF;  // stage tocado, SG_*
   int8_t stageDelta = 0;      // en que sentido
   bool stageSelf = false;     // el stage es del que PEGA, no del que recibe

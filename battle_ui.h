@@ -310,7 +310,7 @@ struct BattleUi {
   uint16_t hpPend = 0;
   // El peor caso ya no es "CHARMANDER used STOMPINGTANTRUM!" (32) sino la
   // desobediencia: "CHARMANDER did STOMPINGTANTRUM instead!" son 38.
-  char msg[44] = { 0 };
+  char msg[96] = { 0 };   // traduzido (leva 75): JA/KO gastam 3 bytes por letra
   // Que bolsillo de la bolsa se esta mirando en el combate: 0 curativos,
   // 1 bolas. Mezclados, con cinco filas y sin forma de bajar, las bolas
   // quedaban enterradas detras de las pociones.
