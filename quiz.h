@@ -20,6 +20,7 @@
 #include <stdint.h>
 #include "dex.h"
 #include "moves.h"
+#include "move_names.h"  // nome do golpe no idioma (o quiz mostra)
 
 #define QUIZ_OPTS 3   // caben tres botones en la pantalla redonda
 #define QUIZ_LEN  5   // preguntas por ronda
@@ -93,7 +94,7 @@ static inline bool qzTipoDe(QuizQ &q) {
   const DexEntry &e = DEX_TBL[d];
   if (e.type1 == T_NONE) return false;
   q.kind = QZ_TYPE_OF;
-  q.subject = e.name;
+  q.subject = dexName(d);   // o nome do idioma (era o de base: FR/DE/JA/KO viam ingles)
   q.subjDex = d;
   q.opt[0] = typeName(e.type1);
   q.right = 0;
@@ -114,14 +115,14 @@ static inline bool qzEvolucionaEn(QuizQ &q) {
   uint16_t evo = DEX_TBL[d].evolvesTo;
   if (!evo || evo > DEX_COUNT) return false;
   q.kind = QZ_EVOLVES;
-  q.subject = DEX_TBL[d].name;
+  q.subject = dexName(d);
   q.subjDex = d;
-  q.opt[0] = DEX_TBL[evo].name;
+  q.opt[0] = dexName(evo);
   q.right = 0;
   for (uint8_t n = 1; n < QUIZ_OPTS; ) {
     int16_t o = (int16_t)(1 + random(DEX_COUNT));
     if (o == (int16_t)evo || o == d) continue;
-    const char *s = DEX_TBL[o].name;
+    const char *s = dexName(o);
     if (qzYaEsta(q, n, s)) continue;
     q.opt[n++] = s;
   }
@@ -134,7 +135,7 @@ static inline bool qzTipoDeGolpe(QuizQ &q) {
   const MoveEntry &mv = MOVE_TBL[m];
   if (mv.type == T_NONE) return false;
   q.kind = QZ_MOVE_TYPE;
-  q.subject = mv.name;
+  q.subject = moveName(m);
   q.subjDex = 0;
   q.opt[0] = typeName(mv.type);
   q.right = 0;
@@ -172,7 +173,7 @@ static inline bool qzPesaMas(QuizQ &q) {
   q.kind = QZ_HEAVIER;
   q.subject = nullptr;          // el enunciado no lleva nombre
   q.subjDex = 0;
-  for (uint8_t i = 0; i < QUIZ_OPTS; i++) q.opt[i] = DEX_TBL[d[i]].name;
+  for (uint8_t i = 0; i < QUIZ_OPTS; i++) q.opt[i] = dexName(d[i]);
   q.right = may;
   return true;
 }
@@ -184,14 +185,14 @@ static inline bool qzQueAprende(QuizQ &q) {
   uint16_t bueno = LEARN_MV[LEARN_OFS[d - 1] + random(n)];
   if (bueno >= MOVE_COUNT) return false;
   q.kind = QZ_LEARNS;
-  q.subject = DEX_TBL[d].name;
+  q.subject = dexName(d);
   q.subjDex = d;
-  q.opt[0] = MOVE_TBL[bueno].name;
+  q.opt[0] = moveName(bueno);
   q.right = 0;
   for (uint8_t k = 1; k < QUIZ_OPTS; ) {
     uint16_t m = (uint16_t)(1 + random(MOVE_COUNT - 1));
     if (qzAprende(d, m)) continue;          // tambien lo aprende: no vale
-    const char *s = MOVE_TBL[m].name;
+    const char *s = moveName(m);
     if (qzYaEsta(q, k, s)) continue;
     q.opt[k++] = s;
   }
@@ -207,12 +208,12 @@ static inline bool qzQuienEs(QuizQ &q, bool silueta) {
   q.subject = nullptr;
   q.subjDex = d;
   q.silueta = silueta;
-  q.opt[0] = DEX_TBL[d].name;
+  q.opt[0] = dexName(d);
   q.right = 0;
   for (uint8_t n = 1; n < QUIZ_OPTS; ) {
     int16_t o = (int16_t)(1 + random(DEX_COUNT));
     if (o == d) continue;
-    const char *s = DEX_TBL[o].name;
+    const char *s = dexName(o);
     if (qzYaEsta(q, n, s)) continue;
     q.opt[n++] = s;
   }

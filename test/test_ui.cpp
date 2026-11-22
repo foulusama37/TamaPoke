@@ -9508,6 +9508,7 @@ TEST(manual74, o_carvalho_fala_cinco_vezes) {
 // CAIXA disse num turno de verdade (bt.msg a cada quadro), golpe a golpe,
 // e que toda frase cabe na caixa com nomes compridos.
 int btParteLinhas(const char *s, int maxW, uint8_t talla, char lin[3][sizeof(bt.msg)], int maxLin);
+const char *moveName(uint16_t mv);
 const char *btFraseCarga(uint16_t g);
 
 static uint16_t golpe75(const char *n) {
@@ -9621,7 +9622,7 @@ TEST(bat75, toda_frase_cabe_na_caixa) {
     std::string nomeMax;
     auto ve = [&](const char *n) { if (n && strlen(n) > nomeMax.size()) nomeMax = n; };
     for (int d = 1; d <= DEX_COUNT; d++) ve(dexName((int16_t)d));
-    for (uint16_t m = 0; m < MOVE_COUNT; m++) ve(MOVE_TBL[m].name);
+    for (uint16_t m = 0; m < MOVE_COUNT; m++) ve(moveName(m));   // o da tela (leva 76)
     for (uint16_t i = 1; i < ITEM_COUNT; i++) ve(ITEM_TBL[i].name);
     for (uint16_t i = 1; i < ABIL_COUNT; i++) ve(abilAt(i).name);
     const char *NOME = nomeMax.c_str();
@@ -9843,4 +9844,174 @@ TEST(lado76, rest_faz_dormir_quem_usou_e_a_frase_diz_ele) {
             "quem usou Rest e quem dorme, e a caixa nao disse:\n" + g);
   CHECK_MSG(g.find(ele + " adormeceu!") == std::string::npos,
             "a caixa disse que o RIVAL dormiu com o meu Rest:\n" + g);
+}
+
+
+// ---- quiz: depois de responder a proxima vem SOZINHA (o dono pediu: so
+// passava com outro toque). Acerto 1,5 s; erro 2,5 s (para ler a certa).
+// A tela final (o premio) continua esperando o toque.
+TEST(quiz_ui, sem_tocar_a_proxima_vem_sozinha) {
+  arranca();
+  todoCerradoT();
+  if (pet.awaitingStarter()) pet.chooseStarter(1);
+  while (pet.isEgg()) pet.eggTap();
+  Pet guarda = pet;
+  randomSeed(7601);
+  quizStart();
+  avanza(100);
+  // acerto: ainda mostrando aos 1,3 s, ja na proxima aos 1,7 s
+  quizTap(233, (int16_t)qzCentroY(quizQ.right));
+  avanza(1300);
+  CHECK_MSG(quizIdx == 0 && quizPick >= 0, "passou cedo demais depois do acerto");
+  avanza(400);
+  CHECK_MSG(quizIdx == 1 && quizPick == -1, "depois do acerto nao passou sozinha");
+  // erro: espera mais (2,5 s)
+  quizTap(233, (int16_t)qzCentroY((quizQ.right + 1) % QUIZ_OPTS));
+  avanza(2300);
+  CHECK_MSG(quizIdx == 1 && quizPick >= 0, "depois do erro passou antes dos 2,5 s");
+  avanza(400);
+  CHECK_MSG(quizIdx == 2 && quizPick == -1, "depois do erro nao passou sozinha");
+  // ate o fim sem tocar: a tela do premio fica (nao fecha sozinha)
+  for (int k = 0; k < 8 && !quizEnd; k++) {
+    quizTap(233, (int16_t)qzCentroY(quizQ.right));
+    avanza(2700);
+  }
+  CHECK_MSG(quizEnd, "o quiz nao chegou ao fim passando sozinho");
+  avanza(5000);
+  CHECK_MSG(quizOpen && quizEnd, "a tela do premio fechou sem o toque");
+  quizTap(233, 233);
+  avanza(100);
+  CHECK_MSG(!quizOpen, "o toque na tela do premio nao fechou");
+  pet = guarda;
+  todoCerradoT();
+}
+
+
+// ---- leva 76: o nome OFICIAL do golpe no idioma. Todo golpe, em cada
+// lugar onde aparece, fica dentro da sua caixa: nenhum pixel passa da borda
+// (printNaLargura encolhe e, se preciso, corta com ".."). Latinas so: no
+// simulador nao ha fonte CJK.
+uint8_t printNaLargura(const char *s, int x, int y, int maxW, uint8_t talla);
+const char *moveName(uint16_t mv);
+
+static int pixelsDireita76(int x0, int y0, int h) {
+  const uint16_t *fb = gfx->getFramebuffer();
+  int n = 0;
+  for (int y = y0; y < y0 + h; y++)
+    for (int x = x0; x < 466; x++)
+      if (fb[y * 466 + x]) n++;
+  return n;
+}
+
+TEST(nomes76, todo_golpe_fica_dentro_da_caixa) {
+  struct Lugar { const char *nome; int maxW; uint8_t talla; bool podeCortar; };
+  // o espaco do golpe na ficha (2x2), a lista da ficha, o cartao do combate
+  const Lugar L[] = { { "espaco da ficha", 118, 1, true },
+                      { "lista da ficha", 200, 2, false },
+                      { "cartao do combate", 192, 2, false } };
+  for (int li = 0; li < LANG_COUNT; li++) {
+    if (LANG_IS_CJK((Lang)li)) continue;
+    setLang((Lang)li);
+    applyLangFont();
+    int cortados = 0;
+    for (uint16_t m = 1; m < MOVE_COUNT; m++) {
+      const char *nm = moveName(m);
+      for (const Lugar &l : L) {
+        gfx->fillScreen(0);
+        gfx->setTextColor(0xFFFF);
+        uint8_t t = printNaLargura(nm, 100, 200, l.maxW, l.talla);
+        int fora = pixelsDireita76(100 + l.maxW, 196, 24);
+        CHECK_MSG(fora == 0, std::string("[") + NOME73[li] + "] " + nm + " passa da borda do " +
+                  l.nome + ": " + std::to_string(fora) + " pixels");
+        bool cabe = (int)textW(nm, t) <= l.maxW;
+        if (!cabe) {
+          cortados++;
+          CHECK_MSG(l.podeCortar, std::string("[") + NOME73[li] + "] " + nm +
+                    " teve de ser cortado no " + l.nome);
+        }
+      }
+    }
+    // hoje so o TORMENTA DE DIAMANTES (ES) se corta no espaco da ficha
+    CHECK_MSG(cortados <= 2, std::string("[") + NOME73[li] + "] " + std::to_string(cortados) +
+              " nomes cortados: a caixa ficou pequena demais para os nomes do idioma");
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+  avanza(100);
+}
+
+// o nome na tela segue o idioma (e o id nao muda: e ele que o motor usa)
+TEST(nomes76, o_cartao_do_combate_mostra_o_nome_do_idioma) {
+  for (int li = 0; li < LANG_COUNT; li++) {
+    preparaElMundoT();
+    setLang((Lang)li);
+    applyLangFont();
+    pet.energy = 100;
+    pet.hpLeft = pet.maxHp();
+    battleStart(16, 10);
+    for (int i = 0; i < 400 && bt.phase != BP_CHOOSE; i++) avanza(16);
+    Combatant &yo = bt.b.side[BT_PLAYER];
+    uint16_t g = golpe75("THUNDERBOLT");
+    yo.moves[0] = g; yo.usesLeft[0] = 30; yo.nMoves = 1;
+    bt.sel = 0;
+    mockTextoTodoReset();
+    avanza(200);
+    std::string nm = moveName(g);
+    CHECK_MSG(mockTextoTodo().find(nm) != std::string::npos,
+              std::string("[") + NOME73[li] + "] o cartao nao mostrou " + nm);
+    if (li != LANG_EN && li != LANG_PT)
+      CHECK_MSG(nm != "THUNDERBOLT", std::string("[") + NOME73[li] + "] sem nome proprio");
+    CHECK_MSG(!strcmp(MOVE_TBL[g].name, "THUNDERBOLT"), "o id do golpe mudou");
+    cierraElCombate();
+    todoCerradoT();
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+  avanza(100);
+}
+
+
+// ---- previa da leva 76 (so com TAMA_PREV76=<idioma>): o cartao do golpe no
+// combate, a ficha de golpes e uma pergunta do quiz sobre golpe.
+extern uint8_t quizIdx;
+TEST(prev76, fotos_dos_nomes_de_golpe) {
+  if (!getenv("TAMA_PREV76")) return;
+  const Lang lg = (Lang)atoi(getenv("TAMA_PREV76"));
+  const std::string pre = std::string("p76_") + NOME73[lg] + "_";
+  preparaElMundoT();
+  setLang(lg);
+  applyLangFont();
+  pet.energy = 100;
+  pet.hpLeft = pet.maxHp();
+  battleStart(16, 10);
+  for (int i = 0; i < 400 && bt.phase != BP_CHOOSE; i++) avanza(16);
+  Combatant &yo = bt.b.side[BT_PLAYER];
+  const char *G[4] = { "THUNDERBOLT", "DIAMONDSTORM", "SUNNYDAY", "DESLIZAMIENTO" };
+  for (int k = 0; k < 4; k++) { yo.moves[k] = golpe75(G[k]); yo.usesLeft[k] = 10; }
+  yo.nMoves = 4;
+  for (int k = 0; k < 2; k++) {
+    bt.sel = (uint8_t)k;
+    avanza(200);
+    volcaPantalla((pre + "cartao" + std::to_string(k)).c_str());
+  }
+  cierraElCombate();
+  todoCerradoT();
+  // a ficha de golpes: os quatro do principal
+  for (int k = 0; k < 4; k++) pet.ppMove[k] = golpe75(G[k]);
+  cardOpen = true;
+  cardPage = 2;
+  moveShown = 0;
+  avanza(300);
+  volcaPantalla((pre + "ficha").c_str());
+  todoCerradoT();
+  // o quiz: uma pergunta de tipo de golpe
+  quizStart();
+  for (int t = 0; t < 40 && quizQ.kind != QZ_MOVE_TYPE; t++) quizUna(quizQ, QZ_MOVE_TYPE);
+  avanza(300);
+  volcaPantalla((pre + "quiz").c_str());
+  quizOpen = false;
+  todoCerradoT();
+  setLang(LANG_EN);
+  applyLangFont();
+  avanza(100);
 }

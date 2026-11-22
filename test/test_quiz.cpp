@@ -40,24 +40,24 @@ static bool esBuena(const QuizQ &q, const char *op) {
     }
     case QZ_EVOLVES: {
       uint16_t evo = DEX_TBL[q.subjDex].evolvesTo;
-      return evo && strcmp(op, DEX_TBL[evo].name) == 0;
+      return evo && strcmp(op, dexName((int16_t)evo)) == 0;
     }
     case QZ_MOVE_TYPE: {
       for (int m = 0; m < MOVE_COUNT; m++)
-        if (strcmp(MOVE_TBL[m].name, q.subject) == 0)
+        if (strcmp(moveName((uint16_t)m), q.subject) == 0)
           return strcmp(op, typeName(MOVE_TBL[m].type)) == 0;
       return false;
     }
     case QZ_LEARNS: {
       for (int m = 0; m < MOVE_COUNT; m++)
-        if (strcmp(MOVE_TBL[m].name, op) == 0 && qzAprende(q.subjDex, m))
+        if (strcmp(moveName((uint16_t)m), op) == 0 && qzAprende(q.subjDex, m))
           return true;
       return false;
     }
     case QZ_WHO:
       // la buena es SU nombre; otra especie con el mismo nombre tambien
       // lo seria, y por eso el generador las descarta
-      return strcmp(op, DEX_TBL[q.subjDex].name) == 0;
+      return strcmp(op, dexName(q.subjDex)) == 0;
     default:
       return false;   // QZ_HEAVIER se mira aparte (es comparativa)
   }
@@ -126,7 +126,7 @@ TEST(quiz, el_que_pesa_mas_pesa_mas_y_se_nota) {
     uint16_t pesos[QUIZ_OPTS] = { 0, 0, 0 };
     for (int i = 0; i < QUIZ_OPTS; i++)
       for (int d = 1; d <= DEX_COUNT; d++)
-        if (strcmp(DEX_TBL[d].name, q.opt[i]) == 0) {
+        if (strcmp(dexName((int16_t)d), q.opt[i]) == 0) {
           pesos[i] = DEX_TBL[d].weight10;
           break;
         }
@@ -192,4 +192,55 @@ TEST(quiz, no_repite_la_clase_de_la_anterior) {
               std::string("dos seguidas de la clase ") +
               std::to_string(a.kind));
   }
+}
+
+// A TABELA DE NOMES DOS GOLPES ANDA NA LINHA DA MOVE_TBL.
+//
+// move_names.h e indexada pela linha de moves.h. Se moves.h ganhar um golpe
+// e o gerador de nomes nao rodar, cada nome passa a ser o do VIZINHO e
+// ninguem ve: e o que ja aconteceu com gNNN/mNNN. Por isso cada linha leva o
+// id, e aqui se confere linha a linha.
+TEST(nomes_golpes, a_tabela_de_nomes_anda_na_linha_da_MOVE_TBL) {
+  for (uint16_t m = 0; m < MOVE_COUNT; m++)
+    CHECK_MSG(strcmp(MOVE_NAME_ID[m], MOVE_TBL[m].name) == 0,
+              std::string("linha ") + std::to_string(m) + ": nomes de " + MOVE_NAME_ID[m] +
+              " mas o golpe e " + MOVE_TBL[m].name + " (rode tools/gen_move_names.py)");
+}
+
+// Dois golpes com o MESMO nome na tela deixam o quiz com duas respostas
+// ("de que tipo e X?") e o jogador sem saber qual e qual. Ja aconteceu na
+// primeira versao: o DESLIZAMIENTO do Anil saiu FRANA, que e o Rock Slide.
+TEST(nomes_golpes, nenhum_nome_repetido_em_nenhum_idioma) {
+  for (int lg = 0; lg < LANG_COUNT; lg++) {
+    gLang = (Lang)lg;
+    for (uint16_t a = 1; a < MOVE_COUNT; a++)
+      for (uint16_t b = (uint16_t)(a + 1); b < MOVE_COUNT; b++)
+        if (strcmp(moveName(a), moveName(b)) == 0)
+          CHECK_MSG(false, std::string("[") + std::to_string(lg) + "] " + MOVE_TBL[a].name +
+                           " e " + MOVE_TBL[b].name + " se chamam os dois " + moveName(a));
+  }
+  gLang = LANG_DEFAULT;
+}
+
+// E o quiz roda em todos os idiomas com o oraculo procurando pelo nome DO
+// IDIOMA: e la que um nome de base sobrando (o quiz mostrava ingles em
+// FR/DE/JA/KO) ou um nome traduzido torto apareceria.
+TEST(nomes_golpes, o_quiz_tem_uma_resposta_boa_em_todos_os_idiomas) {
+  for (int lg = 0; lg < LANG_COUNT; lg++) {
+    gLang = (Lang)lg;
+    for (int s2 = 0; s2 < 600; s2++) {
+      randomSeed(76000 + s2);
+      QuizQ q;
+      if (!quizSiguiente(q)) continue;
+      if (q.kind == QZ_HEAVIER) continue;
+      int buenas = 0;
+      for (int i = 0; i < QUIZ_OPTS; i++) buenas += esBuena(q, nom(q, i)) ? 1 : 0;
+      CHECK_MSG(buenas == 1, std::string("[") + std::to_string(lg) + "] clase " +
+                std::to_string(q.kind) + " sobre '" + (q.subject ? q.subject : "?") +
+                "': " + std::to_string(buenas) + " respuestas buenas");
+      CHECK_MSG(esBuena(q, nom(q, q.right)), std::string("[") + std::to_string(lg) +
+                "] la marcada como buena no lo es");
+    }
+  }
+  gLang = LANG_DEFAULT;
 }

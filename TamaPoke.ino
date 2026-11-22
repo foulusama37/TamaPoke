@@ -38,6 +38,7 @@
 #include "intro.h"        // intro de primera partida (creditos, profesor)
 #include "bgs.h"          // que escenario de /bg va en cada sitio
 #include "qr_manual.h"    // o QR do manual (tools/gen_qr_manual.py)
+#include "move_names.h"   // o nome do golpe NA TELA (tools/gen_move_names.py)
 
 // Version del firmware. Subir este numero en cada release (y manifest.json para
 // el instalador web). Se muestra en la pantalla de ajustes y por serie al arrancar.
@@ -424,6 +425,12 @@ uint8_t quizIdx = 0;       // que pregunta va, 0..QUIZ_LEN-1
 uint8_t quizHits = 0;      // aciertos
 int8_t quizPick = -1;      // boton tocado (-1 = todavia nada)
 uint32_t quizUntil = 0;    // hasta cuando se ensena el acierto/fallo
+// Depois de responder, a proxima vem SOZINHA (o dono pediu: antes so com
+// outro toque). O erro fica mais tempo: e quando se quer ler qual era a
+// certa. Tocar antes continua passando na hora (passado o quizUntil).
+#define QZ_AUTO_OK_MS 1500
+#define QZ_AUTO_ERR_MS 2500
+uint32_t quizAuto = 0;     // quando passa sozinha (0 = nao esta contando)
 bool quizEnd = false;      // pantalla final (marcador y premio)
 uint8_t quizPrize = 0;     // objeto entregado, 0 si ninguno
 uint8_t quizPrizeQtd = 1;  // cuantos (los 5 de 5 dan dos Rare Candy)
@@ -3050,6 +3057,7 @@ void applyLangFont() {
 //
 // Para la fuente clasica devuelve EXACTAMENTE la misma cuenta que habia antes,
 // asi que este cambio no mueve un pixel en los seis idiomas actuales.
+uint8_t printNaLargura(const char *s, int x, int y, int maxW, uint8_t talla);
 uint16_t textW(const char *s, uint8_t size) {
   if (!gCjkFont) return (uint16_t)strlen(s) * LATIN_ADV * size;
   int16_t x1, y1;
@@ -3419,6 +3427,11 @@ void render() {
     return;
   }
   if (quizOpen) {
+    if (quizPick >= 0 && !quizEnd && quizAuto && (int32_t)(millis() - quizAuto) >= 0) {
+      quizAuto = 0;
+      quizIdx++;
+      quizNextQ();
+    }
     renderQuiz();
     return;
   }
@@ -4810,6 +4823,7 @@ void quizNextQ() {
 
 void quizStart() {
   quizOpen = true;
+  quizAuto = 0;
   quizEnd = false;
   quizIdx = 0;
   quizHits = 0;
@@ -4825,6 +4839,7 @@ void quizTap(int16_t x, int16_t y) {
   if (quizEnd) { quizOpen = false; return; }
   if (quizPick >= 0) {                 // ensenando el resultado
     if (millis() < quizUntil) return;  // un momento para leerlo
+    quizAuto = 0;
     quizIdx++;
     quizNextQ();
     return;
@@ -4835,6 +4850,7 @@ void quizTap(int16_t x, int16_t y) {
     if (y < by || y > by + qzBtnH()) continue;
     quizPick = (int8_t)i;
     quizUntil = millis() + 700;
+    quizAuto = millis() + (i == (int)quizQ.right ? QZ_AUTO_OK_MS : QZ_AUTO_ERR_MS);
     if (i == (int)quizQ.right) { quizHits++; sfxPlay(SFX_MEDAL); }
     else sfxPlay(SFX_DENY);
     return;
@@ -6406,9 +6422,8 @@ void renderCardMoves() {
     drawTypeBadge(x + 4 + TYPE_BADGE / 2, y + SLOT_H / 2, m.type);
     int tx = x + 6 + TYPE_BADGE;
     gfx->setTextColor(CARD_INK);
+    printNaLargura(moveName(v.slotMv[i]), tx, y + 5, x + SLOT_W - 4 - tx, 1);
     setSize(1);
-    setCur(tx, y + 5);
-    printT(m.name);
     char pp[12];
     snprintf(pp, sizeof(pp), "PP %u/%u", v.slotPp[i], movePP(v.slotMv[i]));
     setCur(tx, y + 16);
@@ -6430,9 +6445,8 @@ void renderCardMoves() {
     if (puesto) gfx->fillRoundRect(62, y, 316, 32, 8, CARD_DIM);
     drawTypeBadge(68 + TYPE_BADGE / 2, y + 16, m.type);
     gfx->setTextColor(CARD_INK);
-    setSize(2);
-    setCur(70 + TYPE_BADGE + 6, y + 8);
-    printT(m.name);
+    // ate antes do poder e da marca TM (que comecam por volta de x=310)
+    printNaLargura(moveName(todos[i]), 70 + TYPE_BADGE + 6, y + 8, 306 - (70 + TYPE_BADGE + 6), 2);
     setSize(1);
     char der[16];
     if (m.power) snprintf(der, sizeof(der), "%u", m.power);
@@ -7176,6 +7190,40 @@ const char *drawWrapped(const char *s, int y0, int cols, int lh, int maxLines, u
   }
   while (*s == ' ') s++;
   return s;
+}
+
+// Escreve `s` em (x, y) sem passar de maxW. Tenta a talla pedida; se nao
+// cabe, uma menor (so no latino: a fonte CJK nao encolhe, o unifont tem
+// 16 px); se nem assim, corta e poe ".." -- nunca no meio de uma letra
+// UTF-8. A linha fica centrada na mesma altura: a talla menor desce
+// 4 px por degrau. Devolve a talla usada. Nasceu com os nomes oficiais
+// dos golpes (leva 76): TORMENTA DE DIAMANTES nao cabe onde cabia SURF.
+uint8_t printNaLargura(const char *s, int x, int y, int maxW, uint8_t talla) {
+  uint8_t t = talla;
+  while (t > 1 && !gCjkFont && (int)textW(s, t) > maxW) t--;
+  int dy = (talla - t) * 4;
+  setSize(t);
+  if ((int)textW(s, t) <= maxW) {
+    setCur(x, y + dy);
+    printT(s);
+    return t;
+  }
+  char buf[64];
+  int n = 0, len = (int)strlen(s);
+  while (n < len && n < (int)sizeof(buf) - 3) {
+    unsigned char c = (unsigned char)s[n];
+    int cl = !gCjkFont || c < 0x80 ? 1 : (c & 0xE0) == 0xC0 ? 2 : (c & 0xF0) == 0xE0 ? 3 : 4;
+    if (n + cl > (int)sizeof(buf) - 3) break;
+    memcpy(buf, s, n + cl);
+    memcpy(buf + n + cl, "..", 3);
+    if ((int)textW(buf, t) > maxW) break;
+    n += cl;
+  }
+  memcpy(buf, s, n);
+  memcpy(buf + n, "..", 3);
+  setCur(x, y + dy);
+  printT(buf);
+  return t;
 }
 
 // Por donde va la ficha de la Pokedex y donde acabo la pagina pintada.

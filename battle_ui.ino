@@ -1210,10 +1210,10 @@ static void btLaunch(uint8_t who, uint8_t slot) {
     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_IGNORES_YOU), dexName(att.pareceDex()));
   else if (ord.kind == OB_OTHER)
     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_DID_INSTEAD), dexName(att.pareceDex()),
-             MOVE_TBL[mv < MOVE_COUNT ? mv : MOVE_STRUGGLE].name);
+             moveName(mv < MOVE_COUNT ? mv : MOVE_STRUGGLE));
   else
     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_USED), dexName(att.pareceDex()),
-             MOVE_TBL[mv < MOVE_COUNT ? mv : MOVE_STRUGGLE].name);
+             moveName(mv < MOVE_COUNT ? mv : MOVE_STRUGGLE));
   bt.pendingSlot = slot;
   bt.phase = BP_SAY;
   bt.until = millis() + 850;
@@ -2662,11 +2662,16 @@ static void btMoveCard() {
                                                   : MOVE_STRUGGLE;
   const MoveEntry &m = MOVE_TBL[mv];
 
-  gfx->setTextSize(2);
+  // o nome do idioma, entre as duas flechas (40 px de cada lado). Antes ia
+  // com gfx->print direto e strlen*12: sem CJK e sem encolher nada.
   gfx->setTextColor(INK_K);
-  int tw = (int)strlen(m.name) * 12;
-  gfx->setCursor(233 - tw / 2, BT_CARD_Y0 + 12);
-  gfx->print(m.name);
+  {
+    const char *nm = moveName(mv);
+    const int livre = w - 80;
+    uint8_t tz = (int)textW(nm, 2) <= livre || LANG_IS_CJK(gLang) ? 2 : 1;
+    int tw = (int)textW(nm, tz);
+    printNaLargura(nm, 233 - (tw < livre ? tw : livre) / 2, BT_CARD_Y0 + 12, livre, 2);
+  }
 
   // chip del tipo: el mismo de la Pokedex, con simbolo. Cabe de +32 a +58,
   // justo entre el nombre (acaba en +28) y la linea de POW (+60).
@@ -3299,7 +3304,7 @@ void btRenderBadge() {
   printTituloC(l, 256, 1, C565(0x60, 0x60, 0x78), C565(0xd8, 0xd8, 0xe0));
   int y = 282;
   if (pet.lastTM >= 0) {
-    snprintf(l, sizeof(l), T(S_BADGE_TM), MOVE_TBL[tmMove((uint16_t)pet.lastTM)].name);
+    snprintf(l, sizeof(l), T(S_BADGE_TM), moveName(tmMove((uint16_t)pet.lastTM)));
     printTituloC(l, y, tituloTalla(l, 2, 300), C565(0x30, 0x58, 0xb0),
                  C565(0xc8, 0xd0, 0xe8));
     y += 30;
