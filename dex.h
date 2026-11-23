@@ -341,8 +341,24 @@ static const uint16_t TYPE_COLOR[T_COUNT] = {
   0xBDDA,  // steel
   0xECD5,  // fairy
 };
+// por idioma, na ordem do enum Lang (leva 77: o quiz perguntava em
+// espanhol e respondia FIRE)
+static_assert(LANG_ES == 0 && LANG_EN == 1 && LANG_FR == 2 && LANG_DE == 3 &&
+              LANG_IT == 4 && LANG_PT == 5 && LANG_JA == 6 && LANG_KO == 7,
+              "TYPE_NAME_L segue a ordem do enum Lang");
+static const char *const TYPE_NAME_L[LANG_COUNT][T_COUNT] = {
+  { "---", "NORMAL", "LUCHA", "VOLADOR", "VENENO", "TIERRA", "ROCA", "BICHO", "FANTASMA", "FUEGO", "AGUA", "PLANTA", "EL\220CTRICO", "PSIQUICO", "HIELO", "DRAGON", "SINIESTRO", "ACERO", "HADA" },  // ES
+  { "---", "NORMAL", "FIGHT", "FLY", "POISON", "GROUND", "ROCK", "BUG", "GHOST", "FIRE", "WATER", "GRASS", "ELEC", "PSY", "ICE", "DRAGON", "DARK", "STEEL", "FAIRY" },  // EN
+  { "---", "NORMAL", "COMBAT", "VOL", "POISON", "SOL", "ROCHE", "INSECTE", "SPECTRE", "FEU", "EAU", "PLANTE", "\220LECTRIK", "PSY", "GLACE", "DRAGON", "T\220NEBRES", "ACIER", "F\220E" },  // FR
+  { "---", "NORMAL", "KAMPF", "FLUG", "GIFT", "BODEN", "GESTEIN", "K\216FER", "GEIST", "FEUER", "WASSER", "PFLANZE", "ELEKTRO", "PSYCHO", "EIS", "DRACHE", "UNLICHT", "STAHL", "FEE" },  // DE
+  { "---", "NORMALE", "LOTTA", "VOLANTE", "VELENO", "TERRA", "ROCCIA", "COLEOTTERO", "SPETTRO", "FUOCO", "ACQUA", "ERBA", "ELETTRO", "PSICO", "GHIACCIO", "DRAGO", "BUIO", "ACCIAIO", "FOLLETTO" },  // IT
+  { "---", "NORMAL", "LUTADOR", "VOADOR", "VENENOSO", "TERRESTRE", "PEDRA", "INSETO", "FANTASMA", "FOGO", "AGUA", "PLANTA", "EL\220TRICO", "PSIQUICO", "GELO", "DRAG\262O", "SOMBRIO", "A\200O", "FADA" },  // PT
+  { "---", "ノーマル", "かくとう", "ひこう", "どく", "じめん", "いわ", "むし", "ゴースト", "ほのお", "みず", "くさ", "でんき", "エスパー", "こおり", "ドラゴン", "あく", "はがね", "フェアリー" },  // JA
+  { "---", "노말", "격투", "비행", "독", "땅", "바위", "벌레", "고스트", "불꽃", "물", "풀", "전기", "에스퍼", "얼음", "드래곤", "악", "강철", "페어리" },  // KO
+};
 static inline const char *typeName(uint8_t t) {
-  return t < T_COUNT ? TYPE_NAME[t] : TYPE_NAME[T_NONE];
+  const uint8_t l = gLang < LANG_COUNT ? (uint8_t)gLang : (uint8_t)LANG_EN;
+  return TYPE_NAME_L[l][t < T_COUNT ? t : T_NONE];
 }
 static inline uint16_t typeColor(uint8_t t) {
   return t < T_COUNT ? TYPE_COLOR[t] : TYPE_COLOR[T_NONE];

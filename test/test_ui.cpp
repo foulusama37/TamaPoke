@@ -10015,3 +10015,76 @@ TEST(prev76, fotos_dos_nomes_de_golpe) {
   applyLangFont();
   avanza(100);
 }
+
+
+// ---- leva 77: o nome do TIPO no idioma (o quiz perguntava em espanhol e
+// respondia FIRE). Em cada idioma, cada tipo cabe nos chips de largura
+// fixa: o da Pokedex (104), o da ficha (108), as opcoes do ginasio (96) e
+// o saco do ginasio (72, que cresce). No CJK o simulador nao tem a fonte:
+// conta-se 16 px por letra larga.
+TEST(tipos77, o_nome_do_tipo_e_do_idioma_e_cabe_nos_chips) {
+  const int FIXOS[] = { 104, 108, 96, 72 };
+  for (int li = 0; li < LANG_COUNT; li++) {
+    setLang((Lang)li);
+    applyLangFont();
+    for (uint8_t t = 1; t < T_COUNT; t++) {
+      const char *n = typeName(t);
+      int w;
+      if (LANG_IS_CJK((Lang)li)) {
+        w = 0;
+        for (const unsigned char *p = (const unsigned char *)n; *p;) {
+          if (*p < 0x80) { w += 8; p++; } else { w += 16; p += (*p & 0xF0) == 0xE0 ? 3 : 2; }
+        }
+      } else {
+        w = (int)textW(n, 1);
+      }
+      for (int f : FIXOS) {
+        // o saco cresce (min 72): conta a largura que ele vai ter
+        int chip = f == 72 ? (w + 12 > 72 ? w + 12 : 72) : f;
+        CHECK_MSG(w + 8 <= chip, std::string("[") + NOME73[li] + "] tipo " + n +
+                  " (" + std::to_string(w) + " px) nao cabe no chip de " + std::to_string(f));
+      }
+    }
+    // nao-ingles: o nome e o do idioma, nao o rotulo ingles
+    if (li != LANG_EN) {
+      bool algumDiferente = false;
+      for (uint8_t t = 1; t < T_COUNT; t++)
+        algumDiferente |= strcmp(typeName(t), TYPE_NAME[t]) != 0;
+      CHECK_MSG(algumDiferente, std::string("[") + NOME73[li] + "] os tipos sairam em ingles");
+    }
+  }
+  // o ingles nao mudou (o chip do golpe foi medido com FIGHT/ELEC/PSY)
+  setLang(LANG_EN);
+  applyLangFont();
+  for (uint8_t t = 0; t < T_COUNT; t++) CHECK_EQ(std::string(typeName(t)), std::string(TYPE_NAME[t]));
+  avanza(100);
+}
+
+// e o cartao do golpe no combate mostra o tipo do idioma
+TEST(tipos77, o_chip_do_golpe_no_combate_esta_no_idioma) {
+  for (int li = 0; li < LANG_COUNT; li++) {
+    preparaElMundoT();
+    setLang((Lang)li);
+    applyLangFont();
+    pet.energy = 100;
+    pet.hpLeft = pet.maxHp();
+    battleStart(16, 10);
+    for (int i = 0; i < 400 && bt.phase != BP_CHOOSE; i++) avanza(16);
+    Combatant &yo = bt.b.side[BT_PLAYER];
+    uint16_t g = golpe75("FLAMETHROWER");
+    yo.moves[0] = g; yo.usesLeft[0] = 30; yo.nMoves = 1;
+    bt.sel = 0;
+    mockTextoTodoReset();
+    avanza(200);
+    // da TABELA do idioma, nao de typeName(): comparar com a propria funcao
+    // era tautologia (a sabotagem que a fazia ignorar o idioma passava)
+    std::string tipo = TYPE_NAME_L[li][MOVE_TBL[g].type];
+    CHECK_MSG(mockTextoTodo().find(tipo) != std::string::npos,
+              std::string("[") + NOME73[li] + "] o chip nao disse " + tipo);
+    cierraElCombate();
+    todoCerradoT();
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+  avanza(100);
+}

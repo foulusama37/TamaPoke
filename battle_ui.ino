@@ -2675,7 +2675,9 @@ static void btMoveCard() {
 
   // chip del tipo: el mismo de la Pokedex, con simbolo. Cabe de +32 a +58,
   // justo entre el nombre (acaba en +28) y la linea de POW (+60).
-  int cw = (int)strlen(typeName(m.type)) * 6 + 42;
+  // pela largura de verdade: o nome do tipo agora e do idioma (leva 77)
+  // e em japones strlen conta 3 bytes por kana
+  int cw = (int)textW(typeName(m.type), 1) + 42;
   drawTypeChip(233 - cw / 2, BT_CARD_Y0 + 32, cw, 26, m.type, 1);
 
   char izq[16], der[16];

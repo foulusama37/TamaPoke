@@ -4069,7 +4069,13 @@ static void renderGymRound(uint32_t now, uint16_t ink) {
   gfx->drawRoundRect(sx - 40, top, 80, 126, 24, ink);
   // mas alto que antes para que quepa el simbolo encima del rotulo; el saco
   // mide 126, asi que de top+34 a top+90 sigue holgado
-  drawTypeChip(sx - 36, top + 34, 72, 56, gymBagType, 1);
+  // 72 de largura cabe ate COLEOTTERO; em japones FAIRY e 5 kana (80 px):
+  // ai o chip cresce, o saco tem folga dos lados
+  {
+    int cw = (int)textW(typeName(gymBagType), 1) + 12;
+    if (cw < 72) cw = 72;
+    drawTypeChip(sx - cw / 2, top + 34, cw, 56, gymBagType, 1);
+  }
 
   drawGymMon(CX - 104, 306);
 

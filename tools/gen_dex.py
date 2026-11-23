@@ -341,9 +341,28 @@ def main():
     for t in ORDEN_TIPOS:
         out.append(f'  0x{rgb565(COLORES[t]):04X},  // {t}\n')
     out.append("};\n")
+    # O nome do tipo NA TELA, por idioma (tools/gen_type_names.py). Ingles
+    # segue com as etiquetas curtas de cima; os outros, o nome oficial.
+    from type_names import TYPE_NAMES
+    ling = ["ES", "EN", "FR", "DE", "IT", "PT", "JA", "KO"]
+    if TYPE_NAMES["EN"] != [ETIQUETAS[t] for t in ORDEN_TIPOS]:
+        raise SystemExit("type_names.py EN difere das ETIQUETAS: rode gen_type_names.py")
+    out.append(
+        "// por idioma, na ordem do enum Lang (leva 77: o quiz perguntava em\n"
+        "// espanhol e respondia FIRE)\n"
+        "static_assert(LANG_ES == 0 && LANG_EN == 1 && LANG_FR == 2 && LANG_DE == 3 &&\n"
+        "              LANG_IT == 4 && LANG_PT == 5 && LANG_JA == 6 && LANG_KO == 7,\n"
+        "              \"TYPE_NAME_L segue a ordem do enum Lang\");\n"
+        "static const char *const TYPE_NAME_L[LANG_COUNT][T_COUNT] = {\n")
+    from cp437_up import literal_c
+    for lg in ling:
+        lit = (lambda s: '"%s"' % s) if lg in ("JA", "KO") else literal_c
+        out.append("  { " + ", ".join(lit(s) for s in TYPE_NAMES[lg]) + " },  // " + lg + "\n")
+    out.append("};\n")
     out.append(
         "static inline const char *typeName(uint8_t t) {\n"
-        "  return t < T_COUNT ? TYPE_NAME[t] : TYPE_NAME[T_NONE];\n"
+        "  const uint8_t l = gLang < LANG_COUNT ? (uint8_t)gLang : (uint8_t)LANG_EN;\n"
+        "  return TYPE_NAME_L[l][t < T_COUNT ? t : T_NONE];\n"
         "}\n"
         "static inline uint16_t typeColor(uint8_t t) {\n"
         "  return t < T_COUNT ? TYPE_COLOR[t] : TYPE_COLOR[T_NONE];\n"

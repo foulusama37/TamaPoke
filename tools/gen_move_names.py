@@ -27,6 +27,9 @@ import sys
 import time
 import unicodedata
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from cp437_up import maiuscula, literal_c
+
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(RAIZ, "tools", "downloads", "pokeapi_moves")
 LINGUAS = ["ES", "EN", "FR", "DE", "IT", "PT", "JA", "KO"]
@@ -54,16 +57,9 @@ PROPRIOS = {
 
 
 def latino(s):
-    s = s.replace("’", "'").replace("‘", "'").replace(" ", " ")
-    # ligaduras que a fonte nao tem: escrevem-se separadas (Coeur, Aetherium)
-    for a, b in (("Œ", "OE"), ("œ", "oe"), ("Æ", "AE"), ("æ", "ae")):
-        s = s.replace(a, b)
-    s = unicodedata.normalize("NFD", s)
-    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
-    s = s.upper()
-    if any(ord(c) >= 128 for c in s):
-        raise SystemExit("sobrou caractere fora do ASCII: %r" % s)
-    return s
+    # maiusculas com os acentos que a fonte TEM (KÄFER, ÉLECTRIK); as
+    # ligaduras viram duas letras e os acentos sem glifo caem (cp437_up.py)
+    return maiuscula(s)
 
 
 def ids_de_moves_h():
@@ -158,7 +154,8 @@ def main():
             continue          # PT usa o EN (a PokeAPI nao tem portugues)
         out.append("")
         out.append("static const char *const MOVE_NAME_%s[MOVE_COUNT] = {" % lg)
-        out += ["  %s," % c_str(s) for s in tab[lg]]
+        lit = c_str if lg in ("JA", "KO") else literal_c
+        out += ["  %s," % lit(s) for s in tab[lg]]
         out.append("};")
     out += ["",
             "static inline const char *moveName(uint16_t mv) {",
