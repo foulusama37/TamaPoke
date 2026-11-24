@@ -1,0 +1,1909 @@
+{
+ "itens": {
+  "LEFTOVERS": {
+   "nome": "Restos"
+  },
+  "SITRUSBERRY": {
+   "nome": "Baga Sitrus"
+  },
+  "ORANBERRY": {
+   "nome": "Baga Oran"
+  },
+  "LUMBERRY": {
+   "nome": "Baga Lum"
+  },
+  "FOCUSSASH": {
+   "nome": "Faixa do Foco"
+  },
+  "LIFEORB": {
+   "nome": "Orbe da Vida"
+  },
+  "CHOICEBAND": {
+   "nome": "Faixa de Escolha"
+  },
+  "CHOICESPECS": {
+   "nome": "Lentes de Escolha"
+  },
+  "QUICKCLAW": {
+   "nome": "Garra Rápida"
+  },
+  "SCOPELENS": {
+   "nome": "Lente de Mira"
+  },
+  "EVERSTONE": {
+   "nome": "Pedra Eterna"
+  },
+  "CHARCOAL": {
+   "nome": "Carvão"
+  },
+  "MYSTICWATER": {
+   "nome": "Gota Mística"
+  },
+  "MIRACLESEED": {
+   "nome": "Semente Milagrosa"
+  },
+  "MAGNET": {
+   "nome": "Imã"
+  },
+  "TWISTEDSPOON": {
+   "nome": "Colher Torta"
+  },
+  "NEVERMELTICE": {
+   "nome": "Gelo Eterno"
+  },
+  "BLACKBELT": {
+   "nome": "Faixa Preta"
+  },
+  "SHARPBEAK": {
+   "nome": "Bico Afiado"
+  },
+  "POISONBARB": {
+   "nome": "Ferrão Venenoso"
+  },
+  "SOFTSAND": {
+   "nome": "Areia Macia"
+  },
+  "HARDSTONE": {
+   "nome": "Pedra Dura"
+  },
+  "SILVERPOWDER": {
+   "nome": "Pó Prateado"
+  },
+  "SPELLTAG": {
+   "nome": "Selo Feitiço"
+  },
+  "DRAGONFANG": {
+   "nome": "Presa de Dragão"
+  },
+  "BLACKGLASSES": {
+   "nome": "Lentes Escuras"
+  },
+  "SILKSCARF": {
+   "nome": "Lenço de Seda"
+  },
+  "POTION": {
+   "nome": "Poção"
+  },
+  "SUPERPOTION": {
+   "nome": "Superpoção"
+  },
+  "HYPERPOTION": {
+   "nome": "Hiperpoção"
+  },
+  "MAXPOTION": {
+   "nome": "Poção Máxima"
+  },
+  "FULLRESTORE": {
+   "nome": "Restaura Tudo"
+  },
+  "REVIVE": {
+   "nome": "Reviver"
+  },
+  "MAXREVIVE": {
+   "nome": "Reviver Máximo"
+  },
+  "ANTIDOTE": {
+   "nome": "Antídoto"
+  },
+  "PARALYZEHEAL": {
+   "nome": "Antiparalisia"
+  },
+  "AWAKENING": {
+   "nome": "Despertar"
+  },
+  "BURNHEAL": {
+   "nome": "Antiqueimadura"
+  },
+  "ICEHEAL": {
+   "nome": "Antigelo"
+  },
+  "FULLHEAL": {
+   "nome": "Cura Total"
+  },
+  "ETHER": {
+   "nome": "Éter"
+  },
+  "MAXETHER": {
+   "nome": "Éter Máximo"
+  },
+  "ELIXIR": {
+   "nome": "Elixir"
+  },
+  "MAXELIXIR": {
+   "nome": "Elixir Máximo"
+  },
+  "XATTACK": {
+   "nome": "Ataque X"
+  },
+  "XDEFENSE": {
+   "nome": "Defesa X"
+  },
+  "XSPEED": {
+   "nome": "Velocidade X"
+  },
+  "XSPATK": {
+   "nome": "Ataque Esp. X"
+  },
+  "DIREHIT": {
+   "nome": "Crítico X"
+  },
+  "HPUP": {
+   "nome": "Mais HP"
+  },
+  "PROTEIN": {
+   "nome": "Proteína"
+  },
+  "IRON": {
+   "nome": "Ferro"
+  },
+  "CALCIUM": {
+   "nome": "Cálcio"
+  },
+  "ZINC": {
+   "nome": "Zinco"
+  },
+  "CARBOS": {
+   "nome": "Carbos"
+  },
+  "POKEBALL": {
+   "nome": "Poké Bola"
+  },
+  "GREATBALL": {
+   "nome": "Grande Bola"
+  },
+  "ULTRABALL": {
+   "nome": "Ultra Bola"
+  },
+  "MASTERBALL": {
+   "nome": "Bola Mestra"
+  },
+  "FIRESTONE": {
+   "nome": "Pedra do Fogo"
+  },
+  "WATERSTONE": {
+   "nome": "Pedra Aquática"
+  },
+  "THUNDERSTONE": {
+   "nome": "Pedra do Trovão"
+  },
+  "LEAFSTONE": {
+   "nome": "Pedra da Folha"
+  },
+  "MOONSTONE": {
+   "nome": "Pedra da Lua"
+  },
+  "SUNSTONE": {
+   "nome": "Pedra do Sol"
+  },
+  "LINKINGCORD": {
+   "nome": "Cabo de Ligação"
+  },
+  "KINGSROCK": {
+   "nome": "Rocha do Rei"
+  },
+  "DRAGONSCALE": {
+   "nome": "Escama de Dragão"
+  },
+  "UPGRADE": {
+   "nome": "Up-Grade"
+  },
+  "METALCOAT": {
+   "nome": "Capa Metálica"
+  },
+  "PRISMSCALE": {
+   "nome": "Escama Prisma"
+  },
+  "DEEPSEATOOTH": {
+   "nome": "Dente Abissal"
+  },
+  "DEEPSEASCALE": {
+   "nome": "Escama Abissal"
+  },
+  "SHINYSTONE": {
+   "nome": "Pedra Brilhante"
+  },
+  "DUSKSTONE": {
+   "nome": "Pedra Noturna"
+  },
+  "DAWNSTONE": {
+   "nome": "Pedra da Aurora"
+  },
+  "ICESTONE": {
+   "nome": "Pedra do Gelo"
+  },
+  "PROTECTOR": {
+   "nome": "Protetor"
+  },
+  "ELECTIRIZER": {
+   "nome": "Eletrizador"
+  },
+  "MAGMARIZER": {
+   "nome": "Magmatizador"
+  },
+  "DUBIOUSDISC": {
+   "nome": "Disco Duvidoso"
+  },
+  "REAPERCLOTH": {
+   "nome": "Pano Ceifador"
+  },
+  "OVALSTONE": {
+   "nome": "Pedra Oval"
+  },
+  "SACHET": {
+   "nome": "Sachê"
+  },
+  "WHIPPEDDREAM": {
+   "nome": "Creme Doce"
+  },
+  "BLACKAUGURITE": {
+   "nome": "Mineral Negro"
+  },
+  "SCROLLOFDARKNESS": {
+   "nome": "Pergaminho Sombras"
+  },
+  "SCROLLOFWATERS": {
+   "nome": "Pergaminho Mares"
+  },
+  "TOWNMAP": {
+   "nome": "Mapa"
+  },
+  "VENUSAURITEX": {
+   "nome": "Venusaurita X"
+  },
+  "CHARIZARDITEX": {
+   "nome": "Charizardita X"
+  },
+  "CHARIZARDITEY": {
+   "nome": "Charizardita Y"
+  },
+  "BLASTOISINITEX": {
+   "nome": "Blastoisita X"
+  },
+  "BEEDRILLITE": {
+   "nome": "Beedrillita"
+  },
+  "PIDGEOTITE": {
+   "nome": "Pidgeotita"
+  },
+  "PIKACHUITE": {
+   "nome": "Pikachuita"
+  },
+  "ALAKAZITE": {
+   "nome": "Alakazamita"
+  },
+  "SLOWBRONITE": {
+   "nome": "Slowbronita"
+  },
+  "GENGARITEX": {
+   "nome": "Gengarita X"
+  },
+  "KANGASKHANITE": {
+   "nome": "Kangaskhanita"
+  },
+  "PINSIRITE": {
+   "nome": "Pinsirita"
+  },
+  "GYARADOSITE": {
+   "nome": "Gyaradosita"
+  },
+  "AERODACTYLITE": {
+   "nome": "Aerodactylita"
+  },
+  "MEWTWONITEX": {
+   "nome": "Mewtwoita X"
+  },
+  "MEWTWONITEY": {
+   "nome": "Mewtwoita Y"
+  },
+  "AMPHAROSITE": {
+   "nome": "Ampharosita"
+  },
+  "STEELIXITE": {
+   "nome": "Steelixita"
+  },
+  "SCIZORITE": {
+   "nome": "Scizorita"
+  },
+  "HERACRONITE": {
+   "nome": "Heracrossita"
+  },
+  "HOUNDOOMINITE": {
+   "nome": "Houndoomita"
+  },
+  "TYRANITARITE": {
+   "nome": "Tyranitarita"
+  },
+  "SCEPTILITE": {
+   "nome": "Sceptilita"
+  },
+  "BLAZIKENITE": {
+   "nome": "Blazikenita"
+  },
+  "SWAMPERTITE": {
+   "nome": "Swampertita"
+  },
+  "GARDEVOIRITE": {
+   "nome": "Gardevoirita"
+  },
+  "SABLENITE": {
+   "nome": "Sableynita"
+  },
+  "MAWILITE": {
+   "nome": "Mawilita"
+  },
+  "AGGRONITE": {
+   "nome": "Aggronita"
+  },
+  "MEDICHAMITE": {
+   "nome": "Medichamita"
+  },
+  "MANECTITE": {
+   "nome": "Manectricita"
+  },
+  "SHARPEDONITE": {
+   "nome": "Sharpedonita"
+  },
+  "CAMERUPTITE": {
+   "nome": "Cameruptita"
+  },
+  "ALTARIANITE": {
+   "nome": "Altarianita"
+  },
+  "BANETTITE": {
+   "nome": "Banettita"
+  },
+  "ABSOLITE": {
+   "nome": "Absolita"
+  },
+  "GLALITITE": {
+   "nome": "Glalita"
+  },
+  "SALAMENCITE": {
+   "nome": "Salamencita"
+  },
+  "METAGROSSITE": {
+   "nome": "Metagrossita"
+  },
+  "LATIASITE": {
+   "nome": "Latiasita"
+  },
+  "LATIOSITE": {
+   "nome": "Latiosita"
+  },
+  "RAYQUAZITE": {
+   "nome": "Rayquazita"
+  },
+  "LOPUNNITE": {
+   "nome": "Lopunnita"
+  },
+  "GARCHOMPITE": {
+   "nome": "Garchompita"
+  },
+  "LUCARIONITE": {
+   "nome": "Lucarita"
+  },
+  "ABOMASITE": {
+   "nome": "Abomasnowita"
+  },
+  "GALLADITE": {
+   "nome": "Galladita"
+  },
+  "AUDINITE": {
+   "nome": "Audinita"
+  },
+  "DIANCITE": {
+   "nome": "Diancita"
+  },
+  "ARCANINITE": {
+   "nome": "Arcaninita"
+  },
+  "VENUSAURITEY": {
+   "nome": "Venusaurita Y"
+  },
+  "BLASTOISINITEY": {
+   "nome": "Blastoisita Y"
+  },
+  "GENGARITEY": {
+   "nome": "Gengarita Y"
+  },
+  "KINGLERITE": {
+   "nome": "Kinglerita"
+  },
+  "LAPRASITE": {
+   "nome": "Laprasita"
+  },
+  "MACHAMPITE": {
+   "nome": "Machampita"
+  },
+  "GARBODORITE": {
+   "nome": "Garbodorita"
+  },
+  "CORVIKNIGHTITE": {
+   "nome": "Corviknightita"
+  },
+  "ORBEETLEITE": {
+   "nome": "Orbeetleita"
+  },
+  "BUTTERFREEITE": {
+   "nome": "Butterfreeita"
+  },
+  "DREDNAWITE": {
+   "nome": "Drednawita"
+  },
+  "COALOSSALITE": {
+   "nome": "Coalossalita"
+  },
+  "FLAPPLETUNITE": {
+   "nome": "Flappletunita"
+  },
+  "SANDACONDITE": {
+   "nome": "Sandacondita"
+  },
+  "TOXTRICITITE": {
+   "nome": "Toxtricitita"
+  },
+  "CENTISKORCHITE": {
+   "nome": "Centiskorchita"
+  },
+  "HATTERENITE": {
+   "nome": "Hatterenita"
+  },
+  "GRIMMSNARLITE": {
+   "nome": "Grimmsnarlita"
+  },
+  "ALCREMITE": {
+   "nome": "Alcremita"
+  },
+  "COPPERAJITE": {
+   "nome": "Copperajita"
+  },
+  "DURALUDONITE": {
+   "nome": "Duraludonita"
+  },
+  "EEVEEITE": {
+   "nome": "Eeveeita"
+  },
+  "JUMPLUFITE": {
+   "nome": "Jumplufita"
+  },
+  "RILLABOOMITE": {
+   "nome": "Rillaboomita"
+  },
+  "CINDERECITE": {
+   "nome": "Cinderacita"
+  },
+  "INTELEONITE": {
+   "nome": "Inteleonita"
+  },
+  "SNORLAXITE": {
+   "nome": "Snorlaxita"
+  },
+  "CLEFABLITE": {
+   "nome": "Clefablita"
+  },
+  "STARMINITE": {
+   "nome": "Starmita"
+  },
+  "VICTREEBELITE": {
+   "nome": "Victreebelita"
+  },
+  "DRAGONITITE": {
+   "nome": "Dragonitita"
+  },
+  "MEGANIUMITE": {
+   "nome": "Meganiumita"
+  },
+  "FERALIGITE": {
+   "nome": "Feraligatrita"
+  },
+  "SKARMORITE": {
+   "nome": "Skarmorita"
+  },
+  "FROSLASSITE": {
+   "nome": "Froslassita"
+  },
+  "EMBOARITE": {
+   "nome": "Emboarita"
+  },
+  "EXCADRITE": {
+   "nome": "Excadrilita"
+  },
+  "SCOLIPITE": {
+   "nome": "Scolipedita"
+  },
+  "SCRAFTINITE": {
+   "nome": "Scraftita"
+  },
+  "EELEKTROSSITE": {
+   "nome": "Eelektrossita"
+  },
+  "CHANDELURITE": {
+   "nome": "Chandelurita"
+  },
+  "CHESNAUGHTITE": {
+   "nome": "Chesnaughtita"
+  },
+  "DELPHOXITE": {
+   "nome": "Delphoxita"
+  },
+  "GRENINJITE": {
+   "nome": "Greninjanita"
+  },
+  "PYROARITE": {
+   "nome": "Pyroarita"
+  },
+  "MALAMARITE": {
+   "nome": "Malamarita"
+  },
+  "BARBARACITE": {
+   "nome": "Barbaraclita"
+  },
+  "DRAGALGITE": {
+   "nome": "Dragalgita"
+  },
+  "HAWLUCHITE": {
+   "nome": "Hawluchanita"
+  },
+  "DRAMPANITE": {
+   "nome": "Drampanita"
+  },
+  "FALINKSITE": {
+   "nome": "Falinksita"
+  },
+  "FLOETTITE": {
+   "nome": "Floettita"
+  },
+  "ZYGARDITE": {
+   "nome": "Zygardita"
+  },
+  "STARAPTITE": {
+   "nome": "Staraptorita"
+  },
+  "LUCARIONITEZ": {
+   "nome": "Lucarita Z"
+  },
+  "CRABOMINITE": {
+   "nome": "Crabominablita"
+  },
+  "MAGEARNITE": {
+   "nome": "Magearnita"
+  },
+  "ABSOLITEZ": {
+   "nome": "Absolita Z"
+  },
+  "CHIMECHITE": {
+   "nome": "Chimechita"
+  },
+  "GARCHOMPITEZ": {
+   "nome": "Garchompita Z"
+  },
+  "GOLURKITE": {
+   "nome": "Golurkita"
+  },
+  "TATSUGIRINITE": {
+   "nome": "Tatsugirita"
+  },
+  "MEOWSTICITE": {
+   "nome": "Meowsticita"
+  },
+  "BAXCALIBRITE": {
+   "nome": "Baxcaliburita"
+  },
+  "SCOVILLAINITE": {
+   "nome": "Scovillainita"
+  },
+  "GLIMMORANITE": {
+   "nome": "Glimmoranita"
+  },
+  "GOLISOPITE": {
+   "nome": "Golisopodita"
+  },
+  "ZERAORITE": {
+   "nome": "Zeraoranita"
+  },
+  "HEATRANITE": {
+   "nome": "Heatranita"
+  },
+  "DARKRANITE": {
+   "nome": "Darkrainita"
+  },
+  "RAICHUITEX": {
+   "nome": "Raichuita X"
+  },
+  "RAICHUITEY": {
+   "nome": "Raichuita Y"
+  },
+  "POKEDEX": {
+   "nome": "Pokédex"
+  },
+  "MEGARING": {
+   "nome": "Mega-Anel"
+  },
+  "QUICKBALL": {
+   "nome": "Bola Rápida"
+  },
+  "TIMERBALL": {
+   "nome": "Bola Timer"
+  },
+  "DUSKBALL": {
+   "nome": "Bola Noturna"
+  },
+  "NETBALL": {
+   "nome": "Bola Rede"
+  },
+  "NESTBALL": {
+   "nome": "Bola Ninho"
+  },
+  "REPEATBALL": {
+   "nome": "Bola Repetição"
+  },
+  "LEVELBALL": {
+   "nome": "Bola Nível"
+  },
+  "FASTBALL": {
+   "nome": "Bola Veloz"
+  },
+  "HEAVYBALL": {
+   "nome": "Bola Pesada"
+  },
+  "MOONBALL": {
+   "nome": "Bola Lunar"
+  },
+  "DREAMBALL": {
+   "nome": "Bola Sonho"
+  },
+  "FRIENDBALL": {
+   "nome": "Bola Amiga"
+  },
+  "LUXURYBALL": {
+   "nome": "Bola Luxo"
+  },
+  "PREMIERBALL": {
+   "nome": "Bola Premier"
+  },
+  "RARECANDY": {
+   "nome": "Doce Raro"
+  },
+  "SHINYZADOR": {
+   "nome": "Poção Brilhante"
+  }
+ },
+ "habil": {
+  "ACOMETIDA": {
+   "nome": "Investida",
+   "desc": "No 1º turno em combate, tem 50% a mais de Velocidade e 20% a mais de Ataque."
+  },
+  "ADAPTABILITY": {
+   "nome": "Adaptabilidade",
+   "desc": "O bônus por usar golpes do mesmo tipo do Pokémon passa de 1,5x para 2x."
+  },
+  "AERILATE": {
+   "nome": "Pele Celeste",
+   "desc": "Converte golpes do tipo NORMAL em tipo VOADOR e aumenta seu poder em 20%."
+  },
+  "AFTERMATH": {
+   "nome": "Detonação",
+   "desc": "Se for derrotado por um golpe de contato, causa ao agressor dano de 25% do HP máximo dele, salvo se o agressor tiver Umidade."
+  },
+  "AIRLOCK": {
+   "nome": "Trava de Ar",
+   "desc": "Neutraliza todos os efeitos do clima, exceto Sol Extremo, Dilúvio e Turbulência, que continuam ativos."
+  },
+  "ANALYTIC": {
+   "nome": "Analítico",
+   "desc": "Aumenta o poder do golpe em 30% se for o último a atacar."
+  },
+  "ANGERPOINT": {
+   "nome": "Ponto de Raiva",
+   "desc": "Se receber um golpe crítico, fica furioso e eleva o Ataque ao máximo."
+  },
+  "ANGERSHELL": {
+   "nome": "Casco Raivoso",
+   "desc": "Quando um ataque reduz seu HP à metade, perde Defesa e Defesa Especial, mas ganha Ataque, Ataque Especial e Velocidade."
+  },
+  "ANTICIPATION": {
+   "nome": "Antecipação",
+   "desc": "Se o rival tiver um golpe supereficaz contra ele, o Pokémon estremece."
+  },
+  "ARENATRAP": {
+   "nome": "Armadilha de Areia",
+   "desc": "Impede o rival de fugir ou ser trocado, salvo se for tipo FANTASMA ou VOADOR, levitar, levar Casca Solta ou usar um golpe de troca."
+  },
+  "ARMORTAIL": {
+   "nome": "Cauda Blindada",
+   "desc": "A estranha cauda impede o rival de usar golpes com prioridade contra ele e seus aliados."
+  },
+  "AROMAVEIL": {
+   "nome": "Véu Aromático",
+   "desc": "Protege o Pokémon e seus aliados de efeitos que limitam os golpes, como Provocação, Desabilitar ou Corpo Amaldiçoado."
+  },
+  "BADDREAMS": {
+   "nome": "Pesadelo",
+   "desc": "No fim de cada turno, causa dano de 1/8 do HP máximo a todo rival adormecido."
+  },
+  "BALLFETCH": {
+   "nome": "Busca-Bola",
+   "desc": "Se não levar nenhum item, recupera a Poké Bola da primeira captura falha."
+  },
+  "BATTERY": {
+   "nome": "Bateria",
+   "desc": "Aumenta em 30% o poder dos golpes especiais dos aliados."
+  },
+  "BATTLEARMOR": {
+   "nome": "Armadura Batalha",
+   "desc": "Sua couraça robusta bloqueia os golpes críticos."
+  },
+  "BEADSOFRUIN": {
+   "nome": "Contas da Ruína",
+   "desc": "Reduz a Defesa Especial de todos os outros Pokémon com o poder de suas contas amaldiçoadas."
+  },
+  "BEASTBOOST": {
+   "nome": "Impulso Bestial",
+   "desc": "Se derrotar um rival no turno, aumenta em 1 nível seu atributo mais alto."
+  },
+  "BERSERK": {
+   "nome": "Fúria",
+   "desc": "Aumenta 1 nível o Ataque Especial cada vez que um ataque rival reduz seu HP abaixo de 50%. Pode ativar mais de uma vez."
+  },
+  "BIGPECKS": {
+   "nome": "Peito Estufado",
+   "desc": "Impede que o rival reduza a Defesa do Pokémon, mas não que ela caia pelos próprios golpes."
+  },
+  "BLAZE": {
+   "nome": "Chama",
+   "desc": "Aumenta em 50% o poder dos golpes do tipo FOGO quando o HP está em 1/3 ou menos."
+  },
+  "BULLETPROOF": {
+   "nome": "Antibalas",
+   "desc": "O Pokémon é imune a todos os golpes de balas, canhões, bombas e bolas."
+  },
+  "BURNTOUCH": {
+   "nome": "Toque Ardente",
+   "desc": "Pode queimar o alvo só de tocá-lo, com 30% de chance."
+  },
+  "CAMORRISTA": {
+   "nome": "Brigão",
+   "desc": "Aumenta em 20% o poder dos chutes."
+  },
+  "CHEEKPOUCH": {
+   "nome": "Bochechas",
+   "desc": "Recupera 1/3 do HP máximo ao comer qualquer baga, depois do efeito dela."
+  },
+  "CHILLINGNEIGH": {
+   "nome": "Relincho Gélido",
+   "desc": "Aumenta 1 nível o Ataque ao derrotar um Pokémon."
+  },
+  "CHLOROPHYLL": {
+   "nome": "Clorofila",
+   "desc": "Duplica a Velocidade sob sol forte."
+  },
+  "CLEARBODY": {
+   "nome": "Corpo Puro",
+   "desc": "Impede que golpes ou habilidades de outros Pokémon reduzam seus atributos, mas não os próprios."
+  },
+  "CLOUDNINE": {
+   "nome": "Nuvem Nove",
+   "desc": "Anula todos os efeitos do clima, embora o clima continue no campo."
+  },
+  "COLORCHANGE": {
+   "nome": "Mudança de Cor",
+   "desc": "Adota o tipo do último golpe que recebeu. Com golpes múltiplos, muda ao receber o último acerto."
+  },
+  "COMATOSE": {
+   "nome": "Letargia",
+   "desc": "Nunca acorda de seu sono profundo e até ataca dormindo."
+  },
+  "COMMANDER": {
+   "nome": "Comandante",
+   "desc": "Se entrar em combate com um Dondozo aliado, entra na boca dele para comandá-lo."
+  },
+  "COMPETITIVE": {
+   "nome": "Competitivo",
+   "desc": "Aumenta 2 níveis o Ataque Especial cada vez que o rival reduz um de seus atributos."
+  },
+  "COMPOUNDEYES": {
+   "nome": "Olhos Compostos",
+   "desc": "Aumenta em 30% a Precisão dos golpes. Também aumenta a chance de achar Pokémon selvagens com item."
+  },
+  "CONTRARY": {
+   "nome": "Do Contra",
+   "desc": "Inverte as mudanças de atributos: caem quando deveriam subir e sobem quando deveriam cair."
+  },
+  "CORROSION": {
+   "nome": "Corrosão",
+   "desc": "Pode envenenar até Pokémon do tipo AÇO ou VENENOSO. Golpes VENENOSO de dano direto ainda não atingem AÇO."
+  },
+  "COSTAR": {
+   "nome": "Coadjuvante",
+   "desc": "Ao entrar em combate, copia as mudanças de atributos do aliado."
+  },
+  "COTTONDOWN": {
+   "nome": "Penugem",
+   "desc": "Ao ser atingido por um ataque, reduz em 1 nível a Velocidade dos demais Pokémon em combate."
+  },
+  "CUDCHEW": {
+   "nome": "Ruminar",
+   "desc": "Ao comer uma baga, a regurgita no fim do turno seguinte e a come de novo."
+  },
+  "CURIOUSMEDICINE": {
+   "nome": "Remédio Curioso",
+   "desc": "Ao entrar em combate, zera as mudanças de atributos dos aliados, positivas e negativas."
+  },
+  "CURSEDBODY": {
+   "nome": "Corpo Amaldiçoado",
+   "desc": "Tem 30% de chance de desabilitar por 4 turnos o golpe usado contra ele."
+  },
+  "CUTECHARM": {
+   "nome": "Charme",
+   "desc": "Se um rival do sexo oposto o atingir com golpe de contato, tem 30% de chance de ficar apaixonado."
+  },
+  "DAMP": {
+   "nome": "Umidade",
+   "desc": "Impede o uso de golpes explosivos e a ativação da habilidade Detonação."
+  },
+  "DANCER": {
+   "nome": "Dançarino",
+   "desc": "Copia qualquer golpe de dança usado por outro Pokémon em combate."
+  },
+  "DARKAURA": {
+   "nome": "Aura Sombria",
+   "desc": "Aumenta em 1/3 o poder de todos os golpes do tipo SOMBRIO."
+  },
+  "DAUNTLESSSHIELD": {
+   "nome": "Escudo Destemido",
+   "desc": "Aumenta 1 nível a Defesa na primeira vez que entra em combate."
+  },
+  "DAZZLING": {
+   "nome": "Deslumbrante",
+   "desc": "Confunde o rival e o impede de usar golpes com prioridade contra o Pokémon ou seus aliados."
+  },
+  "DEFEATIST": {
+   "nome": "Derrotista",
+   "desc": "Quando o HP cai abaixo de 50% do máximo, o Ataque e o Ataque Especial caem à metade."
+  },
+  "DEFIANT": {
+   "nome": "Desafiador",
+   "desc": "Aumenta 2 níveis o Ataque cada vez que o rival reduz um de seus atributos."
+  },
+  "DELTASTREAM": {
+   "nome": "Corrente Delta",
+   "desc": "Cria ventos fortes que anulam as fraquezas do tipo VOADOR. Climas comuns não o substituem."
+  },
+  "DISGUISE": {
+   "nome": "Disfarce",
+   "desc": "O primeiro ataque rival que receber só tira 1/8 do HP máximo, seja qual for o dano."
+  },
+  "DOWNLOAD": {
+   "nome": "Download",
+   "desc": "Compara a Defesa e a Defesa Especial do rival e aumenta o Ataque ou o Ataque Especial conforme a mais baixa."
+  },
+  "DRAGONSMAW": {
+   "nome": "Bocarra de Dragão",
+   "desc": "Aumenta em 50% o poder dos golpes do tipo DRAGÃO."
+  },
+  "DRIZZLE": {
+   "nome": "Garoa",
+   "desc": "Ao entrar em combate, faz chover por 5 turnos. Dura 8 turnos se levar Rocha Molhada."
+  },
+  "DROUGHT": {
+   "nome": "Seca",
+   "desc": "Ao entrar em combate, traz sol forte por 5 turnos. Dura 8 turnos se levar Rocha Quente."
+  },
+  "DRYSKIN": {
+   "nome": "Pele Seca",
+   "desc": "Perde 1/8 do HP por turno no sol e recupera na chuva. Golpes FOGO causam 25% a mais; golpes AGUA curam 25% do HP."
+  },
+  "EARLYBIRD": {
+   "nome": "Madrugador",
+   "desc": "Se adormecer, acorda na metade dos turnos. Se o número for ímpar, arredonda para baixo."
+  },
+  "EARTHEATER": {
+   "nome": "Geofagia",
+   "desc": "Se for atingido por um golpe do tipo TERRESTRE, recupera HP em vez de sofrer dano."
+  },
+  "EFFECTSPORE": {
+   "nome": "Esporos",
+   "desc": "30% de chance de adormecer, envenenar ou paralisar o rival que o atingir com golpe de contato."
+  },
+  "ELECTRICSURGE": {
+   "nome": "Onda Elétrica",
+   "desc": "Cria um Campo Elétrico ao entrar em combate."
+  },
+  "ELECTROMORPHOSIS": {
+   "nome": "Eletromorfose",
+   "desc": "Ao receber dano, se carrega de eletricidade e reforça seu próximo golpe do tipo ELÉTRICO."
+  },
+  "EMERGENCYEXIT": {
+   "nome": "Saída Emergencial",
+   "desc": "Sai do combate depois de usar um golpe do tipo INSETO."
+  },
+  "ESPANTO": {
+   "nome": "Espanto",
+   "desc": "Assusta o rival e reduz seu Ataque Especial."
+  },
+  "FAIRYAURA": {
+   "nome": "Aura Feérica",
+   "desc": "Aumenta em 1/3 o poder de todos os golpes do tipo FADA."
+  },
+  "FILTER": {
+   "nome": "Filtro",
+   "desc": "Reduz o dano dos golpes supereficazes a 3/4 do dano inicial."
+  },
+  "FLAMEBODY": {
+   "nome": "Corpo em Chamas",
+   "desc": "Quem o atacar com golpe de contato tem 30% de chance de ser queimado."
+  },
+  "FLAREBOOST": {
+   "nome": "Impulso Ardente",
+   "desc": "Aumenta em 50% o poder dos ataques especiais quando está queimado."
+  },
+  "FLASHFIRE": {
+   "nome": "Absorver Fogo",
+   "desc": "Golpes do tipo FOGO não o afetam e reforçam em 50% seus golpes FOGO. Vale também para golpes de estado."
+  },
+  "FLORACION": {
+   "nome": "Floração",
+   "desc": "Aumenta o dano dos golpes do tipo PLANTA."
+  },
+  "FLOWERGIFT": {
+   "nome": "Dom Floral",
+   "desc": "Sob sol, aumenta o Ataque e a Defesa Especial de todos os Pokémon da equipe em combate."
+  },
+  "FLOWERVEIL": {
+   "nome": "Véu Floral",
+   "desc": "Impede que aliados do tipo PLANTA sofram problemas de estado ou tenham atributos reduzidos."
+  },
+  "FLUFFY": {
+   "nome": "Fofura",
+   "desc": "Reduz à metade o dano dos golpes de contato, mas duplica o dano dos golpes do tipo FOGO."
+  },
+  "FORECAST": {
+   "nome": "Previsão",
+   "desc": "Muda para tipo AGUA, FOGO ou GELO conforme o clima. Se o clima acabar, volta a tipo NORMAL."
+  },
+  "FOREWARN": {
+   "nome": "Aviso",
+   "desc": "Ao entrar em combate, revela o golpe mais forte do rival."
+  },
+  "FRIENDGUARD": {
+   "nome": "Guarda Amiga",
+   "desc": "Reduz em 25% o dano que os aliados sofrem, mas não o próprio."
+  },
+  "FRISK": {
+   "nome": "Revista",
+   "desc": "Ao entrar em combate, vê o item que o rival leva."
+  },
+  "FULLMETALBODY": {
+   "nome": "Corpo de Metal",
+   "desc": "Impede que golpes ou habilidades de outros Pokémon reduzam seus atributos."
+  },
+  "FURCOAT": {
+   "nome": "Pelagem Grossa",
+   "desc": "Reduz à metade o dano recebido de ataques físicos do rival."
+  },
+  "GALEWINGS": {
+   "nome": "Asas de Vendaval",
+   "desc": "Dá prioridade aos golpes do tipo VOADOR quando o HP está no máximo."
+  },
+  "GLUTTONY": {
+   "nome": "Gula",
+   "desc": "Usa as bagas que só se ativam com 25% do HP quando ainda tem 50% do HP máximo."
+  },
+  "GOODASGOLD": {
+   "nome": "Corpo Dourado",
+   "desc": "Seu corpo de ouro inoxidável o torna imune a golpes de estado de outros Pokémon."
+  },
+  "GOOEY": {
+   "nome": "Pegajoso",
+   "desc": "Reduz em 1 nível a Velocidade do rival que o atingir com golpe de contato."
+  },
+  "GORILLATACTICS": {
+   "nome": "Tática de Gorila",
+   "desc": "Aumenta o Ataque em 50%, mas só pode usar o primeiro golpe escolhido."
+  },
+  "GRASSYSURGE": {
+   "nome": "Onda Herbal",
+   "desc": "Cria um Campo de Grama ao entrar em combate."
+  },
+  "GRIMNEIGH": {
+   "nome": "Relincho Sombrio",
+   "desc": "Aumenta 1 nível o Ataque Especial ao derrotar um Pokémon."
+  },
+  "GUARDDOG": {
+   "nome": "Cão de Guarda",
+   "desc": "Aumenta o Ataque se sofrer Intimidação. Também anula golpes e itens que forçam a troca."
+  },
+  "GULPMISSILE": {
+   "nome": "Míssil Engolido",
+   "desc": "Após usar Surfar ou Mergulho, muda de forma: com mais de 50% do HP vira uma forma, com menos vira outra."
+  },
+  "GUTS": {
+   "nome": "Garra",
+   "desc": "Se tiver um problema de estado, aumenta o Ataque em 50% e ignora a perda de Ataque da queimadura."
+  },
+  "HADRONENGINE": {
+   "nome": "Motor Hádron",
+   "desc": "Cria um Campo Elétrico ao entrar em combate. No Campo Elétrico, seu Ataque Especial aumenta."
+  },
+  "HARVEST": {
+   "nome": "Colheita",
+   "desc": "50% de chance de recuperar a baga usada no fim de cada turno. Sob sol, recupera sempre (100%)."
+  },
+  "HEALER": {
+   "nome": "Curandeiro",
+   "desc": "No fim de cada turno, 30% de chance de curar o problema de estado de um aliado em combate."
+  },
+  "HEATPROOF": {
+   "nome": "Termorresistente",
+   "desc": "Reduz à metade o dano de golpes FOGO. Queimado, perde 1/32 do HP máximo por turno em vez de 1/16."
+  },
+  "HEAVYMETAL": {
+   "nome": "Metal Pesado",
+   "desc": "Duplica o peso do Pokémon, o que afeta golpes baseados em peso."
+  },
+  "HONEYGATHER": {
+   "nome": "Coleta de Mel",
+   "desc": "Pode encontrar Mel depois do combate. A chance aumenta com o nível do Pokémon."
+  },
+  "HOSPITALITY": {
+   "nome": "Hospitalidade",
+   "desc": "Ao entrar em combate, recupera um pouco do HP do aliado."
+  },
+  "HUGEPOWER": {
+   "nome": "Força Enorme",
+   "desc": "Duplica o Ataque do Pokémon, o que só afeta ataques físicos."
+  },
+  "HUNGERSWITCH": {
+   "nome": "Fome Alternada",
+   "desc": "No fim de cada turno, alterna entre Forma Saciada e Forma Faminta, mudando o tipo de Roda Aural."
+  },
+  "HUSTLE": {
+   "nome": "Agitação",
+   "desc": "Aumenta o Ataque ou o Ataque Especial em 50%, mas reduz em 20% a Precisão dos golpes ofensivos."
+  },
+  "HYDRATION": {
+   "nome": "Hidratação",
+   "desc": "No fim de cada turno, cura os problemas de estado se estiver chovendo."
+  },
+  "HYPERCUTTER": {
+   "nome": "Hipercortador",
+   "desc": "Impede que o rival reduza seu Ataque. Reduções pelos próprios golpes ainda funcionam."
+  },
+  "ICEBODY": {
+   "nome": "Corpo de Gelo",
+   "desc": "Recupera 1/16 do HP máximo no fim de cada turno durante granizo."
+  },
+  "ICEFACE": {
+   "nome": "Rosto de Gelo",
+   "desc": "Se receber um ataque físico, muda para a forma sem gelo. Recupera a forma uma vez se cair granizo."
+  },
+  "ICESCALES": {
+   "nome": "Escamas de Gelo",
+   "desc": "Suas escamas gélidas reduzem à metade o dano dos ataques especiais."
+  },
+  "ILLUMINATE": {
+   "nome": "Iluminação",
+   "desc": "Ao entrar em combate, reduz em 1 nível a Precisão dos rivais. Fora do combate, atrai mais Pokémon selvagens."
+  },
+  "ILLUSION": {
+   "nome": "Ilusão",
+   "desc": "Ao entrar em combate, se disfarça do último Pokémon da equipe para confundir o rival."
+  },
+  "IMMUNITY": {
+   "nome": "Imunidade",
+   "desc": "Seu sistema imunológico impede o envenenamento."
+  },
+  "IMPOSTER": {
+   "nome": "Impostor",
+   "desc": "Se transforma no Pokémon à frente, copiando todos os atributos exceto o HP."
+  },
+  "INFILTRATOR": {
+   "nome": "Infiltrador",
+   "desc": "Ataca ignorando as barreiras e o Substituto do rival."
+  },
+  "INNARDSOUT": {
+   "nome": "Entranhas",
+   "desc": "Ao ser derrotado, causa ao rival dano igual ao HP que lhe restava. Não ativa com dano indireto."
+  },
+  "INNERFOCUS": {
+   "nome": "Foco Interno",
+   "desc": "Graças à concentração, não recua com os ataques do rival e também não sofre Intimidação."
+  },
+  "INSOMNIA": {
+   "nome": "Insônia",
+   "desc": "Não pode adormecer nem usar Descanso. Se ganhar a habilidade dormindo, acorda."
+  },
+  "INTIMIDATE": {
+   "nome": "Intimidação",
+   "desc": "Ao entrar em combate, intimida o rival e reduz seu Ataque em 1 nível."
+  },
+  "INTREPIDSWORD": {
+   "nome": "Espada Intrépida",
+   "desc": "Aumenta 1 nível o Ataque na primeira vez que entra em combate."
+  },
+  "IRONBARBS": {
+   "nome": "Farpas de Ferro",
+   "desc": "Causa dano de 1/8 do HP máximo ao rival que o atingir com golpe de contato."
+  },
+  "IRONFIST": {
+   "nome": "Punho de Ferro",
+   "desc": "Aumenta em 20% o poder dos golpes de soco."
+  },
+  "JUSTIFIED": {
+   "nome": "Justiceiro",
+   "desc": "Se for atingido por um golpe do tipo SOMBRIO, aumenta 1 nível o Ataque."
+  },
+  "KEENEYE": {
+   "nome": "Olhar Aguçado",
+   "desc": "Impede que sua Precisão seja reduzida e ignora aumentos de Evasão do rival."
+  },
+  "KLUTZ": {
+   "nome": "Desastrado",
+   "desc": "Não pode usar itens que leva e anula o efeito deles. Itens de experiência e dinheiro funcionam."
+  },
+  "LEAFGUARD": {
+   "nome": "Guarda Folha",
+   "desc": "Sob sol, evita problemas de estado; também não pode usar Descanso."
+  },
+  "LEVITATE": {
+   "nome": "Levitação",
+   "desc": "Como flutua, é imune aos golpes do tipo TERRESTRE."
+  },
+  "LIBERO": {
+   "nome": "Líbero",
+   "desc": "Muda para o tipo do golpe que vai usar antes de executá-lo, mesmo que o golpe falhe."
+  },
+  "LIGHTMETAL": {
+   "nome": "Metal Leve",
+   "desc": "Reduz à metade o peso do Pokémon, o que afeta golpes baseados em peso."
+  },
+  "LIGHTNINGROD": {
+   "nome": "Para-raios",
+   "desc": "Atrai e neutraliza golpes do tipo ELÉTRICO e aumenta 1 nível o Ataque Especial, mesmo sendo tipo TERRESTRE."
+  },
+  "LIMBER": {
+   "nome": "Flexibilidade",
+   "desc": "Seu corpo flexível impede que seja paralisado."
+  },
+  "LINGERINGAROMA": {
+   "nome": "Aroma Persistente",
+   "desc": "Passa a habilidade Aroma Persistente ao Pokémon que o atingir com golpe de contato."
+  },
+  "LIQUIDOOZE": {
+   "nome": "Gosma Líquida",
+   "desc": "Quem tentar drenar seu HP perde a quantidade que absorveria. Não afeta Come-Sonhos."
+  },
+  "LIQUIDVOICE": {
+   "nome": "Voz Líquida",
+   "desc": "Os golpes de som do Pokémon passam a ser do tipo AGUA e ficam 20% mais fortes."
+  },
+  "LONGREACH": {
+   "nome": "Longo Alcance",
+   "desc": "Usa qualquer golpe sem entrar em contato com o alvo."
+  },
+  "MAGICBOUNCE": {
+   "nome": "Ricochete Mágico",
+   "desc": "Devolve os golpes de estado lançados pelo rival, sem ser afetado por eles."
+  },
+  "MAGICGUARD": {
+   "nome": "Guarda Mágica",
+   "desc": "Só recebe dano de ataques diretos. Não sofre dano indireto nem pode ser preso por golpes."
+  },
+  "MAGICIAN": {
+   "nome": "Mágico",
+   "desc": "Rouba o item do Pokémon que atingir com um golpe de dano direto, exceto certos itens ou habilidades."
+  },
+  "MAGNETPULL": {
+   "nome": "Magnetismo",
+   "desc": "Impede rivais do tipo AÇO de fugir ou ser trocados, salvo se levarem Casca Solta ou usarem golpe de troca."
+  },
+  "MARVELSCALE": {
+   "nome": "Escama Maravilha",
+   "desc": "Aumenta a Defesa em 50% se sofrer um problema de estado."
+  },
+  "MEGALAUNCHER": {
+   "nome": "Megalançador",
+   "desc": "Aumenta em 50% o poder dos golpes de pulso e aura."
+  },
+  "MERCILESS": {
+   "nome": "Impiedoso",
+   "desc": "Os golpes sempre são críticos se o rival estiver envenenado."
+  },
+  "MIMICRY": {
+   "nome": "Mimetismo",
+   "desc": "Muda de tipo conforme o campo ativo. Quando o campo acaba, volta ao tipo anterior."
+  },
+  "MINUS": {
+   "nome": "Menos",
+   "desc": "Aumenta em 50% o Ataque Especial se um aliado tiver a habilidade Mais ou Menos."
+  },
+  "MIRRORARMOR": {
+   "nome": "Armadura Espelho",
+   "desc": "Devolve ao causador os efeitos de golpes ou habilidades que reduzem atributos."
+  },
+  "MISTYSURGE": {
+   "nome": "Onda Nebulosa",
+   "desc": "Cria um Campo Nebuloso ao entrar em combate."
+  },
+  "MOLDBREAKER": {
+   "nome": "Quebra-Molde",
+   "desc": "As habilidades do alvo não afetam o dano nem os efeitos dos seus golpes."
+  },
+  "MOODY": {
+   "nome": "Temperamental",
+   "desc": "A cada turno, aumenta 2 níveis um atributo ao acaso e reduz 1 nível outro ao acaso."
+  },
+  "MOTORDRIVE": {
+   "nome": "Motor Elétrico",
+   "desc": "Se for atingido por um golpe do tipo ELÉTRICO, aumenta 1 nível a Velocidade e não sofre dano."
+  },
+  "MOXIE": {
+   "nome": "Autoconfiança",
+   "desc": "Ao derrotar um alvo, sua confiança aumenta 1 nível o Ataque."
+  },
+  "MULTISCALE": {
+   "nome": "Multiescamas",
+   "desc": "Reduz à metade o dano sofrido com HP no máximo. Não afeta golpes de dano fixo."
+  },
+  "MULTITYPE": {
+   "nome": "Multitipo",
+   "desc": "Muda o tipo do Pokémon para o da placa ou cristal Z que leva."
+  },
+  "MUMMY": {
+   "nome": "Múmia",
+   "desc": "Passa a habilidade Múmia ao rival que entrar em contato com ele."
+  },
+  "MYCELIUMMIGHT": {
+   "nome": "Poder Micélio",
+   "desc": "Sempre age por último com golpes de estado, mas estes ignoram a habilidade do alvo."
+  },
+  "NATURALCURE": {
+   "nome": "Cura Natural",
+   "desc": "Cura os problemas de estado ao ser trocado e também ao fim do combate."
+  },
+  "NEUROFORCE": {
+   "nome": "Neuroforça",
+   "desc": "Aumenta em 25% o poder dos golpes supereficazes."
+  },
+  "NEUTRALIZINGGAS": {
+   "nome": "Gás Neutralizante",
+   "desc": "Anula as habilidades dos Pokémon em campo. Ao sair ou ser derrotado, todas voltam a funcionar."
+  },
+  "NOGUARD": {
+   "nome": "Sem Guarda",
+   "desc": "Todos os golpes acertam sempre, tanto os do Pokémon quanto os do rival."
+  },
+  "OBLIVIOUS": {
+   "nome": "Distraído",
+   "desc": "Sua indiferença impede que se apaixone ou seja provocado, e o protege de Provocação e Intimidação."
+  },
+  "OPPORTUNIST": {
+   "nome": "Oportunista",
+   "desc": "Copia os aumentos de atributos do rival, aproveitando a situação."
+  },
+  "ORICHALCUMPULSE": {
+   "nome": "Pulso Oricalco",
+   "desc": "Traz sol forte ao entrar em combate. Sob sol forte, seu Ataque aumenta."
+  },
+  "OVERCOAT": {
+   "nome": "Sobretudo",
+   "desc": "Protege de tempestades de areia, granizo e golpes de pós e esporos."
+  },
+  "OVERGROW": {
+   "nome": "Supercrescimento",
+   "desc": "Aumenta em 50% o poder dos golpes do tipo PLANTA quando o HP está em 1/3 ou menos."
+  },
+  "OWNTEMPO": {
+   "nome": "Ritmo Próprio",
+   "desc": "Impede que fique confuso, mesmo pelos próprios golpes, e também a Intimidação."
+  },
+  "PARENTALBOND": {
+   "nome": "Laço Parental",
+   "desc": "Ataca duas vezes por turno com golpes de dano; o segundo tem 25% do poder do primeiro."
+  },
+  "PASTELVEIL": {
+   "nome": "Véu Pastel",
+   "desc": "Protege a si e aos aliados do envenenamento. Ao entrar em combate, cura o veneno dos aliados."
+  },
+  "PERISHBODY": {
+   "nome": "Corpo Perecível",
+   "desc": "Se atingido por golpe de contato, ele e o atacante são derrotados após 3 turnos."
+  },
+  "PICKPOCKET": {
+   "nome": "Punguista",
+   "desc": "Se o rival usar golpe de contato, rouba o item dele se não levar nenhum. Não vale com certos itens."
+  },
+  "PICKUP": {
+   "nome": "Coleta",
+   "desc": "10% de chance de achar um item após o combate. Também pega itens que aliados ou rivais perderem."
+  },
+  "PIELHERBACEA": {
+   "nome": "Pele Herbácea",
+   "desc": "Converte golpes do tipo NORMAL em tipo PLANTA e os fortalece."
+  },
+  "PIXILATE": {
+   "nome": "Pele Feérica",
+   "desc": "Converte golpes do tipo NORMAL em tipo FADA e aumenta seu poder em 20%."
+  },
+  "PLUS": {
+   "nome": "Mais",
+   "desc": "Aumenta em 50% o Ataque Especial se um aliado tiver a habilidade Mais ou Menos."
+  },
+  "PODERGELIDO": {
+   "nome": "Poder Gélido",
+   "desc": "Aumenta em 50% o poder dos golpes GELO e a Velocidade com clima de neve."
+  },
+  "PODERSABIO": {
+   "nome": "Poder Sábio",
+   "desc": "Aumenta o Ataque Especial em 50%, mas só pode usar o primeiro golpe escolhido."
+  },
+  "POISONHEAL": {
+   "nome": "Cura Tóxica",
+   "desc": "Se estiver envenenado, recupera 1/8 do HP máximo a cada turno."
+  },
+  "POISONPOINT": {
+   "nome": "Ponto Venenoso",
+   "desc": "Quem o atacar com golpe de contato tem 30% de chance de ser envenenado."
+  },
+  "POISONPUPPETEER": {
+   "nome": "Titereiro Tóxico",
+   "desc": "Os rivais que Pecharunt envenenar com seus golpes também ficam confusos."
+  },
+  "POISONTOUCH": {
+   "nome": "Toque Venenoso",
+   "desc": "Pode envenenar o alvo só de tocá-lo, com 30% de chance."
+  },
+  "POWERCONSTRUCT": {
+   "nome": "Construção",
+   "desc": "Quando o HP cai abaixo de 50%, as células se reagrupam e ele adota a Forma Completa."
+  },
+  "POWERSPOT": {
+   "nome": "Ponto de Poder",
+   "desc": "Aumenta em 30% o poder dos golpes dos Pokémon aliados adjacentes."
+  },
+  "PRANKSTER": {
+   "nome": "Pregador de Peças",
+   "desc": "Dá prioridade aos golpes de estado. Pokémon do tipo SOMBRIO são imunes a eles."
+  },
+  "PRESSURE": {
+   "nome": "Pressão",
+   "desc": "Pressiona o rival, que gasta 2 PP por golpe usado contra este Pokémon."
+  },
+  "PRISMARMOR": {
+   "nome": "Armadura Prisma",
+   "desc": "Reduz em 1/4 o dano dos golpes supereficazes."
+  },
+  "PROPELLERTAIL": {
+   "nome": "Cauda Hélice",
+   "desc": "Seus golpes ignoram golpes ou habilidades do rival que atraem ataques."
+  },
+  "PROTEAN": {
+   "nome": "Proteano",
+   "desc": "Muda para o tipo do golpe que vai usar, antes de usá-lo, mesmo que o golpe falhe."
+  },
+  "PROTOSYNTHESIS": {
+   "nome": "Protossíntese",
+   "desc": "Sob sol ou levando Energia Propulsora, aumenta seu atributo mais alto."
+  },
+  "PSYCHICSURGE": {
+   "nome": "Onda Psíquica",
+   "desc": "Cria um Campo Psíquico ao entrar em combate."
+  },
+  "PUNKROCK": {
+   "nome": "Punk Rock",
+   "desc": "Aumenta em 30% o poder dos golpes de som e reduz à metade o dano que recebe deles."
+  },
+  "PUREPOWER": {
+   "nome": "Poder Puro",
+   "desc": "Duplica o Ataque do Pokémon."
+  },
+  "PURIFYINGSALT": {
+   "nome": "Sal Purificador",
+   "desc": "Imune a problemas de estado. Reduz à metade o dano de golpes do tipo FANTASMA."
+  },
+  "QUARKDRIVE": {
+   "nome": "Motor Quark",
+   "desc": "Com Campo Elétrico ou levando Energia Propulsora, aumenta seu atributo mais alto."
+  },
+  "QUEENLYMAJESTY": {
+   "nome": "Majestade Real",
+   "desc": "Impede o rival de usar golpes com prioridade contra o Pokémon; o PP é gasto como se falhasse."
+  },
+  "QUICKDRAW": {
+   "nome": "Saque Rápido",
+   "desc": "Com golpe físico ou especial, 30% de chance de agir primeiro entre golpes de mesma prioridade."
+  },
+  "QUICKFEET": {
+   "nome": "Pés Rápidos",
+   "desc": "Aumenta a Velocidade em 50% com problema de estado. Se paralisado, ignora a perda de Velocidade."
+  },
+  "RAINDISH": {
+   "nome": "Prato de Chuva",
+   "desc": "Recupera 1/16 do HP no fim de cada turno quando chove."
+  },
+  "RATTLED": {
+   "nome": "Assustado",
+   "desc": "Atingido por golpe SOMBRIO, INSETO ou FANTASMA, ou por Intimidação, aumenta 1 nível a Velocidade."
+  },
+  "RECEIVER": {
+   "nome": "Receptor",
+   "desc": "Herda a habilidade de um aliado quando ele é derrotado."
+  },
+  "RECKLESS": {
+   "nome": "Imprudente",
+   "desc": "Aumenta em 20% o poder dos golpes que também ferem o usuário."
+  },
+  "REFRIGERATE": {
+   "nome": "Pele Gelada",
+   "desc": "Converte golpes do tipo NORMAL em tipo GELO e aumenta seu poder em 20%."
+  },
+  "REGENERATOR": {
+   "nome": "Regeneração",
+   "desc": "Recupera 1/3 do HP máximo ao voltar à Poké Bola, por troca manual ou por golpe do rival."
+  },
+  "RIPEN": {
+   "nome": "Amadurecer",
+   "desc": "Amadurece as bagas e duplica seus efeitos ao comê-las."
+  },
+  "RIVALRY": {
+   "nome": "Rivalidade",
+   "desc": "Aumenta em 25% o poder dos golpes se o alvo for do mesmo sexo. Não perde 25% contra o sexo oposto."
+  },
+  "RKSSYSTEM": {
+   "nome": "Sistema RKS",
+   "desc": "Muda de tipo conforme o disco que leva, mudando também o tipo de Multiataque."
+  },
+  "ROCKHEAD": {
+   "nome": "Cabeça de Pedra",
+   "desc": "Não sofre dano de recuo dos próprios golpes, exceto Luta Desesperada."
+  },
+  "ROCKYPAYLOAD": {
+   "nome": "Carga Rochosa",
+   "desc": "Aumenta em 50% o poder dos golpes do tipo PEDRA."
+  },
+  "ROUGHSKIN": {
+   "nome": "Pele Rugosa",
+   "desc": "Causa dano de 1/16 do HP máximo ao rival que o atingir com golpe de contato."
+  },
+  "RUNAWAY": {
+   "nome": "Fuga",
+   "desc": "Sempre consegue fugir de Pokémon selvagens, ignorando a habilidade do rival."
+  },
+  "SANDFORCE": {
+   "nome": "Força da Areia",
+   "desc": "Aumenta em 30% o poder dos golpes TERRESTRE, AÇO e PEDRA durante tempestade de areia."
+  },
+  "SANDRUSH": {
+   "nome": "Pressa na Areia",
+   "desc": "Duplica a Velocidade em tempestade de areia e não sofre dano dela."
+  },
+  "SANDSPIT": {
+   "nome": "Cuspe de Areia",
+   "desc": "Cria uma tempestade de areia ao ser atingido. Dura 8 turnos se levar Rocha Lisa."
+  },
+  "SANDSTREAM": {
+   "nome": "Fluxo de Areia",
+   "desc": "Ao entrar em combate, cria uma tempestade de areia por 5 turnos. Dura 8 turnos se levar Rocha Lisa."
+  },
+  "SANDVEIL": {
+   "nome": "Véu de Areia",
+   "desc": "Aumenta a Evasão em 20% em tempestade de areia e não sofre dano dela."
+  },
+  "SAPSIPPER": {
+   "nome": "Herbívoro",
+   "desc": "Neutraliza golpes do tipo PLANTA, inclusive de estado, e aumenta 1 nível o Ataque."
+  },
+  "SCHOOLING": {
+   "nome": "Cardume",
+   "desc": "A partir do nível 20, vira a forma cardume se o HP estiver acima de 25%. Volta à forma solo abaixo de 25%."
+  },
+  "SCRAPPY": {
+   "nome": "Briguento",
+   "desc": "Golpes NORMAL e LUTADOR atingem Pokémon do tipo FANTASMA. Também é imune à Intimidação."
+  },
+  "SCREENCLEANER": {
+   "nome": "Limpa-Telas",
+   "desc": "Ao entrar em combate, anula Tela de Luz, Refletir e Véu Aurora de rivais e aliados."
+  },
+  "SEEDSOWER": {
+   "nome": "Semeador",
+   "desc": "Cria um Campo de Grama ao ser atingido por um ataque."
+  },
+  "SERENEGRACE": {
+   "nome": "Graça Serena",
+   "desc": "Duplica a chance dos efeitos secundários dos golpes. Vale também para Rocha do Rei e Presa Afiada."
+  },
+  "SHADOWSHIELD": {
+   "nome": "Escudo Sombrio",
+   "desc": "Reduz à metade o dano sofrido quando o HP está no máximo."
+  },
+  "SHADOWTAG": {
+   "nome": "Pega-Sombra",
+   "desc": "Impede o rival de fugir ou ser trocado, salvo se for tipo FANTASMA, levar Casca Solta ou usar golpe de troca."
+  },
+  "SHARPNESS": {
+   "nome": "Afiado",
+   "desc": "Aumenta em 50% o poder dos golpes cortantes."
+  },
+  "SHEDSKIN": {
+   "nome": "Troca de Pele",
+   "desc": "No fim de cada turno, 30% de chance de curar seus problemas de estado ao trocar de pele."
+  },
+  "SHEERFORCE": {
+   "nome": "Força Bruta",
+   "desc": "Aumenta em 30% o poder dos golpes com efeitos secundários, mas anula esses efeitos."
+  },
+  "SHELLARMOR": {
+   "nome": "Carapaça",
+   "desc": "Sua couraça robusta bloqueia os golpes críticos."
+  },
+  "SHIELDDUST": {
+   "nome": "Pó Escudo",
+   "desc": "O pó de escamas o protege dos efeitos secundários dos ataques recebidos."
+  },
+  "SHIELDSDOWN": {
+   "nome": "Escudo Baixo",
+   "desc": "Quando o HP cai à metade, quebra sua carapaça e adota uma forma ofensiva."
+  },
+  "SILVANO": {
+   "nome": "Silvestre",
+   "desc": "Aumenta em 30% o dano de golpes de qualquer tipo no Campo de Grama."
+  },
+  "SIMPLE": {
+   "nome": "Simples",
+   "desc": "Duplica as mudanças de atributos, positivas e negativas."
+  },
+  "SKILLLINK": {
+   "nome": "Encadeado",
+   "desc": "Golpes múltiplos sempre acertam o número máximo de vezes."
+  },
+  "SLOWSTART": {
+   "nome": "Início Lento",
+   "desc": "Reduz à metade o Ataque e a Velocidade nos primeiros 5 turnos. Ao ser trocado, a contagem reinicia."
+  },
+  "SLUSHRUSH": {
+   "nome": "Limpa-Neve",
+   "desc": "Duplica a Velocidade durante granizo e o torna imune ao granizo."
+  },
+  "SNIPER": {
+   "nome": "Atirador",
+   "desc": "Aumenta o dano dos golpes críticos de 1,5x para 2,25x."
+  },
+  "SNOWCLOAK": {
+   "nome": "Manto de Neve",
+   "desc": "Aumenta a Evasão em 20% durante granizo."
+  },
+  "SNOWWARNING": {
+   "nome": "Nevasca",
+   "desc": "Ao entrar em combate, faz nevar por 5 turnos. Dura 8 turnos se levar Rocha Gelada."
+  },
+  "SOBRECARGA": {
+   "nome": "Sobrecarga",
+   "desc": "Aumenta em 50% o poder dos golpes do tipo ELÉTRICO quando o HP está em 1/3 ou menos."
+  },
+  "SOLARPOWER": {
+   "nome": "Poder Solar",
+   "desc": "Sob sol, aumenta o Ataque Especial em 50%, mas perde 1/8 do HP máximo no fim de cada turno."
+  },
+  "SOLIDROCK": {
+   "nome": "Rocha Sólida",
+   "desc": "Reduz o dano dos golpes supereficazes a 3/4 do dano inicial."
+  },
+  "SOULHEART": {
+   "nome": "Coração da Alma",
+   "desc": "Aumenta o Ataque Especial cada vez que um Pokémon é derrotado, aliado ou rival."
+  },
+  "SOUNDPROOF": {
+   "nome": "Antirruído",
+   "desc": "Seu isolamento acústico o protege de golpes de som, exceto os próprios."
+  },
+  "SPEEDBOOST": {
+   "nome": "Turbo",
+   "desc": "Aumenta 1 nível a Velocidade no fim de cada turno."
+  },
+  "STAKEOUT": {
+   "nome": "Tocaia",
+   "desc": "Causa o dobro de dano a um Pokémon que entrou em combate neste turno por troca."
+  },
+  "STALL": {
+   "nome": "Retardatário",
+   "desc": "O Pokémon age por último entre golpes de mesma prioridade."
+  },
+  "STALWART": {
+   "nome": "Inabalável",
+   "desc": "Seus golpes ignoram golpes ou habilidades do rival que atraem ataques."
+  },
+  "STAMINA": {
+   "nome": "Vigor",
+   "desc": "Aumenta 1 nível a Defesa ao receber um ataque de dano direto."
+  },
+  "STANCECHANGE": {
+   "nome": "Mudança Tática",
+   "desc": "Adota a Forma Lâmina ao atacar com golpe de dano, ou a Forma Escudo ao usar Escudo Real."
+  },
+  "STATIC": {
+   "nome": "Estática",
+   "desc": "Quem o atacar com golpe de contato tem 30% de chance de ficar paralisado. Afeta também o tipo TERRESTRE."
+  },
+  "STEADFAST": {
+   "nome": "Firmeza",
+   "desc": "Cada vez que recua, aumenta 1 nível a Velocidade graças à sua vontade inabalável."
+  },
+  "STEAMENGINE": {
+   "nome": "Motor a Vapor",
+   "desc": "Se for atingido por golpe do tipo FOGO ou AGUA, aumenta a Velocidade em 6 níveis."
+  },
+  "STEAMVEIL": {
+   "nome": "Véu de Vapor",
+   "desc": "Ao entrar, traz sol forte por 6 turnos. Golpes AGUA viram vapor: não causam dano e aumentam sua Evasão."
+  },
+  "STEELWORKER": {
+   "nome": "Metalúrgico",
+   "desc": "Aumenta em 50% o poder dos golpes do tipo AÇO."
+  },
+  "STEELYSPIRIT": {
+   "nome": "Espírito de Aço",
+   "desc": "Aumenta em 50% o poder dos golpes do tipo AÇO do usuário e dos aliados."
+  },
+  "STENCH": {
+   "nome": "Fedor",
+   "desc": "10% de chance de fazer o rival recuar ao usar golpe de dano. Não acumula com Presa Afiada ou Rocha do Rei."
+  },
+  "STICKYHOLD": {
+   "nome": "Aderência",
+   "desc": "O item que leva fica grudado no corpo e não pode ser roubado em combate."
+  },
+  "STORMDRAIN": {
+   "nome": "Dreno Pluvial",
+   "desc": "Atrai os golpes do tipo AGUA, aumenta 1 nível o Ataque Especial e não sofre dano."
+  },
+  "STRONGJAW": {
+   "nome": "Mandíbula Forte",
+   "desc": "Aumenta em 50% o poder dos golpes de mordida."
+  },
+  "STURDY": {
+   "nome": "Robustez",
+   "desc": "Com HP no máximo, impede que o rival o derrote com um único golpe."
+  },
+  "STURDYROOT": {
+   "nome": "Raiz Robusta",
+   "desc": "Os golpes que drenam HP recuperam mais HP."
+  },
+  "SUCTIONCUPS": {
+   "nome": "Ventosas",
+   "desc": "Suas ventosas se prendem ao chão e anulam golpes e itens que forçam a troca."
+  },
+  "SUPERLUCK": {
+   "nome": "Sortudo",
+   "desc": "Sua sorte aumenta em 1 nível a chance de golpes críticos."
+  },
+  "SUPERSWEETSYRUP": {
+   "nome": "Néctar Doce",
+   "desc": "Na primeira entrada em combate, espalha um aroma de néctar que reduz a Evasão do rival."
+  },
+  "SUPREMEOVERLORD": {
+   "nome": "Senhor Supremo",
+   "desc": "Ao entrar em combate, o Ataque e o Ataque Especial aumentam um pouco por membro da equipe derrotado."
+  },
+  "SWARM": {
+   "nome": "Enxame",
+   "desc": "Aumenta em 50% o poder dos golpes do tipo INSETO quando o HP está em 1/3 ou menos."
+  },
+  "SWEETVEIL": {
+   "nome": "Véu Doce",
+   "desc": "Impede que o Pokémon e seus aliados em combate adormeçam ou usem Descanso."
+  },
+  "SWIFTSWIM": {
+   "nome": "Nado Veloz",
+   "desc": "Duplica a Velocidade quando chove."
+  },
+  "SWORDOFRUIN": {
+   "nome": "Espada da Ruína",
+   "desc": "Reduz a Defesa de todos os outros Pokémon com o poder de sua espada amaldiçoada."
+  },
+  "SYMBIOSIS": {
+   "nome": "Simbiose",
+   "desc": "Passa seu item ao aliado quando este usa o dele."
+  },
+  "SYNCHRONIZE": {
+   "nome": "Sincronia",
+   "desc": "Passa envenenamento, queimadura ou paralisia ao Pokémon que lhe causar esse estado."
+  },
+  "TABLETSOFRUIN": {
+   "nome": "Tábuas da Ruína",
+   "desc": "Reduz o Ataque de todos os outros Pokémon com o poder de suas tábuas amaldiçoadas."
+  },
+  "TANGLEDFEET": {
+   "nome": "Pés Trôpegos",
+   "desc": "Reduz à metade a Precisão dos golpes rivais contra ele se estiver confuso."
+  },
+  "TANGLINGHAIR": {
+   "nome": "Cabelo Enrolado",
+   "desc": "Reduz em 1 nível a Velocidade do rival que o atingir com golpe de contato."
+  },
+  "TECHNICIAN": {
+   "nome": "Técnico",
+   "desc": "Multiplica por 1,5x o poder dos golpes com poder de 60 ou menos."
+  },
+  "TELEPATHY": {
+   "nome": "Telepatia",
+   "desc": "Esquiva dos ataques dos aliados em combate."
+  },
+  "TERASHIFT": {
+   "nome": "Teramudança",
+   "desc": "Ao entrar em combate, absorve a energia ao redor e adota a Forma Terastal."
+  },
+  "TERAVOLT": {
+   "nome": "Teravolt",
+   "desc": "As habilidades do alvo não afetam os golpes usados."
+  },
+  "THERMALEXCHANGE": {
+   "nome": "Troca Térmica",
+   "desc": "Imune a queimaduras. Se atingido por golpe do tipo FOGO, aumenta o Ataque."
+  },
+  "THICKFAT": {
+   "nome": "Gordura",
+   "desc": "Sua camada de gordura reduz à metade o dano de golpes do tipo FOGO e GELO."
+  },
+  "TINTEDLENS": {
+   "nome": "Lente Colorida",
+   "desc": "Os golpes pouco eficazes causam o dobro de dano."
+  },
+  "TINTINEO": {
+   "nome": "Tilintar",
+   "desc": "Ao entrar, cura os estados da equipe. Golpes de som viram tipo PSIQUICO e ficam 20% mais fortes."
+  },
+  "TORRENT": {
+   "nome": "Torrente",
+   "desc": "Aumenta em 50% o poder dos golpes do tipo AGUA quando o HP está em 1/3 ou menos."
+  },
+  "TOUGHCLAWS": {
+   "nome": "Garras Duras",
+   "desc": "Aumenta em 1/3 o poder dos golpes de contato."
+  },
+  "TOXICBOOST": {
+   "nome": "Impulso Tóxico",
+   "desc": "Aumenta em 50% o poder dos ataques físicos quando está envenenado."
+  },
+  "TOXICCHAIN": {
+   "nome": "Corrente Tóxica",
+   "desc": "Sua corrente tóxica pode envenenar gravemente o Pokémon que atacar."
+  },
+  "TOXICDEBRIS": {
+   "nome": "Detritos Tóxicos",
+   "desc": "Ao sofrer dano de ataque físico, espalha Espinhos Tóxicos aos pés do rival."
+  },
+  "TRACE": {
+   "nome": "Rastrear",
+   "desc": "Ao entrar em combate, copia a habilidade de um rival adjacente ao acaso."
+  },
+  "TRANSISTOR": {
+   "nome": "Transistor",
+   "desc": "Aumenta em 30% o poder dos golpes do tipo ELÉTRICO."
+  },
+  "TRIAGE": {
+   "nome": "Triagem",
+   "desc": "Aumenta em 3 a prioridade dos golpes que recuperam HP diretamente."
+  },
+  "TRUANT": {
+   "nome": "Preguiça",
+   "desc": "A cada dois turnos, o Pokémon fica ausente e não faz nada."
+  },
+  "TURBOBLAZE": {
+   "nome": "Turbochama",
+   "desc": "As habilidades do alvo não afetam os golpes usados."
+  },
+  "UNAWARE": {
+   "nome": "Ignorante",
+   "desc": "Ao atacar, ignora as mudanças de atributos do rival, exceto a Velocidade."
+  },
+  "UNBURDEN": {
+   "nome": "Leveza",
+   "desc": "Duplica a Velocidade se usar ou perder o item que leva. O efeito some ao ser trocado."
+  },
+  "UNNERVE": {
+   "nome": "Nervosismo",
+   "desc": "Deixa o rival nervoso e o impede de comer bagas."
+  },
+  "UNSEENFIST": {
+   "nome": "Punho Invisível",
+   "desc": "Golpes de contato causam dano mesmo se o alvo se proteger."
+  },
+  "VESSELOFRUIN": {
+   "nome": "Vaso da Ruína",
+   "desc": "Reduz o Ataque Especial de todos os outros Pokémon com o poder de seu vaso amaldiçoado."
+  },
+  "VICTORYSTAR": {
+   "nome": "Estrela Vitória",
+   "desc": "Aumenta em 10% a Precisão do Pokémon e de seus aliados em combate."
+  },
+  "VITALSPIRIT": {
+   "nome": "Espírito Vital",
+   "desc": "Sua determinação o impede de adormecer. Se usar Descanso, o golpe falha."
+  },
+  "VOLTABSORB": {
+   "nome": "Absorver Volts",
+   "desc": "Golpes do tipo ELÉTRICO não o afetam e recuperam 1/4 do HP máximo. Vale também para golpes de estado."
+  },
+  "WANDERINGSPIRIT": {
+   "nome": "Alma Errante",
+   "desc": "Se atingido por golpe de contato, troca de habilidade com o agressor, salvo exceções."
+  },
+  "WATERABSORB": {
+   "nome": "Hidroabsorção",
+   "desc": "Golpes do tipo AGUA não o afetam e recuperam 1/4 do HP máximo. Vale também para golpes de estado."
+  },
+  "WATERBUBBLE": {
+   "nome": "Bolha",
+   "desc": "Faz algumas coisas."
+  },
+  "WATERCOMPACTION": {
+   "nome": "Compactação",
+   "desc": "Aumenta 2 níveis a Defesa se atingido por golpe do tipo AGUA, mas não fica imune a ele."
+  },
+  "WATERVEIL": {
+   "nome": "Véu Aquático",
+   "desc": "A camada de água evita queimaduras. Se ganhar a habilidade queimado, se cura."
+  },
+  "WEAKARMOR": {
+   "nome": "Armadura Frágil",
+   "desc": "Ao sofrer dano de ataque físico, reduz 1 nível a Defesa, mas aumenta 2 níveis a Velocidade."
+  },
+  "WELLBAKEDBODY": {
+   "nome": "Corpo Assado",
+   "desc": "Se atingido por golpe do tipo FOGO, aumenta muito a Defesa em vez de sofrer dano."
+  },
+  "WHITESMOKE": {
+   "nome": "Fumaça Branca",
+   "desc": "A fumaça branca impede que outros Pokémon reduzam seus atributos, mas não os próprios golpes."
+  },
+  "WIMPOUT": {
+   "nome": "Fujão",
+   "desc": "Se assusta e sai do combate quando o HP cai abaixo de 50%, por dano direto ou indireto."
+  },
+  "WINDPOWER": {
+   "nome": "Energia Eólica",
+   "desc": "Se carrega ao ser atingido por golpe de vento, o que reforça seu próximo golpe ELÉTRICO."
+  },
+  "WINDRIDER": {
+   "nome": "Surfista do Vento",
+   "desc": "Com Vento Favorável ou ao ser atingido por golpe de vento, aumenta o Ataque e não sofre dano dele."
+  },
+  "WONDERGUARD": {
+   "nome": "Guarda Maravilha",
+   "desc": "Graças a um poder misterioso, só sofre dano de golpes supereficazes."
+  },
+  "WONDERSKIN": {
+   "nome": "Pele Milagrosa",
+   "desc": "Reduz a Precisão dos golpes de estado contra ele a 50%."
+  },
+  "ZENMODE": {
+   "nome": "Modo Zen",
+   "desc": "Muda de forma quando o HP cai à metade."
+  },
+  "ZEROTOHERO": {
+   "nome": "Zero a Herói",
+   "desc": "Adota a Forma Heroica ao sair do combate."
+  }
+ }
+}

@@ -397,12 +397,24 @@ static void drawMonCelula(const StoredMon &m, int x, int y, bool activo,
   setSize(1);
   setCur(x + (TRG_W - (int)textW(nm, 1)) / 2, y + 84);
   printT(nm);
-  char lv[10], it[24] = "";
+  char lv[10], it[40] = "";
   snprintf(lv, sizeof lv, "Lv%u", Pet::levelOf(m));
   uint8_t leva = objeto == 0xFF ? m.item : objeto;
   if (leva && leva < ITEM_COUNT) {
-    int cabe = (TRG_W - 8) / LATIN_ADV - (int)strlen(lv) - 1;
-    if (cabe > 0) snprintf(it, sizeof it, "%.*s", cabe, ITEM_TBL[leva].name);
+    // pela LARGURA e por letra inteira (em japones uma letra sao 3 bytes)
+    int cabe = (TRG_W - 8) - (int)textW(lv, 1) - LATIN_ADV;
+    const char *in = itemName(leva);
+    int n = 0;
+    while (in[n] && n < (int)sizeof(it) - 1) {
+      unsigned char c = (unsigned char)in[n];
+      int cl = !gCjkFont || c < 0x80 ? 1 : (c & 0xE0) == 0xC0 ? 2 : (c & 0xF0) == 0xE0 ? 3 : 4;
+      if (n + cl > (int)sizeof(it) - 1) break;
+      memcpy(it, in, n + cl);
+      it[n + cl] = 0;
+      if ((int)textW(it, 1) > cabe) break;
+      n += cl;
+    }
+    it[n] = 0;
   }
   int w = (int)textW(lv, 1) + (it[0] ? LATIN_ADV + (int)textW(it, 1) : 0);
   int lx = x + (TRG_W - w) / 2;

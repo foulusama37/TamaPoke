@@ -718,7 +718,7 @@ static void btSwitchTo(uint8_t slot, bool porGusto = false) {
   // Entrou com Drought & cia: a animacao do campo depois da bola abrir.
   if (btAnimDoCampo(BT_PLAYER, millis() + 900))
     snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GO_2), dexName(c.pareceDex()),
-             abilAt(bt.b.startAbil[BT_PLAYER]).name);
+             abilName(bt.b.startAbil[BT_PLAYER]));
 }
 
 // O GOLPE cuja animacao do Anil representa uma habilidade que muda o
@@ -923,7 +923,7 @@ static bool btCobrarBotin() {
   }
 
   if (!bt.loot[0]) return false;
-  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GOT), itemAt(bt.loot[0]).name);
+  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GOT), itemName(bt.loot[0]));
   bt.until = millis() + BT_LOOT_MS;
   return true;
 }
@@ -959,7 +959,7 @@ static void battleClose() {
     //  el BOTIN lo cobro btCobrarBotin al entrar en BP_LOOT, que es donde
     //  se puede ENSENAR — antes se cobraba aqui y solo salia por serie)
     for (uint8_t i = 0; i < 2; i++)
-      if (bt.loot[i]) Serial.printf("encontro: %s\n", itemAt(bt.loot[i]).name);
+      if (bt.loot[i]) Serial.printf("encontro: %s\n", itemName(bt.loot[i]));
     // Y la progresion por Kanto: un salvaje suma al porton, un lider da la
     // insignia (y con ella, mas especies sueltas por ahi).
     if (bt.gym >= 0) {
@@ -976,7 +976,7 @@ static void battleClose() {
       Serial.printf("DESAFIO SUPERADO: %s (%u/%u)  premio: %u x %s\n",
                     gymAt(pet.region, (uint8_t)bt.gym).leader,
                     pet.badges, pet.gymCount(), pet.lastBallCount,
-                    itemAt(pet.lastBallId).name);
+                    itemName(pet.lastBallId));
     } else {
       pet.winWild();
       // Ganar a un entrenador paga una bola de propina, encima de lo que
@@ -984,7 +984,7 @@ static void battleClose() {
       // que su bicho no se pueda capturar.
       if (bt.trainer >= 0) {
         pet.giveBall(pet.badges >= 4 ? 1 : 0);
-        Serial.printf("propina: %s\n", itemAt(pet.lastBallId).name);
+        Serial.printf("propina: %s\n", itemName(pet.lastBallId));
       }
       // Y si era uno de los TRES de la casa, sube el porton del lider.
       // Va DESPUES de winWild(), que ya apunto la victoria: winGymTrainer
@@ -1613,7 +1613,7 @@ void battleTick() {
                    dexName(bt.b.side[s ^ 1].pareceDex()));
         else
           snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ABILITY),
-                   dexName(bt.b.side[s].pareceDex()), abilAt(bt.b.startAbil[s]).name);
+                   dexName(bt.b.side[s].pareceDex()), abilName(bt.b.startAbil[s]));
         bt.until = now + 1000;
         // E o clima/terreno que ela trouxe, animado (o sol do Drought...).
         uint32_t dura = btAnimDoCampo(s, now);
@@ -1868,7 +1868,7 @@ void battleTick() {
         if (bt.last.abilFired) {
           uint8_t lado = bt.last.abilOfDef ? (bt.acting ^ 1) : bt.acting;
           snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ABILITY),
-                   dexName(bt.b.side[lado].pareceDex()), abilAt(bt.last.abilFired).name);
+                   dexName(bt.b.side[lado].pareceDex()), abilName(bt.last.abilFired));
           bt.until = now + 900;
           break;
         }
@@ -2034,7 +2034,7 @@ void battleTick() {
         if (bt.last.itemStolen != IT_NONE) {
           snprintf(bt.msg, sizeof(bt.msg), T(S_BM_STOLE),
                    dexName(bt.b.side[bt.acting].pareceDex()),
-                   itemAt(bt.last.itemStolen).name);
+                   itemName(bt.last.itemStolen));
           bt.last.itemStolen = IT_NONE;
           bt.until = now + 900;
           break;
@@ -2044,7 +2044,7 @@ void battleTick() {
           uint8_t de = bt.last.itemLostSelf ? bt.acting : (uint8_t)(bt.acting ^ 1);
           snprintf(bt.msg, sizeof(bt.msg), T(S_BM_LOST),
                    dexName(bt.b.side[de].pareceDex()),
-                   itemAt(bt.last.itemLost).name);
+                   itemName(bt.last.itemLost));
           bt.last.itemLost = IT_NONE;
           bt.until = now + 900;
           break;
@@ -2133,7 +2133,7 @@ void battleTick() {
           // Shed Skin y Speed Boost: si no se anuncian, el estado desaparece
           // o la velocidad sube sin que nadie sepa por que
           snprintf(bt.msg, sizeof(bt.msg), T(S_BM_ABILITY),
-                   dexName(bt.b.side[who].pareceDex()), abilAt(bt.b.endAbil).name);
+                   dexName(bt.b.side[who].pareceDex()), abilName(bt.b.endAbil));
           bt.until = now + 900;
           break;
         }
@@ -2190,7 +2190,7 @@ void battleTick() {
           const Combatant &q = bt.b.side[who];
           if (bt.b.endHealItem)
             snprintf(bt.msg, sizeof(bt.msg), T(S_BM_RESTORED_HP),
-                     dexName(q.pareceDex()), itemAt(bt.b.endHealItem).name);
+                     dexName(q.pareceDex()), itemName(bt.b.endHealItem));
           else
             snprintf(bt.msg, sizeof(bt.msg), T(S_BM_RESTORED_HP_2),
                      dexName(q.pareceDex()));
@@ -2244,7 +2244,7 @@ void battleTick() {
       bt.lootShown++;
       if (bt.lootShown < 2 && bt.loot[bt.lootShown]) {
         snprintf(bt.msg, sizeof(bt.msg), T(S_BM_GOT),
-                 itemAt(bt.loot[bt.lootShown]).name);
+                 itemName(bt.loot[bt.lootShown]));
         bt.until = millis() + BT_LOOT_MS;
       } else {
         bt.msg[0] = 0;
@@ -3313,7 +3313,7 @@ void btRenderBadge() {
   }
   if (pet.lastBallId) {
     snprintf(l, sizeof(l), "+%u %s", (unsigned)pet.lastBallCount,
-             itemAt(pet.lastBallId).name);
+             itemName(pet.lastBallId));
     printTituloC(l, y, tituloTalla(l, 2, 300), C565(0x28, 0x80, 0x40),
                  C565(0xc8, 0xe0, 0xc0));
   }
@@ -3445,7 +3445,7 @@ void btRenderWin() {
     setCur(108, y + 2);
     printT(T(S_GANHOU));
     setCur(108 + textW(T(S_GANHOU), 1), y + 2);
-    printT(itemAt(bt.loot[i]).name);
+    printT(itemName(bt.loot[i]));
     y += 22;
   }
 
@@ -3494,7 +3494,7 @@ void btRenderParty() {
   // va a relevar —— que es justo el toque que no quiere dar.
   char tit[48];
   if (bt.itemPick)
-    snprintf(tit, sizeof(tit), T(S_EM_QUEM_FMT), ITEM_TBL[bt.itemPick].name);
+    snprintf(tit, sizeof(tit), T(S_EM_QUEM_FMT), itemName(bt.itemPick));
   else
     snprintf(tit, sizeof(tit), "%s", bt.mustSwitch ? T(S_QUEM_PROXIMO) : T(S_CARD_TEAM));
   uint8_t tt = 2;
@@ -4250,7 +4250,7 @@ bool pvpSegue() {
         pvpSincroniza(bt.b, pvpL);      // um Revive devolve alguem ao banco
         const char *quem = dexName(naPista ? c.asDex : (int16_t)l.reg[idx].species);
         snprintf(bt.msg, sizeof(bt.msg), lado == pvpEu ? T(S_BM_USED_ON) : T(S_BM_FOE_USED_ON),
-                 ITEM_TBL[id].name, quem);
+                 itemName(id), quem);
         sfxPlay(SFX_EAT);
         bt.phase = BP_MSG;
         bt.extraStep = 9;

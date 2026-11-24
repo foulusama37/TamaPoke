@@ -1,0 +1,1657 @@
+{
+ "itens": {
+  "LEFTOVERS": {
+   "desc": "Ein Item zum Tragen. Füllt die KP des Trägers im Kampf nach und nach wieder auf."
+  },
+  "SITRUSBERRY": {
+   "desc": "Eine Zutat für Knurspe. Ein Pokémon kann sie nutzen oder tragen, um einige KP aufzufüllen."
+  },
+  "ORANBERRY": {
+   "desc": "Eine Zutat für Knurspe. Ein Pokémon kann sie nutzen oder tragen, um 10 KP aufzufüllen."
+  },
+  "LUMBERRY": {
+   "desc": "Eine Zutat für Knurspe. Ein Pokémon kann sie nutzen oder tragen, um jedes Statusproblem zu heilen."
+  },
+  "FOCUSSASH": {
+   "desc": "Ein Item zum Tragen. Hat der Träger volle KP, übersteht er eine K.O.-Attacke mit 1 KP."
+  },
+  "LIFEORB": {
+   "desc": "Verstärkt Attacken, kostet aber bei jedem Angriff 30% der KP. Muss von einem Pokémon getragen werden."
+  },
+  "CHOICEBAND": {
+   "desc": "Erhöht den Angriff um 50%, erlaubt aber zu 50% nur eine Art von Attacke. Muss von einem Pokémon getragen werden."
+  },
+  "CHOICESPECS": {
+   "desc": "Erhöht den Spezial-Angriff um 50%, erlaubt aber nur eine Art von Attacke. Muss von einem Pokémon getragen werden."
+  },
+  "QUICKCLAW": {
+   "desc": "Ein Item zum Tragen. Eine leichte, scharfe Klaue, mit der der Träger manchmal zuerst handelt."
+  },
+  "SCOPELENS": {
+   "desc": "Eine Linse, die die Chance auf einen Volltreffer erhöht."
+  },
+  "EVERSTONE": {
+   "desc": "Ein Item zum Tragen. Ein Pokémon, das diesen seltsamen Stein trägt, entwickelt sich nicht."
+  },
+  "CHARCOAL": {
+   "desc": "Ein Item zum Tragen. Ein Brennstoff, der Feuer-Attacken verstärkt."
+  },
+  "MYSTICWATER": {
+   "desc": "Ein tropfenförmiger Edelstein, der Wasser-Attacken um 20% verstärkt. Muss von einem Pokémon getragen werden."
+  },
+  "MIRACLESEED": {
+   "desc": "Ein Item zum Tragen. Ein lebendiger Samen, der Pflanzen-Attacken verstärkt."
+  },
+  "MAGNET": {
+   "desc": "Ein Item zum Tragen. Ein starker Magnet, der Elektro-Attacken verstärkt."
+  },
+  "TWISTEDSPOON": {
+   "desc": "Ein Item zum Tragen. Ein Löffel voll telekinetischer Kraft, der Psycho-Attacken verstärkt."
+  },
+  "NEVERMELTICE": {
+   "desc": "Ein Item zum Tragen. Ein Stück Eis, das Hitze abweist und Eis-Attacken verstärkt."
+  },
+  "BLACKBELT": {
+   "desc": "Ein Item zum Tragen. Ein Gürtel, der die Entschlossenheit und Kampf-Attacken stärkt."
+  },
+  "SHARPBEAK": {
+   "desc": "Ein Item zum Tragen. Ein langer, spitzer Schnabel, der Flug-Attacken verstärkt."
+  },
+  "POISONBARB": {
+   "desc": "Ein giftiger Stachel, der Gift-Attacken um 20% verstärkt. Muss von einem Pokémon getragen werden."
+  },
+  "SOFTSAND": {
+   "desc": "Ein Item zum Tragen. Lockerer, seidiger Sand, der Boden-Attacken verstärkt."
+  },
+  "HARDSTONE": {
+   "desc": "Ein Item zum Tragen. Ein unzerbrechlicher Stein, der Gestein-Attacken verstärkt."
+  },
+  "SILVERPOWDER": {
+   "desc": "Ein Item zum Tragen. Glänzender Silberstaub, der Käfer-Attacken verstärkt."
+  },
+  "SPELLTAG": {
+   "desc": "Ein Item zum Tragen. Ein unheimliches Etikett, das Geist-Attacken verstärkt."
+  },
+  "DRAGONFANG": {
+   "desc": "Ein Item zum Tragen. Ein harter, spitzer Zahn, der Drachen-Attacken verstärkt."
+  },
+  "BLACKGLASSES": {
+   "desc": "Ein Item zum Tragen. Eine zwielichtige Brille, die Unlicht-Attacken verstärkt."
+  },
+  "SILKSCARF": {
+   "desc": "Ein Item zum Tragen. Ein edles Tuch, das Normal-Attacken verstärkt."
+  },
+  "POTION": {
+   "desc": "Ein Sprüh-Heilmittel für Wunden. Füllt die KP eines Pokémon um 20 Punkte auf."
+  },
+  "SUPERPOTION": {
+   "desc": "Ein Sprüh-Heilmittel für Wunden. Füllt die KP eines Pokémon um 60 Punkte auf."
+  },
+  "HYPERPOTION": {
+   "desc": "Ein Sprüh-Heilmittel für Wunden. Füllt die KP eines Pokémon um 120 Punkte auf."
+  },
+  "MAXPOTION": {
+   "desc": "Ein Sprüh-Heilmittel für Wunden. Füllt die KP eines Pokémon vollständig auf."
+  },
+  "FULLRESTORE": {
+   "desc": "Ein Heilmittel, das die KP eines Pokémon voll auffüllt und alle Statusprobleme heilt."
+  },
+  "REVIVE": {
+   "desc": "Belebt ein besiegtes Pokémon wieder. Stellt die Hälfte seiner maximalen KP her."
+  },
+  "MAXREVIVE": {
+   "desc": "Belebt ein besiegtes Pokémon wieder. Stellt alle seine KP her."
+  },
+  "ANTIDOTE": {
+   "desc": "Ein Sprüh-Heilmittel. Heilt ein Pokémon von einer Vergiftung."
+  },
+  "PARALYZEHEAL": {
+   "desc": "Ein Sprüh-Heilmittel. Heilt ein Pokémon von einer Paralyse."
+  },
+  "AWAKENING": {
+   "desc": "Ein Sprüh-Heilmittel. Weckt ein schlafendes Pokémon auf."
+  },
+  "BURNHEAL": {
+   "desc": "Ein Sprüh-Heilmittel. Heilt ein Pokémon von einer Verbrennung."
+  },
+  "ICEHEAL": {
+   "desc": "Ein Sprüh-Heilmittel. Taut ein eingefrorenes Pokémon wieder auf."
+  },
+  "FULLHEAL": {
+   "desc": "Ein Sprüh-Heilmittel. Heilt alle Statusprobleme eines Pokémon."
+  },
+  "ETHER": {
+   "desc": "Füllt die AP einer gewählten Attacke eines Pokémon um bis zu 10 Punkte auf."
+  },
+  "MAXETHER": {
+   "desc": "Füllt die AP einer gewählten Attacke eines Pokémon vollständig auf."
+  },
+  "ELIXIR": {
+   "desc": "Füllt die AP aller Attacken eines Pokémon um je 10 Punkte auf."
+  },
+  "MAXELIXIR": {
+   "desc": "Füllt die AP aller Attacken eines Pokémon vollständig auf."
+  },
+  "XATTACK": {
+   "desc": "Erhöht im Kampf den Angriff um 1 Stufe. Die Wirkung endet, wenn das Pokémon ausgewechselt wird."
+  },
+  "XDEFENSE": {
+   "desc": "Erhöht im Kampf die Verteidigung um 1 Stufe. Die Wirkung endet, wenn das Pokémon ausgewechselt wird."
+  },
+  "XSPEED": {
+   "desc": "Erhöht im Kampf die Initiative um 1 Stufe. Die Wirkung endet, wenn das Pokémon ausgewechselt wird."
+  },
+  "XSPATK": {
+   "desc": "Erhöht im Kampf den Spezial-Angriff um 1 Stufe. Die Wirkung endet, wenn das Pokémon ausgewechselt wird."
+  },
+  "DIREHIT": {
+   "desc": "Erhöht im Kampf die Volltrefferquote um 1 Stufe. Die Wirkung endet, wenn das Pokémon ausgewechselt wird."
+  },
+  "HPUP": {
+   "desc": "Ein nahrhaftes Getränk, das die KP eines Pokémon erhöht."
+  },
+  "PROTEIN": {
+   "desc": "Ein nahrhaftes Getränk, das den Angriff eines Pokémon erhöht."
+  },
+  "IRON": {
+   "desc": "Ein nahrhaftes Getränk, das die Verteidigung eines Pokémon erhöht."
+  },
+  "CALCIUM": {
+   "desc": "Ein nahrhaftes Getränk, das den Spezial-Angriff eines Pokémon erhöht."
+  },
+  "ZINC": {
+   "desc": "Ein nahrhaftes Getränk, das die Spezial-Verteidigung eines Pokémon erhöht."
+  },
+  "CARBOS": {
+   "desc": "Ein nahrhaftes Getränk, das die Initiative eines Pokémon erhöht."
+  },
+  "POKEBALL": {
+   "desc": "Ein Gerät zum Fangen wilder Pokémon. Es wird wie ein Ball auf ein Pokémon geworfen und funktioniert als Kapsel."
+  },
+  "GREATBALL": {
+   "desc": "Ein guter, leistungsstarker Ball mit höherer Fangquote als ein normaler Pokéball."
+  },
+  "ULTRABALL": {
+   "desc": "Ein äußerst leistungsstarker Ball mit höherer Fangquote als ein Superball."
+  },
+  "MASTERBALL": {
+   "desc": "Der beste Ball mit maximaler Leistung. Er fängt jedes wilde Pokémon garantiert."
+  },
+  "FIRESTONE": {
+   "desc": "Ein seltsamer Stein, der manche Pokémon entwickeln lässt. Sein Kern ist feurig orange."
+  },
+  "WATERSTONE": {
+   "desc": "Ein seltsamer Stein, der manche Pokémon entwickeln lässt. Er ist blau wie klares Wasser."
+  },
+  "THUNDERSTONE": {
+   "desc": "Ein seltsamer Stein, der manche Pokémon entwickeln lässt. Er hat ein Blitzmuster."
+  },
+  "LEAFSTONE": {
+   "desc": "Ein seltsamer Stein, der manche Pokémon entwickeln lässt. Er hat ein Blattmuster."
+  },
+  "MOONSTONE": {
+   "desc": "Ein seltsamer Stein, der manche Pokémon entwickeln lässt. Er ist pechschwarz."
+  },
+  "SUNSTONE": {
+   "desc": "Ein seltsamer Stein, der manche Pokémon entwickeln lässt. Er ist rot wie die Sonne."
+  },
+  "LINKINGCORD": {
+   "desc": "Eine Schnur, die eine mysteriöse Energie ausstrahlt. Sie lässt manche Pokémon entwickeln."
+  },
+  "KINGSROCK": {
+   "desc": "Ein Item zum Tragen. Fügt der Träger Schaden zu, kann das Ziel zurückschrecken."
+  },
+  "DRAGONSCALE": {
+   "desc": "Eine dicke, zähe Schuppe. Drachen-Pokémon können sie beim Fangen bei sich tragen."
+  },
+  "UPGRADE": {
+   "desc": "Ein seltsames Gerät der Silph Co. voller Daten aller Art. Lässt Porygon sich entwickeln."
+  },
+  "METALCOAT": {
+   "desc": "Ein Item zum Tragen. Ein spezieller Metallfilm, der Stahl-Attacken verstärkt."
+  },
+  "PRISMSCALE": {
+   "desc": "Eine schöne Schuppe, die Barschwa sich entwickeln lässt. Sie schimmert in Regenbogenfarben."
+  },
+  "DEEPSEATOOTH": {
+   "desc": "Ein Item für Perlu. Ein silbern glänzender Zahn, der den Spezial-Angriff erhöht."
+  },
+  "DEEPSEASCALE": {
+   "desc": "Ein Item für Perlu. Eine zartrosa schimmernde Schuppe, die die Spezial-Verteidigung erhöht."
+  },
+  "SHINYSTONE": {
+   "desc": "Ein seltsamer Stein, der manche Pokémon entwickeln lässt. Er strahlt ein grelles Licht aus."
+  },
+  "DUSKSTONE": {
+   "desc": "Ein seltsamer Stein, der manche Pokémon entwickeln lässt. Er ist dunkel wie der Nachthimmel."
+  },
+  "DAWNSTONE": {
+   "desc": "Ein seltsamer Stein, der manche Pokémon entwickeln lässt. Er funkelt wie ein glitzerndes Auge."
+  },
+  "ICESTONE": {
+   "desc": "Ein seltsamer Stein, der manche Pokémon entwickeln lässt. Er hat ein Schneemuster."
+  },
+  "PROTECTOR": {
+   "desc": "Ein sehr schwerer Schutz. Damit entwickelt sich Rizeros."
+  },
+  "ELECTIRIZER": {
+   "desc": "Ein Gerät mit sehr viel elektrischer Energie. Damit entwickelt sich Elektek."
+  },
+  "MAGMARIZER": {
+   "desc": "Eine Kiste mit enormer magmatischer Energie. Damit entwickelt sich Magmar."
+  },
+  "DUBIOUSDISC": {
+   "desc": "Ein durchsichtiges Gerät mit mysteriösen Daten. Lässt Porygon2 sich entwickeln."
+  },
+  "REAPERCLOTH": {
+   "desc": "Ein Tuch voll sehr starker spiritueller Energie. Damit entwickelt sich Zwirrklop."
+  },
+  "OVALSTONE": {
+   "desc": "Ein seltsamer, eiförmiger Stein, der Wonneira sich entwickeln lässt."
+  },
+  "SACHET": {
+   "desc": "Ein Duftbeutel mit eigenartigem Aroma. Damit entwickelt sich Parfi."
+  },
+  "WHIPPEDDREAM": {
+   "desc": "Eine Süßigkeit aus weicher, lockerer Schlagsahne. Damit entwickelt sich Flauschling."
+  },
+  "BLACKAUGURITE": {
+   "desc": "Ein glasiger schwarzer Stein, der Sichlor sich entwickeln lässt."
+  },
+  "SCROLLOFDARKNESS": {
+   "desc": "Eine seltsame Schriftrolle, mit der sich Dakuma zu Wulaosu (Fokussierter Stil) entwickelt."
+  },
+  "SCROLLOFWATERS": {
+   "desc": "Eine seltsame Schriftrolle, mit der sich Dakuma zu Wulaosu (Fließender Stil) entwickelt."
+  },
+  "TOWNMAP": {
+   "desc": "Eine praktische Karte, die jederzeit einsehbar ist. Sie zeigt sogar deinen Standort."
+  },
+  "VENUSAURITEX": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Bisaflor im Kampf die Mega-Entwicklung.",
+   "nome": "Bisaflornit X"
+  },
+  "CHARIZARDITEX": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Glurak im Kampf die Mega-Entwicklung."
+  },
+  "CHARIZARDITEY": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Glurak im Kampf die Mega-Entwicklung."
+  },
+  "BLASTOISINITEX": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Turtok im Kampf die Mega-Entwicklung.",
+   "nome": "Turtoknit X"
+  },
+  "BEEDRILLITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Bibor im Kampf die Mega-Entwicklung."
+  },
+  "PIDGEOTITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Tauboss im Kampf die Mega-Entwicklung."
+  },
+  "PIKACHUITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Pikachu im Kampf die Mega-Entwicklung.",
+   "nome": "Pikachunit"
+  },
+  "ALAKAZITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Simsala im Kampf die Mega-Entwicklung."
+  },
+  "SLOWBRONITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Lahmus im Kampf die Mega-Entwicklung."
+  },
+  "GENGARITEX": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Gengar im Kampf die Mega-Entwicklung.",
+   "nome": "Gengarnit X"
+  },
+  "KANGASKHANITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Kangama im Kampf die Mega-Entwicklung."
+  },
+  "PINSIRITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Pinsir im Kampf die Mega-Entwicklung."
+  },
+  "GYARADOSITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Garados im Kampf die Mega-Entwicklung."
+  },
+  "AERODACTYLITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Aerodactyl im Kampf die Mega-Entwicklung."
+  },
+  "MEWTWONITEX": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Mewtu im Kampf die Mega-Entwicklung."
+  },
+  "MEWTWONITEY": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Mewtu im Kampf die Mega-Entwicklung."
+  },
+  "AMPHAROSITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Ampharos im Kampf die Mega-Entwicklung."
+  },
+  "STEELIXITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Stahlos im Kampf die Mega-Entwicklung."
+  },
+  "SCIZORITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Scherox im Kampf die Mega-Entwicklung."
+  },
+  "HERACRONITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Skaraborn im Kampf die Mega-Entwicklung."
+  },
+  "HOUNDOOMINITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Hundemon im Kampf die Mega-Entwicklung."
+  },
+  "TYRANITARITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Despotar im Kampf die Mega-Entwicklung."
+  },
+  "SCEPTILITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Gewaldro im Kampf die Mega-Entwicklung."
+  },
+  "BLAZIKENITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Lohgock im Kampf die Mega-Entwicklung."
+  },
+  "SWAMPERTITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Sumpex im Kampf die Mega-Entwicklung."
+  },
+  "GARDEVOIRITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Guardevoir im Kampf die Mega-Entwicklung."
+  },
+  "SABLENITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Zobiris im Kampf die Mega-Entwicklung."
+  },
+  "MAWILITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Flunkifer im Kampf die Mega-Entwicklung."
+  },
+  "AGGRONITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Stolloss im Kampf die Mega-Entwicklung."
+  },
+  "MEDICHAMITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Meditalis im Kampf die Mega-Entwicklung."
+  },
+  "MANECTITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Voltenso im Kampf die Mega-Entwicklung."
+  },
+  "SHARPEDONITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Tohaido im Kampf die Mega-Entwicklung."
+  },
+  "CAMERUPTITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Camerupt im Kampf die Mega-Entwicklung."
+  },
+  "ALTARIANITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Altaria im Kampf die Mega-Entwicklung."
+  },
+  "BANETTITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Banette im Kampf die Mega-Entwicklung."
+  },
+  "ABSOLITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Absol im Kampf die Mega-Entwicklung."
+  },
+  "GLALITITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Firnontor im Kampf die Mega-Entwicklung."
+  },
+  "SALAMENCITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Brutalanda im Kampf die Mega-Entwicklung."
+  },
+  "METAGROSSITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Metagross im Kampf die Mega-Entwicklung."
+  },
+  "LATIASITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Latias im Kampf die Mega-Entwicklung."
+  },
+  "LATIOSITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Latios im Kampf die Mega-Entwicklung."
+  },
+  "RAYQUAZITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Rayquaza im Kampf die Mega-Entwicklung.",
+   "nome": "Rayquazanit"
+  },
+  "LOPUNNITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Schlapor im Kampf die Mega-Entwicklung."
+  },
+  "GARCHOMPITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Knakrack im Kampf die Mega-Entwicklung."
+  },
+  "LUCARIONITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Lucario im Kampf die Mega-Entwicklung."
+  },
+  "ABOMASITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Rexblisar im Kampf die Mega-Entwicklung."
+  },
+  "GALLADITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Galagladi im Kampf die Mega-Entwicklung."
+  },
+  "AUDINITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Ohrdoch im Kampf die Mega-Entwicklung."
+  },
+  "DIANCITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Diancie im Kampf die Mega-Entwicklung."
+  },
+  "ARCANINITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Arkani im Kampf die Mega-Entwicklung.",
+   "nome": "Arkaninit"
+  },
+  "VENUSAURITEY": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Bisaflor im Kampf die Mega-Entwicklung.",
+   "nome": "Bisaflornit Y"
+  },
+  "BLASTOISINITEY": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Turtok im Kampf die Mega-Entwicklung.",
+   "nome": "Turtoknit Y"
+  },
+  "GENGARITEY": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Gengar im Kampf die Mega-Entwicklung.",
+   "nome": "Gengarnit Y"
+  },
+  "KINGLERITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Kingler im Kampf die Mega-Entwicklung.",
+   "nome": "Kinglernit"
+  },
+  "LAPRASITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Lapras im Kampf die Mega-Entwicklung.",
+   "nome": "Laprasnit"
+  },
+  "MACHAMPITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Machomei im Kampf die Mega-Entwicklung.",
+   "nome": "Machomeinit"
+  },
+  "GARBODORITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Deponitox im Kampf die Mega-Entwicklung.",
+   "nome": "Deponitoxnit"
+  },
+  "CORVIKNIGHTITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Krarmor im Kampf die Mega-Entwicklung.",
+   "nome": "Krarmornit"
+  },
+  "ORBEETLEITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Maritellit im Kampf die Mega-Entwicklung.",
+   "nome": "Maritellnit"
+  },
+  "BUTTERFREEITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Smettbo im Kampf die Mega-Entwicklung.",
+   "nome": "Smettbonit"
+  },
+  "DREDNAWITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Kamalm im Kampf die Mega-Entwicklung.",
+   "nome": "Kamalmnit"
+  },
+  "COALOSSALITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Montecarbo im Kampf die Mega-Entwicklung.",
+   "nome": "Montecarbonit"
+  },
+  "FLAPPLETUNITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Drapfel oder Schlapfel im Kampf die Mega-Entwicklung.",
+   "nome": "Drapschlapfelnit"
+  },
+  "SANDACONDITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Sanaconda im Kampf die Mega-Entwicklung.",
+   "nome": "Sanacondanit"
+  },
+  "TOXTRICITITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Riffex im Kampf die Mega-Entwicklung.",
+   "nome": "Riffexnit"
+  },
+  "CENTISKORCHITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Infernopod im Kampf die Mega-Entwicklung.",
+   "nome": "Infernopodnit"
+  },
+  "HATTERENITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Silembrim im Kampf die Mega-Entwicklung.",
+   "nome": "Silembrimnit"
+  },
+  "GRIMMSNARLITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Olangaar im Kampf die Mega-Entwicklung.",
+   "nome": "Olangaarnit"
+  },
+  "ALCREMITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Pokusan im Kampf die Mega-Entwicklung.",
+   "nome": "Pokusannit"
+  },
+  "COPPERAJITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Patinaraja im Kampf die Mega-Entwicklung.",
+   "nome": "Patinarajanit"
+  },
+  "DURALUDONITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Duraludon im Kampf die Mega-Entwicklung.",
+   "nome": "Duraludonnit"
+  },
+  "EEVEEITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Evoli im Kampf die Mega-Entwicklung.",
+   "nome": "Evolinit"
+  },
+  "JUMPLUFITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Papungha im Kampf die Mega-Entwicklung.",
+   "nome": "Papunghanit"
+  },
+  "RILLABOOMITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Gortrom im Kampf die Mega-Entwicklung.",
+   "nome": "Gortromnit"
+  },
+  "CINDERECITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Liberlo im Kampf die Mega-Entwicklung.",
+   "nome": "Liberlonit"
+  },
+  "INTELEONITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Intelleon im Kampf die Mega-Entwicklung.",
+   "nome": "Intelleonnit"
+  },
+  "SNORLAXITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Relaxo im Kampf die Mega-Entwicklung.",
+   "nome": "Relaxonit"
+  },
+  "CLEFABLITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Pixi im Kampf die Mega-Entwicklung."
+  },
+  "STARMINITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Starmie im Kampf die Mega-Entwicklung."
+  },
+  "VICTREEBELITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Sarzenia im Kampf die Mega-Entwicklung."
+  },
+  "DRAGONITITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Dragoran im Kampf die Mega-Entwicklung.",
+   "nome": "Dragorannit"
+  },
+  "MEGANIUMITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Meganie im Kampf die Mega-Entwicklung."
+  },
+  "FERALIGITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Impergator im Kampf die Mega-Entwicklung."
+  },
+  "SKARMORITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Panzaeron im Kampf die Mega-Entwicklung."
+  },
+  "FROSLASSITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Frosdedje im Kampf die Mega-Entwicklung."
+  },
+  "EMBOARITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Flambirex im Kampf die Mega-Entwicklung."
+  },
+  "EXCADRITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Stalobor im Kampf die Mega-Entwicklung."
+  },
+  "SCOLIPITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Cerapendra im Kampf die Mega-Entwicklung."
+  },
+  "SCRAFTINITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Irokex im Kampf die Mega-Entwicklung."
+  },
+  "EELEKTROSSITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Zapplarang im Kampf die Mega-Entwicklung."
+  },
+  "CHANDELURITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Skelabra im Kampf die Mega-Entwicklung."
+  },
+  "CHESNAUGHTITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Brigaron im Kampf die Mega-Entwicklung."
+  },
+  "DELPHOXITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Fennexis im Kampf die Mega-Entwicklung."
+  },
+  "GRENINJITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Quajutsu im Kampf die Mega-Entwicklung."
+  },
+  "PYROARITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Pyroleo im Kampf die Mega-Entwicklung."
+  },
+  "MALAMARITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Calamanero im Kampf die Mega-Entwicklung."
+  },
+  "BARBARACITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Thanathora im Kampf die Mega-Entwicklung."
+  },
+  "DRAGALGITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Tandrak im Kampf die Mega-Entwicklung."
+  },
+  "HAWLUCHITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Resladero im Kampf die Mega-Entwicklung.",
+   "nome": "Resladeronit"
+  },
+  "DRAMPANITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Sen-Long im Kampf die Mega-Entwicklung."
+  },
+  "FALINKSITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Legios im Kampf die Mega-Entwicklung."
+  },
+  "FLOETTITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Floette (Ewige Blume) im Kampf die Mega-Entwicklung."
+  },
+  "ZYGARDITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Zygarde im Kampf die Mega-Entwicklung."
+  },
+  "STARAPTITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Staraptor im Kampf die Mega-Entwicklung."
+  },
+  "LUCARIONITEZ": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Lucario im Kampf die Mega-Entwicklung."
+  },
+  "CRABOMINITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Krawell im Kampf die Mega-Entwicklung."
+  },
+  "MAGEARNITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Magearna im Kampf die Mega-Entwicklung."
+  },
+  "ABSOLITEZ": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Absol im Kampf die Mega-Entwicklung."
+  },
+  "CHIMECHITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Palimpalim im Kampf die Mega-Entwicklung."
+  },
+  "GARCHOMPITEZ": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Knakrack im Kampf die Mega-Entwicklung."
+  },
+  "GOLURKITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Golgantes im Kampf die Mega-Entwicklung."
+  },
+  "TATSUGIRINITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Nigiragi im Kampf die Mega-Entwicklung."
+  },
+  "MEOWSTICITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Psiaugon im Kampf die Mega-Entwicklung."
+  },
+  "BAXCALIBRITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Espinodon im Kampf die Mega-Entwicklung."
+  },
+  "SCOVILLAINITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Halupenjo im Kampf die Mega-Entwicklung."
+  },
+  "GLIMMORANITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Lumiflora im Kampf die Mega-Entwicklung."
+  },
+  "GOLISOPITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Tectass im Kampf die Mega-Entwicklung."
+  },
+  "ZERAORITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Zeraora im Kampf die Mega-Entwicklung."
+  },
+  "HEATRANITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Heatran im Kampf die Mega-Entwicklung."
+  },
+  "DARKRANITE": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Darkrai im Kampf die Mega-Entwicklung."
+  },
+  "RAICHUITEX": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Raichu im Kampf die Mega-Entwicklung.",
+   "nome": "Raichunit X"
+  },
+  "RAICHUITEY": {
+   "desc": "Einer der mysteriösen Mega-Steine. Ermöglicht Raichu im Kampf die Mega-Entwicklung.",
+   "nome": "Raichunit Y"
+  },
+  "POKEDEX": {
+   "desc": "Eine Hightech-Enzyklopädie, die alle gesehenen und gefangenen Pokémon erfasst.",
+   "nome": "Pokédex"
+  },
+  "MEGARING": {
+   "desc": "Ein Ring, mit dem ein Trainer seine Pokémon Mega-entwickeln kann."
+  },
+  "QUICKBALL": {
+   "desc": "Ein Pokéball mit höherer Fangquote, wenn er zu Beginn einer wilden Begegnung eingesetzt wird."
+  },
+  "TIMERBALL": {
+   "desc": "Ein besonderer Pokéball, der umso besser wirkt, je mehr Runden der Kampf dauert."
+  },
+  "DUSKBALL": {
+   "desc": "Ein besonderer Pokéball, mit dem man wilde Pokémon nachts oder an dunklen Orten wie Höhlen leichter fängt."
+  },
+  "NETBALL": {
+   "desc": "Ein besonderer Pokéball, der bei Wasser- und Käfer-Pokémon besonders gut wirkt."
+  },
+  "NESTBALL": {
+   "desc": "Ein besonderer Pokéball, der bei schwächeren wilden Pokémon besonders gut wirkt."
+  },
+  "REPEATBALL": {
+   "desc": "Ein besonderer Pokéball, der bei bereits gefangenen Pokémon-Arten besonders gut wirkt."
+  },
+  "LEVELBALL": {
+   "desc": "Ein Pokéball, mit dem man Pokémon mit niedrigerem Level als dem eigenen leichter fängt."
+  },
+  "FASTBALL": {
+   "desc": "Ein besonderer Pokéball, mit dem man schnelle Pokémon leichter fängt."
+  },
+  "HEAVYBALL": {
+   "desc": "Ein Pokéball, der sehr schwere Pokémon besser fängt als üblich."
+  },
+  "MOONBALL": {
+   "desc": "Ein Pokéball, der am besten bei Pokémon wirkt, die sich mit einem Mondstein entwickeln."
+  },
+  "DREAMBALL": {
+   "desc": "Ein besonderer Pokéball, der besser wirkt, wenn das Pokémon schläft."
+  },
+  "FRIENDBALL": {
+   "desc": "Ein Pokéball, der gefangene Pokémon zutraulicher macht."
+  },
+  "LUXURYBALL": {
+   "desc": "Ein bequemer Pokéball, der gefangene wilde Pokémon schnell zutraulich macht."
+  },
+  "PREMIERBALL": {
+   "desc": "Ein recht seltener Pokéball, der eigens zur Erinnerung an ein Ereignis gefertigt wurde."
+  },
+  "RARECANDY": {
+   "desc": "Ein Bonbon voller Energie. Erhöht das Level eines Pokémon um eins."
+  },
+  "SHINYZADOR": {
+   "desc": "Ein funkelnder Trank. Das Pokémon, das ihn trinkt, wird für immer zu einem schillernden Pokémon.",
+   "nome": "Schillertrank"
+  }
+ },
+ "habil": {
+  "ACOMETIDA": {
+   "desc": "Erhöht in der ersten Runde die Initiative um 50% und den Angriff um 20%.",
+   "nome": "Ansturm"
+  },
+  "ADAPTABILITY": {
+   "desc": "Erhöht den Bonus für Attacken des eigenen Typs (STAB) von 1,5x auf 2x."
+  },
+  "AERILATE": {
+   "desc": "Macht Normal-Attacken zu Flug-Attacken und erhöht ihre Stärke um 20%."
+  },
+  "AFTERMATH": {
+   "desc": "Wird es durch eine Kontakt-Attacke besiegt, verliert der Angreifer 25% seiner max. KP."
+  },
+  "AIRLOCK": {
+   "desc": "Hebt alle Wettereffekte auf."
+  },
+  "ANALYTIC": {
+   "desc": "Erhöht die Stärke um 30%, wenn es zuletzt handelt."
+  },
+  "ANGERPOINT": {
+   "desc": "Maximiert den Angriff nach einem erlittenen Volltreffer."
+  },
+  "ANGERSHELL": {
+   "desc": "Sinken die KP unter die Hälfte, fallen Vert./Sp.-Vert., aber Angr./Sp.-Angr./Init. steigen."
+  },
+  "ANTICIPATION": {
+   "desc": "Erschaudert, wenn der Gegner eine sehr effektive Attacke hat."
+  },
+  "ARENATRAP": {
+   "desc": "Gegner können nicht fliehen, außer sie sind vom Typ Geist oder Flug oder schweben."
+  },
+  "ARMORTAIL": {
+   "desc": "Blockt Attacken mit Vorrang gegen das Team."
+  },
+  "AROMAVEIL": {
+   "desc": "Schützt das Team vor Attacken, die die Wahl einschränken, wie Verhöhner oder Tastfluch."
+  },
+  "BADDREAMS": {
+   "desc": "Schlafende Gegner verlieren am Ende jeder Runde 1/8 ihrer max. KP."
+  },
+  "BALLFETCH": {
+   "desc": "Holt den ersten fehlgeschlagenen Pokéball zurück, wenn es kein Item trägt."
+  },
+  "BATTERY": {
+   "desc": "Verstärkt die Spezial-Attacken von Mitstreitern um 30%."
+  },
+  "BATTLEARMOR": {
+   "desc": "Das Pokémon ist vor Volltreffern geschützt."
+  },
+  "BEADSOFRUIN": {
+   "desc": "Senkt die Spezial-Verteidigung aller anderen Pokémon."
+  },
+  "BEASTBOOST": {
+   "desc": "Erhöht den höchsten Statuswert, nachdem es einen Gegner besiegt hat."
+  },
+  "BERSERK": {
+   "desc": "Erhöht den Spezial-Angriff, wenn die KP unter die Hälfte sinken. Kann mehrmals wirken."
+  },
+  "BIGPECKS": {
+   "desc": "Verhindert, dass andere seine Verteidigung senken."
+  },
+  "BLAZE": {
+   "desc": "Verstärkt Feuer-Attacken um 50%, wenn die KP bei 1/3 oder weniger liegen."
+  },
+  "BULLETPROOF": {
+   "desc": "Immun gegen alle Kugel-, Ball- und Bomben-Attacken."
+  },
+  "BURNTOUCH": {
+   "desc": "Verbrennt das Ziel bei Kontakt mit 30% Wahrscheinlichkeit.",
+   "nome": "Glutberührung"
+  },
+  "CAMORRISTA": {
+   "desc": "Verstärkt Tritt-Attacken um 20%.",
+   "nome": "Raufbold"
+  },
+  "CHEEKPOUCH": {
+   "desc": "Stellt beim Verzehr einer Beere 1/3 der max. KP her."
+  },
+  "CHILLINGNEIGH": {
+   "desc": "Erhöht den Angriff, nachdem es einen Gegner besiegt hat."
+  },
+  "CHLOROPHYLL": {
+   "desc": "Verdoppelt bei starkem Sonnenlicht die Initiative."
+  },
+  "CLEARBODY": {
+   "desc": "Verhindert, dass andere Pokémon seine Statuswerte senken."
+  },
+  "CLOUDNINE": {
+   "desc": "Hebt alle Wettereffekte auf, solange es im Kampf ist."
+  },
+  "COLORCHANGE": {
+   "desc": "Nimmt den Typ der letzten Attacke an, die es getroffen hat."
+  },
+  "COMATOSE": {
+   "desc": "Wacht nie auf, kann aber im Schlaf angreifen."
+  },
+  "COMMANDER": {
+   "desc": "Springt in das Maul eines verbündeten Heerashai und befehligt es."
+  },
+  "COMPETITIVE": {
+   "desc": "Erhöht den Spezial-Angriff stark, wenn der Gegner einen Statuswert senkt."
+  },
+  "COMPOUNDEYES": {
+   "desc": "Erhöht die Genauigkeit um 30% und die Chance, wilde Pokémon mit Items zu finden."
+  },
+  "CONTRARY": {
+   "desc": "Kehrt Statusänderungen um: Werte steigen, wenn sie sinken sollten, und umgekehrt."
+  },
+  "CORROSION": {
+   "desc": "Kann auch Stahl- und Gift-Pokémon vergiften."
+  },
+  "COSTAR": {
+   "desc": "Kopiert beim Einwechseln die Statusänderungen eines Mitstreiters."
+  },
+  "COTTONDOWN": {
+   "desc": "Senkt die Initiative der anderen Pokémon, wenn es von einer Attacke getroffen wird."
+  },
+  "CUDCHEW": {
+   "desc": "Würgt eine Beere hoch und isst sie am Ende der nächsten Runde erneut."
+  },
+  "CURIOUSMEDICINE": {
+   "desc": "Setzt beim Einwechseln die Statusänderungen der Mitstreiter zurück."
+  },
+  "CURSEDBODY": {
+   "desc": "Blockiert mit 30% Wahrscheinlichkeit die gegen es eingesetzte Attacke für 4 Runden."
+  },
+  "CUTECHARM": {
+   "desc": "Kontakt betört mit 30% Wahrscheinlichkeit, wenn der Gegner das andere Geschlecht hat."
+  },
+  "DAMP": {
+   "desc": "Verhindert Selbstzerstörungs-Attacken und die Fähigkeit Finale."
+  },
+  "DANCER": {
+   "desc": "Kopiert jede Tanz-Attacke anderer Pokémon."
+  },
+  "DARKAURA": {
+   "desc": "Verstärkt alle Unlicht-Attacken um 33%."
+  },
+  "DAUNTLESSSHIELD": {
+   "desc": "Erhöht beim Einwechseln die Verteidigung um eine Stufe."
+  },
+  "DAZZLING": {
+   "desc": "Gegner können keine Attacken mit Vorrang gegen das Team einsetzen."
+  },
+  "DEFEATIST": {
+   "desc": "Halbiert Angriff und Spezial-Angriff, wenn die KP unter 50% sinken."
+  },
+  "DEFIANT": {
+   "desc": "Erhöht den Angriff stark, wenn der Gegner einen Statuswert senkt."
+  },
+  "DELTASTREAM": {
+   "desc": "Ruft starke Winde, die Schwächen des Typs Flug aufheben. Normales Wetter ersetzt sie nicht."
+  },
+  "DISGUISE": {
+   "desc": "Senkt den Schaden des ersten Treffers auf 1/8 der max. KP."
+  },
+  "DOWNLOAD": {
+   "desc": "Passt die Angriffswerte an die Verteidigung des Gegners an."
+  },
+  "DRAGONSMAW": {
+   "desc": "Verstärkt Drachen-Attacken um 50%."
+  },
+  "DRIZZLE": {
+   "desc": "Ruft beim Einwechseln Regen für 5 Runden. Mit Nassbrocken hält er 8 Runden."
+  },
+  "DROUGHT": {
+   "desc": "Ruft beim Einwechseln starkes Sonnenlicht für 5 Runden. Mit Heißbrocken hält es 8 Runden."
+  },
+  "DRYSKIN": {
+   "desc": "Verliert KP in der Sonne, heilt sich im Regen. Nimmt mehr Feuer-Schaden, Wasser-Attacken heilen."
+  },
+  "EARLYBIRD": {
+   "desc": "Schläft nur halb so lange wie üblich."
+  },
+  "EARTHEATER": {
+   "desc": "Füllt KP auf, wenn es von einer Boden-Attacke getroffen wird."
+  },
+  "EFFECTSPORE": {
+   "desc": "Kontakt kann den Angreifer vergiften, paralysieren oder einschläfern (30% Chance)."
+  },
+  "ELECTRICSURGE": {
+   "desc": "Erzeugt beim Einwechseln ein Elektrofeld."
+  },
+  "ELECTROMORPHOSIS": {
+   "desc": "Erlittener Schaden lädt die nächste Elektro-Attacke auf."
+  },
+  "EMERGENCYEXIT": {
+   "desc": "Wechselt aus, nachdem es eine Käfer-Attacke eingesetzt hat."
+  },
+  "ESPANTO": {
+   "desc": "Erschreckt den Gegner und senkt seinen Spezial-Angriff.",
+   "nome": "Schreck"
+  },
+  "FAIRYAURA": {
+   "desc": "Verstärkt alle Feen-Attacken um 33%."
+  },
+  "FILTER": {
+   "desc": "Senkt den Schaden sehr effektiver Attacken um 1/4."
+  },
+  "FLAMEBODY": {
+   "desc": "Kontakt verbrennt den Angreifer mit 30% Wahrscheinlichkeit."
+  },
+  "FLAREBOOST": {
+   "desc": "Verstärkt Spezial-Attacken um 50%, wenn es verbrannt ist."
+  },
+  "FLASHFIRE": {
+   "desc": "Verstärkt Feuer-Attacken um 50%, wenn es von Feuer getroffen wird. Immun gegen Feuer."
+  },
+  "FLORACION": {
+   "desc": "Verstärkt Pflanzen-Attacken.",
+   "nome": "Erblühen"
+  },
+  "FLOWERGIFT": {
+   "desc": "Erhöht bei Sonne Angriff und Spezial-Verteidigung des Teams."
+  },
+  "FLOWERVEIL": {
+   "desc": "Schützt verbündete Pflanzen-Pokémon vor Statusproblemen und Wertesenkungen."
+  },
+  "FLUFFY": {
+   "desc": "Halbiert den Schaden von Kontakt-Attacken, verdoppelt aber Feuer-Schaden."
+  },
+  "FORECAST": {
+   "desc": "Ändert seinen Typ je nach Wetter."
+  },
+  "FOREWARN": {
+   "desc": "Enthüllt beim Einwechseln die stärkste Attacke des Gegners."
+  },
+  "FRIENDGUARD": {
+   "desc": "Senkt den Schaden, den Mitstreiter erleiden, um 25%."
+  },
+  "FRISK": {
+   "desc": "Enthüllt beim Einwechseln das getragene Item des Gegners."
+  },
+  "FULLMETALBODY": {
+   "desc": "Verhindert, dass andere seine Statuswerte senken."
+  },
+  "FURCOAT": {
+   "desc": "Halbiert den Schaden physischer Attacken."
+  },
+  "GALEWINGS": {
+   "desc": "Flug-Attacken erhalten bei vollen KP Vorrang."
+  },
+  "GLUTTONY": {
+   "desc": "Isst getragene Beeren schon bei 50% KP statt bei 25%."
+  },
+  "GOODASGOLD": {
+   "desc": "Immun gegen Status-Attacken."
+  },
+  "GOOEY": {
+   "desc": "Senkt bei Kontakt die Initiative des Angreifers."
+  },
+  "GORILLATACTICS": {
+   "desc": "Erhöht den Angriff um 50%, legt es aber auf die erste Attacke fest."
+  },
+  "GRASSYSURGE": {
+   "desc": "Erzeugt beim Einwechseln ein Grasfeld."
+  },
+  "GRIMNEIGH": {
+   "desc": "Erhöht den Spezial-Angriff, nachdem es einen Gegner besiegt hat."
+  },
+  "GUARDDOG": {
+   "desc": "Blockt Bedroher und erhöht stattdessen den Angriff. Verhindert erzwungenes Auswechseln."
+  },
+  "GULPMISSILE": {
+   "desc": "Ändert nach Surfer oder Taucher je nach KP seine Form."
+  },
+  "GUTS": {
+   "desc": "Erhöht den Angriff um 50% bei einem Statusproblem und ignoriert die Verbrennungs-Senkung."
+  },
+  "HADRONENGINE": {
+   "desc": "Erzeugt ein Elektrofeld. Erhöht auf dem Elektrofeld den Spezial-Angriff."
+  },
+  "HARVEST": {
+   "desc": "Stellt am Rundenende mit 50% Chance eine benutzte Beere wieder her. Bei Sonne 100%."
+  },
+  "HEALER": {
+   "desc": "Heilt am Ende jeder Runde mit 30% Chance das Statusproblem eines Mitstreiters."
+  },
+  "HEATPROOF": {
+   "desc": "Halbiert den Schaden von Feuer-Attacken. Senkt den Verbrennungsschaden."
+  },
+  "HEAVYMETAL": {
+   "desc": "Verdoppelt das Gewicht des Pokémon."
+  },
+  "HONEYGATHER": {
+   "desc": "Sammelt nach dem Kampf eventuell Honig."
+  },
+  "HOSPITALITY": {
+   "desc": "Füllt beim Einwechseln die KP eines Mitstreiters auf."
+  },
+  "HUGEPOWER": {
+   "desc": "Verdoppelt den Angriffswert des Pokémon."
+  },
+  "HUNGERSWITCH": {
+   "desc": "Wechselt am Ende jeder Runde Form und den Typ von Aura-Rad."
+  },
+  "HUSTLE": {
+   "desc": "Erhöht Angriff oder Spezial-Angriff um 50%, senkt aber die Genauigkeit um 20%."
+  },
+  "HYDRATION": {
+   "desc": "Heilt bei Regen am Rundenende Statusprobleme."
+  },
+  "HYPERCUTTER": {
+   "desc": "Verhindert, dass andere seinen Angriff senken."
+  },
+  "ICEBODY": {
+   "desc": "Füllt bei Hagel nach und nach KP auf."
+  },
+  "ICEFACE": {
+   "desc": "Wird bei einem physischen Treffer zum Wohlfühlkopf. Hagel stellt es wieder her."
+  },
+  "ICESCALES": {
+   "desc": "Halbiert den Schaden von Spezial-Attacken."
+  },
+  "ILLUMINATE": {
+   "desc": "Senkt beim Einwechseln die Genauigkeit des Gegners. Erhöht die Rate wilder Begegnungen."
+  },
+  "ILLUSION": {
+   "desc": "Tarnt sich als das letzte Pokémon im Team."
+  },
+  "IMMUNITY": {
+   "desc": "Kann nicht vergiftet werden."
+  },
+  "IMPOSTER": {
+   "desc": "Verwandelt sich in den Gegner und kopiert seine Werte (außer KP)."
+  },
+  "INFILTRATOR": {
+   "desc": "Attacken ignorieren Schutzwände und Delegatoren."
+  },
+  "INNARDSOUT": {
+   "desc": "Fügt vor dem Besiegtwerden Schaden in Höhe der restlichen KP zu."
+  },
+  "INNERFOCUS": {
+   "desc": "Verhindert Zurückschrecken und Bedroher."
+  },
+  "INSOMNIA": {
+   "desc": "Kann nicht einschlafen und Erholung nicht nutzen. Wacht auf, wenn es sie im Schlaf erhält."
+  },
+  "INTIMIDATE": {
+   "desc": "Senkt beim Einwechseln den Angriff des Gegners."
+  },
+  "INTREPIDSWORD": {
+   "desc": "Erhöht beim Einwechseln den Angriff um eine Stufe."
+  },
+  "IRONBARBS": {
+   "desc": "Fügt dem Angreifer bei Kontakt Schaden in Höhe von 1/8 der max. KP zu."
+  },
+  "IRONFIST": {
+   "desc": "Verstärkt Schlag-Attacken um 20%."
+  },
+  "JUSTIFIED": {
+   "desc": "Erhöht den Angriff, wenn es von einer Unlicht-Attacke getroffen wird."
+  },
+  "KEENEYE": {
+   "desc": "Verhindert das Senken der Genauigkeit. Ignoriert erhöhten Ausweichwert des Gegners."
+  },
+  "KLUTZ": {
+   "desc": "Kann getragene Items nicht nutzen, ihre Effekte entfallen."
+  },
+  "LEAFGUARD": {
+   "desc": "Verhindert bei Sonne Statusprobleme."
+  },
+  "LEVITATE": {
+   "desc": "Immun gegen alle Boden-Attacken."
+  },
+  "LIBERO": {
+   "desc": "Nimmt den Typ der Attacke an, die es gleich einsetzt."
+  },
+  "LIGHTMETAL": {
+   "desc": "Halbiert das Gewicht des Pokémon."
+  },
+  "LIGHTNINGROD": {
+   "desc": "Zieht Elektro-Attacken an und erhöht den Spezial-Angriff. Wirkt auch bei Boden-Pokémon."
+  },
+  "LIMBER": {
+   "desc": "Kann nicht paralysiert werden."
+  },
+  "LINGERINGAROMA": {
+   "desc": "Kontakt ändert die Fähigkeit des Angreifers zu Duftnote."
+  },
+  "LIQUIDOOZE": {
+   "desc": "Schadet Gegnern, die ihm mit Attacken KP absaugen."
+  },
+  "LIQUIDVOICE": {
+   "desc": "Schall-Attacken werden zum Typ Wasser und um 20% verstärkt."
+  },
+  "LONGREACH": {
+   "desc": "Seine Attacken berühren das Ziel nicht."
+  },
+  "MAGICBOUNCE": {
+   "desc": "Wirft Status-Attacken auf den Anwender zurück."
+  },
+  "MAGICGUARD": {
+   "desc": "Erleidet nur direkten Schaden. Immun gegen indirekten Schaden und Fesseln."
+  },
+  "MAGICIAN": {
+   "desc": "Stiehlt das Item des Ziels, wenn es mit einer Kontakt-Attacke trifft."
+  },
+  "MAGNETPULL": {
+   "desc": "Hält Stahl-Gegner fest, außer sie tragen einen Wechseldich."
+  },
+  "MARVELSCALE": {
+   "desc": "Erhöht die Verteidigung um 50% bei einem Statusproblem."
+  },
+  "MEGALAUNCHER": {
+   "desc": "Verstärkt Puls- und Aura-Attacken um 50%."
+  },
+  "MERCILESS": {
+   "desc": "Trifft immer kritisch, wenn das Ziel vergiftet ist."
+  },
+  "MIMICRY": {
+   "desc": "Nimmt den Typ des aktuellen Feldes an."
+  },
+  "MINUS": {
+   "desc": "Erhöht den Spezial-Angriff um 50%, wenn ein Mitstreiter Plus oder Minus hat."
+  },
+  "MIRRORARMOR": {
+   "desc": "Wirft Wertesenkungen auf den Anwender zurück."
+  },
+  "MISTYSURGE": {
+   "desc": "Erzeugt beim Einwechseln ein Nebelfeld."
+  },
+  "MOLDBREAKER": {
+   "desc": "Attacken ignorieren die Fähigkeit des Ziels."
+  },
+  "MOODY": {
+   "desc": "Erhöht am Ende jeder Runde einen zufälligen Wert stark und senkt einen anderen."
+  },
+  "MOTORDRIVE": {
+   "desc": "Erhöht die Initiative bei einem Elektro-Treffer. Immun gegen Elektro-Schaden."
+  },
+  "MOXIE": {
+   "desc": "Erhöht den Angriff, nachdem es einen Gegner besiegt hat."
+  },
+  "MULTISCALE": {
+   "desc": "Halbiert den erlittenen Schaden bei vollen KP."
+  },
+  "MULTITYPE": {
+   "desc": "Nimmt den Typ der getragenen Tafel oder des Z-Kristalls an."
+  },
+  "MUMMY": {
+   "desc": "Ändert bei Kontakt die Fähigkeit des Angreifers zu Mumie."
+  },
+  "MYCELIUMMIGHT": {
+   "desc": "Status-Attacken kommen zuletzt, ignorieren aber Fähigkeiten."
+  },
+  "NATURALCURE": {
+   "desc": "Heilt alle Statusprobleme beim Auswechseln oder am Kampfende."
+  },
+  "NEUROFORCE": {
+   "desc": "Verstärkt sehr effektive Attacken um 25%."
+  },
+  "NEUTRALIZINGGAS": {
+   "desc": "Hebt alle Fähigkeiten auf, solange es im Kampf ist."
+  },
+  "NOGUARD": {
+   "desc": "Attacken von oder gegen dieses Pokémon treffen immer."
+  },
+  "OBLIVIOUS": {
+   "desc": "Verhindert Anziehung, Verhöhner und Bedroher."
+  },
+  "OPPORTUNIST": {
+   "desc": "Kopiert die Werteerhöhungen des Gegners."
+  },
+  "ORICHALCUMPULSE": {
+   "desc": "Ruft starkes Sonnenlicht. Erhöht in der Sonne den Angriff."
+  },
+  "OVERCOAT": {
+   "desc": "Schützt vor Sandsturm, Hagel sowie Pulver- und Sporen-Attacken."
+  },
+  "OVERGROW": {
+   "desc": "Verstärkt Pflanzen-Attacken um 50%, wenn die KP bei 1/3 oder weniger liegen."
+  },
+  "OWNTEMPO": {
+   "desc": "Verhindert Verwirrung und Bedroher."
+  },
+  "PARENTALBOND": {
+   "desc": "Greift zweimal pro Runde an. Der zweite Treffer macht 25% Schaden."
+  },
+  "PASTELVEIL": {
+   "desc": "Schützt das Team vor Vergiftung. Heilt Mitstreiter beim Einwechseln."
+  },
+  "PERISHBODY": {
+   "desc": "Trifft es eine Kontakt-Attacke, werden beide Pokémon in 3 Runden besiegt."
+  },
+  "PICKPOCKET": {
+   "desc": "Stiehlt bei Kontakt das Item des Angreifers, wenn es selbst keins trägt."
+  },
+  "PICKUP": {
+   "desc": "Findet nach dem Kampf mit 10% Chance ein Item. Hebt evtl. in der Runde verlorene Items auf."
+  },
+  "PIELHERBACEA": {
+   "desc": "Macht Normal-Attacken zu Pflanzen-Attacken und verstärkt sie.",
+   "nome": "Laubhaut"
+  },
+  "PIXILATE": {
+   "desc": "Macht Normal-Attacken zu Feen-Attacken und erhöht ihre Stärke um 20%."
+  },
+  "PLUS": {
+   "desc": "Erhöht den Spezial-Angriff um 50%, wenn ein Mitstreiter Plus oder Minus hat."
+  },
+  "PODERGELIDO": {
+   "desc": "Erhöht bei Schnee die Stärke von Eis-Attacken und die Initiative um 50%.",
+   "nome": "Eiseskraft"
+  },
+  "PODERSABIO": {
+   "desc": "Erhöht den Spezial-Angriff um 50%, legt es aber auf die erste Attacke fest.",
+   "nome": "Weisenkraft"
+  },
+  "POISONHEAL": {
+   "desc": "Füllt pro Runde 1/8 der max. KP auf, wenn es vergiftet ist."
+  },
+  "POISONPOINT": {
+   "desc": "Kontakt vergiftet den Angreifer mit 30% Wahrscheinlichkeit."
+  },
+  "POISONPUPPETEER": {
+   "desc": "Vergiftete Gegner werden zudem verwirrt."
+  },
+  "POISONTOUCH": {
+   "desc": "Kontakt vergiftet das Ziel mit 30% Wahrscheinlichkeit."
+  },
+  "POWERCONSTRUCT": {
+   "desc": "Nimmt die Optimumform an, wenn die KP unter 50% sinken."
+  },
+  "POWERSPOT": {
+   "desc": "Verstärkt die Attacken von Mitstreitern um 30%."
+  },
+  "PRANKSTER": {
+   "desc": "Status-Attacken erhalten Vorrang. Unlicht-Pokémon sind immun."
+  },
+  "PRESSURE": {
+   "desc": "Der Gegner verbraucht 2 AP pro Attacke."
+  },
+  "PRISMARMOR": {
+   "desc": "Senkt sehr effektiven Schaden um 1/4."
+  },
+  "PROPELLERTAIL": {
+   "desc": "Seine Attacken lassen sich durch Attacken oder Fähigkeiten des Gegners nicht umlenken."
+  },
+  "PROTEAN": {
+   "desc": "Nimmt den Typ der Attacke an, die es gleich einsetzt."
+  },
+  "PROTOSYNTHESIS": {
+   "desc": "Erhöht den höchsten Wert bei starkem Sonnenlicht oder mit Energiekapsel."
+  },
+  "PSYCHICSURGE": {
+   "desc": "Erzeugt beim Einwechseln ein Psychofeld."
+  },
+  "PUNKROCK": {
+   "desc": "Verstärkt Schall-Attacken um 30% und halbiert erlittenen Schall-Schaden."
+  },
+  "PUREPOWER": {
+   "desc": "Verdoppelt den Angriffswert."
+  },
+  "PURIFYINGSALT": {
+   "desc": "Immun gegen Statusprobleme. Halbiert Geist-Schaden."
+  },
+  "QUARKDRIVE": {
+   "desc": "Erhöht den höchsten Wert auf dem Elektrofeld oder mit Energiekapsel."
+  },
+  "QUEENLYMAJESTY": {
+   "desc": "Attacken mit Vorrang können das Pokémon nicht treffen."
+  },
+  "QUICKDRAW": {
+   "desc": "Handelt mit 30% Chance zuerst innerhalb derselben Vorrangstufe."
+  },
+  "QUICKFEET": {
+   "desc": "Erhöht die Initiative um 50% bei einem Statusproblem. Ignoriert die Paralyse-Senkung."
+  },
+  "RAINDISH": {
+   "desc": "Füllt bei Regen nach und nach KP auf."
+  },
+  "RATTLED": {
+   "desc": "Erhöht die Initiative bei Geist-, Unlicht- oder Käfer-Treffern oder Bedroher."
+  },
+  "RECEIVER": {
+   "desc": "Übernimmt die Fähigkeit eines besiegten Mitstreiters."
+  },
+  "RECKLESS": {
+   "desc": "Verstärkt Attacken mit Rückstoß um 20%."
+  },
+  "REFRIGERATE": {
+   "desc": "Macht Normal-Attacken zu Eis-Attacken und erhöht ihre Stärke um 20%."
+  },
+  "REGENERATOR": {
+   "desc": "Füllt beim Auswechseln 1/3 der max. KP auf."
+  },
+  "RIPEN": {
+   "desc": "Verdoppelt die Wirkung verzehrter Beeren."
+  },
+  "RIVALRY": {
+   "desc": "Fügt Gegnern desselben Geschlechts 25% mehr Schaden zu."
+  },
+  "RKSSYSTEM": {
+   "desc": "Ändert seinen Typ je nach getragener Disc."
+  },
+  "ROCKHEAD": {
+   "desc": "Verhindert Rückstoßschaden, außer bei Verzweifler."
+  },
+  "ROCKYPAYLOAD": {
+   "desc": "Verstärkt Gestein-Attacken um 50%."
+  },
+  "ROUGHSKIN": {
+   "desc": "Fügt dem Angreifer bei Kontakt Schaden in Höhe von 1/16 der max. KP zu."
+  },
+  "RUNAWAY": {
+   "desc": "Garantiert die Flucht vor wilden Pokémon."
+  },
+  "SANDFORCE": {
+   "desc": "Verstärkt im Sandsturm Boden-, Stahl- und Gestein-Attacken um 30%."
+  },
+  "SANDRUSH": {
+   "desc": "Verdoppelt im Sandsturm die Initiative und schützt vor Sandschaden."
+  },
+  "SANDSPIT": {
+   "desc": "Ruft bei einem Treffer einen Sandsturm. Mit Glattbrocken hält er 8 Runden."
+  },
+  "SANDSTREAM": {
+   "desc": "Ruft beim Einwechseln einen Sandsturm für 5 Runden. Mit Glattbrocken hält er 8 Runden."
+  },
+  "SANDVEIL": {
+   "desc": "Erhöht im Sandsturm den Ausweichwert um 20% und schützt vor Sandsturmschaden."
+  },
+  "SAPSIPPER": {
+   "desc": "Absorbiert Pflanzen-Attacken und erhöht so den Angriff."
+  },
+  "SCHOOLING": {
+   "desc": "Nimmt bei über 25% KP die Schwarmform an (ab Level 20). Darunter wechselt es zurück."
+  },
+  "SCRAPPY": {
+   "desc": "Normal- und Kampf-Attacken treffen Geist-Pokémon. Immun gegen Bedroher."
+  },
+  "SCREENCLEANER": {
+   "desc": "Entfernt Lichtschild, Reflektor und Auroraschleier vom Feld."
+  },
+  "SEEDSOWER": {
+   "desc": "Erzeugt bei einem Treffer ein Grasfeld."
+  },
+  "SERENEGRACE": {
+   "desc": "Verdoppelt die Chance auf Zusatzeffekte. Gilt auch für King-Stein und Scharfzahn."
+  },
+  "SHADOWSHIELD": {
+   "desc": "Halbiert den erlittenen Schaden bei vollen KP."
+  },
+  "SHADOWTAG": {
+   "desc": "Der Gegner kann weder fliehen noch wechseln, außer er ist ein Geist oder trägt Wechseldich."
+  },
+  "SHARPNESS": {
+   "desc": "Verstärkt Schneide-Attacken um 50%."
+  },
+  "SHEDSKIN": {
+   "desc": "Heilt am Ende jeder Runde mit 30% Chance Statusprobleme."
+  },
+  "SHEERFORCE": {
+   "desc": "Verstärkt Attacken mit Zusatzeffekten um 30%, die Effekte entfallen aber."
+  },
+  "SHELLARMOR": {
+   "desc": "Das Pokémon ist vor Volltreffern geschützt."
+  },
+  "SHIELDDUST": {
+   "desc": "Blockt Zusatzeffekte erlittener Attacken."
+  },
+  "SHIELDSDOWN": {
+   "desc": "Bricht seine Hülle auf, wenn die KP unter die Hälfte sinken, und ändert die Form."
+  },
+  "SILVANO": {
+   "desc": "Erhöht auf dem Grasfeld den Schaden aller Attacken um 30%.",
+   "nome": "Waldgeist"
+  },
+  "SIMPLE": {
+   "desc": "Verdoppelt alle Statusänderungen."
+  },
+  "SKILLLINK": {
+   "desc": "Mehrfach-Attacken treffen immer die maximale Anzahl an Malen."
+  },
+  "SLOWSTART": {
+   "desc": "Halbiert in den ersten 5 Runden Angriff und Initiative."
+  },
+  "SLUSHRUSH": {
+   "desc": "Verdoppelt bei Hagel die Initiative und schützt vor Hagelschaden."
+  },
+  "SNIPER": {
+   "desc": "Erhöht den Volltrefferschaden von 1,5x auf 2,25x."
+  },
+  "SNOWCLOAK": {
+   "desc": "Erhöht bei Hagel den Ausweichwert um 20%."
+  },
+  "SNOWWARNING": {
+   "desc": "Ruft Hagel für 5 Runden. Mit Eisbrocken hält er 8 Runden."
+  },
+  "SOBRECARGA": {
+   "desc": "Verstärkt Elektro-Attacken um 50%, wenn die KP bei 1/3 oder weniger liegen.",
+   "nome": "Überladung"
+  },
+  "SOLARPOWER": {
+   "desc": "Erhöht in der Sonne den Spezial-Angriff um 50%, kostet aber 1/8 KP pro Runde."
+  },
+  "SOLIDROCK": {
+   "desc": "Senkt den Schaden sehr effektiver Attacken um 1/4."
+  },
+  "SOULHEART": {
+   "desc": "Erhöht den Spezial-Angriff, wann immer ein Pokémon besiegt wird."
+  },
+  "SOUNDPROOF": {
+   "desc": "Immun gegen alle Schall-Attacken."
+  },
+  "SPEEDBOOST": {
+   "desc": "Erhöht am Ende jeder Runde die Initiative um eine Stufe."
+  },
+  "STAKEOUT": {
+   "desc": "Fügt Pokémon, die in dieser Runde eingewechselt wurden, doppelten Schaden zu."
+  },
+  "STALL": {
+   "desc": "Das Pokémon handelt innerhalb seiner Vorrangstufe zuletzt."
+  },
+  "STALWART": {
+   "desc": "Seine Attacken lassen sich durch Attacken oder Fähigkeiten des Gegners nicht umlenken."
+  },
+  "STAMINA": {
+   "desc": "Erhöht die Verteidigung, wenn es von einer Schadens-Attacke getroffen wird."
+  },
+  "STANCECHANGE": {
+   "desc": "Nimmt beim Angreifen die Klingenform an, bei Königsschild die Schildform."
+  },
+  "STATIC": {
+   "desc": "Kontakt paralysiert mit 30% Wahrscheinlichkeit. Wirkt auch bei Boden-Pokémon."
+  },
+  "STEADFAST": {
+   "desc": "Erhöht die Initiative um eine Stufe, wann immer es zurückschreckt."
+  },
+  "STEAMENGINE": {
+   "desc": "Maximiert die Initiative bei einem Feuer- oder Wasser-Treffer."
+  },
+  "STEAMVEIL": {
+   "desc": "Ruft beim Einwechseln starkes Sonnenlicht für 6 Runden. Wasser-Attacken verdampfen: kein Schaden, Ausweichwert steigt.",
+   "nome": "Dampfschleier"
+  },
+  "STEELWORKER": {
+   "desc": "Verstärkt Stahl-Attacken um 50%."
+  },
+  "STEELYSPIRIT": {
+   "desc": "Verstärkt Stahl-Attacken des Anwenders und der Mitstreiter um 50%."
+  },
+  "STENCH": {
+   "desc": "Lässt den Gegner beim Angriff mit 10% Chance zurückschrecken. Nicht mit Scharfzahn oder King-Stein kombinierbar."
+  },
+  "STICKYHOLD": {
+   "desc": "Das getragene Item kann im Kampf nicht genommen werden."
+  },
+  "STORMDRAIN": {
+   "desc": "Zieht Wasser-Attacken an und erhöht den Spezial-Angriff. Erleidet keinen Schaden."
+  },
+  "STRONGJAW": {
+   "desc": "Verstärkt Biss-Attacken um 50%."
+  },
+  "STURDY": {
+   "desc": "Kann bei vollen KP nicht mit einem Treffer besiegt werden."
+  },
+  "STURDYROOT": {
+   "desc": "Saug-Attacken füllen mehr KP auf.",
+   "nome": "Tiefe Wurzeln"
+  },
+  "SUCTIONCUPS": {
+   "desc": "Hebt alle Attacken und Items auf, die ein Auswechseln erzwingen."
+  },
+  "SUPERLUCK": {
+   "desc": "Erhöht die Volltrefferquote um eine Stufe."
+  },
+  "SUPERSWEETSYRUP": {
+   "desc": "Senkt beim Einwechseln den Ausweichwert des Gegners."
+  },
+  "SUPREMEOVERLORD": {
+   "desc": "Erhöht Angriff und Spezial-Angriff für jedes besiegte Teammitglied."
+  },
+  "SWARM": {
+   "desc": "Verstärkt Käfer-Attacken um 50%, wenn die KP bei 1/3 oder weniger liegen."
+  },
+  "SWEETVEIL": {
+   "desc": "Das Pokémon und seine Mitstreiter können nicht einschlafen oder Erholung nutzen."
+  },
+  "SWIFTSWIM": {
+   "desc": "Verdoppelt bei Regen die Initiative."
+  },
+  "SWORDOFRUIN": {
+   "desc": "Senkt die Verteidigung aller anderen Pokémon."
+  },
+  "SYMBIOSIS": {
+   "desc": "Gibt sein Item an einen Mitstreiter weiter, der seins verbraucht hat."
+  },
+  "SYNCHRONIZE": {
+   "desc": "Gibt Verbrennung, Vergiftung oder Paralyse an den Gegner weiter."
+  },
+  "TABLETSOFRUIN": {
+   "desc": "Senkt den Angriff aller anderen Pokémon."
+  },
+  "TANGLEDFEET": {
+   "desc": "Halbiert die Genauigkeit gegnerischer Attacken, wenn es verwirrt ist."
+  },
+  "TANGLINGHAIR": {
+   "desc": "Senkt bei Kontakt die Initiative des Angreifers."
+  },
+  "TECHNICIAN": {
+   "desc": "Verstärkt Attacken mit 60 Basisstärke oder weniger um 1,5x."
+  },
+  "TELEPATHY": {
+   "desc": "Weicht Attacken von Mitstreitern aus."
+  },
+  "TERASHIFT": {
+   "desc": "Kommt in der Terakristall-Form in den Kampf."
+  },
+  "TERAVOLT": {
+   "desc": "Attacken ignorieren die Fähigkeit des Ziels."
+  },
+  "THERMALEXCHANGE": {
+   "desc": "Immun gegen Verbrennung. Feuer-Attacken erhöhen den Angriff."
+  },
+  "THICKFAT": {
+   "desc": "Halbiert den Schaden von Feuer- und Eis-Attacken."
+  },
+  "TINTEDLENS": {
+   "desc": "Verdoppelt die Stärke 'nicht sehr effektiver' Attacken."
+  },
+  "TINTINEO": {
+   "desc": "Heilt beim Einwechseln Statusprobleme des Teams. Schall-Attacken werden zu Psycho und um 20% verstärkt.",
+   "nome": "Heilsgeläut"
+  },
+  "TORRENT": {
+   "desc": "Verstärkt Wasser-Attacken um 50%, wenn die KP bei 1/3 oder weniger liegen."
+  },
+  "TOUGHCLAWS": {
+   "desc": "Verstärkt Kontakt-Attacken um 33%."
+  },
+  "TOXICBOOST": {
+   "desc": "Verstärkt physische Attacken um 50%, wenn es vergiftet ist."
+  },
+  "TOXICCHAIN": {
+   "desc": "Attacken können das Ziel schwer vergiften."
+  },
+  "TOXICDEBRIS": {
+   "desc": "Legt Giftspitzen aus, wenn es von einer physischen Attacke getroffen wird."
+  },
+  "TRACE": {
+   "desc": "Kopiert die Fähigkeit eines Gegners."
+  },
+  "TRANSISTOR": {
+   "desc": "Verstärkt Elektro-Attacken um 30%."
+  },
+  "TRIAGE": {
+   "desc": "Heil-Attacken erhalten +3 Vorrang."
+  },
+  "TRUANT": {
+   "desc": "Das Pokémon kann nur jede zweite Runde angreifen."
+  },
+  "TURBOBLAZE": {
+   "desc": "Attacken ignorieren die Fähigkeit des Ziels."
+  },
+  "UNAWARE": {
+   "desc": "Attacken ignorieren die Statusänderungen des Gegners."
+  },
+  "UNBURDEN": {
+   "desc": "Verdoppelt die Initiative, wenn ein getragenes Item verbraucht wird oder verloren geht."
+  },
+  "UNNERVE": {
+   "desc": "Verunsichert den Gegner, sodass er keine Beeren essen kann."
+  },
+  "UNSEENFIST": {
+   "desc": "Kontakt-Attacken durchbrechen Schutz."
+  },
+  "VESSELOFRUIN": {
+   "desc": "Senkt den Spezial-Angriff aller anderen Pokémon."
+  },
+  "VICTORYSTAR": {
+   "desc": "Erhöht die Genauigkeit des Anwenders und der Mitstreiter um 10%."
+  },
+  "VITALSPIRIT": {
+   "desc": "Kann nicht einschlafen. Erholung schlägt fehl."
+  },
+  "VOLTABSORB": {
+   "desc": "Füllt bei einem Elektro-Treffer 1/4 der KP auf. Blockt auch Status-Attacken."
+  },
+  "WANDERINGSPIRIT": {
+   "desc": "Tauscht bei Kontakt die Fähigkeit mit dem Angreifer."
+  },
+  "WATERABSORB": {
+   "desc": "Füllt bei einem Wasser-Treffer 1/4 der KP auf. Blockt auch Status-Attacken."
+  },
+  "WATERBUBBLE": {
+   "desc": "Bewirkt so einiges."
+  },
+  "WATERCOMPACTION": {
+   "desc": "Erhöht die Verteidigung stark bei einem Wasser-Treffer (keine Immunität)."
+  },
+  "WATERVEIL": {
+   "desc": "Kann nicht verbrannt werden. Heilt eine bestehende Verbrennung."
+  },
+  "WEAKARMOR": {
+   "desc": "Senkt bei physischen Treffern die Verteidigung, erhöht aber stark die Initiative."
+  },
+  "WELLBAKEDBODY": {
+   "desc": "Erhöht die Verteidigung stark bei einem Feuer-Treffer."
+  },
+  "WHITESMOKE": {
+   "desc": "Andere Pokémon können seine Statuswerte nicht senken."
+  },
+  "WIMPOUT": {
+   "desc": "Flieht aus dem Kampf, wenn die KP unter 50% sinken."
+  },
+  "WINDPOWER": {
+   "desc": "Wind-Attacken laden die nächste Elektro-Attacke auf."
+  },
+  "WINDRIDER": {
+   "desc": "Erhöht den Angriff bei Rückenwind oder einem Wind-Treffer (ohne Schaden)."
+  },
+  "WONDERGUARD": {
+   "desc": "Erleidet nur durch sehr effektive Attacken Schaden."
+  },
+  "WONDERSKIN": {
+   "desc": "Senkt die Genauigkeit gegnerischer Status-Attacken auf 50%."
+  },
+  "ZENMODE": {
+   "desc": "Ändert die Form, wenn die KP unter die Hälfte sinken."
+  },
+  "ZEROTOHERO": {
+   "desc": "Nimmt beim Auswechseln die Heldenform an."
+  }
+ }
+}

@@ -30,6 +30,7 @@
 #include "../i18n.h"
 #include "../duelo.h"
 #include "../pvp.h"
+#include "../abil_names.h"   // abilName: a caixa diz o nome do idioma (leva 78)
 #include "../desktop/guion.h"
 
 #include <algorithm>
@@ -9828,7 +9829,11 @@ TEST(lado76, poison_point_envenena_quem_bateu_e_a_frase_diz_ele) {
   std::string eu, ele;
   std::string g = turnoLado("SPLASH", "TACKLE", "Poison Point", eu, ele);
   CHECK_MSG(habil76("Poison Point") != 0, "premissa: a habilidade existe");
-  CHECK_MSG(g.find("Poison Point") != std::string::npos, "premissa: a habilidade disparou:\n" + g);
+  // a caixa esta em PT: desde a leva 78 diz o nome portugues da habilidade
+  setLang(LANG_PT);
+  const std::string pp = abilName(habil76("Poison Point"));
+  setLang(LANG_EN);
+  CHECK_MSG(g.find(pp) != std::string::npos, "premissa: a habilidade disparou (" + pp + "):\n" + g);
   // T(S_BM_WAS_POISONED) em PT e "%s foi envenenado!"
   CHECK_MSG(g.find(ele + " foi envenenado!") != std::string::npos,
             "o rival que bateu e quem se envenena, e a caixa nao disse:\n" + g);
@@ -10087,4 +10092,321 @@ TEST(tipos77, o_chip_do_golpe_no_combate_esta_no_idioma) {
   setLang(LANG_EN);
   applyLangFont();
   avanza(100);
+}
+
+
+#include "../item_names.h"
+#include "../abil_names.h"
+const char *drawWrapped(const char *s, int y0, int cols, int lh, int maxLines, uint8_t talla);
+
+// ---- leva 78: nome e descricao de ITEM e HABILIDADE no idioma ----
+// item_names.h / abil_names.h (tools/gen_textos_itens.py). As tabelas sao
+// indexadas pela linha de ITEM_TBL/ABIL_TBL: a assinatura (o nome ingles de
+// cada linha) tem de bater, senao a tela le o VIZINHO.
+TEST(textos78, as_assinaturas_batem_linha_a_linha) {
+  for (int i = 0; i < ITEM_COUNT; i++)
+    CHECK_MSG(strcmp(ITEM_NAME_SIG[i], ITEM_TBL[i].name) == 0,
+              std::string("item ") + std::to_string(i) + ": " + ITEM_NAME_SIG[i] + " != " + ITEM_TBL[i].name);
+  for (int i = 0; i < ABIL_COUNT; i++)
+    CHECK_MSG(strcmp(ABIL_NAME_SIG[i], ABIL_TBL[i].name) == 0,
+              std::string("habil ") + std::to_string(i) + ": " + ABIL_NAME_SIG[i] + " != " + ABIL_TBL[i].name);
+}
+
+// Em cada idioma o nome e a descricao saem do idioma -- nao do ingles.
+TEST(textos78, nomes_e_descricoes_sao_do_idioma) {
+  for (int li = 0; li < LANG_COUNT; li++) {
+    setLang((Lang)li);
+    int nDifI = 0, dDifI = 0, comDescI = 0, nDifA = 0, dDifA = 0, comDescA = 0;
+    for (int i = 1; i < ITEM_COUNT; i++) {
+      CHECK_MSG(itemName((uint8_t)i) && *itemName((uint8_t)i), std::string("[") + NOME73[li] + "] item sem nome " + std::to_string(i));
+      nDifI += strcmp(itemName((uint8_t)i), ITEM_TBL[i].name) != 0;
+      if (*ITEM_DESC[i]) { comDescI++; dDifI += strcmp(itemDesc((uint8_t)i), ITEM_DESC[i]) != 0; }
+    }
+    for (int i = 1; i < ABIL_COUNT; i++) {
+      CHECK_MSG(abilName((uint16_t)i) && *abilName((uint16_t)i), std::string("[") + NOME73[li] + "] habil sem nome " + std::to_string(i));
+      nDifA += strcmp(abilName((uint16_t)i), ABIL_TBL[i].name) != 0;
+      if (*ABIL_DESC[i]) { comDescA++; dDifA += strcmp(abilDesc((uint16_t)i), ABIL_DESC[i]) != 0; }
+    }
+    if (li == LANG_EN) {
+      CHECK_EQ(nDifI + nDifA + dDifI + dDifA, 0);
+      continue;
+    }
+    std::string q = std::string("[") + NOME73[li] + "] ";
+    // nomes: muitos coincidem de verdade (megas, "Pokedex"); descricoes quase nenhuma
+    CHECK_MSG(nDifI * 2 > ITEM_COUNT, q + "nomes de item em ingles: " + std::to_string(nDifI));
+    CHECK_MSG(nDifA * 2 > ABIL_COUNT, q + "nomes de habilidade em ingles: " + std::to_string(nDifA));
+    CHECK_MSG(dDifI * 100 >= comDescI * 95, q + "descricoes de item em ingles: " + std::to_string(comDescI - dDifI));
+    CHECK_MSG(dDifA * 100 >= comDescA * 95, q + "descricoes de habilidade em ingles: " + std::to_string(comDescA - dDifA));
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+}
+
+// O corte do paragrafo passou a ser pela LARGURA. No latino tem de dar
+// EXATAMENTE o mesmo que o corte por bytes de antes (copiado aqui), pagina
+// a pagina, em todas as descricoes dos seis idiomas latinos.
+static const char *wrapAntigo78(const char *s, int cols, int maxLines) {
+  if (!s || !*s) return s;
+  int n = 0;
+  while (*s && n < maxLines) {
+    while (*s == ' ') s++;
+    if (!*s) break;
+    int corte = 0, ultimo = 0;
+    while (s[corte] && corte < cols) {
+      if (s[corte] == ' ') ultimo = corte;
+      corte++;
+    }
+    if (s[corte] && ultimo) corte = ultimo;
+    s += corte;
+    n++;
+  }
+  while (*s == ' ') s++;
+  return s;
+}
+
+TEST(textos78, a_quebra_latina_nao_mudou) {
+  int conf = 0;
+  for (int li = 0; li < LANG_COUNT; li++) {
+    if (LANG_IS_CJK((Lang)li)) continue;
+    setLang((Lang)li);
+    applyLangFont();
+    std::vector<const char *> todos;
+    for (int i = 1; i < ITEM_COUNT; i++) todos.push_back(itemDesc((uint8_t)i));
+    for (int i = 1; i < ABIL_COUNT; i++) todos.push_back(abilDesc((uint16_t)i));
+    for (const char *s : todos) {
+      for (int cols : { 25, 26 }) {
+        const char *a = s, *b = s;
+        for (int pag = 0; pag < 20 && a && *a; pag++) {
+          const char *na = drawWrapped(a, 200, cols, 18, 2, 2);
+          const char *nb = wrapAntigo78(b, cols, 2);
+          CHECK_MSG(na == nb, std::string("[") + NOME73[li] + "] corte mudou em: " + s);
+          if (na != nb) break;
+          a = na; b = nb;
+          conf++;
+        }
+      }
+    }
+  }
+  CHECK_MSG(conf > 5000, "premissa: conferiu poucas paginas");
+  setLang(LANG_EN);
+  applyLangFont();
+}
+
+// Japones nao tem espacos e cada letra sao 3 bytes: o corte por bytes partia
+// a letra ao meio. Pagina a pagina, o que sai tem de ser UTF-8 valido e
+// trazer o texto inteiro, em ordem (o simulador pinta cada linha duas vezes:
+// a pseudo-negrita; por isso "em ordem" e subsequencia).
+static bool utf8Valido78(const std::string &s) {
+  for (size_t i = 0; i < s.size();) {
+    unsigned char c = (unsigned char)s[i];
+    int n = c < 0x80 ? 1 : (c & 0xE0) == 0xC0 ? 2 : (c & 0xF0) == 0xE0 ? 3 : (c & 0xF8) == 0xF0 ? 4 : 0;
+    if (!n || i + n > s.size()) return false;
+    for (int k = 1; k < n; k++)
+      if (((unsigned char)s[i + k] & 0xC0) != 0x80) return false;
+    i += n;
+  }
+  return true;
+}
+
+TEST(textos78, japones_e_coreano_nao_partem_letra) {
+  for (Lang lg : { LANG_JA, LANG_KO }) {
+    setLang(lg);
+    applyLangFont();
+    std::vector<const char *> todos;
+    for (int i = 1; i < ITEM_COUNT; i++) todos.push_back(itemDesc((uint8_t)i));
+    for (int i = 1; i < ABIL_COUNT; i++) todos.push_back(abilDesc((uint16_t)i));
+    // e as mesmas SEM espacos: o japones dos jogos nem sempre os tem, e com
+    // espaco o corte cai nele e nunca no meio de uma letra (a sabotagem que
+    // partia a letra passava)
+    std::vector<std::string> semEsp;
+    for (const char *s : todos) {
+      std::string t;
+      for (const char *q = s; *q; q++) if (*q != ' ') t += *q;
+      semEsp.push_back(t);
+    }
+    for (const std::string &t : semEsp) todos.push_back(t.c_str());
+    int partidas = 0, perdidas = 0;
+    std::string exemplo;
+    for (const char *s : todos) {
+      mockTextoTodoReset();
+      const char *p = s;
+      for (int pag = 0; pag < 60 && p && *p; pag++) p = drawWrapped(p, 200, 25, 18, 2, 2);
+      CHECK_MSG(!p || !*p, std::string("nao chegou ao fim: ") + s);
+      const std::string &out = mockTextoTodo();
+      if (!utf8Valido78(out)) { partidas++; if (exemplo.empty()) exemplo = s; }
+      // subsequencia, sem os espacos
+      size_t j = 0;
+      bool ok = true;
+      for (const char *q = s; *q; q++) {
+        if (*q == ' ') continue;
+        j = out.find(*q, j);
+        if (j == std::string::npos) { ok = false; break; }
+        j++;
+      }
+      if (!ok) perdidas++;
+    }
+    CHECK_MSG(partidas == 0, std::string("[") + NOME73[lg] + "] letras partidas em " + std::to_string(partidas) + " textos, ex.: " + exemplo);
+    CHECK_MSG(perdidas == 0, std::string("[") + NOME73[lg] + "] texto perdido em " + std::to_string(perdidas));
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+}
+
+// A ficha do objeto na mochila mostra o nome e a descricao do idioma. Troca o
+// idioma com a ficha ABERTA: o ponteiro da pagina era do idioma velho.
+// O esperado sai das TABELAS (nao de itemName/itemDesc: comparar a tela com a
+// propria funcao era tautologia -- a sabotagem que a fazia ignorar o idioma passava).
+static const char *const *const NOME_ITEM78[LANG_COUNT] = {
+  ITEM_NAME_ES, nullptr, ITEM_NAME_FR, ITEM_NAME_DE, ITEM_NAME_IT, ITEM_NAME_PT, ITEM_NAME_JA, ITEM_NAME_KO };
+static const char *const *const DESC_ITEM78[LANG_COUNT] = {
+  ITEM_DESC_ES, nullptr, ITEM_DESC_FR, ITEM_DESC_DE, ITEM_DESC_IT, ITEM_DESC_PT, ITEM_DESC_JA, ITEM_DESC_KO };
+TEST(textos78, a_ficha_do_objeto_esta_no_idioma) {
+  preparaElMundoT();
+  uint8_t restos = itemPorNomeT("Leftovers");
+  CHECK_MSG(restos, "premissa: Leftovers");
+  if (pet.bag[restos] == 0) pet.bag[restos] = 1;
+  if (pet.heldItem == restos) pet.holdItem(0);
+  cardOpen = true;
+  cardPage = 3;
+  bagPocket = BP_HELD;
+  bagShown = restos;
+  avanza(100);
+  for (int li = 0; li < LANG_COUNT; li++) {
+    setLang((Lang)li);
+    applyLangFont();
+    mockTextoTodoReset();
+    avanza(100);
+    const std::string &out = mockTextoTodo();
+    std::string q = std::string("[") + NOME73[li] + "] ";
+    const char *nomeEsp = NOME_ITEM78[li] ? NOME_ITEM78[li][restos] : ITEM_TBL[restos].name;
+    CHECK_MSG(out.find(nomeEsp) != std::string::npos, q + "a lista nao disse " + nomeEsp);
+    // o comeco da descricao: ate o 1o espaco (ou 3 letras largas)
+    const char *d = DESC_ITEM78[li] && DESC_ITEM78[li][restos] ? DESC_ITEM78[li][restos] : ITEM_DESC[restos];
+    int n = 0, letras = 0;
+    while (d[n] && d[n] != ' ' && letras < 3) {
+      unsigned char c = (unsigned char)d[n];
+      int cl = !LANG_IS_CJK((Lang)li) || c < 0x80 ? 1 : (c & 0xE0) == 0xC0 ? 2 : (c & 0xF0) == 0xE0 ? 3 : 4;
+      n += cl;
+      if (cl > 1) letras++;
+    }
+    std::string ini(d, n);
+    CHECK_MSG(out.find(ini) != std::string::npos, q + "a ficha nao comeca por " + ini);
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+  todoCerradoT();
+}
+
+// O cuadro da habilidade tinha 4 linhas e nada mais: em alemao a descricao
+// mais longa nao cabe. Agora pagina: cada toque mostra a seguinte, o ultimo
+// fecha. Lendo todas as paginas, tem de aparecer o texto inteiro.
+TEST(textos78, o_cuadro_da_habilidade_pagina_ate_o_fim) {
+  for (Lang lg : { LANG_DE, LANG_FR, LANG_JA }) {
+    preparaElMundoT();
+    setLang(lg);
+    applyLangFont();
+    uint16_t maior = 1;
+    for (uint16_t i = 1; i < ABIL_COUNT; i++)
+      if (strlen(abilDesc(i)) > strlen(abilDesc(maior))) maior = i;
+    std::string d = abilDesc(maior);
+    // no japones a maior cabe em 4 linhas (19 letras por linha): so tem de abrir e fechar
+    bool longo = !LANG_IS_CJK(lg);
+    CHECK_MSG(!longo || d.size() > 4 * 26, std::string("premissa: a maior nao passa de 4 linhas: ") + d);
+    pet.ability = maior;
+    cardOpen = true;
+    cardPage = 1;
+    abilShown = true;
+    std::string lido;
+    int toques = 0;
+    while (abilShown && toques < 10) {
+      mockTextoTodoReset();
+      avanza(100);
+      lido += mockTextoTodo();
+      onTap(220, 220);
+      toques++;
+      avanza(50);
+    }
+    CHECK_MSG(!abilShown, "o ultimo toque nao fechou");
+    CHECK_MSG(!longo || toques >= 2, std::string("premissa: uma pagina so (") + d + ")");
+    // cada palavra (latino) / cada letra (japones) aparece
+    size_t j = 0;
+    bool ok = true;
+    for (char c : d) {
+      if (c == ' ') continue;
+      j = lido.find(c, j);
+      if (j == std::string::npos) { ok = false; break; }
+      j++;
+    }
+    CHECK_MSG(ok, std::string("[") + NOME73[lg] + "] parte do texto nunca apareceu: " + d);
+    todoCerradoT();
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+  avanza(50);
+}
+
+// A mochila em ordem alfabetica: a do NOME QUE SE LE.
+TEST(textos78, a_mochila_ordena_pelo_nome_do_idioma) {
+  preparaElMundoT();
+  for (uint8_t i = 1; i < ITEM_COUNT; i++)
+    if (ITEM_TBL[i].pocket == BP_HELD && pet.bag[i] == 0) pet.bag[i] = 1;
+  pet.bagSort = 1;
+  for (Lang lg : { LANG_FR, LANG_DE, LANG_JA }) {
+    setLang(lg);
+    uint8_t n = pet.pocketCount(BP_HELD);
+    CHECK_MSG(n > 10, "premissa: poucos objetos");
+    int foraIdioma = 0, foraIngles = 0;
+    for (uint8_t k = 1; k < n; k++) {
+      uint8_t a = pet.pocketItem(BP_HELD, k - 1), b = pet.pocketItem(BP_HELD, k);
+      foraIdioma += strcmp(itemName(a), itemName(b)) > 0;
+      foraIngles += strcmp(ITEM_TBL[a].name, ITEM_TBL[b].name) > 0;
+    }
+    CHECK_MSG(foraIdioma == 0, std::string("[") + NOME73[lg] + "] fora de ordem: " + std::to_string(foraIdioma));
+    CHECK_MSG(foraIngles > 0, std::string("premissa [") + NOME73[lg] + "]: a ordem do idioma e a do ingles");
+  }
+  pet.bagSort = 0;
+  setLang(LANG_EN);
+  todoCerradoT();
+}
+
+
+// fotos para aprovar (leva 78): TAMA_PREV78=1 ./build/tamapoke_uitests prev78
+TEST(prev78, fotos_dos_itens_e_habilidades) {
+  if (!getenv("TAMA_PREV78")) return;
+  for (Lang lg : { LANG_PT, LANG_DE, LANG_FR, LANG_ES }) {
+    const std::string pre = std::string("p78_") + NOME73[lg] + "_";
+    preparaElMundoT();
+    setLang(lg);
+    applyLangFont();
+    // a mochila (objetos que se levam) com a ficha dos Restos
+    for (uint8_t i = 1; i < ITEM_COUNT; i++)
+      if (ITEM_TBL[i].pocket == BP_HELD && pet.bag[i] == 0) pet.bag[i] = 1;
+    uint8_t restos = itemPorNomeT("Leftovers");
+    if (pet.heldItem == restos) pet.holdItem(0);
+    pet.bagSort = 1;
+    cardOpen = true;
+    cardPage = 3;
+    bagPocket = BP_HELD;
+    bagShown = restos;
+    avanza(200);
+    volcaPantalla((pre + "mochila").c_str());
+    todoCerradoT();
+    // o cuadro da habilidade: a de descricao mais longa, pagina 1 e 2
+    uint16_t maior = 1;
+    for (uint16_t i = 1; i < ABIL_COUNT; i++)
+      if (strlen(abilDesc(i)) > strlen(abilDesc(maior))) maior = i;
+    pet.ability = maior;
+    cardOpen = true;
+    cardPage = 1;
+    abilShown = true;
+    avanza(200);
+    volcaPantalla((pre + "habil1").c_str());
+    onTap(220, 220);
+    avanza(200);
+    if (abilShown) volcaPantalla((pre + "habil2").c_str());
+    pet.bagSort = 0;
+    todoCerradoT();
+  }
+  setLang(LANG_EN);
+  applyLangFont();
 }

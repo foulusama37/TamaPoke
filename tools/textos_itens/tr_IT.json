@@ -1,0 +1,1657 @@
+{
+ "itens": {
+  "LEFTOVERS": {
+   "desc": "Da far tenere a un Pokémon. Durante la lotta recupera gradualmente i PS di chi lo tiene."
+  },
+  "SITRUSBERRY": {
+   "desc": "Ingrediente per Poffin. Un Pokémon può usarla o tenerla per recuperare un po' di PS."
+  },
+  "ORANBERRY": {
+   "desc": "Ingrediente per Poffin. Un Pokémon può usarla o tenerla per recuperare 10 PS."
+  },
+  "LUMBERRY": {
+   "desc": "Ingrediente per Poffin. Un Pokémon può usarla o tenerla per curare qualsiasi problema di stato."
+  },
+  "FOCUSSASH": {
+   "desc": "Da far tenere a un Pokémon. Se ha i PS al massimo, resiste con 1 PS a un colpo che lo manderebbe KO."
+  },
+  "LIFEORB": {
+   "desc": "Potenzia le mosse, ma consuma il 30% dei PS a ogni attacco. Da far tenere a un Pokémon."
+  },
+  "CHOICEBAND": {
+   "desc": "Aumenta l'Attacco del 50%, ma consente di usare un solo tipo di mossa il 50% delle volte. Da far tenere a un Pokémon."
+  },
+  "CHOICESPECS": {
+   "desc": "Aumentano l'Attacco Speciale del 50%, ma consentono di usare un solo tipo di mossa. Da far tenere a un Pokémon."
+  },
+  "QUICKCLAW": {
+   "desc": "Da far tenere a un Pokémon. Artiglio leggero e affilato che a volte permette di agire per primo."
+  },
+  "SCOPELENS": {
+   "desc": "Lente che aumenta la probabilità di sferrare un brutto colpo."
+  },
+  "EVERSTONE": {
+   "desc": "Da far tenere a un Pokémon. Questa strana pietra impedisce al Pokémon che la tiene di evolversi."
+  },
+  "CHARCOAL": {
+   "desc": "Da far tenere a un Pokémon. Combustibile che potenzia le mosse di tipo Fuoco."
+  },
+  "MYSTICWATER": {
+   "desc": "Gemma a forma di goccia che potenzia del 20% le mosse di tipo Acqua. Da far tenere a un Pokémon."
+  },
+  "MIRACLESEED": {
+   "desc": "Da far tenere a un Pokémon. Seme pieno di vita che potenzia le mosse di tipo Erba."
+  },
+  "MAGNET": {
+   "desc": "Da far tenere a un Pokémon. Potente calamita che potenzia le mosse di tipo Elettro."
+  },
+  "TWISTEDSPOON": {
+   "desc": "Da far tenere a un Pokémon. Cucchiaio carico di energia telecinetica che potenzia le mosse di tipo Psico."
+  },
+  "NEVERMELTICE": {
+   "desc": "Da far tenere a un Pokémon. Frammento di ghiaccio che respinge il calore e potenzia le mosse di tipo Ghiaccio."
+  },
+  "BLACKBELT": {
+   "desc": "Da far tenere a un Pokémon. Cintura che accresce la determinazione e potenzia le mosse di tipo Lotta."
+  },
+  "SHARPBEAK": {
+   "desc": "Da far tenere a un Pokémon. Becco lungo e affilato che potenzia le mosse di tipo Volante."
+  },
+  "POISONBARB": {
+   "desc": "Aculeo velenoso che potenzia del 20% le mosse di tipo Veleno. Da far tenere a un Pokémon."
+  },
+  "SOFTSAND": {
+   "desc": "Da far tenere a un Pokémon. Sabbia fine e setosa che potenzia le mosse di tipo Terra."
+  },
+  "HARDSTONE": {
+   "desc": "Da far tenere a un Pokémon. Pietra indistruttibile che potenzia le mosse di tipo Roccia."
+  },
+  "SILVERPOWDER": {
+   "desc": "Da far tenere a un Pokémon. Polvere argentea e lucente che potenzia le mosse di tipo Coleottero."
+  },
+  "SPELLTAG": {
+   "desc": "Da far tenere a un Pokémon. Talismano sinistro e inquietante che potenzia le mosse di tipo Spettro."
+  },
+  "DRAGONFANG": {
+   "desc": "Da far tenere a un Pokémon. Zanna dura e affilata che potenzia le mosse di tipo Drago."
+  },
+  "BLACKGLASSES": {
+   "desc": "Da far tenere a un Pokémon. Occhiali dall'aria losca che potenziano le mosse di tipo Buio."
+  },
+  "SILKSCARF": {
+   "desc": "Da far tenere a un Pokémon. Sciarpa pregiata che potenzia le mosse di tipo Normale."
+  },
+  "POTION": {
+   "desc": "Medicina spray per le ferite. Ripristina 20 PS di un Pokémon."
+  },
+  "SUPERPOTION": {
+   "desc": "Medicina spray per le ferite. Ripristina 60 PS di un Pokémon."
+  },
+  "HYPERPOTION": {
+   "desc": "Medicina spray per le ferite. Ripristina 120 PS di un Pokémon."
+  },
+  "MAXPOTION": {
+   "desc": "Medicina spray per le ferite. Ripristina tutti i PS di un Pokémon."
+  },
+  "FULLRESTORE": {
+   "desc": "Medicina che ripristina tutti i PS e cura ogni problema di stato di un Pokémon."
+  },
+  "REVIVE": {
+   "desc": "Medicina che rianima un Pokémon esausto e ne ripristina metà dei PS massimi."
+  },
+  "MAXREVIVE": {
+   "desc": "Medicina che rianima un Pokémon esausto e ne ripristina tutti i PS."
+  },
+  "ANTIDOTE": {
+   "desc": "Medicina spray che elimina l'avvelenamento di un Pokémon."
+  },
+  "PARALYZEHEAL": {
+   "desc": "Medicina spray che cura la paralisi di un Pokémon."
+  },
+  "AWAKENING": {
+   "desc": "Medicina spray che risveglia un Pokémon addormentato."
+  },
+  "BURNHEAL": {
+   "desc": "Medicina spray che cura un Pokémon dalle scottature."
+  },
+  "ICEHEAL": {
+   "desc": "Medicina spray che scongela un Pokémon congelato."
+  },
+  "FULLHEAL": {
+   "desc": "Medicina spray che cura tutti i problemi di stato di un Pokémon."
+  },
+  "ETHER": {
+   "desc": "Ripristina fino a 10 PP della mossa scelta di un Pokémon."
+  },
+  "MAXETHER": {
+   "desc": "Ripristina tutti i PP della mossa scelta di un Pokémon."
+  },
+  "ELIXIR": {
+   "desc": "Ripristina 10 PP di ogni mossa appresa da un Pokémon."
+  },
+  "MAXELIXIR": {
+   "desc": "Ripristina tutti i PP di ogni mossa appresa da un Pokémon."
+  },
+  "XATTACK": {
+   "desc": "Aumenta l'Attacco di 1 livello in lotta. L'effetto svanisce se il Pokémon viene sostituito."
+  },
+  "XDEFENSE": {
+   "desc": "Aumenta la Difesa di 1 livello in lotta. L'effetto svanisce se il Pokémon viene sostituito."
+  },
+  "XSPEED": {
+   "desc": "Aumenta la Velocità di 1 livello in lotta. L'effetto svanisce se il Pokémon viene sostituito."
+  },
+  "XSPATK": {
+   "desc": "Aumenta l'Attacco Speciale di 1 livello in lotta. L'effetto svanisce se il Pokémon viene sostituito."
+  },
+  "DIREHIT": {
+   "desc": "Aumenta di 1 livello la probabilità di brutti colpi in lotta. L'effetto svanisce se il Pokémon viene sostituito."
+  },
+  "HPUP": {
+   "desc": "Bevanda nutriente che aumenta i PS di un Pokémon."
+  },
+  "PROTEIN": {
+   "desc": "Bevanda nutriente che aumenta l'Attacco di un Pokémon."
+  },
+  "IRON": {
+   "desc": "Bevanda nutriente che aumenta la Difesa di un Pokémon."
+  },
+  "CALCIUM": {
+   "desc": "Bevanda nutriente che aumenta l'Attacco Speciale di un Pokémon."
+  },
+  "ZINC": {
+   "desc": "Bevanda nutriente che aumenta la Difesa Speciale di un Pokémon."
+  },
+  "CARBOS": {
+   "desc": "Bevanda nutriente che aumenta la Velocità di un Pokémon."
+  },
+  "POKEBALL": {
+   "desc": "Strumento a capsula per catturare Pokémon selvatici. Si lancia contro il Pokémon come una palla."
+  },
+  "GREATBALL": {
+   "desc": "Ball ad alte prestazioni, con un tasso di cattura più alto di una Poké Ball normale."
+  },
+  "ULTRABALL": {
+   "desc": "Ball dalle prestazioni eccellenti, con un tasso di cattura più alto di una Mega Ball."
+  },
+  "MASTERBALL": {
+   "desc": "La Ball migliore in assoluto. Cattura qualsiasi Pokémon selvatico senza mai fallire."
+  },
+  "FIRESTONE": {
+   "desc": "Pietra particolare che fa evolvere alcune specie di Pokémon. Ha un cuore arancione infuocato."
+  },
+  "WATERSTONE": {
+   "desc": "Pietra particolare che fa evolvere alcune specie di Pokémon. E' blu come l'acqua limpida."
+  },
+  "THUNDERSTONE": {
+   "desc": "Pietra particolare che fa evolvere alcune specie di Pokémon. Ha il disegno di un fulmine."
+  },
+  "LEAFSTONE": {
+   "desc": "Pietra particolare che fa evolvere alcune specie di Pokémon. Ha il disegno di una foglia."
+  },
+  "MOONSTONE": {
+   "desc": "Pietra particolare che fa evolvere alcune specie di Pokémon. E' nera come il giaietto."
+  },
+  "SUNSTONE": {
+   "desc": "Pietra particolare che fa evolvere alcune specie di Pokémon. E' rossa come il sole."
+  },
+  "LINKINGCORD": {
+   "desc": "Cordone che emana una misteriosa energia. Fa evolvere alcuni Pokémon."
+  },
+  "KINGSROCK": {
+   "desc": "Da far tenere a un Pokémon. Quando chi lo tiene infligge danni, il bersaglio può tentennare."
+  },
+  "DRAGONSCALE": {
+   "desc": "Squama spessa e resistente. Può essere tenuta dai Pokémon di tipo Drago al momento della cattura."
+  },
+  "UPGRADE": {
+   "desc": "Strano congegno della Silph S.p.A. che contiene ogni genere di dati. Fa evolvere Porygon."
+  },
+  "METALCOAT": {
+   "desc": "Da far tenere a un Pokémon. Speciale pellicola metallica che potenzia le mosse di tipo Acciaio."
+  },
+  "PRISMSCALE": {
+   "desc": "Splendida squama che fa evolvere Feebas. Brilla dei colori dell'arcobaleno."
+  },
+  "DEEPSEATOOTH": {
+   "desc": "Da far tenere a Clamperl. Zanna dal brillio argenteo che aumenta l'Attacco Speciale."
+  },
+  "DEEPSEASCALE": {
+   "desc": "Da far tenere a Clamperl. Squama dal tenue riflesso rosa che aumenta la Difesa Speciale."
+  },
+  "SHINYSTONE": {
+   "desc": "Pietra particolare che fa evolvere alcune specie di Pokémon. Brilla di una luce abbagliante."
+  },
+  "DUSKSTONE": {
+   "desc": "Pietra particolare che fa evolvere alcune specie di Pokémon. E' scura come il cielo notturno."
+  },
+  "DAWNSTONE": {
+   "desc": "Pietra particolare che fa evolvere alcune specie di Pokémon. Scintilla come un occhio lucente."
+  },
+  "ICESTONE": {
+   "desc": "Pietra particolare che fa evolvere alcune specie di Pokémon. Ha un motivo a fiocchi di neve."
+  },
+  "PROTECTOR": {
+   "desc": "Congegno protettivo molto pesante. Serve a far evolvere Rhydon."
+  },
+  "ELECTIRIZER": {
+   "desc": "Congegno che contiene una grande quantità di energia elettrica. Serve a far evolvere Electabuzz."
+  },
+  "MAGMARIZER": {
+   "desc": "Scatola che contiene un'enorme quantità di energia magmatica. Serve a far evolvere Magmar."
+  },
+  "DUBIOUSDISC": {
+   "desc": "Congegno trasparente che contiene dati misteriosi. Fa evolvere Porygon2."
+  },
+  "REAPERCLOTH": {
+   "desc": "Stoffa intrisa di una potentissima energia spirituale. Serve a far evolvere Dusclops."
+  },
+  "OVALSTONE": {
+   "desc": "Pietra particolare a forma di uovo che fa evolvere Happiny."
+  },
+  "SACHET": {
+   "desc": "Sacchetto che emana un profumo particolare. Serve a far evolvere Spritzee."
+  },
+  "WHIPPEDDREAM": {
+   "desc": "Dolce a base di soffice panna montata. Serve a far evolvere Swirlix."
+  },
+  "BLACKAUGURITE": {
+   "desc": "Pietra nera e vetrosa che fa evolvere Scyther."
+  },
+  "SCROLLOFDARKNESS": {
+   "desc": "Rotolo particolare che fa evolvere Kubfu in Urshifu Stile Pugno Singolo."
+  },
+  "SCROLLOFWATERS": {
+   "desc": "Rotolo particolare che fa evolvere Kubfu in Urshifu Stile Pluricolpo."
+  },
+  "TOWNMAP": {
+   "desc": "Comodissima mappa consultabile in qualsiasi momento. Mostra anche dove ti trovi."
+  },
+  "VENUSAURITEX": {
+   "desc": "Una delle misteriose Megapietre. Permette a Venusaur di megaevolversi in lotta.",
+   "nome": "Venusaurite X"
+  },
+  "CHARIZARDITEX": {
+   "desc": "Una delle misteriose Megapietre. Permette a Charizard di megaevolversi in lotta."
+  },
+  "CHARIZARDITEY": {
+   "desc": "Una delle misteriose Megapietre. Permette a Charizard di megaevolversi in lotta."
+  },
+  "BLASTOISINITEX": {
+   "desc": "Una delle misteriose Megapietre. Permette a Blastoise di megaevolversi in lotta.",
+   "nome": "Blastoisinite X"
+  },
+  "BEEDRILLITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Beedrill di megaevolversi in lotta."
+  },
+  "PIDGEOTITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Pidgeot di megaevolversi in lotta."
+  },
+  "PIKACHUITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Pikachu di megaevolversi in lotta.",
+   "nome": "Pikachunite"
+  },
+  "ALAKAZITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Alakazam di megaevolversi in lotta."
+  },
+  "SLOWBRONITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Slowbro di megaevolversi in lotta."
+  },
+  "GENGARITEX": {
+   "desc": "Una delle misteriose Megapietre. Permette a Gengar di megaevolversi in lotta.",
+   "nome": "Gengarite X"
+  },
+  "KANGASKHANITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Kangaskhan di megaevolversi in lotta."
+  },
+  "PINSIRITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Pinsir di megaevolversi in lotta."
+  },
+  "GYARADOSITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Gyarados di megaevolversi in lotta."
+  },
+  "AERODACTYLITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Aerodactyl di megaevolversi in lotta."
+  },
+  "MEWTWONITEX": {
+   "desc": "Una delle misteriose Megapietre. Permette a Mewtwo di megaevolversi in lotta."
+  },
+  "MEWTWONITEY": {
+   "desc": "Una delle misteriose Megapietre. Permette a Mewtwo di megaevolversi in lotta."
+  },
+  "AMPHAROSITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Ampharos di megaevolversi in lotta."
+  },
+  "STEELIXITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Steelix di megaevolversi in lotta."
+  },
+  "SCIZORITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Scizor di megaevolversi in lotta."
+  },
+  "HERACRONITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Heracross di megaevolversi in lotta."
+  },
+  "HOUNDOOMINITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Houndoom di megaevolversi in lotta."
+  },
+  "TYRANITARITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Tyranitar di megaevolversi in lotta."
+  },
+  "SCEPTILITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Sceptile di megaevolversi in lotta."
+  },
+  "BLAZIKENITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Blaziken di megaevolversi in lotta."
+  },
+  "SWAMPERTITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Swampert di megaevolversi in lotta."
+  },
+  "GARDEVOIRITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Gardevoir di megaevolversi in lotta."
+  },
+  "SABLENITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Sableye di megaevolversi in lotta."
+  },
+  "MAWILITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Mawile di megaevolversi in lotta."
+  },
+  "AGGRONITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Aggron di megaevolversi in lotta."
+  },
+  "MEDICHAMITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Medicham di megaevolversi in lotta."
+  },
+  "MANECTITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Manectric di megaevolversi in lotta."
+  },
+  "SHARPEDONITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Sharpedo di megaevolversi in lotta."
+  },
+  "CAMERUPTITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Camerupt di megaevolversi in lotta."
+  },
+  "ALTARIANITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Altaria di megaevolversi in lotta."
+  },
+  "BANETTITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Banette di megaevolversi in lotta."
+  },
+  "ABSOLITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Absol di megaevolversi in lotta."
+  },
+  "GLALITITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Glalie di megaevolversi in lotta."
+  },
+  "SALAMENCITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Salamence di megaevolversi in lotta."
+  },
+  "METAGROSSITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Metagross di megaevolversi in lotta."
+  },
+  "LATIASITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Latias di megaevolversi in lotta."
+  },
+  "LATIOSITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Latios di megaevolversi in lotta."
+  },
+  "RAYQUAZITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Rayquaza di megaevolversi in lotta.",
+   "nome": "Rayquazite"
+  },
+  "LOPUNNITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Lopunny di megaevolversi in lotta."
+  },
+  "GARCHOMPITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Garchomp di megaevolversi in lotta."
+  },
+  "LUCARIONITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Lucario di megaevolversi in lotta."
+  },
+  "ABOMASITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Abomasnow di megaevolversi in lotta."
+  },
+  "GALLADITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Gallade di megaevolversi in lotta."
+  },
+  "AUDINITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Audino di megaevolversi in lotta."
+  },
+  "DIANCITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Diancie di megaevolversi in lotta."
+  },
+  "ARCANINITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Arcanine di megaevolversi in lotta.",
+   "nome": "Arcaninite"
+  },
+  "VENUSAURITEY": {
+   "desc": "Una delle misteriose Megapietre. Permette a Venusaur di megaevolversi in lotta.",
+   "nome": "Venusaurite Y"
+  },
+  "BLASTOISINITEY": {
+   "desc": "Una delle misteriose Megapietre. Permette a Blastoise di megaevolversi in lotta.",
+   "nome": "Blastoisinite Y"
+  },
+  "GENGARITEY": {
+   "desc": "Una delle misteriose Megapietre. Permette a Gengar di megaevolversi in lotta.",
+   "nome": "Gengarite Y"
+  },
+  "KINGLERITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Kingler di megaevolversi in lotta.",
+   "nome": "Kinglerite"
+  },
+  "LAPRASITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Lapras di megaevolversi in lotta.",
+   "nome": "Laprasite"
+  },
+  "MACHAMPITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Machamp di megaevolversi in lotta.",
+   "nome": "Machampite"
+  },
+  "GARBODORITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Garbodor di megaevolversi in lotta.",
+   "nome": "Garbodorite"
+  },
+  "CORVIKNIGHTITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Corviknight di megaevolversi in lotta.",
+   "nome": "Corviknightite"
+  },
+  "ORBEETLEITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Orbeetle di megaevolversi in lotta.",
+   "nome": "Orbeetlite"
+  },
+  "BUTTERFREEITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Butterfree di megaevolversi in lotta.",
+   "nome": "Butterfrite"
+  },
+  "DREDNAWITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Drednaw di megaevolversi in lotta.",
+   "nome": "Drednawite"
+  },
+  "COALOSSALITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Coalossal di megaevolversi in lotta.",
+   "nome": "Coalossalite"
+  },
+  "FLAPPLETUNITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Flapple o Appletun di megaevolversi in lotta.",
+   "nome": "Flappletunite"
+  },
+  "SANDACONDITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Sandaconda di megaevolversi in lotta.",
+   "nome": "Sandacondite"
+  },
+  "TOXTRICITITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Toxtricity di megaevolversi in lotta.",
+   "nome": "Toxtricitite"
+  },
+  "CENTISKORCHITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Centiskorch di megaevolversi in lotta.",
+   "nome": "Centiskorchite"
+  },
+  "HATTERENITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Hatterene di megaevolversi in lotta.",
+   "nome": "Hatterenite"
+  },
+  "GRIMMSNARLITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Grimmsnarl di megaevolversi in lotta.",
+   "nome": "Grimmsnarlite"
+  },
+  "ALCREMITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Alcremie di megaevolversi in lotta.",
+   "nome": "Alcremite"
+  },
+  "COPPERAJITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Copperajah di megaevolversi in lotta.",
+   "nome": "Copperajahite"
+  },
+  "DURALUDONITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Duraludon di megaevolversi in lotta.",
+   "nome": "Duraludonite"
+  },
+  "EEVEEITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Eevee di megaevolversi in lotta.",
+   "nome": "Eevite"
+  },
+  "JUMPLUFITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Jumpluff di megaevolversi in lotta.",
+   "nome": "Jumpluffite"
+  },
+  "RILLABOOMITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Rillaboom di megaevolversi in lotta.",
+   "nome": "Rillaboomite"
+  },
+  "CINDERECITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Cinderace di megaevolversi in lotta.",
+   "nome": "Cinderacite"
+  },
+  "INTELEONITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Inteleon di megaevolversi in lotta.",
+   "nome": "Inteleonite"
+  },
+  "SNORLAXITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Snorlax di megaevolversi in lotta.",
+   "nome": "Snorlaxite"
+  },
+  "CLEFABLITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Clefable di megaevolversi in lotta."
+  },
+  "STARMINITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Starmie di megaevolversi in lotta."
+  },
+  "VICTREEBELITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Victreebel di megaevolversi in lotta."
+  },
+  "DRAGONITITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Dragonite di megaevolversi in lotta.",
+   "nome": "Dragoninite"
+  },
+  "MEGANIUMITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Meganium di megaevolversi in lotta."
+  },
+  "FERALIGITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Feraligatr di megaevolversi in lotta."
+  },
+  "SKARMORITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Skarmory di megaevolversi in lotta."
+  },
+  "FROSLASSITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Froslass di megaevolversi in lotta."
+  },
+  "EMBOARITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Emboar di megaevolversi in lotta."
+  },
+  "EXCADRITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Excadrill di megaevolversi in lotta."
+  },
+  "SCOLIPITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Scolipede di megaevolversi in lotta."
+  },
+  "SCRAFTINITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Scrafty di megaevolversi in lotta."
+  },
+  "EELEKTROSSITE": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Eelektross di megaevolversi in lotta."
+  },
+  "CHANDELURITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Chandelure di megaevolversi in lotta."
+  },
+  "CHESNAUGHTITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Chesnaught di megaevolversi in lotta."
+  },
+  "DELPHOXITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Delphox di megaevolversi in lotta."
+  },
+  "GRENINJITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Greninja di megaevolversi in lotta."
+  },
+  "PYROARITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Pyroar di megaevolversi in lotta."
+  },
+  "MALAMARITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Malamar di megaevolversi in lotta."
+  },
+  "BARBARACITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Barbaracle di megaevolversi in lotta."
+  },
+  "DRAGALGITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Dragalge di megaevolversi in lotta."
+  },
+  "HAWLUCHITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Hawlucha di megaevolversi in lotta.",
+   "nome": "Hawluchanite"
+  },
+  "DRAMPANITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Drampa di megaevolversi in lotta."
+  },
+  "FALINKSITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Falinks di megaevolversi in lotta."
+  },
+  "FLOETTITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Floette Fiore Eterno di megaevolversi in lotta."
+  },
+  "ZYGARDITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Zygarde di megaevolversi in lotta."
+  },
+  "STARAPTITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Staraptor di megaevolversi in lotta."
+  },
+  "LUCARIONITEZ": {
+   "desc": "Una delle misteriose Megapietre. Permette a Lucario di megaevolversi in lotta."
+  },
+  "CRABOMINITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Crabominable di megaevolversi in lotta."
+  },
+  "MAGEARNITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Magearna di megaevolversi in lotta."
+  },
+  "ABSOLITEZ": {
+   "desc": "Una delle misteriose Megapietre. Permette ad Absol di megaevolversi in lotta."
+  },
+  "CHIMECHITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Chimecho di megaevolversi in lotta."
+  },
+  "GARCHOMPITEZ": {
+   "desc": "Una delle misteriose Megapietre. Permette a Garchomp di megaevolversi in lotta."
+  },
+  "GOLURKITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Golurk di megaevolversi in lotta."
+  },
+  "TATSUGIRINITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Tatsugiri di megaevolversi in lotta."
+  },
+  "MEOWSTICITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Meowstic di megaevolversi in lotta."
+  },
+  "BAXCALIBRITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Baxcalibur di megaevolversi in lotta."
+  },
+  "SCOVILLAINITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Scovillain di megaevolversi in lotta."
+  },
+  "GLIMMORANITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Glimmora di megaevolversi in lotta."
+  },
+  "GOLISOPITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Golisopod di megaevolversi in lotta."
+  },
+  "ZERAORITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Zeraora di megaevolversi in lotta."
+  },
+  "HEATRANITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Heatran di megaevolversi in lotta."
+  },
+  "DARKRANITE": {
+   "desc": "Una delle misteriose Megapietre. Permette a Darkrai di megaevolversi in lotta."
+  },
+  "RAICHUITEX": {
+   "desc": "Una delle misteriose Megapietre. Permette a Raichu di megaevolversi in lotta.",
+   "nome": "Raichunite X"
+  },
+  "RAICHUITEY": {
+   "desc": "Una delle misteriose Megapietre. Permette a Raichu di megaevolversi in lotta.",
+   "nome": "Raichunite Y"
+  },
+  "POKEDEX": {
+   "desc": "Enciclopedia high-tech che registra ogni Pokémon che hai visto e catturato.",
+   "nome": "Pokédex"
+  },
+  "MEGARING": {
+   "desc": "Anello che permette a un Allenatore di far megaevolvere i Pokémon."
+  },
+  "QUICKBALL": {
+   "desc": "Poké Ball più efficace se usata all'inizio di un incontro con un Pokémon selvatico."
+  },
+  "TIMERBALL": {
+   "desc": "Poké Ball un po' speciale che diventa più efficace con il passare dei turni di lotta."
+  },
+  "DUSKBALL": {
+   "desc": "Poké Ball un po' speciale che facilita la cattura di Pokémon selvatici di notte o in luoghi bui come le grotte."
+  },
+  "NETBALL": {
+   "desc": "Poké Ball un po' speciale, particolarmente efficace sui Pokémon di tipo Acqua e Coleottero."
+  },
+  "NESTBALL": {
+   "desc": "Poké Ball un po' speciale, particolarmente efficace sui Pokémon selvatici più deboli."
+  },
+  "REPEATBALL": {
+   "desc": "Poké Ball un po' speciale, particolarmente efficace sulle specie di Pokémon già catturate."
+  },
+  "LEVELBALL": {
+   "desc": "Poké Ball che facilita la cattura di Pokémon di livello inferiore al tuo Pokémon."
+  },
+  "FASTBALL": {
+   "desc": "Poké Ball un po' speciale che facilita la cattura dei Pokémon veloci."
+  },
+  "HEAVYBALL": {
+   "desc": "Poké Ball più efficace del solito nel catturare Pokémon molto pesanti."
+  },
+  "MOONBALL": {
+   "desc": "Poké Ball più efficace sui Pokémon che si evolvono con la Pietralunare."
+  },
+  "DREAMBALL": {
+   "desc": "Poké Ball un po' speciale, più efficace quando il Pokémon è addormentato."
+  },
+  "FRIENDBALL": {
+   "desc": "Poké Ball che rende più affettuosi i Pokémon catturati."
+  },
+  "LUXURYBALL": {
+   "desc": "Comoda Poké Ball che fa affezionare in fretta il Pokémon selvatico catturato."
+  },
+  "PREMIERBALL": {
+   "desc": "Poké Ball piuttosto rara, creata apposta per celebrare una qualche occasione."
+  },
+  "RARECANDY": {
+   "desc": "Caramella piena di energia. Fa salire di un livello un Pokémon."
+  },
+  "SHINYZADOR": {
+   "desc": "Una pozione scintillante. Il Pokémon che la beve diventa cromatico per sempre.",
+   "nome": "Pozione Cromatica"
+  }
+ },
+ "habil": {
+  "ACOMETIDA": {
+   "desc": "Nel primo turno aumenta la Velocità del 50% e l'Attacco del 20%.",
+   "nome": "Assalto"
+  },
+  "ADAPTABILITY": {
+   "desc": "Aumenta il bonus delle mosse dello stesso tipo del Pokémon da 1,5x a 2x."
+  },
+  "AERILATE": {
+   "desc": "Le mosse di tipo Normale diventano di tipo Volante e la loro potenza aumenta del 20%."
+  },
+  "AFTERMATH": {
+   "desc": "Se va KO per una mossa di contatto, toglie all'aggressore il 25% dei suoi PS massimi."
+  },
+  "AIRLOCK": {
+   "desc": "Annulla tutti gli effetti del tempo atmosferico."
+  },
+  "ANALYTIC": {
+   "desc": "Aumenta la potenza del 30% se agisce per ultimo."
+  },
+  "ANGERPOINT": {
+   "desc": "Porta l'Attacco al massimo dopo aver subito un brutto colpo."
+  },
+  "ANGERSHELL": {
+   "desc": "Se i PS scendono sotto la metà, cala Difesa e Difesa Speciale ma aumenta Attacco, Attacco Speciale e Velocità."
+  },
+  "ANTICIPATION": {
+   "desc": "Rabbrividisce se il nemico ha una mossa superefficace contro di lui."
+  },
+  "ARENATRAP": {
+   "desc": "Impedisce la fuga ai nemici, a meno che non siano di tipo Spettro o Volante o levitino."
+  },
+  "ARMORTAIL": {
+   "desc": "Blocca le mosse con priorità rivolte alla squadra."
+  },
+  "AROMAVEIL": {
+   "desc": "Protegge la squadra dalle mosse che limitano le scelte, come Provocazione o Corpofunesto."
+  },
+  "BADDREAMS": {
+   "desc": "A fine turno toglie 1/8 dei PS massimi ai nemici addormentati."
+  },
+  "BALLFETCH": {
+   "desc": "Se non tiene strumenti, recupera la prima Poké Ball lanciata invano."
+  },
+  "BATTERY": {
+   "desc": "Potenzia del 30% le mosse speciali degli alleati."
+  },
+  "BATTLEARMOR": {
+   "desc": "Il Pokémon è protetto dai brutti colpi."
+  },
+  "BEADSOFRUIN": {
+   "desc": "Riduce la Difesa Speciale di tutti gli altri Pokémon."
+  },
+  "BEASTBOOST": {
+   "desc": "Aumenta la statistica più alta dopo aver sconfitto un nemico."
+  },
+  "BERSERK": {
+   "desc": "Aumenta l'Attacco Speciale quando i PS scendono sotto la metà. Può attivarsi più volte."
+  },
+  "BIGPECKS": {
+   "desc": "Impedisce agli altri di ridurgli la Difesa."
+  },
+  "BLAZE": {
+   "desc": "Potenzia del 50% le mosse di tipo Fuoco quando ha 1/3 dei PS o meno."
+  },
+  "BULLETPROOF": {
+   "desc": "E' immune a tutte le mosse basate su proiettili, sfere e bombe."
+  },
+  "BURNTOUCH": {
+   "desc": "Ha il 30% di probabilità di scottare il bersaglio al contatto.",
+   "nome": "Tocco Ardente"
+  },
+  "CAMORRISTA": {
+   "desc": "Potenzia del 20% le mosse basate sui calci.",
+   "nome": "Attaccabrighe"
+  },
+  "CHEEKPOUCH": {
+   "desc": "Recupera 1/3 dei PS massimi quando mangia una bacca."
+  },
+  "CHILLINGNEIGH": {
+   "desc": "Aumenta l'Attacco dopo aver sconfitto un nemico."
+  },
+  "CHLOROPHYLL": {
+   "desc": "Raddoppia la Velocità quando il sole è intenso."
+  },
+  "CLEARBODY": {
+   "desc": "Impedisce agli altri Pokémon di ridurgli le statistiche."
+  },
+  "CLOUDNINE": {
+   "desc": "Annulla tutti gli effetti del tempo atmosferico finché è in campo."
+  },
+  "COLORCHANGE": {
+   "desc": "Assume il tipo dell'ultima mossa che lo ha colpito."
+  },
+  "COMATOSE": {
+   "desc": "Non si sveglia mai, ma può attaccare mentre dorme."
+  },
+  "COMMANDER": {
+   "desc": "Entra nella bocca di un Dondozo alleato per comandarlo."
+  },
+  "COMPETITIVE": {
+   "desc": "Aumenta di molto l'Attacco Speciale quando il nemico gli riduce una statistica."
+  },
+  "COMPOUNDEYES": {
+   "desc": "Aumenta la Precisione del 30% e la probabilità di trovare Pokémon selvatici con strumenti."
+  },
+  "CONTRARY": {
+   "desc": "Inverte le modifiche alle statistiche: salgono quando dovrebbero scendere e viceversa."
+  },
+  "CORROSION": {
+   "desc": "Può avvelenare anche i Pokémon di tipo Acciaio e Veleno."
+  },
+  "COSTAR": {
+   "desc": "Entrando in campo copia le modifiche alle statistiche dell'alleato."
+  },
+  "COTTONDOWN": {
+   "desc": "Quando subisce un attacco riduce la Velocità degli altri Pokémon."
+  },
+  "CUDCHEW": {
+   "desc": "Rigurgita una bacca e la mangia di nuovo alla fine del turno successivo."
+  },
+  "CURIOUSMEDICINE": {
+   "desc": "Entrando in lotta azzera le modifiche alle statistiche degli alleati."
+  },
+  "CURSEDBODY": {
+   "desc": "30% di probabilità di bloccare per 4 turni la mossa usata contro di lui."
+  },
+  "CUTECHARM": {
+   "desc": "Al contatto, 30% di probabilità di far infatuare il nemico se è del sesso opposto."
+  },
+  "DAMP": {
+   "desc": "Impedisce l'uso delle mosse autodistruttive e dell'abilità Scoppio."
+  },
+  "DANCER": {
+   "desc": "Copia qualsiasi mossa di danza usata da altri Pokémon."
+  },
+  "DARKAURA": {
+   "desc": "Aumenta del 33% la potenza di tutte le mosse di tipo Buio."
+  },
+  "DAUNTLESSSHIELD": {
+   "desc": "Entrando in lotta aumenta la Difesa di un livello."
+  },
+  "DAZZLING": {
+   "desc": "Impedisce ai nemici di usare mosse con priorità contro la squadra."
+  },
+  "DEFEATIST": {
+   "desc": "Dimezza Attacco e Attacco Speciale quando i PS scendono sotto il 50%."
+  },
+  "DEFIANT": {
+   "desc": "Aumenta di molto l'Attacco quando il nemico gli riduce una statistica."
+  },
+  "DELTASTREAM": {
+   "desc": "Evoca forti venti che annullano le debolezze del tipo Volante. Il tempo normale non può sostituirli."
+  },
+  "DISGUISE": {
+   "desc": "Riduce il danno del primo colpo subito a 1/8 dei PS massimi."
+  },
+  "DOWNLOAD": {
+   "desc": "Regola le statistiche offensive in base alle difese del nemico."
+  },
+  "DRAGONSMAW": {
+   "desc": "Potenzia del 50% le mosse di tipo Drago."
+  },
+  "DRIZZLE": {
+   "desc": "Entrando in lotta fa piovere per 5 turni. Dura 8 turni se tiene una Rocciaumida."
+  },
+  "DROUGHT": {
+   "desc": "Entrando in lotta rende il sole intenso per 5 turni. Dura 8 turni se tiene una Rocciacalda."
+  },
+  "DRYSKIN": {
+   "desc": "Perde PS col sole e li recupera con la pioggia. Subisce più danni dal Fuoco e si cura con le mosse Acqua."
+  },
+  "EARLYBIRD": {
+   "desc": "Dorme la metà del tempo normale."
+  },
+  "EARTHEATER": {
+   "desc": "Recupera PS se colpito da una mossa di tipo Terra."
+  },
+  "EFFECTSPORE": {
+   "desc": "Al contatto può avvelenare, paralizzare o addormentare l'aggressore (30% di probabilità)."
+  },
+  "ELECTRICSURGE": {
+   "desc": "Entrando in lotta crea un Campo Elettrico."
+  },
+  "ELECTROMORPHOSIS": {
+   "desc": "Subire danni carica la sua prossima mossa di tipo Elettro."
+  },
+  "EMERGENCYEXIT": {
+   "desc": "Si ritira dopo aver usato una mossa di tipo Coleottero."
+  },
+  "ESPANTO": {
+   "desc": "Spaventa l'avversario e ne riduce l'Attacco Speciale.",
+   "nome": "Spavento"
+  },
+  "FAIRYAURA": {
+   "desc": "Aumenta del 33% la potenza di tutte le mosse di tipo Folletto."
+  },
+  "FILTER": {
+   "desc": "Riduce di 1/4 i danni degli attacchi superefficaci."
+  },
+  "FLAMEBODY": {
+   "desc": "Al contatto ha il 30% di probabilità di scottare l'aggressore."
+  },
+  "FLAREBOOST": {
+   "desc": "Potenzia del 50% gli attacchi speciali quando è scottato."
+  },
+  "FLASHFIRE": {
+   "desc": "Potenzia del 50% le mosse di tipo Fuoco se colpito da una mossa Fuoco. E' immune al Fuoco."
+  },
+  "FLORACION": {
+   "desc": "Aumenta la potenza delle mosse di tipo Erba.",
+   "nome": "Fioritura"
+  },
+  "FLOWERGIFT": {
+   "desc": "Col sole aumenta l'Attacco e la Difesa Speciale della squadra."
+  },
+  "FLOWERVEIL": {
+   "desc": "Protegge i Pokémon di tipo Erba alleati da problemi di stato e cali delle statistiche."
+  },
+  "FLUFFY": {
+   "desc": "Dimezza i danni delle mosse di contatto, ma raddoppia quelli del Fuoco."
+  },
+  "FORECAST": {
+   "desc": "Cambia tipo in base al tempo atmosferico."
+  },
+  "FOREWARN": {
+   "desc": "Entrando in lotta rivela la mossa più potente del nemico."
+  },
+  "FRIENDGUARD": {
+   "desc": "Riduce del 25% i danni subiti dagli alleati."
+  },
+  "FRISK": {
+   "desc": "Entrando in lotta rivela lo strumento tenuto dal nemico."
+  },
+  "FULLMETALBODY": {
+   "desc": "Impedisce agli altri di ridurgli le statistiche."
+  },
+  "FURCOAT": {
+   "desc": "Dimezza i danni delle mosse fisiche."
+  },
+  "GALEWINGS": {
+   "desc": "Dà priorità alle mosse di tipo Volante quando ha i PS al massimo."
+  },
+  "GLUTTONY": {
+   "desc": "Mangia le bacche tenute al 50% dei PS anziché al 25%."
+  },
+  "GOODASGOLD": {
+   "desc": "E' immune alle mosse di stato."
+  },
+  "GOOEY": {
+   "desc": "Al contatto riduce la Velocità dell'aggressore."
+  },
+  "GORILLATACTICS": {
+   "desc": "Aumenta l'Attacco del 50%, ma resta bloccato sulla prima mossa usata."
+  },
+  "GRASSYSURGE": {
+   "desc": "Entrando in lotta crea un Campo Erboso."
+  },
+  "GRIMNEIGH": {
+   "desc": "Aumenta l'Attacco Speciale dopo aver sconfitto un nemico."
+  },
+  "GUARDDOG": {
+   "desc": "Blocca Prepotenza e aumenta invece l'Attacco. Impedisce le sostituzioni forzate."
+  },
+  "GULPMISSILE": {
+   "desc": "Cambia forma dopo aver usato Surf o Sub, in base ai PS."
+  },
+  "GUTS": {
+   "desc": "Aumenta l'Attacco del 50% se ha un problema di stato, ignorando il calo da scottatura."
+  },
+  "HADRONENGINE": {
+   "desc": "Crea un Campo Elettrico. Nel Campo Elettrico aumenta l'Attacco Speciale."
+  },
+  "HARVEST": {
+   "desc": "A fine turno, 50% di probabilità di recuperare una bacca usata. 100% col sole."
+  },
+  "HEALER": {
+   "desc": "A fine turno, 30% di probabilità di curare il problema di stato di un alleato."
+  },
+  "HEATPROOF": {
+   "desc": "Dimezza i danni delle mosse di tipo Fuoco. Riduce i danni da scottatura."
+  },
+  "HEAVYMETAL": {
+   "desc": "Raddoppia il peso del Pokémon."
+  },
+  "HONEYGATHER": {
+   "desc": "Dopo la lotta può raccogliere del Miele."
+  },
+  "HOSPITALITY": {
+   "desc": "Entrando in lotta cura i PS di un alleato."
+  },
+  "HUGEPOWER": {
+   "desc": "Raddoppia la statistica di Attacco del Pokémon."
+  },
+  "HUNGERSWITCH": {
+   "desc": "A fine turno cambia forma e il tipo di Ruota d'Aura."
+  },
+  "HUSTLE": {
+   "desc": "Aumenta l'Attacco o l'Attacco Speciale del 50%, ma riduce del 20% la precisione delle mosse offensive."
+  },
+  "HYDRATION": {
+   "desc": "A fine turno cura i problemi di stato se piove."
+  },
+  "HYPERCUTTER": {
+   "desc": "Impedisce agli altri di ridurgli l'Attacco."
+  },
+  "ICEBODY": {
+   "desc": "Recupera gradualmente PS durante la grandinata."
+  },
+  "ICEFACE": {
+   "desc": "Passa alla Forma Liquefaccia se colpito da una mossa fisica. La grandine lo ripristina."
+  },
+  "ICESCALES": {
+   "desc": "Dimezza i danni degli attacchi speciali."
+  },
+  "ILLUMINATE": {
+   "desc": "Entrando in lotta riduce la Precisione del nemico. Aumenta gli incontri con Pokémon selvatici."
+  },
+  "ILLUSION": {
+   "desc": "Si traveste da ultimo Pokémon della squadra."
+  },
+  "IMMUNITY": {
+   "desc": "Non può essere avvelenato."
+  },
+  "IMPOSTER": {
+   "desc": "Si trasforma nel nemico, copiandone le statistiche (tranne i PS)."
+  },
+  "INFILTRATOR": {
+   "desc": "I suoi attacchi ignorano barriere e Sostituti."
+  },
+  "INNARDSOUT": {
+   "desc": "Prima di andare KO infligge danni pari ai PS che gli restavano."
+  },
+  "INNERFOCUS": {
+   "desc": "Non tentenna e non subisce Prepotenza."
+  },
+  "INSOMNIA": {
+   "desc": "Non può addormentarsi né usare Riposo. Si sveglia se la ottiene mentre dorme."
+  },
+  "INTIMIDATE": {
+   "desc": "Entrando in lotta riduce l'Attacco del Pokémon avversario."
+  },
+  "INTREPIDSWORD": {
+   "desc": "Entrando in lotta aumenta l'Attacco di un livello."
+  },
+  "IRONBARBS": {
+   "desc": "Al contatto infligge all'aggressore danni pari a 1/8 dei suoi PS massimi."
+  },
+  "IRONFIST": {
+   "desc": "Potenzia del 20% le mosse basate sui pugni."
+  },
+  "JUSTIFIED": {
+   "desc": "Aumenta l'Attacco se colpito da una mossa di tipo Buio."
+  },
+  "KEENEYE": {
+   "desc": "Impedisce che la Precisione cali. Ignora gli aumenti di Elusione del nemico."
+  },
+  "KLUTZ": {
+   "desc": "Non può usare gli strumenti tenuti e ne annulla gli effetti."
+  },
+  "LEAFGUARD": {
+   "desc": "Col sole previene i problemi di stato."
+  },
+  "LEVITATE": {
+   "desc": "E' immune a tutte le mosse di tipo Terra."
+  },
+  "LIBERO": {
+   "desc": "Assume il tipo della mossa che sta per usare."
+  },
+  "LIGHTMETAL": {
+   "desc": "Dimezza il peso del Pokémon."
+  },
+  "LIGHTNINGROD": {
+   "desc": "Attira le mosse di tipo Elettro e aumenta l'Attacco Speciale. Funziona anche sui tipi Terra."
+  },
+  "LIMBER": {
+   "desc": "Non può essere paralizzato."
+  },
+  "LINGERINGAROMA": {
+   "desc": "Al contatto, l'abilità dell'aggressore diventa Odore Tenace."
+  },
+  "LIQUIDOOZE": {
+   "desc": "Danneggia i nemici che usano mosse che assorbono PS."
+  },
+  "LIQUIDVOICE": {
+   "desc": "Le mosse sonore diventano di tipo Acqua e sono potenziate del 20%."
+  },
+  "LONGREACH": {
+   "desc": "Le sue mosse non entrano in contatto con il bersaglio."
+  },
+  "MAGICBOUNCE": {
+   "desc": "Rimanda indietro le mosse di stato a chi le usa."
+  },
+  "MAGICGUARD": {
+   "desc": "Subisce solo danni diretti. E' immune ai danni indiretti e alle trappole."
+  },
+  "MAGICIAN": {
+   "desc": "Ruba lo strumento del bersaglio quando lo colpisce con una mossa di contatto."
+  },
+  "MAGNETPULL": {
+   "desc": "Intrappola i nemici di tipo Acciaio impedendone la fuga, se non tengono un Disfoguscio."
+  },
+  "MARVELSCALE": {
+   "desc": "Aumenta la Difesa del 50% se ha un problema di stato."
+  },
+  "MEGALAUNCHER": {
+   "desc": "Potenzia del 50% le mosse basate su onde e aure."
+  },
+  "MERCILESS": {
+   "desc": "I suoi attacchi sono sempre brutti colpi se il bersaglio è avvelenato."
+  },
+  "MIMICRY": {
+   "desc": "Cambia tipo in base al campo attivo."
+  },
+  "MINUS": {
+   "desc": "Aumenta l'Attacco Speciale del 50% se un alleato ha l'abilità Più o Meno."
+  },
+  "MIRRORARMOR": {
+   "desc": "Rimanda a chi li usa gli effetti che riducono le statistiche."
+  },
+  "MISTYSURGE": {
+   "desc": "Entrando in lotta crea un Campo Nebbioso."
+  },
+  "MOLDBREAKER": {
+   "desc": "Le sue mosse ignorano l'abilità del bersaglio."
+  },
+  "MOODY": {
+   "desc": "A fine turno aumenta di molto una statistica a caso e ne riduce un'altra."
+  },
+  "MOTORDRIVE": {
+   "desc": "Aumenta la Velocità se colpito da una mossa di tipo Elettro. E' immune ai danni Elettro."
+  },
+  "MOXIE": {
+   "desc": "Aumenta l'Attacco dopo aver mandato KO un nemico."
+  },
+  "MULTISCALE": {
+   "desc": "Dimezza i danni subiti quando ha i PS al massimo."
+  },
+  "MULTITYPE": {
+   "desc": "Cambia tipo in base alla Lastra o al Cristallo Z tenuto."
+  },
+  "MUMMY": {
+   "desc": "Al contatto, l'abilità dell'aggressore diventa Mummia."
+  },
+  "MYCELIUMMIGHT": {
+   "desc": "Le mosse di stato agiscono per ultime ma ignorano le abilità."
+  },
+  "NATURALCURE": {
+   "desc": "Cura tutti i problemi di stato quando viene sostituito o a fine lotta."
+  },
+  "NEUROFORCE": {
+   "desc": "Potenzia del 25% le mosse superefficaci."
+  },
+  "NEUTRALIZINGGAS": {
+   "desc": "Annulla tutte le abilità finché è in campo."
+  },
+  "NOGUARD": {
+   "desc": "Le mosse usate da o contro questo Pokémon non falliscono mai."
+  },
+  "OBLIVIOUS": {
+   "desc": "Previene infatuazione, Provocazione e Prepotenza."
+  },
+  "OPPORTUNIST": {
+   "desc": "Copia gli aumenti di statistiche del nemico."
+  },
+  "ORICHALCUMPULSE": {
+   "desc": "Rende il sole intenso. Col sole aumenta l'Attacco."
+  },
+  "OVERCOAT": {
+   "desc": "Protegge da tempesta di sabbia, grandine e mosse basate su polveri e spore."
+  },
+  "OVERGROW": {
+   "desc": "Potenzia del 50% le mosse di tipo Erba quando ha 1/3 dei PS o meno."
+  },
+  "OWNTEMPO": {
+   "desc": "Previene la confusione e Prepotenza."
+  },
+  "PARENTALBOND": {
+   "desc": "Attacca due volte per turno. Il secondo colpo infligge il 25% dei danni."
+  },
+  "PASTELVEIL": {
+   "desc": "Protegge la squadra dall'avvelenamento. Entrando cura gli alleati."
+  },
+  "PERISHBODY": {
+   "desc": "Se colpito da una mossa di contatto, entrambi i Pokémon vanno KO dopo 3 turni."
+  },
+  "PICKPOCKET": {
+   "desc": "Al contatto ruba lo strumento dell'aggressore, se non ne tiene già uno."
+  },
+  "PICKUP": {
+   "desc": "10% di probabilità di raccogliere uno strumento dopo la lotta. Può raccogliere strumenti persi in lotta."
+  },
+  "PIELHERBACEA": {
+   "desc": "Le mosse di tipo Normale diventano di tipo Erba e sono potenziate.",
+   "nome": "Pelle Erbosa"
+  },
+  "PIXILATE": {
+   "desc": "Le mosse di tipo Normale diventano di tipo Folletto e la loro potenza aumenta del 20%."
+  },
+  "PLUS": {
+   "desc": "Aumenta l'Attacco Speciale del 50% se un alleato ha l'abilità Più o Meno."
+  },
+  "PODERGELIDO": {
+   "desc": "Con la neve aumenta del 50% la potenza delle mosse Ghiaccio e la Velocità.",
+   "nome": "Potere Gelido"
+  },
+  "PODERSABIO": {
+   "desc": "Aumenta l'Attacco Speciale del 50%, ma resta bloccato sulla prima mossa usata.",
+   "nome": "Potere Saggio"
+  },
+  "POISONHEAL": {
+   "desc": "Se è avvelenato recupera 1/8 dei PS massimi a ogni turno."
+  },
+  "POISONPOINT": {
+   "desc": "Al contatto ha il 30% di probabilità di avvelenare l'aggressore."
+  },
+  "POISONPUPPETEER": {
+   "desc": "I nemici che avvelena diventano anche confusi."
+  },
+  "POISONTOUCH": {
+   "desc": "Al contatto ha il 30% di probabilità di avvelenare il bersaglio."
+  },
+  "POWERCONSTRUCT": {
+   "desc": "Passa alla Forma Perfetta quando i PS scendono sotto il 50%."
+  },
+  "POWERSPOT": {
+   "desc": "Potenzia del 30% le mosse degli alleati."
+  },
+  "PRANKSTER": {
+   "desc": "Dà priorità alle mosse di stato. I tipi Buio ne sono immuni."
+  },
+  "PRESSURE": {
+   "desc": "Costringe il nemico a consumare 2 PP per mossa."
+  },
+  "PRISMARMOR": {
+   "desc": "Riduce di 1/4 i danni superefficaci."
+  },
+  "PROPELLERTAIL": {
+   "desc": "Le sue mosse non possono essere deviate da mosse o abilità dell'avversario."
+  },
+  "PROTEAN": {
+   "desc": "Assume il tipo della mossa che sta per usare."
+  },
+  "PROTOSYNTHESIS": {
+   "desc": "Aumenta la statistica più alta col sole intenso o se tiene una Capsula energetica."
+  },
+  "PSYCHICSURGE": {
+   "desc": "Entrando in lotta crea un Campo Psichico."
+  },
+  "PUNKROCK": {
+   "desc": "Potenzia del 30% le mosse sonore e dimezza i danni che ne subisce."
+  },
+  "PUREPOWER": {
+   "desc": "Raddoppia la statistica di Attacco."
+  },
+  "PURIFYINGSALT": {
+   "desc": "E' immune ai problemi di stato. Dimezza i danni delle mosse di tipo Spettro."
+  },
+  "QUARKDRIVE": {
+   "desc": "Aumenta la statistica più alta nel Campo Elettrico o se tiene una Capsula energetica."
+  },
+  "QUEENLYMAJESTY": {
+   "desc": "Impedisce che le mosse con priorità colpiscano il Pokémon."
+  },
+  "QUICKDRAW": {
+   "desc": "30% di probabilità di agire per primo tra mosse con la stessa priorità."
+  },
+  "QUICKFEET": {
+   "desc": "Aumenta la Velocità del 50% se ha un problema di stato. Ignora il calo dovuto alla paralisi."
+  },
+  "RAINDISH": {
+   "desc": "Recupera gradualmente PS con la pioggia."
+  },
+  "RATTLED": {
+   "desc": "Aumenta la Velocità se colpito da mosse Spettro, Buio o Coleottero, o da Prepotenza."
+  },
+  "RECEIVER": {
+   "desc": "Eredita l'abilità di un alleato quando questo va KO."
+  },
+  "RECKLESS": {
+   "desc": "Potenzia del 20% le mosse con contraccolpo."
+  },
+  "REFRIGERATE": {
+   "desc": "Le mosse di tipo Normale diventano di tipo Ghiaccio e la loro potenza aumenta del 20%."
+  },
+  "REGENERATOR": {
+   "desc": "Recupera 1/3 dei PS massimi quando viene sostituito."
+  },
+  "RIPEN": {
+   "desc": "Raddoppia l'effetto delle bacche consumate."
+  },
+  "RIVALRY": {
+   "desc": "Infligge il 25% di danni in più ai nemici dello stesso sesso."
+  },
+  "RKSSYSTEM": {
+   "desc": "Cambia tipo in base al Disco Memoria tenuto."
+  },
+  "ROCKHEAD": {
+   "desc": "Evita i danni da contraccolpo, tranne quelli di Scontro."
+  },
+  "ROCKYPAYLOAD": {
+   "desc": "Potenzia del 50% le mosse di tipo Roccia."
+  },
+  "ROUGHSKIN": {
+   "desc": "Al contatto infligge all'aggressore danni pari a 1/16 dei suoi PS massimi."
+  },
+  "RUNAWAY": {
+   "desc": "Garantisce la fuga dai Pokémon selvatici."
+  },
+  "SANDFORCE": {
+   "desc": "Con la tempesta di sabbia potenzia del 30% le mosse di tipo Terra, Acciaio e Roccia."
+  },
+  "SANDRUSH": {
+   "desc": "Raddoppia la Velocità durante la tempesta di sabbia e lo rende immune ai suoi danni."
+  },
+  "SANDSPIT": {
+   "desc": "Quando viene colpito scatena una tempesta di sabbia. Dura 8 turni se tiene una Roccialiscia."
+  },
+  "SANDSTREAM": {
+   "desc": "Entrando in lotta scatena una tempesta di sabbia per 5 turni. Dura 8 turni se tiene una Roccialiscia."
+  },
+  "SANDVEIL": {
+   "desc": "Aumenta l'Elusione del 20% durante la tempesta di sabbia e lo rende immune ai suoi danni."
+  },
+  "SAPSIPPER": {
+   "desc": "Assorbe le mosse di tipo Erba e aumenta l'Attacco."
+  },
+  "SCHOOLING": {
+   "desc": "Passa alla Forma Banco se i PS sono sopra il 25% (dal livello 20). Torna normale se scendono sotto."
+  },
+  "SCRAPPY": {
+   "desc": "Le mosse Normale e Lotta colpiscono i tipi Spettro. E' immune a Prepotenza."
+  },
+  "SCREENCLEANER": {
+   "desc": "Rimuove Schermoluce, Riflesso e Velaurora dal campo."
+  },
+  "SEEDSOWER": {
+   "desc": "Quando viene colpito crea un Campo Erboso."
+  },
+  "SERENEGRACE": {
+   "desc": "Raddoppia la probabilità degli effetti secondari delle mosse. Vale anche per Roccia di Re e Affilodente."
+  },
+  "SHADOWSHIELD": {
+   "desc": "Dimezza i danni subiti quando ha i PS al massimo."
+  },
+  "SHADOWTAG": {
+   "desc": "Impedisce al nemico di fuggire o essere sostituito, se non è di tipo Spettro o tiene un Disfoguscio."
+  },
+  "SHARPNESS": {
+   "desc": "Potenzia del 50% le mosse taglienti."
+  },
+  "SHEDSKIN": {
+   "desc": "A fine turno, 30% di probabilità di curare i problemi di stato."
+  },
+  "SHEERFORCE": {
+   "desc": "Potenzia del 30% le mosse con effetti secondari, ma ne annulla gli effetti."
+  },
+  "SHELLARMOR": {
+   "desc": "Il Pokémon è protetto dai brutti colpi."
+  },
+  "SHIELDDUST": {
+   "desc": "Blocca gli effetti aggiuntivi degli attacchi subiti."
+  },
+  "SHIELDSDOWN": {
+   "desc": "Rompe il guscio quando i PS scendono sotto la metà, cambiando forma."
+  },
+  "SILVANO": {
+   "desc": "Nel Campo Erboso aumenta del 30% i danni di tutte le mosse.",
+   "nome": "Silvano"
+  },
+  "SIMPLE": {
+   "desc": "Raddoppia tutte le modifiche alle statistiche."
+  },
+  "SKILLLINK": {
+   "desc": "Le mosse multicolpo colpiscono sempre il numero massimo di volte."
+  },
+  "SLOWSTART": {
+   "desc": "Dimezza Attacco e Velocità per i primi 5 turni."
+  },
+  "SLUSHRUSH": {
+   "desc": "Raddoppia la Velocità con la grandine e lo rende immune ai suoi danni."
+  },
+  "SNIPER": {
+   "desc": "Aumenta i danni dei brutti colpi da 1,5x a 2,25x."
+  },
+  "SNOWCLOAK": {
+   "desc": "Aumenta l'Elusione del 20% durante la grandinata."
+  },
+  "SNOWWARNING": {
+   "desc": "Scatena una grandinata per 5 turni. Dura 8 turni se tiene una Rocciafredda."
+  },
+  "SOBRECARGA": {
+   "desc": "Potenzia del 50% le mosse di tipo Elettro quando ha 1/3 dei PS o meno.",
+   "nome": "Sovraccarico"
+  },
+  "SOLARPOWER": {
+   "desc": "Col sole aumenta l'Attacco Speciale del 50%, ma perde 1/8 dei PS a ogni turno."
+  },
+  "SOLIDROCK": {
+   "desc": "Riduce di 1/4 i danni degli attacchi superefficaci."
+  },
+  "SOULHEART": {
+   "desc": "Aumenta l'Attacco Speciale ogni volta che un Pokémon va KO."
+  },
+  "SOUNDPROOF": {
+   "desc": "E' immune a tutte le mosse sonore."
+  },
+  "SPEEDBOOST": {
+   "desc": "A fine turno aumenta la Velocità del Pokémon di un livello."
+  },
+  "STAKEOUT": {
+   "desc": "Infligge danni doppi ai Pokémon entrati in campo in questo turno."
+  },
+  "STALL": {
+   "desc": "Il Pokémon agisce per ultimo tra le mosse con la stessa priorità."
+  },
+  "STALWART": {
+   "desc": "Le sue mosse non possono essere deviate da mosse o abilità dell'avversario."
+  },
+  "STAMINA": {
+   "desc": "Aumenta la Difesa quando subisce una mossa che infligge danni."
+  },
+  "STANCECHANGE": {
+   "desc": "Passa alla Forma Spada quando attacca e alla Forma Scudo quando usa Scudo Reale."
+  },
+  "STATIC": {
+   "desc": "Al contatto ha il 30% di probabilità di paralizzare. Colpisce anche i tipi Terra."
+  },
+  "STEADFAST": {
+   "desc": "Aumenta la Velocità di un livello ogni volta che tentenna."
+  },
+  "STEAMENGINE": {
+   "desc": "Porta la Velocità al massimo se colpito da una mossa di tipo Fuoco o Acqua."
+  },
+  "STEAMVEIL": {
+   "desc": "Entrando rende il sole intenso per 6 turni. Le mosse Acqua diventano vapore: niente danni e aumenta l'Elusione.",
+   "nome": "Velo di Vapore"
+  },
+  "STEELWORKER": {
+   "desc": "Potenzia del 50% le mosse di tipo Acciaio."
+  },
+  "STEELYSPIRIT": {
+   "desc": "Potenzia del 50% le mosse di tipo Acciaio sue e degli alleati."
+  },
+  "STENCH": {
+   "desc": "10% di probabilità di far tentennare il nemico quando attacca. Non si somma ad Affilodente o Roccia di Re."
+  },
+  "STICKYHOLD": {
+   "desc": "Lo strumento tenuto non può essere sottratto in lotta."
+  },
+  "STORMDRAIN": {
+   "desc": "Attira le mosse di tipo Acqua e aumenta l'Attacco Speciale. Non subisce danni."
+  },
+  "STRONGJAW": {
+   "desc": "Potenzia del 50% le mosse basate sui morsi."
+  },
+  "STURDY": {
+   "desc": "Con i PS al massimo, impedisce di andare KO con un solo colpo."
+  },
+  "STURDYROOT": {
+   "desc": "Le mosse che assorbono PS ne fanno recuperare di più.",
+   "nome": "Radice Robusta"
+  },
+  "SUCTIONCUPS": {
+   "desc": "Annulla le mosse e gli strumenti che forzano la sostituzione."
+  },
+  "SUPERLUCK": {
+   "desc": "Aumenta di un livello la probabilità di brutti colpi."
+  },
+  "SUPERSWEETSYRUP": {
+   "desc": "Entrando in lotta riduce l'Elusione del nemico."
+  },
+  "SUPREMEOVERLORD": {
+   "desc": "Aumenta Attacco e Attacco Speciale per ogni compagno di squadra andato KO."
+  },
+  "SWARM": {
+   "desc": "Potenzia del 50% le mosse di tipo Coleottero quando ha 1/3 dei PS o meno."
+  },
+  "SWEETVEIL": {
+   "desc": "Impedisce al Pokémon e ai suoi alleati di addormentarsi o usare Riposo."
+  },
+  "SWIFTSWIM": {
+   "desc": "Raddoppia la Velocità con la pioggia."
+  },
+  "SWORDOFRUIN": {
+   "desc": "Riduce la Difesa di tutti gli altri Pokémon."
+  },
+  "SYMBIOSIS": {
+   "desc": "Passa lo strumento tenuto a un alleato che ha usato il suo."
+  },
+  "SYNCHRONIZE": {
+   "desc": "Trasmette al nemico scottatura, avvelenamento o paralisi."
+  },
+  "TABLETSOFRUIN": {
+   "desc": "Riduce l'Attacco di tutti gli altri Pokémon."
+  },
+  "TANGLEDFEET": {
+   "desc": "Se è confuso, dimezza la precisione delle mosse usate contro di lui."
+  },
+  "TANGLINGHAIR": {
+   "desc": "Al contatto riduce la Velocità dell'aggressore."
+  },
+  "TECHNICIAN": {
+   "desc": "Potenzia di 1,5x le mosse con potenza base di 60 o meno."
+  },
+  "TELEPATHY": {
+   "desc": "Evita i danni degli attacchi degli alleati."
+  },
+  "TERASHIFT": {
+   "desc": "Entra in lotta nella Forma Teracristal."
+  },
+  "TERAVOLT": {
+   "desc": "Le sue mosse ignorano l'abilità del bersaglio."
+  },
+  "THERMALEXCHANGE": {
+   "desc": "E' immune alle scottature. Le mosse di tipo Fuoco gli aumentano l'Attacco."
+  },
+  "THICKFAT": {
+   "desc": "Dimezza i danni delle mosse di tipo Fuoco e Ghiaccio."
+  },
+  "TINTEDLENS": {
+   "desc": "Raddoppia la potenza delle mosse \"non molto efficaci\"."
+  },
+  "TINTINEO": {
+   "desc": "Entrando cura gli stati della squadra. Le mosse sonore diventano di tipo Psico e sono potenziate del 20%.",
+   "nome": "Rintocco Sacro"
+  },
+  "TORRENT": {
+   "desc": "Potenzia del 50% le mosse di tipo Acqua quando ha 1/3 dei PS o meno."
+  },
+  "TOUGHCLAWS": {
+   "desc": "Potenzia del 33% le mosse di contatto."
+  },
+  "TOXICBOOST": {
+   "desc": "Potenzia del 50% gli attacchi fisici quando è avvelenato."
+  },
+  "TOXICCHAIN": {
+   "desc": "I suoi attacchi possono iperavvelenare il bersaglio."
+  },
+  "TOXICDEBRIS": {
+   "desc": "Sparge Fielepunte quando subisce una mossa fisica."
+  },
+  "TRACE": {
+   "desc": "Copia l'abilità di un avversario."
+  },
+  "TRANSISTOR": {
+   "desc": "Potenzia del 30% le mosse di tipo Elettro."
+  },
+  "TRIAGE": {
+   "desc": "Dà priorità +3 alle mosse curative."
+  },
+  "TRUANT": {
+   "desc": "Il Pokémon può attaccare solo un turno sì e uno no."
+  },
+  "TURBOBLAZE": {
+   "desc": "Le sue mosse ignorano l'abilità del bersaglio."
+  },
+  "UNAWARE": {
+   "desc": "I suoi attacchi ignorano le modifiche alle statistiche del nemico."
+  },
+  "UNBURDEN": {
+   "desc": "Raddoppia la Velocità se usa o perde lo strumento tenuto."
+  },
+  "UNNERVE": {
+   "desc": "Innervosisce il nemico, impedendogli di mangiare bacche."
+  },
+  "UNSEENFIST": {
+   "desc": "Le mosse di contatto colpiscono anche attraverso le protezioni."
+  },
+  "VESSELOFRUIN": {
+   "desc": "Riduce l'Attacco Speciale di tutti gli altri Pokémon."
+  },
+  "VICTORYSTAR": {
+   "desc": "Aumenta del 10% la Precisione sua e degli alleati."
+  },
+  "VITALSPIRIT": {
+   "desc": "Non può addormentarsi. Se usa Riposo, la mossa fallisce."
+  },
+  "VOLTABSORB": {
+   "desc": "Recupera 1/4 dei PS se colpito da una mossa di tipo Elettro. Blocca anche le mosse di stato."
+  },
+  "WANDERINGSPIRIT": {
+   "desc": "Al contatto scambia la propria abilità con quella dell'aggressore."
+  },
+  "WATERABSORB": {
+   "desc": "Recupera 1/4 dei PS se colpito da una mossa di tipo Acqua. Blocca anche le mosse di stato."
+  },
+  "WATERBUBBLE": {
+   "desc": "Fa un po' di cose."
+  },
+  "WATERCOMPACTION": {
+   "desc": "Aumenta di molto la Difesa se colpito da una mossa di tipo Acqua (non ne è immune)."
+  },
+  "WATERVEIL": {
+   "desc": "Non può essere scottato. Guarisce dalla scottatura se la ottiene mentre è scottato."
+  },
+  "WEAKARMOR": {
+   "desc": "Se colpito da una mossa fisica, cala la Difesa ma aumenta di molto la Velocità."
+  },
+  "WELLBAKEDBODY": {
+   "desc": "Aumenta di molto la Difesa se colpito da una mossa di tipo Fuoco."
+  },
+  "WHITESMOKE": {
+   "desc": "Gli altri Pokémon non possono ridurgli le statistiche."
+  },
+  "WIMPOUT": {
+   "desc": "Fugge dalla lotta quando i PS scendono sotto il 50%."
+  },
+  "WINDPOWER": {
+   "desc": "Le mosse basate sul vento caricano la sua prossima mossa di tipo Elettro."
+  },
+  "WINDRIDER": {
+   "desc": "Aumenta l'Attacco con Ventoincoda o se colpito da una mossa di vento (senza subire danni)."
+  },
+  "WONDERGUARD": {
+   "desc": "Subisce danni solo dalle mosse superefficaci."
+  },
+  "WONDERSKIN": {
+   "desc": "Riduce al 50% la precisione delle mosse di stato rivolte contro di lui."
+  },
+  "ZENMODE": {
+   "desc": "Cambia forma quando i PS scendono sotto la metà."
+  },
+  "ZEROTOHERO": {
+   "desc": "Passa alla Forma Possente quando si ritira dalla lotta."
+  }
+ }
+}

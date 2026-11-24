@@ -15,12 +15,12 @@ Mismo vocabulario que los golpes
 Lo decidido en tools/pt_golpes.py manda aqui tambien, y de eso hay dos
 cosas que se notan mucho en las fichas:
 
-  - los TIPOS van en INGLES y con el nombre EXACTO de TYPE_NAME (dex.h),
-    que es lo que pinta la pantalla: ELEC, PSY y FLY, no ELECTRIC,
-    PSYCHIC ni FLYING. "agua" como sustancia sigue en portugues.
+  - los TIPOS con el nombre EXACTO del chip PT (TYPE_NAME_L, dex.h),
+    que es lo que pinta el chip en portugues desde la leva 78 (antes era el
+    codigo ingles ELEC/PSY/FLY): ELÉTRICO, PSIQUICO, VOADOR. "agua" como sustancia sigue en portugues.
   - A MAYUSCULA acentuada no existe en CP437 (ni A-aguda ni A-grave):
     "As vezes" se escribe "Por vezes", y "Agua" como nombre de tipo es
-    WATER. Las unicas mayusculas con acento que hay son E-aguda y
+    AGUA (el chip). Las unicas mayusculas con acento que hay son E-aguda y
     C-cedilla; A~ y O~ los dibuja printT() aparte.
 
 Longitud
@@ -427,7 +427,7 @@ FICHAS = {
 394: "Vive sozinho, longe dos outros. Cada um acha que é o mais importante. As pancadas das asas dele partem as árvores mais grossas.",
 395: "Os três chifres do bico mostram a força dele. O líder é o que tem os chifres maiores. Nada tão rápido quanto um motor de popa.",
 396: "Viaja em bandos grandes. Mesmo pequeno, bate as asas com muita força. Sozinhos são fracos, e por isso andam em grupo.",
-397: "Voa por matas e campos atrás de Pokémon do tipo BUG. Anda sempre em bando. As brigas dentro do bando são bem intensas.",
+397: "Voa por matas e campos atrás de Pokémon do tipo INSETO. Anda sempre em bando. As brigas dentro do bando são bem intensas.",
 398: "Tem um temperamento selvagem. Não hesita em desafiar rivais bem maiores. Nunca para de atacar, mesmo ferido. Liga muito para a forma da crista.",
 399: "Tem nervos de aço e nada o abala. É mais ágil e ativo do que parece. Formam colônias nas margens dos rios. Os dentes crescem muito.",
 400: "Para fazer ninho, cria represas nos rios com madeira e barro. Tem fama de trabalhador. Um rio onde um Bibarel faça represa nunca transborda.",
@@ -679,7 +679,7 @@ FICHAS = {
 646: "Consegue criar correntes de ar extremamente frias, mas no fim acaba congelando o próprio corpo.",
 647: "Corre por mares, rios ou qualquer superfície de água do mundo todo. Aparece em águas limpas.",
 648: "Foram criadas incontáveis canções inspiradas nas melodias que Meloetta emite.",
-649: "Pokémon do tipo BUG da antiguidade, modificado pela Equipe Plasma. O canhão das costas dele foi melhorado.",
+649: "Pokémon do tipo INSETO da antiguidade, modificado pela Equipe Plasma. O canhão das costas dele foi melhorado.",
 650: "Quando junta energia, os espinhos macios da cabeça ficam tão duros e afiados que chegam a furar rochas.",
 651: "Desvia os ataques dos inimigos com a couraça robusta que lhe cobre o corpo e contra-ataca com os dois chifres afiados.",
 652: "A força dele é tanta que, com um empurrão, vira um tanque de 50 toneladas. Protege os aliados quando faz de escudo.",
@@ -734,9 +734,9 @@ FICHAS = {
 701: "Apesar de ser um Pokémon de estatura pequena, a perícia em combate o deixa enfrentar Pokémon como Machamp ou Hariyama.",
 702: "Os bigodes dele funcionam como antenas, e por isso consegue enviar e receber ondas elétricas para se comunicar a grandes distâncias.",
 703: "Nasce nas profundezas do subsolo, em alta temperatura e sob muita pressão. Irradia energia pela rocha que tem na cabeça.",
-704: "É o Pokémon do tipo DRAGON mais fraco. Vive em lugares escuros e úmidos para o corpo viscoso dele não secar.",
+704: "É o Pokémon do tipo DRAGÃO mais fraco. Vive em lugares escuros e úmidos para o corpo viscoso dele não secar.",
 705: "Solta um muco que corrói tudo o que toca e assim afugenta o inimigo. Os olhos dele regrediram, portanto não enxerga.",
-706: "Pokémon do tipo DRAGON muito afável, que adora abraçar o Treinador com efusão, embora depois o deixe todo melecado.",
+706: "Pokémon do tipo DRAGÃO muito afável, que adora abraçar o Treinador com efusão, embora depois o deixe todo melecado.",
 707: "Tem o hábito de colecionar chaves. Quando um inimigo o ataca, faz as chaves tilintarem para intimidar.",
 708: "Pokémon que nasce quando um espírito entra num toco podre. Vive em matas pouco frequentadas por humanos.",
 709: "Controla as árvores como quer. Retém até o fim da vida os humanos que entram na mata e a maltratam.",
@@ -844,7 +844,7 @@ FICHAS = {
 811: "Os Thwackey que marcam o ritmo mais contundente com as duas baquetas são os mais respeitados pelos seus.",
 812: "O percussionista de técnica mais apurada vira o líder. São de temperamento calmo e dão muita importância à harmonia do grupo.",
 813: "Põe-se a correr para elevar a temperatura do corpo e espalhar a energia ígnea por ele todo. Assim desata a sua força verdadeira.",
-814: "O pelo macio o protege do frio e o deixa aumentar ainda mais a temperatura dos golpes do tipo FIRE.",
+814: "O pelo macio o protege do frio e o deixa aumentar ainda mais a temperatura dos golpes do tipo FOGO.",
 815: "Destaca-se tanto no ataque quanto na defesa. Cresce quando é ovacionado, mas às vezes se exibe tanto que acaba em apuros.",
 816: "Quando se assusta, solta umas lágrimas com um fator lacrimogêneo equivalente a 100 cebolas para fazer o rival chorar também.",
 817: "É inteligente, mas não mostra interesse especial por nada. Espalha armadilhas pelo território para manter os inimigos longe.",
@@ -915,7 +915,7 @@ FICHAS = {
 882: "Exibe com orgulho a imensa capacidade motora, que o deixa passar dos 60 km/h, mas só consegue respirar debaixo da água.",
 883: "Embora a pele do rosto aguentasse qualquer ataque, a dificuldade para respirar acabou provocando a extinção dele.",
 884: "O corpo dele, parecido com metal polido, é tão leve quanto robusto. Só que tem o defeito de enferrujar com facilidade.",
-885: "Vivia nos mares em tempos imemoriais. Reviveu em forma de Pokémon do tipo GHOST para vaguear pela sua antiga morada.",
+885: "Vivia nos mares em tempos imemoriais. Reviveu em forma de Pokémon do tipo FANTASMA para vaguear pela sua antiga morada.",
 886: "Voa a 200 km/h. Luta junto de um Dreepy, de quem cuida até a hora da evolução dele.",
 887: "Pelo visto, os Dreepy que moram nos chifres dele esperam animados a hora de serem lançados em velocidade supersônica.",
 888: "Este Pokémon é tido como um herói de lenda. Absorve o metal para transformá-lo e usá-lo como armamento.",

@@ -357,7 +357,7 @@ bool btItemPickTap(int16_t x, int16_t y) {
     // Si se curo al que esta EN PISTA, su Combatant ya lo sabe; si fue
     // a uno del banquillo, lo guardado tambien. No hay nada que copiar
     // de un lado al otro —— eso era justo el fallo viejo de la bolsa.
-    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_USED_ON), ITEM_TBL[id].name, quien);
+    snprintf(bt.msg, sizeof(bt.msg), T(S_BM_USED_ON), itemName(id), quien);
     bt.itemPick = 0;
     sfxPlay(SFX_EAT);
     // Usar un objeto cuesta el turno, como en los juegos.
@@ -645,7 +645,7 @@ void btRenderBag() {
     gfx->setTextColor(UI_INK);
     setSize(2);
     setCur(BBAG_X + 54, y + 9);
-    printT(ITEM_TBL[id].name);
+    printT(itemName(id));
     char c[8];
     snprintf(c, sizeof(c), "x%u", btBagQtd(id));
     setSize(1);
@@ -759,7 +759,7 @@ static void btThrowBall(uint8_t id) {
   bt.foeInBall = false;
   bt.phase = BP_THROW;
   bt.until = millis() + 700;
-  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_THREW_A), ITEM_TBL[id].name);
+  snprintf(bt.msg, sizeof(bt.msg), T(S_BM_THREW_A), itemName(id));
   sfxPlay(SFX_BALL_THROW);
 }
 
@@ -1090,7 +1090,7 @@ bool btCaptureTap(int16_t x, int16_t y) {
         pvpUsaItem(id, pvpL[pvpEu].ativo);
       } else if (btItemEnPista(id, true)) {
         // Usar un objeto cuesta el turno, como en los juegos.
-        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_USED_2), ITEM_TBL[id].name);
+        snprintf(bt.msg, sizeof(bt.msg), T(S_BM_USED_2), itemName(id));
         // Aqui habia un `side[BT_PLAYER].hp = pet.hpLeft`. Era lo que
         // remataba el fallo: copiaba la vida de lo GUARDADO encima de la
         // del que estaba peleando. btItemOnField ya trabaja sobre el

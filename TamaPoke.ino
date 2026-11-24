@@ -39,6 +39,8 @@
 #include "bgs.h"          // que escenario de /bg va en cada sitio
 #include "qr_manual.h"    // o QR do manual (tools/gen_qr_manual.py)
 #include "move_names.h"   // o nome do golpe NA TELA (tools/gen_move_names.py)
+#include "item_names.h"   // nome/descricao do item NA TELA (tools/gen_textos_itens.py)
+#include "abil_names.h"   // idem da habilidade
 
 // Version del firmware. Subir este numero en cada release (y manifest.json para
 // el instalador web). Se muestra en la pantalla de ajustes y por serie al arrancar.
@@ -124,6 +126,7 @@ uint8_t darItemId = 0;
 const char *bagDescPtr = nullptr;
 const char *bagDescFin = nullptr;
 uint8_t bagDescDe = 0;
+uint8_t bagDescLang = 0xFF;   // o ponteiro e do idioma em que foi tirado
 
 bool monShinyFor = false;
 
@@ -381,6 +384,12 @@ struct MovesView {
 };
 // Y si esta abierto el cuadro de la habilidad (pagina de combate).
 bool abilShown = false;
+// por onde vai o texto (pagina) e de QUE habilidade/idioma e o ponteiro:
+// em alemao a descricao passa das 4 linhas e nao havia como ler o resto
+const char *abilDescPtr = nullptr;
+const char *abilDescFin = nullptr;
+uint16_t abilDescDe = 0;
+uint8_t abilDescLang = 0xFF;
 // El comando serie SETTINGS la abre desde muy arriba del fichero, antes de
 // que el preprocesador de Arduino haya generado su prototipo.
 void openClock();
@@ -2386,7 +2395,11 @@ void onTap(int16_t x, int16_t y) {
     if (cardPage == 4) { cardTeamTap(x, y); return; }
     if (cardPage == 5) { cardGymTap(x, y); return; }
     if (cardPage == 7) { cardMedalsTap(x, y); return; }
-    if (cardPage == 1 && abilShown) { abilShown = false; return; }  // cerrar el cuadro
+    if (cardPage == 1 && abilShown) {     // pagina seguinte ou fechar o cuadro
+      if (abilDescFin && *abilDescFin) { abilDescPtr = abilDescFin; sfxPlay(SFX_TAP); }
+      else abilShown = false;
+      return;
+    }
     if (cardPage == 0 && y < 84) openKeyboard();  // tocar el nombre = renombrar
     else if (cardPage == 0 && y < 84 + UI_FOSO) { }   // un pelo debajo: nada
     // El boton de IR AL GIMNASIO ya no esta (ver renderCardStats): ese
@@ -2398,6 +2411,7 @@ void onTap(int16_t x, int16_t y) {
     else if (cardPage == 1 && pet.ability && y >= ABIL_Y0 && y <= ABIL_Y1 &&
                x >= 96 && x <= 356) {
       abilShown = true;            // tocar la habilidad: contar que hace
+      abilDescDe = 0;              // desde a primeira pagina
       sfxPlay(SFX_TAP);
     } else if (cardPage == 1 && pet.ability &&
                !lejosDe(x, y, 96, ABIL_Y0, 356, ABIL_Y1)) {
@@ -4138,9 +4152,9 @@ static void renderGymDone(uint16_t ink) {
   // porque es media razon para volver: sin verlas, el jugador no ata el
   // entrenar con el poder capturar.
   if (pet.lastBallCount) {
-    char b[36];
+    char b[48];
     snprintf(b, sizeof(b), "+%u %s", pet.lastBallCount,
-             itemAt(pet.lastBallId).name);
+             itemName(pet.lastBallId));
     gfx->setTextColor(UI_BAR_BAD);
     setSize(2);
     setCur(centerX(b, 2), 292);
@@ -4712,11 +4726,11 @@ void renderQuiz() {
     printT(m);
     if (quizPrize) {
       char p[56];
-      char nome[24];
+      char nome[40];
       if (quizPrizeQtd > 1)
-        snprintf(nome, sizeof(nome), "%s x%u", itemAt(quizPrize).name, (unsigned)quizPrizeQtd);
+        snprintf(nome, sizeof(nome), "%s x%u", itemName(quizPrize), (unsigned)quizPrizeQtd);
       else
-        snprintf(nome, sizeof(nome), "%s", itemAt(quizPrize).name);
+        snprintf(nome, sizeof(nome), "%s", itemName(quizPrize));
       snprintf(p, sizeof(p), T(S_PRIZE_FMT), nome);
       gfx->setTextColor(UI_BAR_OK);
       drawWrapped(p, 240, 360, 2);
@@ -5247,7 +5261,7 @@ void drawCelebration() {
         // bolsa sin que nada lo hubiera dicho, que es lo mismo que no
         // darlo: el jugador no se entera.
         uint8_t it = MEDAL_PRIZE[i];
-        if (it) snprintf(prem, sizeof(prem), T(S_PRIZE_FMT), itemAt(it).name);
+        if (it) snprintf(prem, sizeof(prem), T(S_PRIZE_FMT), itemName(it));
         break;
       }
     l1 = T(S_MEDAL_BANNER);
@@ -5366,15 +5380,14 @@ void renderCardProfile() {
       gfx->drawCircle(366, 178, 22, CARD_INK);
       drawArt(*ic, 366, 178 + ic->h / 2, 1);
     } else {
-      const char *nom = itemAt(pet.heldItem).name;
-      int w = (int)strlen(nom) * 6 + 10;
+      const char *nom = itemName(pet.heldItem);
+      int w = (int)textW(nom, 1) + 10;
       if (w > 150) w = 150;
       gfx->fillRoundRect(366 - w / 2, 168, w, 20, 6, CARD_PAPER);
       gfx->drawRoundRect(366 - w / 2, 168, w, 20, 6, CARD_INK);
       gfx->setTextColor(CARD_INK);
       setSize(1);
-      setCur(366 - (int)strlen(nom) * 3, 175);
-      printT(nom);
+      printNaLargura(nom, 366 - ((w - 10) < 140 ? (w - 10) : 140) / 2, 175, 140, 1);
     }
   }
 
@@ -5461,9 +5474,11 @@ void renderCardStats() {
     setCur(96, 100);
     printT(T(S_HABILIDADE));
     setSize(2);
-    const char *an = abilAt(pet.ability).name;
-    setCur(330 - (int)strlen(an) * 12, 96);
-    printT(an);
+    const char *an = abilName(pet.ability);
+    int aw = (int)textW(an, 2);
+    // o rotulo pequeno a esquerda acaba em ~160: o nome cabe em 168 px
+    if (aw > 168) aw = 168;
+    printNaLargura(an, 330 - aw, 96, 168, 2);
     // Una punta de flecha diminuta: es lo unico de esta pagina que se puede
     // tocar aparte del boton, y sin la marca nadie lo descubriria.
     gfx->fillTriangle(340, 98, 348, 102, 340, 106, CARD_DIM);
@@ -5514,14 +5529,21 @@ void renderCardStats() {
     gfx->fillRoundRect(62, 154, 316, 122, 12, CARD_PAPER);
     gfx->setTextColor(UI_BAR_BAD);
     setSize(2);
-    setCur(centerX(abilAt(pet.ability).name, 2), 168);
-    printT(abilAt(pet.ability).name);
+    printNaLargura(abilName(pet.ability), centerX(abilName(pet.ability), 2), 168, 300, 2);
     gfx->setTextColor(CARD_INK);
     // Talla 2. La caja da 316 px por dentro: a 12 px el caracter son 26
     // columnas, y cuatro lineas de 18 ocupan de 196 a 268, que cabe en
     // los 122 de alto. Antes eran cinco lineas de 50 columnas a talla 1
     // y no habia quien lo leyera en una pantalla de 466.
-    drawWrapped(ABIL_DESC[pet.ability], 196, 26, 18, 4, 2);
+    if (abilDescDe != pet.ability || abilDescLang != (uint8_t)gLang) {
+      abilDescDe = pet.ability;
+      abilDescLang = (uint8_t)gLang;
+      abilDescPtr = abilDesc(pet.ability);
+    }
+    // 24 colunas (288 px em 233 = 89..377, dentro da caixa 58..382) e 3
+    // linhas: a 4a pisava no 'toque: fechar'. O resto vai na pagina seguinte.
+    abilDescFin = drawWrapped(abilDescPtr, 196, 24, 18, 3, 2);
+    if (abilDescFin && *abilDescFin) flechaMas(362, 258, CARD_SOFT);
     gfx->setTextColor(CARD_SOFT);
     setSize(1);
     setCur(centerX(T(S_TOQUE_FECHAR), 1), 266);
@@ -6059,7 +6081,7 @@ void renderCardProgress() {
     if (tipo != STONE_MANY)
       for (uint8_t i = 1; i < ITEM_COUNT; i++)
         if (ITEM_TBL[i].fx == IT_STONE && ITEM_TBL[i].arg == tipo) {
-          obj = ITEM_TBL[i].name;
+          obj = itemName(i);
           break;
         }
     snprintf(evoBuf, sizeof(evoBuf), T(S_PRECISA_FMT), obj);
@@ -6330,7 +6352,7 @@ void cardBagTap(int x, int y) {
   if (bagShown && x >= BAGF_X && x <= BAGF_X + BAGF_W &&
       y >= BAGF_Y && y < BAGB_TOQUE_Y0) {
     if (bagDescFin && *bagDescFin) bagDescPtr = bagDescFin;
-    else bagDescPtr = ITEM_DESC[bagShown];
+    else bagDescPtr = itemDesc(bagShown);
     sfxPlay(SFX_TAP);
     return;
   }
@@ -6589,8 +6611,7 @@ void renderCardBag() {
       drawArt(*ART_ITEM[id], 84, y + 16 + ART_ITEM[id]->h / 2, 1);
     gfx->setTextColor(CARD_INK);
     setSize(2);
-    setCur(106, y + 8);
-    printT(ITEM_TBL[id].name);
+    printNaLargura(itemName(id), 106, y + 8, 216, 2);
     // "HELD" y no "x0": el que se lleva puesto esta descontado de la
     // bolsa, asi que su cuenta es cero y el jugador no entendia que esa
     // linea era precisamente la del objeto que tiene equipado -- ni que
@@ -6615,11 +6636,14 @@ void renderCardBag() {
     gfx->fillRoundRect(BAGF_X, BAGF_Y, BAGF_W, BAGF_H, 8, CARD_PAPER);
     gfx->drawRoundRect(BAGF_X, BAGF_Y, BAGF_W, BAGF_H, 8, CARD_SOFT);
     gfx->setTextColor(CARD_INK);
-    if (bagDescDe != bagShown) {
+    if (bagDescDe != bagShown || bagDescLang != (uint8_t)gLang) {
       bagDescDe = bagShown;
-      bagDescPtr = ITEM_DESC[bagShown];
+      bagDescLang = (uint8_t)gLang;
+      bagDescPtr = itemDesc(bagShown);
     }
-    bagDescFin = drawWrapped(bagDescPtr, BAGF_Y + 8, 25, 18, 2, 2);
+    // 23 colunas: 276 px centrados em 233 = 95..371, dentro da caixa 72..376
+    // (25 passavam da borda direita com as frases traduzidas)
+    bagDescFin = drawWrapped(bagDescPtr, BAGF_Y + 8, 23, 18, 2, 2);
     if (bagDescFin && *bagDescFin) flechaMas(BAGF_X + BAGF_W - 16,
                                              BAGF_Y + 46, CARD_SOFT);
     // los botones, con lo que VA A PASAR escrito
@@ -6688,12 +6712,8 @@ static void drawMonRow(const StoredMon &m, int y, bool activo,
   // (0xFF = o do registro; o titular passa o dele, que vive no Pet.)
   uint8_t leva = objeto == 0xFF ? m.item : objeto;
   if (leva && leva < ITEM_COUNT) {
-    char nm[16];
-    snprintf(nm, sizeof nm, "%.*s", trancado ? 7 : 12, ITEM_TBL[leva].name);
     gfx->setTextColor(UI_BAR_OK);
-    setSize(1);
-    setCur(306, y + 22);
-    printT(nm);
+    printNaLargura(itemName(leva), 306, y + 22, (trancado ? 7 : 12) * LATIN_ADV, 1);
   }
   if (trancado) {
     // Passa do teto DESTA regiao: nao sai da caixa aqui. O cadeado e o
@@ -6769,8 +6789,8 @@ void renderCardTeam() {
     }
     if (darItemId) {
       // no lugar do TROCAR: a pergunta, grande
-      char q[48];
-      snprintf(q, sizeof q, T(S_BAG_DARA), ITEM_TBL[darItemId].name);
+      char q[64];
+      snprintf(q, sizeof q, T(S_BAG_DARA), itemName(darItemId));
       gfx->setTextColor(UI_BAR_OK);
       setSize(2);
       setCur(centerX(q, 2), CARD_TR_Y + 12);
@@ -7005,8 +7025,11 @@ void renderCard() {
   const bool fichaObj = cardPage == 3 && bagShown &&
                         (ITEM_TBL[bagShown].pocket == BP_HELD ||
                          ITEM_TBL[bagShown].pocket == BP_EVO);
-  setCur(centerX(T(S_BACK), 2), (cardPage == 4 && !bankView) ? CARD_PE_TIME
-                                : fichaObj ? BAGF_VOLTA_Y : 390);
+  // la embaixo (ficha do objeto aberta) a talla 2 saia do circulo da tela
+  // e virava 'toque: ..': vai a talla 1
+  setSize(fichaObj ? 1 : 2);
+  setCur(centerX(T(S_BACK), fichaObj ? 1 : 2), (cardPage == 4 && !bankView) ? CARD_PE_TIME
+                                : fichaObj ? BAGF_VOLTA_Y + 4 : 390);
   printT(T(S_BACK));
   if (!cardSolo) {
     int x0 = 233 - (CARD_SEQ_N - 1) * 7;
@@ -7171,18 +7194,37 @@ void drawThumb(const uint8_t *b, int x, int y, int s, bool sil) {
 // (la firma va en UNA linea a proposito: ver el aviso de desktop/tools/gen_sketch.py)
 const char *drawWrapped(const char *s, int y0, int cols, int lh, int maxLines, uint8_t talla) {
   if (!s || !*s || cols < 1) return s;
-  char linea[DEX_TXT_COLS + 1];
+  // Leva 78: o corte e pela LARGURA (cols colunas latinas = cols*6*talla px),
+  // nao por bytes. No latino da exatamente o mesmo (todo caractere mede 6 px
+  // por talla); no japones/coreano um caractere sao 3 bytes e mede o dobro,
+  // e o corte por bytes partia a letra ao meio. O japones nao tem espacos:
+  // sem espaco na linha, corta entre duas letras inteiras.
   if (cols > DEX_TXT_COLS) cols = DEX_TXT_COLS;
+  const int maxW = cols * LATIN_ADV * talla;
+  char linea[DEX_TXT_COLS * 3 + 1];
   setSize(talla);
   int n = 0;
   while (*s && n < maxLines) {
     while (*s == ' ') s++;
     if (!*s) break;
     // cuanto cabe sin partir la ultima palabra
-    int corte = 0, ultimo = 0;
-    while (s[corte] && corte < cols) {
-      if (s[corte] == ' ') ultimo = corte;
-      corte++;
+    int corte = 0, ultimo = 0, w = 0;
+    while (s[corte]) {
+      unsigned char c = (unsigned char)s[corte];
+      int cl = !gCjkFont || c < 0x80 ? 1 : (c & 0xE0) == 0xC0 ? 2 : (c & 0xF0) == 0xE0 ? 3 : 4;
+      if (corte + cl > (int)sizeof(linea) - 1) break;
+      char uno[5];
+      memcpy(uno, s + corte, cl);
+      uno[cl] = 0;
+      int cw = gCjkFont ? (int)textW(uno, talla) : LATIN_ADV * talla;
+      if (w + cw > maxW) break;
+      if (c == ' ') ultimo = corte;
+      w += cw;
+      corte += cl;
+    }
+    if (corte == 0) {               // nem uma letra cabe: pinta uma e segue
+      unsigned char c = (unsigned char)s[0];
+      corte = !gCjkFont || c < 0x80 ? 1 : (c & 0xE0) == 0xC0 ? 2 : (c & 0xF0) == 0xE0 ? 3 : 4;
     }
     if (s[corte] && ultimo) corte = ultimo;   // hay mas texto: cortar en el hueco
     memcpy(linea, s, corte);
@@ -7265,7 +7307,7 @@ static void drawDexEntry(int16_t dex, int y0) {
   // una habilidad leida a secas parece la continuacion de la ficha.
   int ty = y0;
   if (dexPag > 0) {
-    const char *an = abilAt(ab[dexPag - 1]).name;
+    const char *an = abilName(ab[dexPag - 1]);
     gfx->setTextColor(DEX_MARK);
     setSize(1);
     setCur(centerX(an, 1), y0);
@@ -7291,7 +7333,7 @@ static void dexPasaPagina(int16_t dex) {
   uint8_t nab = galleryAbils(dex, ab);
   dexPag = (int8_t)(dexPag + 1);
   if (dexPag > (int8_t)nab) dexPag = 0;
-  dexTxtPtr = dexPag > 0 ? ABIL_DESC[ab[dexPag - 1]] : dexDesc(dex);
+  dexTxtPtr = dexPag > 0 ? abilDesc(ab[dexPag - 1]) : dexDesc(dex);
 }
 
 // Como se codifica cada version en galleryVers: -1 el normal, -2 el

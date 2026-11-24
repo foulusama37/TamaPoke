@@ -421,7 +421,7 @@ static void renderResumo() {
       gfx->setTextColor(CARD_INK);
       setSize(2);
       setCur(116, y + 10);
-      printT(ITEM_TBL[id].name);
+      printT(itemName(id));
     }
   }
   const uint8_t linhas = (uint8_t)(avRes.nMons + avRes.nItens);
@@ -558,7 +558,7 @@ void renderAventura() {
       }
       if (u >= 2600) {
         avBalao(CX, POR_FESTA, avMeiaLargura(avEu) + 54);
-        snprintf(txt, sizeof(txt), T(S_AV_ACHOU_FMT), ITEM_TBL[avItem].name);
+        snprintf(txt, sizeof(txt), T(S_AV_ACHOU_FMT), itemName(avItem));
         avSimbolo(ART_CORACAO, CX - 74, AV_CHAO - (int)avAlvo(avEu) + 30, u, 2400);
       }
       break;

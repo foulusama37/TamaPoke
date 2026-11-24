@@ -6,6 +6,7 @@
 #include <SD_MMC.h>
 #include "dex.h"
 #include "moves.h"
+#include "item_names.h"   // a ordem alfabetica e a do nome que se le
 #include "audio.h"
 #include "tms_v304.h"
 
@@ -2099,7 +2100,9 @@ uint8_t Pet::pocketCount(uint8_t pocket) const {
 static bool vaAntes(uint8_t a, uint8_t b, uint8_t modo) {
   if (modo == 2 && ITEM_TBL[a].fx != ITEM_TBL[b].fx)
     return ITEM_TBL[a].fx < ITEM_TBL[b].fx;
-  int c = strcmp(ITEM_TBL[a].name, ITEM_TBL[b].name);
+  // pelo nome do idioma (leva 78): em frances a ordem do ingles parecia
+  // aleatoria. Bytes: no japones a ordem dos kana e a do Unicode.
+  int c = strcmp(itemName(a), itemName(b));
   if (c != 0) return c < 0;
   return a < b;            // desempate estable: dos nombres iguales
 }

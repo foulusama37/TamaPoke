@@ -1,0 +1,1657 @@
+{
+ "itens": {
+  "LEFTOVERS": {
+   "desc": "Objet à tenir. Restaure peu à peu les PV du porteur pendant le combat."
+  },
+  "SITRUSBERRY": {
+   "desc": "Ingrédient de Poffin. Utilisée ou tenue par un Pokémon, elle restaure quelques PV."
+  },
+  "ORANBERRY": {
+   "desc": "Ingrédient de Poffin. Utilisée ou tenue par un Pokémon, elle restaure 10 PV."
+  },
+  "LUMBERRY": {
+   "desc": "Ingrédient de Poffin. Utilisée ou tenue par un Pokémon, elle soigne tout problème de statut."
+  },
+  "FOCUSSASH": {
+   "desc": "Objet à tenir. Si ses PV sont au max, le porteur survit avec 1 PV à une attaque qui le mettrait K.O."
+  },
+  "LIFEORB": {
+   "desc": "Augmente la puissance des capacités, mais coûte 30% des PV à chaque attaque. Doit être tenu."
+  },
+  "CHOICEBAND": {
+   "desc": "Augmente l'Attaque de 50%, mais ne permet d'utiliser qu'une seule capacité 50% du temps. Doit être tenu."
+  },
+  "CHOICESPECS": {
+   "desc": "Augmentent l'Attaque Spéciale de 50%, mais ne permettent d'utiliser qu'une seule capacité. Doivent être tenues."
+  },
+  "QUICKCLAW": {
+   "desc": "Objet à tenir. Une griffe légère et acérée qui permet parfois au porteur d'agir en premier."
+  },
+  "SCOPELENS": {
+   "desc": "Une lentille qui augmente le taux de coups critiques."
+  },
+  "EVERSTONE": {
+   "desc": "Objet à tenir. Le Pokémon qui tient cette étrange pierre ne peut pas évoluer."
+  },
+  "CHARCOAL": {
+   "desc": "Objet à tenir. Un combustible qui augmente la puissance des capacités de type Feu."
+  },
+  "MYSTICWATER": {
+   "desc": "Une gemme en forme de larme qui augmente de 20% la puissance des capacités de type Eau. Doit être tenue."
+  },
+  "MIRACLESEED": {
+   "desc": "Objet à tenir. Une graine pleine de vie qui augmente la puissance des capacités de type Plante."
+  },
+  "MAGNET": {
+   "desc": "Objet à tenir. Un puissant aimant qui augmente la puissance des capacités de type Électrik."
+  },
+  "TWISTEDSPOON": {
+   "desc": "Objet à tenir. Une cuillère chargée de télékinésie qui augmente la puissance des capacités de type Psy."
+  },
+  "NEVERMELTICE": {
+   "desc": "Objet à tenir. Un morceau de glace qui repousse la chaleur et renforce les capacités de type Glace."
+  },
+  "BLACKBELT": {
+   "desc": "Objet à tenir. Une ceinture qui renforce la détermination et les capacités de type Combat."
+  },
+  "SHARPBEAK": {
+   "desc": "Objet à tenir. Un long bec pointu qui augmente la puissance des capacités de type Vol."
+  },
+  "POISONBARB": {
+   "desc": "Un dard toxique qui augmente de 20% la puissance des capacités de type Poison. Doit être tenu."
+  },
+  "SOFTSAND": {
+   "desc": "Objet à tenir. Un sable fin et soyeux qui augmente la puissance des capacités de type Sol."
+  },
+  "HARDSTONE": {
+   "desc": "Objet à tenir. Une pierre incassable qui augmente la puissance des capacités de type Roche."
+  },
+  "SILVERPOWDER": {
+   "desc": "Objet à tenir. Une poudre argentée et brillante qui augmente la puissance des capacités de type Insecte."
+  },
+  "SPELLTAG": {
+   "desc": "Objet à tenir. Une étiquette sinistre qui augmente la puissance des capacités de type Spectre."
+  },
+  "DRAGONFANG": {
+   "desc": "Objet à tenir. Un croc dur et acéré qui augmente la puissance des capacités de type Dragon."
+  },
+  "BLACKGLASSES": {
+   "desc": "Objet à tenir. Des lunettes louches qui augmentent la puissance des capacités de type Ténèbres."
+  },
+  "SILKSCARF": {
+   "desc": "Objet à tenir. Un foulard somptueux qui augmente la puissance des capacités de type Normal."
+  },
+  "POTION": {
+   "desc": "Un spray qui soigne les blessures. Restaure 20 PV d'un Pokémon."
+  },
+  "SUPERPOTION": {
+   "desc": "Un spray qui soigne les blessures. Restaure 60 PV d'un Pokémon."
+  },
+  "HYPERPOTION": {
+   "desc": "Un spray qui soigne les blessures. Restaure 120 PV d'un Pokémon."
+  },
+  "MAXPOTION": {
+   "desc": "Un spray qui soigne les blessures. Restaure tous les PV d'un Pokémon."
+  },
+  "FULLRESTORE": {
+   "desc": "Un remède qui restaure tous les PV d'un Pokémon et soigne tous ses problèmes de statut."
+  },
+  "REVIVE": {
+   "desc": "Un remède qui ranime un Pokémon K.O. Il restaure la moitié de ses PV max."
+  },
+  "MAXREVIVE": {
+   "desc": "Un remède qui ranime un Pokémon K.O. Il restaure tous ses PV."
+  },
+  "ANTIDOTE": {
+   "desc": "Un spray qui soigne un Pokémon de l'empoisonnement."
+  },
+  "PARALYZEHEAL": {
+   "desc": "Un spray qui soigne un Pokémon de la paralysie."
+  },
+  "AWAKENING": {
+   "desc": "Un spray qui tire un Pokémon des griffes du sommeil."
+  },
+  "BURNHEAL": {
+   "desc": "Un spray qui soigne un Pokémon souffrant d'une brûlure."
+  },
+  "ICEHEAL": {
+   "desc": "Un spray qui dégèle un Pokémon gelé."
+  },
+  "FULLHEAL": {
+   "desc": "Un spray qui soigne tous les problèmes de statut d'un Pokémon."
+  },
+  "ETHER": {
+   "desc": "Restaure jusqu'à 10 PP d'une capacité choisie d'un Pokémon."
+  },
+  "MAXETHER": {
+   "desc": "Restaure tous les PP d'une capacité choisie d'un Pokémon."
+  },
+  "ELIXIR": {
+   "desc": "Restaure 10 PP de chacune des capacités d'un Pokémon."
+  },
+  "MAXELIXIR": {
+   "desc": "Restaure tous les PP de toutes les capacités d'un Pokémon."
+  },
+  "XATTACK": {
+   "desc": "Augmente l'Attaque de 1 niveau en combat. L'effet disparaît si le Pokémon est remplacé."
+  },
+  "XDEFENSE": {
+   "desc": "Augmente la Défense de 1 niveau en combat. L'effet disparaît si le Pokémon est remplacé."
+  },
+  "XSPEED": {
+   "desc": "Augmente la Vitesse de 1 niveau en combat. L'effet disparaît si le Pokémon est remplacé."
+  },
+  "XSPATK": {
+   "desc": "Augmente l'Attaque Spéciale de 1 niveau en combat. L'effet disparaît si le Pokémon est remplacé."
+  },
+  "DIREHIT": {
+   "desc": "Augmente le taux de critique de 1 niveau en combat. L'effet disparaît si le Pokémon est remplacé."
+  },
+  "HPUP": {
+   "desc": "Une boisson nutritive qui augmente les PV d'un Pokémon."
+  },
+  "PROTEIN": {
+   "desc": "Une boisson nutritive qui augmente l'Attaque d'un Pokémon."
+  },
+  "IRON": {
+   "desc": "Une boisson nutritive qui augmente la Défense d'un Pokémon."
+  },
+  "CALCIUM": {
+   "desc": "Une boisson nutritive qui augmente l'Attaque Spéciale d'un Pokémon."
+  },
+  "ZINC": {
+   "desc": "Une boisson nutritive qui augmente la Défense Spéciale d'un Pokémon."
+  },
+  "CARBOS": {
+   "desc": "Une boisson nutritive qui augmente la Vitesse d'un Pokémon."
+  },
+  "POKEBALL": {
+   "desc": "Une capsule qui permet d'attraper les Pokémon sauvages. Il suffit de la lancer comme une balle."
+  },
+  "GREATBALL": {
+   "desc": "Une Ball performante qui offre un meilleur taux de capture qu'une Poké Ball classique."
+  },
+  "ULTRABALL": {
+   "desc": "Une Ball très performante qui offre un meilleur taux de capture qu'une Super Ball."
+  },
+  "MASTERBALL": {
+   "desc": "La meilleure Ball qui soit. Elle attrape à coup sûr n'importe quel Pokémon sauvage."
+  },
+  "FIRESTONE": {
+   "desc": "Une pierre étrange qui fait évoluer certains Pokémon. Son coeur est orange comme le feu."
+  },
+  "WATERSTONE": {
+   "desc": "Une pierre étrange qui fait évoluer certains Pokémon. Elle est bleue comme l'eau claire."
+  },
+  "THUNDERSTONE": {
+   "desc": "Une pierre étrange qui fait évoluer certains Pokémon. Elle porte un motif d'éclair."
+  },
+  "LEAFSTONE": {
+   "desc": "Une pierre étrange qui fait évoluer certains Pokémon. Elle porte un motif de feuille."
+  },
+  "MOONSTONE": {
+   "desc": "Une pierre étrange qui fait évoluer certains Pokémon. Elle est noire comme le jais."
+  },
+  "SUNSTONE": {
+   "desc": "Une pierre étrange qui fait évoluer certains Pokémon. Elle est rouge comme le soleil."
+  },
+  "LINKINGCORD": {
+   "desc": "Un cordon qui dégage une énergie mystérieuse. Il fait évoluer certains Pokémon."
+  },
+  "KINGSROCK": {
+   "desc": "Objet à tenir. Quand le porteur inflige des dégâts, la cible peut être apeurée."
+  },
+  "DRAGONSCALE": {
+   "desc": "Une écaille épaisse et solide. Les Pokémon de type Dragon la tiennent parfois quand on les capture."
+  },
+  "UPGRADE": {
+   "desc": "Un étrange appareil de Sylphe SARL rempli de données en tout genre. Fait évoluer Porygon."
+  },
+  "METALCOAT": {
+   "desc": "Objet à tenir. Un film métallique spécial qui augmente la puissance des capacités de type Acier."
+  },
+  "PRISMSCALE": {
+   "desc": "Une belle écaille qui fait évoluer Barpau. Elle brille des couleurs de l'arc-en-ciel."
+  },
+  "DEEPSEATOOTH": {
+   "desc": "Objet à faire tenir à Coquiperl. Un croc argenté et acéré qui augmente l'Attaque Spéciale."
+  },
+  "DEEPSEASCALE": {
+   "desc": "Objet à faire tenir à Coquiperl. Une écaille rose pâle qui augmente la Défense Spéciale."
+  },
+  "SHINYSTONE": {
+   "desc": "Une pierre étrange qui fait évoluer certains Pokémon. Elle brille d'une lumière éclatante."
+  },
+  "DUSKSTONE": {
+   "desc": "Une pierre étrange qui fait évoluer certains Pokémon. Elle est noire comme la nuit."
+  },
+  "DAWNSTONE": {
+   "desc": "Une pierre étrange qui fait évoluer certains Pokémon. Elle scintille comme un regard."
+  },
+  "ICESTONE": {
+   "desc": "Une pierre étrange qui fait évoluer certains Pokémon. Elle porte un motif de flocons."
+  },
+  "PROTECTOR": {
+   "desc": "Une protection très lourde. Elle sert à faire évoluer Rhinoféros."
+  },
+  "ELECTIRIZER": {
+   "desc": "Cet appareil renferme une grande quantité d'énergie électrique. Il fait évoluer Élektek."
+  },
+  "MAGMARIZER": {
+   "desc": "Cette boîte renferme une énorme quantité d'énergie magmatique. Elle fait évoluer Magmar."
+  },
+  "DUBIOUSDISC": {
+   "desc": "Un appareil transparent rempli de données mystérieuses. Fait évoluer Porygon2."
+  },
+  "REAPERCLOTH": {
+   "desc": "Un tissu imprégné d'une puissante énergie spirituelle. Il fait évoluer Téraclope."
+  },
+  "OVALSTONE": {
+   "desc": "Une pierre étrange qui fait évoluer Ptiravi. Elle a la forme d'un oeuf."
+  },
+  "SACHET": {
+   "desc": "Un sachet qui dégage un parfum particulier. Il fait évoluer Fluvetin."
+  },
+  "WHIPPEDDREAM": {
+   "desc": "Une friandise à base de crème fouettée douce et légère. Elle fait évoluer Sucroquin."
+  },
+  "BLACKAUGURITE": {
+   "desc": "Une pierre noire et vitreuse qui fait évoluer Insécateur."
+  },
+  "SCROLLOFDARKNESS": {
+   "desc": "Un rouleau étrange qui fait évoluer Wushours en Shifours Style Poing Final."
+  },
+  "SCROLLOFWATERS": {
+   "desc": "Un rouleau étrange qui fait évoluer Wushours en Shifours Style Mille Poings."
+  },
+  "TOWNMAP": {
+   "desc": "Une carte très pratique, consultable à tout moment. Elle indique même où vous êtes."
+  },
+  "VENUSAURITEX": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Florizarre de méga-évoluer en combat.",
+   "nome": "Florizarrite X"
+  },
+  "CHARIZARDITEX": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Dracaufeu de méga-évoluer en combat."
+  },
+  "CHARIZARDITEY": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Dracaufeu de méga-évoluer en combat."
+  },
+  "BLASTOISINITEX": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Tortank de méga-évoluer en combat.",
+   "nome": "Tortankite X"
+  },
+  "BEEDRILLITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Dardargnan de méga-évoluer en combat."
+  },
+  "PIDGEOTITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Roucarnage de méga-évoluer en combat."
+  },
+  "PIKACHUITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Pikachu de méga-évoluer en combat.",
+   "nome": "Pikachuite"
+  },
+  "ALAKAZITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Alakazam de méga-évoluer en combat."
+  },
+  "SLOWBRONITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Flagadoss de méga-évoluer en combat."
+  },
+  "GENGARITEX": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Ectoplasma de méga-évoluer en combat.",
+   "nome": "Ectoplasmite X"
+  },
+  "KANGASKHANITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Kangourex de méga-évoluer en combat."
+  },
+  "PINSIRITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Scarabrute de méga-évoluer en combat."
+  },
+  "GYARADOSITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Léviator de méga-évoluer en combat."
+  },
+  "AERODACTYLITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Ptéra de méga-évoluer en combat."
+  },
+  "MEWTWONITEX": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Mewtwo de méga-évoluer en combat."
+  },
+  "MEWTWONITEY": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Mewtwo de méga-évoluer en combat."
+  },
+  "AMPHAROSITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Pharamp de méga-évoluer en combat."
+  },
+  "STEELIXITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Steelix de méga-évoluer en combat."
+  },
+  "SCIZORITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Cizayox de méga-évoluer en combat."
+  },
+  "HERACRONITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Scarhino de méga-évoluer en combat."
+  },
+  "HOUNDOOMINITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Démolosse de méga-évoluer en combat."
+  },
+  "TYRANITARITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Tyranocif de méga-évoluer en combat."
+  },
+  "SCEPTILITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Jungko de méga-évoluer en combat."
+  },
+  "BLAZIKENITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Braségali de méga-évoluer en combat."
+  },
+  "SWAMPERTITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Laggron de méga-évoluer en combat."
+  },
+  "GARDEVOIRITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Gardevoir de méga-évoluer en combat."
+  },
+  "SABLENITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Ténéfix de méga-évoluer en combat."
+  },
+  "MAWILITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Mysdibule de méga-évoluer en combat."
+  },
+  "AGGRONITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Galeking de méga-évoluer en combat."
+  },
+  "MEDICHAMITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Charmina de méga-évoluer en combat."
+  },
+  "MANECTITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Élecsprint de méga-évoluer en combat."
+  },
+  "SHARPEDONITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Sharpedo de méga-évoluer en combat."
+  },
+  "CAMERUPTITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Camérupt de méga-évoluer en combat."
+  },
+  "ALTARIANITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Altaria de méga-évoluer en combat."
+  },
+  "BANETTITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Branette de méga-évoluer en combat."
+  },
+  "ABSOLITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Absol de méga-évoluer en combat."
+  },
+  "GLALITITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Oniglali de méga-évoluer en combat."
+  },
+  "SALAMENCITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Drattak de méga-évoluer en combat."
+  },
+  "METAGROSSITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Métalosse de méga-évoluer en combat."
+  },
+  "LATIASITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Latias de méga-évoluer en combat."
+  },
+  "LATIOSITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Latios de méga-évoluer en combat."
+  },
+  "RAYQUAZITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Rayquaza de méga-évoluer en combat.",
+   "nome": "Rayquazite"
+  },
+  "LOPUNNITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Lockpin de méga-évoluer en combat."
+  },
+  "GARCHOMPITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Carchacrok de méga-évoluer en combat."
+  },
+  "LUCARIONITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Lucario de méga-évoluer en combat."
+  },
+  "ABOMASITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Blizzaroi de méga-évoluer en combat."
+  },
+  "GALLADITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Gallame de méga-évoluer en combat."
+  },
+  "AUDINITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Nanméouïe de méga-évoluer en combat."
+  },
+  "DIANCITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Diancie de méga-évoluer en combat."
+  },
+  "ARCANINITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Arcanin de méga-évoluer en combat.",
+   "nome": "Arcaninite"
+  },
+  "VENUSAURITEY": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Florizarre de méga-évoluer en combat.",
+   "nome": "Florizarrite Y"
+  },
+  "BLASTOISINITEY": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Tortank de méga-évoluer en combat.",
+   "nome": "Tortankite Y"
+  },
+  "GENGARITEY": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Ectoplasma de méga-évoluer en combat.",
+   "nome": "Ectoplasmite Y"
+  },
+  "KINGLERITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Krabboss de méga-évoluer en combat.",
+   "nome": "Krabbossite"
+  },
+  "LAPRASITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Lokhlass de méga-évoluer en combat.",
+   "nome": "Lokhlassite"
+  },
+  "MACHAMPITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Mackogneur de méga-évoluer en combat.",
+   "nome": "Mackogneurite"
+  },
+  "GARBODORITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Miasmax de méga-évoluer en combat.",
+   "nome": "Miasmaxite"
+  },
+  "CORVIKNIGHTITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Corvaillus de méga-évoluer en combat.",
+   "nome": "Corvaillusite"
+  },
+  "ORBEETLEITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Astronelle de méga-évoluer en combat.",
+   "nome": "Astronellite"
+  },
+  "BUTTERFREEITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Papilusion de méga-évoluer en combat.",
+   "nome": "Papilusionite"
+  },
+  "DREDNAWITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Torgamord de méga-évoluer en combat.",
+   "nome": "Torgamordite"
+  },
+  "COALOSSALITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Monthracite de méga-évoluer en combat.",
+   "nome": "Monthracitite"
+  },
+  "FLAPPLETUNITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Pomdrapi ou Dratatin de méga-évoluer en combat.",
+   "nome": "Pomdratatite"
+  },
+  "SANDACONDITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Dunaconda de méga-évoluer en combat.",
+   "nome": "Dunacondite"
+  },
+  "TOXTRICITITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Salarsen de méga-évoluer en combat.",
+   "nome": "Salarsenite"
+  },
+  "CENTISKORCHITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Scolocendre de méga-évoluer en combat.",
+   "nome": "Scolocendrite"
+  },
+  "HATTERENITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Sorcilence de méga-évoluer en combat.",
+   "nome": "Sorcilencite"
+  },
+  "GRIMMSNARLITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Angoliath de méga-évoluer en combat.",
+   "nome": "Angoliathite"
+  },
+  "ALCREMITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Charmilly de méga-évoluer en combat.",
+   "nome": "Charmillite"
+  },
+  "COPPERAJITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Pachyradjah de méga-évoluer en combat.",
+   "nome": "Pachyradjite"
+  },
+  "DURALUDONITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Duralugon de méga-évoluer en combat.",
+   "nome": "Duralugonite"
+  },
+  "EEVEEITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Évoli de méga-évoluer en combat.",
+   "nome": "Évolite"
+  },
+  "JUMPLUFITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Cotovol de méga-évoluer en combat.",
+   "nome": "Cotovolite"
+  },
+  "RILLABOOMITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Gorythmic de méga-évoluer en combat.",
+   "nome": "Gorythmite"
+  },
+  "CINDERECITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Pyrobut de méga-évoluer en combat.",
+   "nome": "Pyrobutite"
+  },
+  "INTELEONITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Lézargus de méga-évoluer en combat.",
+   "nome": "Lézargusite"
+  },
+  "SNORLAXITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Ronflex de méga-évoluer en combat.",
+   "nome": "Ronflexite"
+  },
+  "CLEFABLITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Mélodelfe de méga-évoluer en combat."
+  },
+  "STARMINITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Staross de méga-évoluer en combat."
+  },
+  "VICTREEBELITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Empiflor de méga-évoluer en combat."
+  },
+  "DRAGONITITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Dracolosse de méga-évoluer en combat.",
+   "nome": "Dracolossite"
+  },
+  "MEGANIUMITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Méganium de méga-évoluer en combat."
+  },
+  "FERALIGITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Aligatueur de méga-évoluer en combat."
+  },
+  "SKARMORITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Airmure de méga-évoluer en combat."
+  },
+  "FROSLASSITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Momartik de méga-évoluer en combat."
+  },
+  "EMBOARITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Roitiflam de méga-évoluer en combat."
+  },
+  "EXCADRITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Minotaupe de méga-évoluer en combat."
+  },
+  "SCOLIPITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Brutapode de méga-évoluer en combat."
+  },
+  "SCRAFTINITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Baggaïd de méga-évoluer en combat."
+  },
+  "EELEKTROSSITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Ohmassacre de méga-évoluer en combat."
+  },
+  "CHANDELURITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Lugulabre de méga-évoluer en combat."
+  },
+  "CHESNAUGHTITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Blindépique de méga-évoluer en combat."
+  },
+  "DELPHOXITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Goupelin de méga-évoluer en combat."
+  },
+  "GRENINJITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Amphinobi de méga-évoluer en combat."
+  },
+  "PYROARITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Némélios de méga-évoluer en combat."
+  },
+  "MALAMARITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Sepiatroce de méga-évoluer en combat."
+  },
+  "BARBARACITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Golgopathe de méga-évoluer en combat."
+  },
+  "DRAGALGITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Kravarech de méga-évoluer en combat."
+  },
+  "HAWLUCHITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Brutalibré de méga-évoluer en combat.",
+   "nome": "Brutalibrite"
+  },
+  "DRAMPANITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Draïeul de méga-évoluer en combat."
+  },
+  "FALINKSITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Hexadron de méga-évoluer en combat."
+  },
+  "FLOETTITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Floette Fleur Éternelle de méga-évoluer en combat."
+  },
+  "ZYGARDITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Zygarde de méga-évoluer en combat."
+  },
+  "STARAPTITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Étouraptor de méga-évoluer en combat."
+  },
+  "LUCARIONITEZ": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Lucario de méga-évoluer en combat."
+  },
+  "CRABOMINITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Crabominable de méga-évoluer en combat."
+  },
+  "MAGEARNITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Magearna de méga-évoluer en combat."
+  },
+  "ABSOLITEZ": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Absol de méga-évoluer en combat."
+  },
+  "CHIMECHITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Éoko de méga-évoluer en combat."
+  },
+  "GARCHOMPITEZ": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Carchacrok de méga-évoluer en combat."
+  },
+  "GOLURKITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Golemastoc de méga-évoluer en combat."
+  },
+  "TATSUGIRINITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Nigirigon de méga-évoluer en combat."
+  },
+  "MEOWSTICITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Mistigrix de méga-évoluer en combat."
+  },
+  "BAXCALIBRITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Glaivodo de méga-évoluer en combat."
+  },
+  "SCOVILLAINITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Scovilain de méga-évoluer en combat."
+  },
+  "GLIMMORANITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Floréclat de méga-évoluer en combat."
+  },
+  "GOLISOPITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Sarmuraï de méga-évoluer en combat."
+  },
+  "ZERAORITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Zeraora de méga-évoluer en combat."
+  },
+  "HEATRANITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Heatran de méga-évoluer en combat."
+  },
+  "DARKRANITE": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Darkrai de méga-évoluer en combat."
+  },
+  "RAICHUITEX": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Raichu de méga-évoluer en combat.",
+   "nome": "Raichunite X"
+  },
+  "RAICHUITEY": {
+   "desc": "Une des mystérieuses Méga-Gemmes. Permet à Raichu de méga-évoluer en combat.",
+   "nome": "Raichunite Y"
+  },
+  "POKEDEX": {
+   "desc": "Une encyclopédie high-tech qui enregistre tous les Pokémon vus et capturés.",
+   "nome": "Pokédex"
+  },
+  "MEGARING": {
+   "desc": "Un anneau qui permet au Dresseur de faire méga-évoluer ses Pokémon."
+  },
+  "QUICKBALL": {
+   "desc": "Une Poké Ball plus efficace si elle est utilisée au début d'une rencontre sauvage."
+  },
+  "TIMERBALL": {
+   "desc": "Une Poké Ball un peu spéciale qui devient plus efficace à chaque tour de combat."
+  },
+  "DUSKBALL": {
+   "desc": "Une Poké Ball un peu spéciale qui attrape plus facilement les Pokémon la nuit ou dans les lieux sombres comme les grottes."
+  },
+  "NETBALL": {
+   "desc": "Une Poké Ball un peu spéciale, très efficace sur les Pokémon de type Eau et Insecte."
+  },
+  "NESTBALL": {
+   "desc": "Une Poké Ball un peu spéciale, très efficace sur les Pokémon sauvages faibles."
+  },
+  "REPEATBALL": {
+   "desc": "Une Poké Ball un peu spéciale, très efficace sur les espèces déjà capturées."
+  },
+  "LEVELBALL": {
+   "desc": "Une Poké Ball qui attrape plus facilement les Pokémon de niveau inférieur au vôtre."
+  },
+  "FASTBALL": {
+   "desc": "Une Poké Ball un peu spéciale qui attrape plus facilement les Pokémon rapides."
+  },
+  "HEAVYBALL": {
+   "desc": "Une Poké Ball plus efficace que la normale sur les Pokémon très lourds."
+  },
+  "MOONBALL": {
+   "desc": "Une Poké Ball très efficace sur les Pokémon qui évoluent avec une Pierre Lune."
+  },
+  "DREAMBALL": {
+   "desc": "Une Poké Ball un peu spéciale, plus efficace quand le Pokémon est endormi."
+  },
+  "FRIENDBALL": {
+   "desc": "Une Poké Ball qui rend le Pokémon capturé plus amical."
+  },
+  "LUXURYBALL": {
+   "desc": "Une Poké Ball confortable qui rend vite amical le Pokémon sauvage capturé."
+  },
+  "PREMIERBALL": {
+   "desc": "Une Poké Ball assez rare, fabriquée spécialement pour commémorer un événement."
+  },
+  "RARECANDY": {
+   "desc": "Un bonbon plein d'énergie. Il fait monter un Pokémon d'un niveau."
+  },
+  "SHINYZADOR": {
+   "desc": "Une potion scintillante. Le Pokémon qui la boit devient chromatique pour toujours.",
+   "nome": "Potion Chroma"
+  }
+ },
+ "habil": {
+  "ACOMETIDA": {
+   "desc": "Au premier tour, augmente la Vitesse de 50% et l'Attaque de 20%.",
+   "nome": "Assaut"
+  },
+  "ADAPTABILITY": {
+   "desc": "Le bonus des capacités du même type (STAB) passe de x1,5 à x2."
+  },
+  "AERILATE": {
+   "desc": "Les capacités Normal deviennent de type Vol et gagnent 20% de puissance."
+  },
+  "AFTERMATH": {
+   "desc": "Inflige 25% de ses PV max à l'attaquant s'il est mis K.O. par une capacité de contact."
+  },
+  "AIRLOCK": {
+   "desc": "Annule tous les effets météo."
+  },
+  "ANALYTIC": {
+   "desc": "Augmente la puissance de 30% si le Pokémon agit en dernier."
+  },
+  "ANGERPOINT": {
+   "desc": "Monte l'Attaque au maximum après avoir subi un coup critique."
+  },
+  "ANGERSHELL": {
+   "desc": "Sous la moitié des PV, baisse Déf./Déf. Spé. mais monte Atq./Atq. Spé./Vitesse."
+  },
+  "ANTICIPATION": {
+   "desc": "Frissonne si l'ennemi a une capacité super efficace."
+  },
+  "ARENATRAP": {
+   "desc": "Empêche la fuite des ennemis, sauf s'ils sont de type Spectre ou Vol, ou en lévitation."
+  },
+  "ARMORTAIL": {
+   "desc": "Bloque les capacités prioritaires visant l'équipe."
+  },
+  "AROMAVEIL": {
+   "desc": "Protège l'équipe des capacités qui limitent le choix, comme Provoc ou Corps Maudit."
+  },
+  "BADDREAMS": {
+   "desc": "Inflige 1/8 de leurs PV max aux ennemis endormis à la fin de chaque tour."
+  },
+  "BALLFETCH": {
+   "desc": "Récupère la première Poké Ball ratée s'il ne tient aucun objet."
+  },
+  "BATTERY": {
+   "desc": "Augmente de 30% les capacités spéciales des alliés."
+  },
+  "BATTLEARMOR": {
+   "desc": "Le Pokémon est protégé des coups critiques."
+  },
+  "BEADSOFRUIN": {
+   "desc": "Baisse la Défense Spéciale de tous les autres Pokémon."
+  },
+  "BEASTBOOST": {
+   "desc": "Augmente sa meilleure stat après avoir vaincu un ennemi."
+  },
+  "BERSERK": {
+   "desc": "Augmente l'Attaque Spéciale quand les PV passent sous la moitié. Peut s'activer plusieurs fois."
+  },
+  "BIGPECKS": {
+   "desc": "Empêche les autres de baisser sa Défense."
+  },
+  "BLAZE": {
+   "desc": "Augmente de 50% les capacités Feu quand il reste 1/3 des PV ou moins."
+  },
+  "BULLETPROOF": {
+   "desc": "Immunisé contre les capacités à base de balles, boules et bombes."
+  },
+  "BURNTOUCH": {
+   "desc": "30% de chances de brûler la cible au contact.",
+   "nome": "Toucher Brûlant"
+  },
+  "CAMORRISTA": {
+   "desc": "Augmente de 20% la puissance des coups de pied.",
+   "nome": "Bagarreur"
+  },
+  "CHEEKPOUCH": {
+   "desc": "Restaure 1/3 des PV max en mangeant une Baie."
+  },
+  "CHILLINGNEIGH": {
+   "desc": "Augmente l'Attaque après avoir vaincu un ennemi."
+  },
+  "CHLOROPHYLL": {
+   "desc": "Double la Vitesse sous un soleil intense."
+  },
+  "CLEARBODY": {
+   "desc": "Empêche les autres Pokémon de baisser ses stats."
+  },
+  "CLOUDNINE": {
+   "desc": "Annule tous les effets météo tant qu'il est sur le terrain."
+  },
+  "COLORCHANGE": {
+   "desc": "Prend le type de la dernière capacité qui l'a touché."
+  },
+  "COMATOSE": {
+   "desc": "Ne se réveille jamais, mais peut attaquer en dormant."
+  },
+  "COMMANDER": {
+   "desc": "Entre dans la bouche d'un Oyacata allié pour le commander."
+  },
+  "COMPETITIVE": {
+   "desc": "Augmente beaucoup l'Attaque Spéciale quand l'ennemi baisse une de ses stats."
+  },
+  "COMPOUNDEYES": {
+   "desc": "Augmente la Précision de 30% et la chance de croiser des Pokémon sauvages avec un objet."
+  },
+  "CONTRARY": {
+   "desc": "Inverse les changements de stats : elles montent au lieu de baisser, et inversement."
+  },
+  "CORROSION": {
+   "desc": "Peut empoisonner les types Acier et Poison."
+  },
+  "COSTAR": {
+   "desc": "Copie les changements de stats de l'allié en entrant."
+  },
+  "COTTONDOWN": {
+   "desc": "Baisse la Vitesse des autres Pokémon quand il est touché par une attaque."
+  },
+  "CUDCHEW": {
+   "desc": "Régurgite et remange une Baie à la fin du tour suivant."
+  },
+  "CURIOUSMEDICINE": {
+   "desc": "Annule les changements de stats des alliés en entrant au combat."
+  },
+  "CURSEDBODY": {
+   "desc": "30% de chances de bloquer pendant 4 tours la capacité utilisée contre lui."
+  },
+  "CUTECHARM": {
+   "desc": "Le contact a 30% de chances de rendre amoureux un ennemi du sexe opposé."
+  },
+  "DAMP": {
+   "desc": "Empêche les capacités explosives et le talent Boom Final."
+  },
+  "DANCER": {
+   "desc": "Copie toute capacité de danse utilisée par un autre Pokémon."
+  },
+  "DARKAURA": {
+   "desc": "Augmente de 33% la puissance de toutes les capacités Ténèbres."
+  },
+  "DAUNTLESSSHIELD": {
+   "desc": "Augmente la Défense d'un niveau en entrant au combat."
+  },
+  "DAZZLING": {
+   "desc": "Empêche les ennemis d'utiliser des capacités prioritaires contre l'équipe."
+  },
+  "DEFEATIST": {
+   "desc": "Divise par deux l'Attaque et l'Attaque Spéciale sous 50% des PV."
+  },
+  "DEFIANT": {
+   "desc": "Augmente beaucoup l'Attaque quand l'ennemi baisse une de ses stats."
+  },
+  "DELTASTREAM": {
+   "desc": "Crée des vents violents qui suppriment les faiblesses du type Vol. La météo normale ne peut le remplacer."
+  },
+  "DISGUISE": {
+   "desc": "Réduit les dégâts du premier coup reçu à 1/8 des PV max."
+  },
+  "DOWNLOAD": {
+   "desc": "Ajuste ses stats offensives selon les défenses de l'ennemi."
+  },
+  "DRAGONSMAW": {
+   "desc": "Augmente de 50% les capacités Dragon."
+  },
+  "DRIZZLE": {
+   "desc": "Fait pleuvoir 5 tours en entrant au combat. Dure 8 tours avec une Roche Humide."
+  },
+  "DROUGHT": {
+   "desc": "Crée un soleil intense 5 tours en entrant au combat. Dure 8 tours avec une Roche Chaude."
+  },
+  "DRYSKIN": {
+   "desc": "Perd des PV au soleil, se soigne sous la pluie. Craint plus le Feu, se soigne avec les capacités Eau."
+  },
+  "EARLYBIRD": {
+   "desc": "Dort deux fois moins longtemps."
+  },
+  "EARTHEATER": {
+   "desc": "Restaure ses PV s'il est touché par une capacité Sol."
+  },
+  "EFFECTSPORE": {
+   "desc": "Le contact peut empoisonner, paralyser ou endormir l'attaquant (30% de chances)."
+  },
+  "ELECTRICSURGE": {
+   "desc": "Crée un Champ Électrifié en entrant au combat."
+  },
+  "ELECTROMORPHOSIS": {
+   "desc": "Subir des dégâts charge sa prochaine capacité Électrik."
+  },
+  "EMERGENCYEXIT": {
+   "desc": "Se retire après avoir utilisé une capacité Insecte."
+  },
+  "ESPANTO": {
+   "desc": "Effraie l'ennemi et baisse son Attaque Spéciale.",
+   "nome": "Épouvante"
+  },
+  "FAIRYAURA": {
+   "desc": "Augmente de 33% la puissance de toutes les capacités Fée."
+  },
+  "FILTER": {
+   "desc": "Réduit de 1/4 les dégâts des attaques super efficaces."
+  },
+  "FLAMEBODY": {
+   "desc": "Le contact a 30% de chances de brûler l'attaquant."
+  },
+  "FLAREBOOST": {
+   "desc": "Augmente de 50% les attaques spéciales quand il est brûlé."
+  },
+  "FLASHFIRE": {
+   "desc": "Augmente de 50% les capacités Feu s'il est touché par une capacité Feu. Immunisé contre le Feu."
+  },
+  "FLORACION": {
+   "desc": "Augmente la puissance des capacités Plante.",
+   "nome": "Floraison"
+  },
+  "FLOWERGIFT": {
+   "desc": "Augmente l'Attaque et la Défense Spéciale de l'équipe par temps ensoleillé."
+  },
+  "FLOWERVEIL": {
+   "desc": "Protège les alliés de type Plante des problèmes de statut et des baisses de stats."
+  },
+  "FLUFFY": {
+   "desc": "Divise par deux les dégâts des capacités de contact, mais double ceux du Feu."
+  },
+  "FORECAST": {
+   "desc": "Change de type selon la météo."
+  },
+  "FOREWARN": {
+   "desc": "Révèle la capacité la plus puissante de l'ennemi en entrant au combat."
+  },
+  "FRIENDGUARD": {
+   "desc": "Réduit de 25% les dégâts subis par les alliés."
+  },
+  "FRISK": {
+   "desc": "Révèle l'objet tenu par l'ennemi en entrant au combat."
+  },
+  "FULLMETALBODY": {
+   "desc": "Empêche les autres de baisser ses stats."
+  },
+  "FURCOAT": {
+   "desc": "Divise par deux les dégâts des capacités physiques."
+  },
+  "GALEWINGS": {
+   "desc": "Donne la priorité aux capacités Vol quand ses PV sont au max."
+  },
+  "GLUTTONY": {
+   "desc": "Mange ses Baies à 50% des PV au lieu de 25%."
+  },
+  "GOODASGOLD": {
+   "desc": "Immunisé contre les capacités de statut."
+  },
+  "GOOEY": {
+   "desc": "Baisse la Vitesse de l'attaquant au contact."
+  },
+  "GORILLATACTICS": {
+   "desc": "Augmente l'Attaque de 50%, mais bloque sur la première capacité utilisée."
+  },
+  "GRASSYSURGE": {
+   "desc": "Crée un Champ Herbu en entrant au combat."
+  },
+  "GRIMNEIGH": {
+   "desc": "Augmente l'Attaque Spéciale après avoir vaincu un ennemi."
+  },
+  "GUARDDOG": {
+   "desc": "Bloque Intimidation et augmente l'Attaque à la place. Empêche les changements forcés."
+  },
+  "GULPMISSILE": {
+   "desc": "Change de forme selon ses PV après avoir utilisé Surf ou Plongée."
+  },
+  "GUTS": {
+   "desc": "Augmente l'Attaque de 50% en cas de problème de statut, en ignorant la pénalité de brûlure."
+  },
+  "HADRONENGINE": {
+   "desc": "Crée un Champ Électrifié. Augmente l'Attaque Spéciale sur Champ Électrifié."
+  },
+  "HARVEST": {
+   "desc": "50% de chances de récupérer une Baie utilisée à la fin du tour. 100% au soleil."
+  },
+  "HEALER": {
+   "desc": "30% de chances de soigner le statut d'un allié à la fin de chaque tour."
+  },
+  "HEATPROOF": {
+   "desc": "Divise par deux les dégâts des capacités Feu. Réduit les dégâts de brûlure."
+  },
+  "HEAVYMETAL": {
+   "desc": "Double le poids du Pokémon."
+  },
+  "HONEYGATHER": {
+   "desc": "Peut ramasser du Miel après un combat."
+  },
+  "HOSPITALITY": {
+   "desc": "Soigne les PV d'un allié en entrant au combat."
+  },
+  "HUGEPOWER": {
+   "desc": "Double l'Attaque du Pokémon."
+  },
+  "HUNGERSWITCH": {
+   "desc": "Change de forme et de type de Roue Libre à la fin de chaque tour."
+  },
+  "HUSTLE": {
+   "desc": "Augmente l'Attaque ou l'Attaque Spéciale de 50%, mais baisse de 20% la Précision des attaques."
+  },
+  "HYDRATION": {
+   "desc": "Soigne les problèmes de statut à la fin du tour s'il pleut."
+  },
+  "HYPERCUTTER": {
+   "desc": "Empêche les autres de baisser son Attaque."
+  },
+  "ICEBODY": {
+   "desc": "Restaure peu à peu ses PV sous la grêle."
+  },
+  "ICEFACE": {
+   "desc": "Passe en Tête Dégel s'il subit une capacité physique. La grêle le restaure."
+  },
+  "ICESCALES": {
+   "desc": "Divise par deux les dégâts des attaques spéciales."
+  },
+  "ILLUMINATE": {
+   "desc": "Baisse la Précision de l'ennemi en entrant au combat. Augmente les rencontres sauvages."
+  },
+  "ILLUSION": {
+   "desc": "Prend l'apparence du dernier Pokémon de l'équipe."
+  },
+  "IMMUNITY": {
+   "desc": "Ne peut pas être empoisonné."
+  },
+  "IMPOSTER": {
+   "desc": "Se transforme en l'ennemi et copie ses stats (sauf les PV)."
+  },
+  "INFILTRATOR": {
+   "desc": "Ses attaques ignorent les protections et les Clones."
+  },
+  "INNARDSOUT": {
+   "desc": "En tombant K.O., inflige des dégâts égaux aux PV qui lui restaient."
+  },
+  "INNERFOCUS": {
+   "desc": "Empêche la peur et l'Intimidation."
+  },
+  "INSOMNIA": {
+   "desc": "Empêche de s'endormir ou d'utiliser Repos. Le réveille s'il l'obtient en dormant."
+  },
+  "INTIMIDATE": {
+   "desc": "Baisse l'Attaque de l'ennemi en entrant au combat."
+  },
+  "INTREPIDSWORD": {
+   "desc": "Augmente l'Attaque d'un niveau en entrant au combat."
+  },
+  "IRONBARBS": {
+   "desc": "Inflige 1/8 de ses PV max à l'attaquant au contact."
+  },
+  "IRONFIST": {
+   "desc": "Augmente de 20% la puissance des coups de poing."
+  },
+  "JUSTIFIED": {
+   "desc": "Augmente l'Attaque s'il est touché par une capacité Ténèbres."
+  },
+  "KEENEYE": {
+   "desc": "Empêche la baisse de sa Précision. Ignore les hausses d'Esquive de l'ennemi."
+  },
+  "KLUTZ": {
+   "desc": "Empêche l'utilisation des objets tenus et annule leurs effets."
+  },
+  "LEAFGUARD": {
+   "desc": "Empêche les problèmes de statut par temps ensoleillé."
+  },
+  "LEVITATE": {
+   "desc": "Immunisé contre toutes les capacités Sol."
+  },
+  "LIBERO": {
+   "desc": "Prend le type de la capacité qu'il va utiliser."
+  },
+  "LIGHTMETAL": {
+   "desc": "Divise par deux le poids du Pokémon."
+  },
+  "LIGHTNINGROD": {
+   "desc": "Attire les capacités Électrik pour monter l'Attaque Spéciale. Marche même sur les types Sol."
+  },
+  "LIMBER": {
+   "desc": "Ne peut pas être paralysé."
+  },
+  "LINGERINGAROMA": {
+   "desc": "Le contact change le talent de l'attaquant en Odeur Tenace."
+  },
+  "LIQUIDOOZE": {
+   "desc": "Blesse les ennemis qui utilisent des capacités drainant les PV."
+  },
+  "LIQUIDVOICE": {
+   "desc": "Les capacités sonores deviennent de type Eau et gagnent 20%."
+  },
+  "LONGREACH": {
+   "desc": "Ses capacités n'entrent pas en contact avec la cible."
+  },
+  "MAGICBOUNCE": {
+   "desc": "Renvoie les capacités de statut à leur lanceur."
+  },
+  "MAGICGUARD": {
+   "desc": "Ne subit que les dégâts directs. Immunisé contre les dégâts indirects et les pièges."
+  },
+  "MAGICIAN": {
+   "desc": "Vole l'objet de la cible en la touchant avec une capacité de contact."
+  },
+  "MAGNETPULL": {
+   "desc": "Piège les ennemis de type Acier et les empêche de fuir, sauf s'ils tiennent une Carapace Mue."
+  },
+  "MARVELSCALE": {
+   "desc": "Augmente la Défense de 50% en cas de problème de statut."
+  },
+  "MEGALAUNCHER": {
+   "desc": "Augmente de 50% les capacités d'aura et de pulsation."
+  },
+  "MERCILESS": {
+   "desc": "Ses attaques sont toujours critiques si la cible est empoisonnée."
+  },
+  "MIMICRY": {
+   "desc": "Change de type selon le Champ en cours."
+  },
+  "MINUS": {
+   "desc": "Augmente l'Attaque Spéciale de 50% si un allié a le talent Plus ou Moins."
+  },
+  "MIRRORARMOR": {
+   "desc": "Renvoie les baisses de stats à leur lanceur."
+  },
+  "MISTYSURGE": {
+   "desc": "Crée un Champ Brumeux en entrant au combat."
+  },
+  "MOLDBREAKER": {
+   "desc": "Ses capacités ignorent le talent de la cible."
+  },
+  "MOODY": {
+   "desc": "Monte beaucoup une stat au hasard et en baisse une autre à la fin de chaque tour."
+  },
+  "MOTORDRIVE": {
+   "desc": "Augmente la Vitesse s'il est touché par une capacité Électrik. Immunisé contre l'Électrik."
+  },
+  "MOXIE": {
+   "desc": "Augmente l'Attaque après avoir mis un ennemi K.O."
+  },
+  "MULTISCALE": {
+   "desc": "Divise par deux les dégâts subis quand ses PV sont au max."
+  },
+  "MULTITYPE": {
+   "desc": "Prend le type de la Plaque ou du Cristal Z tenu."
+  },
+  "MUMMY": {
+   "desc": "Le contact change le talent de l'attaquant en Momie."
+  },
+  "MYCELIUMMIGHT": {
+   "desc": "Ses capacités de statut agissent en dernier mais ignorent les talents."
+  },
+  "NATURALCURE": {
+   "desc": "Soigne tous les problèmes de statut quand il est remplacé ou à la fin du combat."
+  },
+  "NEUROFORCE": {
+   "desc": "Augmente de 25% les capacités super efficaces."
+  },
+  "NEUTRALIZINGGAS": {
+   "desc": "Neutralise tous les talents tant qu'il est sur le terrain."
+  },
+  "NOGUARD": {
+   "desc": "Les capacités utilisées par ou contre ce Pokémon ne ratent jamais."
+  },
+  "OBLIVIOUS": {
+   "desc": "Empêche l'attraction, la Provoc et l'Intimidation."
+  },
+  "OPPORTUNIST": {
+   "desc": "Copie les hausses de stats de l'ennemi."
+  },
+  "ORICHALCUMPULSE": {
+   "desc": "Crée un soleil intense. Augmente l'Attaque au soleil."
+  },
+  "OVERCOAT": {
+   "desc": "Protège de la tempête de sable, de la grêle et des capacités à base de poudre/spores."
+  },
+  "OVERGROW": {
+   "desc": "Augmente de 50% les capacités Plante quand il reste 1/3 des PV ou moins."
+  },
+  "OWNTEMPO": {
+   "desc": "Empêche la confusion et l'Intimidation."
+  },
+  "PARENTALBOND": {
+   "desc": "Attaque deux fois par tour. Le second coup inflige 25% des dégâts."
+  },
+  "PASTELVEIL": {
+   "desc": "Protège l'équipe du poison. Soigne les alliés en entrant."
+  },
+  "PERISHBODY": {
+   "desc": "Les deux Pokémon tombent K.O. dans 3 tours s'il est touché par un contact."
+  },
+  "PICKPOCKET": {
+   "desc": "Vole l'objet de l'attaquant au contact s'il n'en tient pas déjà un."
+  },
+  "PICKUP": {
+   "desc": "10% de chances de ramasser un objet après un combat. Peut ramasser les objets perdus."
+  },
+  "PIELHERBACEA": {
+   "desc": "Les capacités Normal deviennent de type Plante et gagnent en puissance.",
+   "nome": "Peau Végétale"
+  },
+  "PIXILATE": {
+   "desc": "Les capacités Normal deviennent de type Fée et gagnent 20% de puissance."
+  },
+  "PLUS": {
+   "desc": "Augmente l'Attaque Spéciale de 50% si un allié a le talent Plus ou Moins."
+  },
+  "PODERGELIDO": {
+   "desc": "Augmente de 50% la puissance Glace et la Vitesse par temps neigeux.",
+   "nome": "Force Glaciale"
+  },
+  "PODERSABIO": {
+   "desc": "Augmente l'Attaque Spéciale de 50%, mais bloque sur la première capacité utilisée.",
+   "nome": "Force Sage"
+  },
+  "POISONHEAL": {
+   "desc": "Restaure 1/8 des PV max par tour s'il est empoisonné."
+  },
+  "POISONPOINT": {
+   "desc": "Le contact a 30% de chances d'empoisonner l'attaquant."
+  },
+  "POISONPUPPETEER": {
+   "desc": "Les ennemis qu'il empoisonne deviennent aussi confus."
+  },
+  "POISONTOUCH": {
+   "desc": "Le contact a 30% de chances d'empoisonner la cible."
+  },
+  "POWERCONSTRUCT": {
+   "desc": "Passe en Forme Parfaite quand ses PV tombent sous 50%."
+  },
+  "POWERSPOT": {
+   "desc": "Augmente de 30% les capacités des alliés."
+  },
+  "PRANKSTER": {
+   "desc": "Donne la priorité aux capacités de statut. Les types Ténèbres sont immunisés."
+  },
+  "PRESSURE": {
+   "desc": "Force l'ennemi à utiliser 2 PP par capacité."
+  },
+  "PRISMARMOR": {
+   "desc": "Réduit de 1/4 les dégâts super efficaces."
+  },
+  "PROPELLERTAIL": {
+   "desc": "Ses capacités ignorent les redirections dues aux capacités ou talents adverses."
+  },
+  "PROTEAN": {
+   "desc": "Prend le type de la capacité qu'il va utiliser."
+  },
+  "PROTOSYNTHESIS": {
+   "desc": "Augmente sa meilleure stat au soleil ou s'il tient une Énergie Booster."
+  },
+  "PSYCHICSURGE": {
+   "desc": "Crée un Champ Psychique en entrant au combat."
+  },
+  "PUNKROCK": {
+   "desc": "Augmente de 30% les capacités sonores et divise par deux les dégâts qu'elles lui font."
+  },
+  "PUREPOWER": {
+   "desc": "Double l'Attaque."
+  },
+  "PURIFYINGSALT": {
+   "desc": "Immunisé contre les problèmes de statut. Divise par deux les dégâts Spectre."
+  },
+  "QUARKDRIVE": {
+   "desc": "Augmente sa meilleure stat sur Champ Électrifié ou s'il tient une Énergie Booster."
+  },
+  "QUEENLYMAJESTY": {
+   "desc": "Empêche les capacités prioritaires de toucher le Pokémon."
+  },
+  "QUICKDRAW": {
+   "desc": "30% de chances d'agir en premier à priorité égale."
+  },
+  "QUICKFEET": {
+   "desc": "Augmente la Vitesse de 50% en cas de problème de statut. Ignore la baisse due à la paralysie."
+  },
+  "RAINDISH": {
+   "desc": "Restaure peu à peu ses PV sous la pluie."
+  },
+  "RATTLED": {
+   "desc": "Augmente la Vitesse s'il subit une capacité Spectre, Ténèbres ou Insecte, ou Intimidation."
+  },
+  "RECEIVER": {
+   "desc": "Hérite du talent d'un allié quand celui-ci tombe K.O."
+  },
+  "RECKLESS": {
+   "desc": "Augmente de 20% les capacités à contrecoup."
+  },
+  "REFRIGERATE": {
+   "desc": "Les capacités Normal deviennent de type Glace et gagnent 20% de puissance."
+  },
+  "REGENERATOR": {
+   "desc": "Restaure 1/3 des PV max quand il est remplacé."
+  },
+  "RIPEN": {
+   "desc": "Double l'effet des Baies consommées."
+  },
+  "RIVALRY": {
+   "desc": "Inflige 25% de dégâts en plus aux ennemis du même sexe."
+  },
+  "RKSSYSTEM": {
+   "desc": "Change de type selon la ROM tenue."
+  },
+  "ROCKHEAD": {
+   "desc": "Empêche les dégâts de contrecoup, sauf avec Lutte."
+  },
+  "ROCKYPAYLOAD": {
+   "desc": "Augmente de 50% les capacités Roche."
+  },
+  "ROUGHSKIN": {
+   "desc": "Inflige 1/16 de ses PV max à l'attaquant au contact."
+  },
+  "RUNAWAY": {
+   "desc": "Garantit la fuite face aux Pokémon sauvages."
+  },
+  "SANDFORCE": {
+   "desc": "Augmente de 30% les capacités Sol, Acier et Roche pendant une tempête de sable."
+  },
+  "SANDRUSH": {
+   "desc": "Double la Vitesse pendant une tempête de sable et immunise contre ses dégâts."
+  },
+  "SANDSPIT": {
+   "desc": "Déclenche une tempête de sable quand il est touché. Dure 8 tours avec une Roche Lisse."
+  },
+  "SANDSTREAM": {
+   "desc": "Crée une tempête de sable 5 tours en entrant au combat. Dure 8 tours avec une Roche Lisse."
+  },
+  "SANDVEIL": {
+   "desc": "Augmente l'Esquive de 20% pendant une tempête de sable et immunise contre ses dégâts."
+  },
+  "SAPSIPPER": {
+   "desc": "Absorbe les capacités Plante pour augmenter l'Attaque."
+  },
+  "SCHOOLING": {
+   "desc": "Passe en Forme Banc si ses PV sont au-dessus de 25% (niveau 20+). Revient en dessous."
+  },
+  "SCRAPPY": {
+   "desc": "Ses capacités Normal et Combat touchent les types Spectre. Immunisé contre Intimidation."
+  },
+  "SCREENCLEANER": {
+   "desc": "Retire Mur Lumière, Protection et Voile Aurore du terrain."
+  },
+  "SEEDSOWER": {
+   "desc": "Crée un Champ Herbu quand il est touché."
+  },
+  "SERENEGRACE": {
+   "desc": "Double les chances d'effets secondaires des capacités. Marche avec Roche Royale et Croc Rasoir."
+  },
+  "SHADOWSHIELD": {
+   "desc": "Divise par deux les dégâts subis quand ses PV sont au max."
+  },
+  "SHADOWTAG": {
+   "desc": "Empêche l'ennemi de fuir ou d'être remplacé, sauf s'il est de type Spectre ou tient une Carapace Mue."
+  },
+  "SHARPNESS": {
+   "desc": "Augmente de 50% les capacités tranchantes."
+  },
+  "SHEDSKIN": {
+   "desc": "30% de chances de soigner ses problèmes de statut à la fin de chaque tour."
+  },
+  "SHEERFORCE": {
+   "desc": "Augmente de 30% les capacités à effet secondaire, mais supprime l'effet."
+  },
+  "SHELLARMOR": {
+   "desc": "Le Pokémon est protégé des coups critiques."
+  },
+  "SHIELDDUST": {
+   "desc": "Bloque les effets secondaires des attaques reçues."
+  },
+  "SHIELDSDOWN": {
+   "desc": "Brise sa carapace et change de forme quand ses PV passent sous la moitié."
+  },
+  "SILVANO": {
+   "desc": "Augmente de 30% les dégâts de toutes les capacités sur Champ Herbu.",
+   "nome": "Sylvestre"
+  },
+  "SIMPLE": {
+   "desc": "Double tous les changements de stats."
+  },
+  "SKILLLINK": {
+   "desc": "Les capacités à coups multiples frappent toujours le nombre maximum de fois."
+  },
+  "SLOWSTART": {
+   "desc": "Divise par deux l'Attaque et la Vitesse pendant les 5 premiers tours."
+  },
+  "SLUSHRUSH": {
+   "desc": "Double la Vitesse sous la grêle et immunise contre ses dégâts."
+  },
+  "SNIPER": {
+   "desc": "Les dégâts des coups critiques passent de x1,5 à x2,25."
+  },
+  "SNOWCLOAK": {
+   "desc": "Augmente l'Esquive de 20% pendant une tempête de grêle."
+  },
+  "SNOWWARNING": {
+   "desc": "Déclenche une tempête de grêle 5 tours. Dure 8 tours avec une Roche Glace."
+  },
+  "SOBRECARGA": {
+   "desc": "Augmente de 50% les capacités Électrik quand il reste 1/3 des PV ou moins.",
+   "nome": "Surcharge"
+  },
+  "SOLARPOWER": {
+   "desc": "Augmente l'Attaque Spéciale de 50% au soleil, mais perd 1/8 des PV par tour."
+  },
+  "SOLIDROCK": {
+   "desc": "Réduit de 1/4 les dégâts des attaques super efficaces."
+  },
+  "SOULHEART": {
+   "desc": "Augmente l'Attaque Spéciale chaque fois qu'un Pokémon tombe K.O."
+  },
+  "SOUNDPROOF": {
+   "desc": "Immunisé contre toutes les capacités sonores."
+  },
+  "SPEEDBOOST": {
+   "desc": "Augmente la Vitesse du Pokémon d'un niveau à la fin de chaque tour."
+  },
+  "STAKEOUT": {
+   "desc": "Inflige le double de dégâts aux Pokémon entrés au combat ce tour-ci."
+  },
+  "STALL": {
+   "desc": "Le Pokémon agit en dernier à priorité égale."
+  },
+  "STALWART": {
+   "desc": "Ses capacités ignorent les redirections dues aux capacités ou talents adverses."
+  },
+  "STAMINA": {
+   "desc": "Augmente la Défense quand il subit une capacité offensive."
+  },
+  "STANCECHANGE": {
+   "desc": "Passe en Forme Assaut en attaquant, et en Forme Parade avec Bouclier Royal."
+  },
+  "STATIC": {
+   "desc": "Le contact a 30% de chances de paralyser l'attaquant. Touche aussi les types Sol."
+  },
+  "STEADFAST": {
+   "desc": "Augmente la Vitesse d'un niveau chaque fois qu'il a peur."
+  },
+  "STEAMENGINE": {
+   "desc": "Monte la Vitesse au maximum s'il est touché par une capacité Feu ou Eau."
+  },
+  "STEAMVEIL": {
+   "desc": "Crée un soleil intense 6 tours en entrant. Les capacités Eau deviennent vapeur : aucun dégât et Esquive en hausse.",
+   "nome": "Voile Vapeur"
+  },
+  "STEELWORKER": {
+   "desc": "Augmente de 50% les capacités Acier."
+  },
+  "STEELYSPIRIT": {
+   "desc": "Augmente de 50% les capacités Acier du lanceur et de ses alliés."
+  },
+  "STENCH": {
+   "desc": "10% de chances d'apeurer l'ennemi en attaquant. Ne se cumule pas avec Croc Rasoir ou Roche Royale."
+  },
+  "STICKYHOLD": {
+   "desc": "L'objet tenu ne peut pas être pris en combat."
+  },
+  "STORMDRAIN": {
+   "desc": "Attire les capacités Eau pour monter l'Attaque Spéciale. Ne subit aucun dégât."
+  },
+  "STRONGJAW": {
+   "desc": "Augmente de 50% les capacités de morsure."
+  },
+  "STURDY": {
+   "desc": "Empêche le Pokémon d'être mis K.O. en un coup quand ses PV sont au max."
+  },
+  "STURDYROOT": {
+   "desc": "Les capacités qui drainent les PV en restaurent davantage.",
+   "nome": "Racine Profonde"
+  },
+  "SUCTIONCUPS": {
+   "desc": "Annule les capacités et objets qui forcent le changement."
+  },
+  "SUPERLUCK": {
+   "desc": "Augmente le taux de critique d'un niveau."
+  },
+  "SUPERSWEETSYRUP": {
+   "desc": "Baisse l'Esquive de l'ennemi en entrant."
+  },
+  "SUPREMEOVERLORD": {
+   "desc": "Augmente l'Attaque et l'Attaque Spéciale pour chaque allié K.O."
+  },
+  "SWARM": {
+   "desc": "Augmente de 50% les capacités Insecte quand il reste 1/3 des PV ou moins."
+  },
+  "SWEETVEIL": {
+   "desc": "Empêche le Pokémon et ses alliés de s'endormir ou d'utiliser Repos."
+  },
+  "SWIFTSWIM": {
+   "desc": "Double la Vitesse sous la pluie."
+  },
+  "SWORDOFRUIN": {
+   "desc": "Baisse la Défense de tous les autres Pokémon."
+  },
+  "SYMBIOSIS": {
+   "desc": "Donne son objet à un allié qui a utilisé le sien."
+  },
+  "SYNCHRONIZE": {
+   "desc": "Transmet brûlure, poison ou paralysie à l'ennemi."
+  },
+  "TABLETSOFRUIN": {
+   "desc": "Baisse l'Attaque de tous les autres Pokémon."
+  },
+  "TANGLEDFEET": {
+   "desc": "Divise par deux la Précision des capacités visant ce Pokémon s'il est confus."
+  },
+  "TANGLINGHAIR": {
+   "desc": "Baisse la Vitesse de l'attaquant au contact."
+  },
+  "TECHNICIAN": {
+   "desc": "Multiplie par 1,5 les capacités de puissance 60 ou moins."
+  },
+  "TELEPATHY": {
+   "desc": "Évite les dégâts des attaques alliées."
+  },
+  "TERASHIFT": {
+   "desc": "Entre au combat en Forme Téracristal."
+  },
+  "TERAVOLT": {
+   "desc": "Ses capacités ignorent le talent de la cible."
+  },
+  "THERMALEXCHANGE": {
+   "desc": "Immunisé contre la brûlure. Les capacités Feu augmentent son Attaque."
+  },
+  "THICKFAT": {
+   "desc": "Divise par deux les dégâts des capacités Feu et Glace."
+  },
+  "TINTEDLENS": {
+   "desc": "Double la puissance des capacités \"pas très efficaces\"."
+  },
+  "TINTINEO": {
+   "desc": "Soigne le statut de l'équipe en entrant. Les capacités sonores deviennent Psy et gagnent 20%.",
+   "nome": "Carillon Sacré"
+  },
+  "TORRENT": {
+   "desc": "Augmente de 50% les capacités Eau quand il reste 1/3 des PV ou moins."
+  },
+  "TOUGHCLAWS": {
+   "desc": "Augmente de 33% les capacités de contact."
+  },
+  "TOXICBOOST": {
+   "desc": "Augmente de 50% les attaques physiques quand il est empoisonné."
+  },
+  "TOXICCHAIN": {
+   "desc": "Ses attaques peuvent gravement empoisonner la cible."
+  },
+  "TOXICDEBRIS": {
+   "desc": "Pose des Pics Toxik quand il subit une capacité physique."
+  },
+  "TRACE": {
+   "desc": "Copie le talent d'un adversaire."
+  },
+  "TRANSISTOR": {
+   "desc": "Augmente de 30% les capacités Électrik."
+  },
+  "TRIAGE": {
+   "desc": "Donne une priorité de +3 aux capacités de soin."
+  },
+  "TRUANT": {
+   "desc": "Le Pokémon ne peut attaquer qu'un tour sur deux."
+  },
+  "TURBOBLAZE": {
+   "desc": "Ses capacités ignorent le talent de la cible."
+  },
+  "UNAWARE": {
+   "desc": "Ses attaques ignorent les changements de stats de l'ennemi."
+  },
+  "UNBURDEN": {
+   "desc": "Double la Vitesse si l'objet tenu est utilisé ou perdu."
+  },
+  "UNNERVE": {
+   "desc": "Rend l'ennemi nerveux et l'empêche de manger des Baies."
+  },
+  "UNSEENFIST": {
+   "desc": "Ses capacités de contact passent les protections."
+  },
+  "VESSELOFRUIN": {
+   "desc": "Baisse l'Attaque Spéciale de tous les autres Pokémon."
+  },
+  "VICTORYSTAR": {
+   "desc": "Augmente de 10% la Précision du lanceur et de ses alliés."
+  },
+  "VITALSPIRIT": {
+   "desc": "Ne peut pas s'endormir. Repos échoue s'il est utilisé."
+  },
+  "VOLTABSORB": {
+   "desc": "Restaure 1/4 des PV s'il est touché par une capacité Électrik. Bloque aussi celles de statut."
+  },
+  "WANDERINGSPIRIT": {
+   "desc": "Échange son talent avec l'attaquant au contact."
+  },
+  "WATERABSORB": {
+   "desc": "Restaure 1/4 des PV s'il est touché par une capacité Eau. Bloque aussi celles de statut."
+  },
+  "WATERBUBBLE": {
+   "desc": "Fait plusieurs choses."
+  },
+  "WATERCOMPACTION": {
+   "desc": "Augmente beaucoup la Défense s'il est touché par une capacité Eau (sans immunité)."
+  },
+  "WATERVEIL": {
+   "desc": "Ne peut pas être brûlé. Soigne la brûlure s'il l'obtient en étant brûlé."
+  },
+  "WEAKARMOR": {
+   "desc": "Baisse la Défense mais monte beaucoup la Vitesse s'il subit une capacité physique."
+  },
+  "WELLBAKEDBODY": {
+   "desc": "Augmente beaucoup la Défense s'il est touché par une capacité Feu."
+  },
+  "WHITESMOKE": {
+   "desc": "Les autres Pokémon ne peuvent pas baisser ses stats."
+  },
+  "WIMPOUT": {
+   "desc": "Fuit le combat quand ses PV tombent sous 50%."
+  },
+  "WINDPOWER": {
+   "desc": "Les capacités de vent chargent sa prochaine capacité Électrik."
+  },
+  "WINDRIDER": {
+   "desc": "Augmente l'Attaque avec Vent Arrière ou s'il est touché par une capacité de vent (sans dégâts)."
+  },
+  "WONDERGUARD": {
+   "desc": "Ne subit des dégâts que des capacités super efficaces."
+  },
+  "WONDERSKIN": {
+   "desc": "Baisse à 50% la Précision des capacités de statut qui le visent."
+  },
+  "ZENMODE": {
+   "desc": "Change de forme quand ses PV passent sous la moitié."
+  },
+  "ZEROTOHERO": {
+   "desc": "Passe en Forme Super quand il est remplacé."
+  }
+ }
+}
