@@ -350,6 +350,8 @@ uint8_t bagPocket = 0;        // BP_*: pestana abierta en la bolsa
 #define SLOT_Y 66
 #define SLOT_W 152
 #define SLOT_H 28
+#define SLOT_NOME_CJK_Y 5   // leva 80: nome JA/KO: tinta nas linhas 2-16 da caixa (o kana sobe 3 px acima do "A", o hangul desce 1 a mais)
+#define SLOT_PP_CJK_Y 19    // e o "PP" na 5x7 nas linhas 19-25 (bordas em 0 e 27)
 bool clockOpen = false;       // pantalla de ajuste de hora (deslizar abajo)
 bool manualQrOpen = false;    // o QR do manual, aberto pelo botao do topo dos ajustes
 int clockH = 12, clockM = 0;  // hora en edicion
@@ -3063,6 +3065,25 @@ void applyLangFont() {
   gfx->getTextBounds("A", 0, 0, &x1, &y1, &w, &h);
   gFontAscent = -y1;           // y1 negativo: subir desde la linea base
   gfx->setTextSize(antes);
+}
+
+// Leva 80: um texto ASCII curto (numeros, "PP 20/20") na 5x7 classica
+// MESMO em japones/coreano, para os sitios onde a fonte CJK (16 px de
+// altura) nao cabe numa segunda linha. Volta a fonte do idioma no fim.
+void printLatino(const char *s, int x, int y) {
+  if (!gCjkFont) {
+    setSize(1);
+    setCur(x, y);
+    printT(s);
+    return;
+  }
+  gfx->setFont();
+  gfx->setUTF8Print(false);
+  gfx->setTextSize(1);
+  gfx->setCursor(x, y);
+  gfx->print(s);
+  applyLangFont();
+  setSize(1);
 }
 
 // ---------- medida de texto (preparado para fuentes CJK) ----------
@@ -6471,12 +6492,14 @@ void renderCardMoves() {
     drawTypeBadge(x + 4 + TYPE_BADGE / 2, y + SLOT_H / 2, m.type);
     int tx = x + 6 + TYPE_BADGE;
     gfx->setTextColor(CARD_INK);
-    printNaLargura(moveName(v.slotMv[i]), tx, y + 5, x + SLOT_W - 4 - tx, 1);
-    setSize(1);
+    // Leva 80: em JA/KO o nome tem 16 px de altura e a caixa 28; na
+    // posicao latina (y+5) ele descia ate cima do "PP". Sobe o nome e o
+    // PP vai na 5x7 (7 px) logo abaixo.
+    printNaLargura(moveName(v.slotMv[i]), tx, y + (gCjkFont ? SLOT_NOME_CJK_Y : 5),
+                   x + SLOT_W - 4 - tx, 1);
     char pp[12];
     snprintf(pp, sizeof(pp), "PP %u/%u", v.slotPp[i], movePP(v.slotMv[i]));
-    setCur(tx, y + 16);
-    printT(pp);
+    printLatino(pp, tx, y + (gCjkFont ? SLOT_PP_CJK_Y : 16));
   }
 
   // La lista de todo lo que sabe. Aqui son CINCO filas y no seis: la

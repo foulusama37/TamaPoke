@@ -10622,3 +10622,67 @@ TEST(prev79, fotos_dos_golpes_e_da_pokedex) {
   setLang(LANG_EN);
   applyLangFont();
 }
+
+// leva 80: nos 4 botoes de golpe do topo da tela de golpes, o nome e o
+// "PP 20/20" sao DUAS faixas de tinta separadas. Em JA/KO a fonte tem 16 px
+// e a caixa 28: o nome descia ate cima do PP. Medido no framebuffer.
+static int faixas80(int i, std::vector<std::pair<int, int>> &faixas) {
+  const uint16_t *fb = gfx->getFramebuffer();
+  const int W = gfx->width();
+  const int x = 74 + (i & 1) * (152 + 8), y = 66 + (i >> 1) * (28 + 5);
+  const int x0 = x + 6 + 24, x1 = x + 152 - 10;   // longe do canto redondo
+  std::map<uint16_t, int> conta;
+  for (int yy = y + 1; yy < y + 27; yy++)
+    for (int xx = x0; xx < x1; xx++) conta[fb[yy * W + xx]]++;
+  uint16_t fundo = 0;
+  int mx = 0;
+  for (auto &c : conta)
+    if (c.second > mx) { mx = c.second; fundo = c.first; }
+  faixas.clear();
+  for (int yy = y + 1; yy < y + 27; yy++) {
+    bool tinta = false;
+    for (int xx = x0; xx < x1 && !tinta; xx++) tinta = fb[yy * W + xx] != fundo;
+    if (!tinta) continue;
+    const int r = yy - y;   // linha dentro da caixa
+    if (!faixas.empty() && faixas.back().second == r - 1) faixas.back().second = r;
+    else faixas.push_back({ r, r });
+  }
+  return mx * 2 >= (26 * (x1 - x0));   // premissa: o fundo e a maior parte da caixa
+}
+
+TEST(textos80, o_nome_do_golpe_nao_pisa_no_pp) {
+  for (Lang lg : { LANG_EN, LANG_JA, LANG_KO }) {
+    preparaElMundoT();
+    setLang(lg);
+    applyLangFont();
+    cardOpen = true;
+    cardPage = 2;
+    moveShown = 0;
+    avanza(200);
+    if (getenv("TAMA_PREV80")) volcaPantalla((std::string("p80_") + NOME73[lg]).c_str());
+    int cheios = 0;
+    for (int i = 0; i < 4; i++) {
+      std::vector<std::pair<int, int>> f;
+      CHECK_MSG(faixas80(i, f), std::string("premissa: o fundo da caixa ") + NOME73[lg]);
+      if (f.empty()) continue;
+      cheios++;
+      std::string fx;
+      for (auto &q : f) fx += " " + std::to_string(q.first) + "-" + std::to_string(q.second);
+      if (getenv("TAMA_PREV80")) fprintf(stderr, "[%s] caixa %d:%s\n", NOME73[lg], i, fx.c_str());
+      // a ultima faixa e o PP (5x7: 7 linhas) e tem uma linha vazia antes;
+      // o nome pode ser mais de uma faixa (um hangul tem vao no meio)
+      // e nada encosta na borda (linhas 0 e 27): a 1a medida tinha o nome
+      // coreano cortado em cima e o teste so via as faixas
+      const bool separado = f.size() >= 2 && f.back().second - f.back().first + 1 <= 8 &&
+                            f.front().first >= 2 && f.back().second <= 25;
+      CHECK_MSG(separado, std::string("[") + NOME73[lg] + "] caixa " + std::to_string(i) +
+                              ": o nome encosta no PP ou na borda:" + fx);
+    }
+    CHECK_MSG(cheios >= 2, std::string("premissa: o titular tem golpes ") + NOME73[lg]);
+    cardOpen = false;
+    avanza(50);
+    todoCerradoT();
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+}
