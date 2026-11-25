@@ -10410,3 +10410,215 @@ TEST(prev78, fotos_dos_itens_e_habilidades) {
   setLang(LANG_EN);
   applyLangFont();
 }
+
+
+// ======================================================================
+// Leva 79: o que faz o golpe e a ficha da Pokedex em FR/DE/IT/JA/KO.
+// O esperado sai das TABELAS (move_descs.h / dex_text_l.h), nunca de
+// moveDesc()/dexDesc(): comparar a tela com a propria funcao e tautologia.
+// ======================================================================
+#include "../dex_text.h"
+#include "../move_descs.h"
+#include "../dex_text_l.h"
+
+extern const char *dexTxtPtr;
+extern const char *moveDescFin;
+
+static const char *const *const MOVE_DESC_L79[LANG_COUNT] = {
+  MOVE_DESC_ES, MOVE_DESC, MOVE_DESC_FR, MOVE_DESC_DE, MOVE_DESC_IT, MOVE_DESC_PT, MOVE_DESC_JA, MOVE_DESC_KO };
+static const char *const *const DEX_TEXT_L79[LANG_COUNT] = {
+  DEX_TEXT_ES, DEX_TEXT, DEX_TEXT_FR, DEX_TEXT_DE, DEX_TEXT_IT, DEX_TEXT_PT, DEX_TEXT_JA, DEX_TEXT_KO };
+static const Lang NOVAS79[] = { LANG_FR, LANG_DE, LANG_IT, LANG_JA, LANG_KO };
+
+static_assert(sizeof(DEX_TEXT_FR) / sizeof(DEX_TEXT_FR[0]) == DEX_COUNT + 1, "dex_text_l.h fora do DEX_COUNT");
+static_assert(sizeof(DEX_TEXT_KO) / sizeof(DEX_TEXT_KO[0]) == DEX_COUNT + 1, "dex_text_l.h fora do DEX_COUNT");
+
+static const char *golpeEsperado79(uint8_t lg, uint16_t mv) {
+  const char *s = MOVE_DESC_L79[lg][mv];
+  return s && *s ? s : MOVE_DESC[mv];
+}
+static const char *dexEsperado79(uint8_t lg, int16_t dex) {
+  const char *s = DEX_TEXT_L79[lg][dex];
+  return s && *s ? s : DEX_TEXT[dex];
+}
+
+// A tabela vai pela LINHA de MOVE_TBL: se um golpe entra no meio, o texto
+// de cada um passa a ser o do vizinho, calado. A assinatura e o ID da linha.
+TEST(textos79, a_assinatura_dos_golpes_bate_linha_a_linha) {
+  int erradas = 0;
+  for (uint16_t i = 0; i < MOVE_COUNT; i++)
+    if (strcmp(MOVE_DESC_SIG[i], MOVE_TBL[i].name) != 0) {
+      if (erradas++ < 3)
+        CHECK_MSG(false, std::string("linha ") + std::to_string(i) + ": " + MOVE_DESC_SIG[i] +
+                             " != " + MOVE_TBL[i].name + " (regenerar move_descs.h)");
+    }
+  CHECK_EQ(erradas, 0);
+}
+
+// Nada de rascunho: cada golpe e cada ficha tem o texto do idioma, e o
+// texto nao e o ingles copiado.
+TEST(textos79, as_cinco_linguas_tem_todos_os_golpes_e_fichas) {
+  for (Lang lg : NOVAS79) {
+    const std::string q = std::string("[") + NOME73[lg] + "] ";
+    int semG = 0, iguaisG = 0, semD = 0, iguaisD = 0;
+    for (uint16_t i = 0; i < MOVE_COUNT; i++) {
+      const char *s = MOVE_DESC_L79[lg][i];
+      if (!s || !*s) semG++;
+      else if (!strcmp(s, MOVE_DESC[i])) iguaisG++;
+    }
+    for (int16_t d = 1; d <= DEX_COUNT; d++) {
+      const char *s = DEX_TEXT_L79[lg][d];
+      if (!s || !*s) semD++;
+      else if (!strcmp(s, DEX_TEXT[d])) iguaisD++;
+    }
+    CHECK_MSG(semG == 0, q + std::to_string(semG) + " golpes sem descricao (caem no ingles)");
+    CHECK_MSG(iguaisG < MOVE_COUNT / 50, q + std::to_string(iguaisG) + " golpes com o texto ingles");
+    CHECK_MSG(semD == 0, q + std::to_string(semD) + " fichas da Pokedex vazias");
+    CHECK_MSG(iguaisD == 0, q + std::to_string(iguaisD) + " fichas com o texto ingles");
+  }
+  // o Nidoran: a fonte classica tem femea (12) e macho (11), como no nome
+  CHECK_MSG(strchr(DEX_TEXT_FR[29], '\x0c') != nullptr, "a ficha FR do Nidoran femea perdeu o simbolo");
+  CHECK_MSG(strchr(DEX_TEXT_DE[32], '\x0b') != nullptr, "a ficha DE do Nidoran macho perdeu o simbolo");
+}
+
+// A ficha do golpe (pagina 2 do cartao) mostra o texto do idioma. E o caso
+// que estava errado: abrir o golpe, fechar, TROCAR o idioma e abrir o MESMO
+// golpe -- o ponteiro era do idioma velho, porque so se zerava ao mudar de golpe.
+TEST(textos79, a_ficha_do_golpe_esta_no_idioma) {
+  preparaElMundoT();
+  uint16_t mv = pet.ppMove[0];
+  if (!mv) mv = 1;
+  for (uint8_t li = 0; li < LANG_COUNT; li++) {
+    setLang((Lang)li);
+    applyLangFont();
+    cardOpen = true;
+    cardPage = 2;
+    moveShown = mv;
+    avanza(150);
+    CHECK_MSG(moveDescPtr && !strcmp(moveDescPtr, golpeEsperado79(li, mv)),
+              std::string("[") + NOME73[li] + "] a ficha de " + MOVE_TBL[mv].name + " disse: " +
+                  (moveDescPtr ? moveDescPtr : "(nada)"));
+    cardOpen = false;   // fecha; o proximo idioma reabre o MESMO golpe
+    avanza(50);
+  }
+  // e com a ficha ABERTA tambem
+  setLang(LANG_FR);
+  applyLangFont();
+  cardOpen = true;
+  cardPage = 2;
+  moveShown = mv;
+  avanza(150);
+  setLang(LANG_KO);
+  applyLangFont();
+  avanza(150);
+  CHECK_MSG(moveDescPtr && !strcmp(moveDescPtr, golpeEsperado79(LANG_KO, mv)),
+            std::string("trocar o idioma com a ficha aberta deixou: ") + (moveDescPtr ? moveDescPtr : "(nada)"));
+  moveShown = 0;
+  cardOpen = false;
+  setLang(LANG_EN);
+  applyLangFont();
+  todoCerradoT();
+}
+
+// A ficha da Pokedex: idem, inclusive trocando o idioma com ela aberta.
+TEST(textos79, a_ficha_da_pokedex_esta_no_idioma) {
+  preparaElMundoT();
+  const int16_t dex = 25;
+  pet.registerSpecies(dex, false);
+  for (uint8_t li = 0; li < LANG_COUNT; li++) {
+    setLang((Lang)li);
+    applyLangFont();
+    openDexEntry(dex);
+    avanza(300);
+    CHECK_MSG(dexTxtPtr && !strcmp(dexTxtPtr, dexEsperado79(li, dex)),
+              std::string("[") + NOME73[li] + "] a ficha do Pikachu disse: " + (dexTxtPtr ? dexTxtPtr : "(nada)"));
+  }
+  // aberta, troca o idioma
+  setLang(LANG_DE);
+  applyLangFont();
+  avanza(300);
+  CHECK_MSG(dexTxtPtr && !strcmp(dexTxtPtr, dexEsperado79(LANG_DE, dex)),
+            std::string("trocar o idioma com a ficha aberta deixou: ") + (dexTxtPtr ? dexTxtPtr : "(nada)"));
+  cierraLaFicha();
+  setLang(LANG_EN);
+  applyLangFont();
+  avanza(100);
+  todoCerradoT();
+}
+
+// As paginas da ficha do golpe chegam ao FIM do texto, no idioma de letra
+// larga tambem: tocar a ficha ate voltar ao comeco tem de ter mostrado tudo.
+TEST(textos79, a_ficha_do_golpe_pagina_ate_o_fim) {
+  preparaElMundoT();
+  for (Lang lg : { LANG_DE, LANG_JA }) {
+    setLang(lg);
+    applyLangFont();
+    // o golpe de texto mais longo neste idioma
+    uint16_t mv = 1;
+    for (uint16_t i = 1; i < MOVE_COUNT; i++)
+      if (strlen(golpeEsperado79(lg, i)) > strlen(golpeEsperado79(lg, mv))) mv = i;
+    const char *txt = golpeEsperado79(lg, mv);
+    cardOpen = true;
+    cardPage = 2;
+    moveShown = mv;
+    avanza(150);
+    int paginas = 1;
+    bool viuOFim = false;
+    for (int k = 0; k < 12; k++) {
+      if (!moveDescFin || !*moveDescFin) { viuOFim = true; break; }
+      toca(224, 360);    // a ficha do golpe (72..376 x 320..398)
+      avanza(150);
+      paginas++;
+      // o sketch tem a SUA copia da tabela (outro endereco): compara-se o
+      // texto -- a pagina tem de ser um final do texto esperado
+      const size_t lp = moveDescPtr ? strlen(moveDescPtr) : 0, lt = strlen(txt);
+      CHECK_MSG(moveDescPtr && lp > 0 && lp < lt && !strcmp(txt + lt - lp, moveDescPtr),
+                std::string("[") + NOME73[lg] + "] a pagina saiu do texto: moveShown " + std::to_string(moveShown) +
+                    " (era " + std::to_string(mv) + ") ptr=" + (moveDescPtr ? moveDescPtr : "(nada)") + " | txt=" + txt);
+    }
+    CHECK_MSG(viuOFim, std::string("[") + NOME73[lg] + "] a ficha de " + MOVE_TBL[mv].name + " nunca chegou ao fim");
+    CHECK_MSG(paginas >= 2, std::string("[") + NOME73[lg] + "] premissa: o texto mais longo tem de pedir 2 paginas");
+    moveShown = 0;
+    cardOpen = false;
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+  todoCerradoT();
+}
+
+
+// fotos para aprovar (leva 79): TAMA_PREV79=1 ./build/tamapoke_uitests prev79
+TEST(prev79, fotos_dos_golpes_e_da_pokedex) {
+  if (!getenv("TAMA_PREV79")) return;
+  for (Lang lg : { LANG_FR, LANG_DE, LANG_IT, LANG_JA, LANG_KO }) {
+    const std::string pre = std::string("p79_") + NOME73[lg] + "_";
+    preparaElMundoT();
+    setLang(lg);
+    applyLangFont();
+    // a ficha do golpe: o de texto mais longo, paginas 1 e 2
+    uint16_t mv = 1;
+    for (uint16_t i = 1; i < MOVE_COUNT; i++)
+      if (strlen(golpeEsperado79(lg, i)) > strlen(golpeEsperado79(lg, mv))) mv = i;
+    cardOpen = true;
+    cardPage = 2;
+    moveShown = mv;
+    avanza(200);
+    volcaPantalla((pre + "golpe1").c_str());
+    toca(224, 360);
+    avanza(200);
+    volcaPantalla((pre + "golpe2").c_str());
+    moveShown = 0;
+    cardOpen = false;
+    todoCerradoT();
+    // a Pokedex: o Pikachu
+    pet.registerSpecies(25, false);
+    openDexEntry(25);
+    avanza(400);
+    volcaPantalla((pre + "dex1").c_str());
+    cierraLaFicha();
+    avanza(100);
+    todoCerradoT();
+  }
+  setLang(LANG_EN);
+  applyLangFont();
+}

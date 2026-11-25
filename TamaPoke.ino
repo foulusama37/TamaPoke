@@ -41,6 +41,8 @@
 #include "move_names.h"   // o nome do golpe NA TELA (tools/gen_move_names.py)
 #include "item_names.h"   // nome/descricao do item NA TELA (tools/gen_textos_itens.py)
 #include "abil_names.h"   // idem da habilidade
+#include "move_descs.h"   // o que faz o golpe em FR/DE/IT/JA/KO (tools/gen_textos_golpes_dex.py)
+#include "dex_text_l.h"   // ficha da Pokedex em FR/DE/IT/JA/KO (oficial, tools/dex_oficial.py)
 
 // Version del firmware. Subir este numero en cada release (y manifest.json para
 // el instalador web). Se muestra en la pantalla de ajustes y por serie al arrancar.
@@ -365,6 +367,7 @@ uint16_t moveShown = 0;
 const char *moveDescPtr = nullptr;
 const char *moveDescFin = nullptr;
 uint16_t moveDescDe = 0;     // de que golpe es el puntero de arriba
+uint8_t moveDescLang = 0xFF; // y de que idioma: cambiarlo con el mismo golpe dejaba el texto viejo
 // De QUIEN son los golpes que se estan mirando. 0xFF = el titular (que vive
 // en el propio Pet y no en su hueco del equipo); 0..5 = un hueco del equipo.
 // Sin esto, para ver los golpes de un suplente habia que hacerlo titular
@@ -6260,15 +6263,25 @@ void cardMovesTap(int x, int y) {
   }
 }
 
-// La ficha de Pokedex en el idioma activo. Mismo reparto que moveDesc():
-// el espanol sale del PBS (gratis) y el portugues esta escrito a mano en
-// tools/pt_dex.py, ahi indexado por NUMERO de Pokedex, que a diferencia de
-// la fila de un golpe es la identidad del bicho y no se mueve.
+// La ficha de Pokedex en el idioma activo. El espanol sale del PBS (gratis),
+// el portugues esta escrito a mano en tools/pt_dex.py y FR/DE/IT/JA/KO son las
+// oficiales del MISMO juego que la espanola del Anil (tools/dex_oficial.py,
+// leva 79). Todo indexado por NUMERO de Pokedex, que a diferencia de la fila
+// de un golpe es la identidad del bicho y no se mueve.
 static const char *dexDesc(int16_t dex) {
   if (dex < 1 || dex > DEX_COUNT) return "";
-  if (gLang == LANG_PT && DEX_TEXT_PT[dex]) return DEX_TEXT_PT[dex];
-  if (gLang == LANG_ES && DEX_TEXT_ES[dex]) return DEX_TEXT_ES[dex];
-  return DEX_TEXT[dex];
+  const char *s = nullptr;
+  switch (gLang) {
+    case LANG_ES: s = DEX_TEXT_ES[dex]; break;
+    case LANG_PT: s = DEX_TEXT_PT[dex]; break;
+    case LANG_FR: s = DEX_TEXT_FR[dex]; break;
+    case LANG_DE: s = DEX_TEXT_DE[dex]; break;
+    case LANG_IT: s = DEX_TEXT_IT[dex]; break;
+    case LANG_JA: s = DEX_TEXT_JA[dex]; break;
+    case LANG_KO: s = DEX_TEXT_KO[dex]; break;
+    default: break;
+  }
+  return s && *s ? s : DEX_TEXT[dex];
 }
 
 // Que hace el golpe, en el idioma activo.
@@ -6279,15 +6292,23 @@ static const char *dexDesc(int16_t dex) {
 // nullptr y cae al ingles, que es el idioma por defecto: un golpe sin
 // traducir se lee, no se queda en blanco.
 //
-// Los otros cinco idiomas no tienen estas frases y tambien caen al
-// ingles. Son 200 KB de texto por idioma (2225 frases entre golpes,
-// Pokedex, objetos y habilidades), asi que cada idioma nuevo es una
-// decision de sitio, no un anadido gratis.
+// FR/DE/IT/JA/KO (leva 79) estan en move_descs.h, traducidos TAMBIEN del
+// texto del Anil (tools/textos_golpes/tr_XX.json): la descripcion dice lo
+// que hace el golpe AQUI, y la oficial a veces dice otra cosa.
 static const char *moveDesc(uint16_t mv) {
   if (mv >= MOVE_COUNT) return "";
-  if (gLang == LANG_PT && MOVE_DESC_PT[mv]) return MOVE_DESC_PT[mv];
-  if (gLang == LANG_ES && MOVE_DESC_ES[mv]) return MOVE_DESC_ES[mv];
-  return MOVE_DESC[mv];
+  const char *s = nullptr;
+  switch (gLang) {
+    case LANG_ES: s = MOVE_DESC_ES[mv]; break;
+    case LANG_PT: s = MOVE_DESC_PT[mv]; break;
+    case LANG_FR: s = MOVE_DESC_FR[mv]; break;
+    case LANG_DE: s = MOVE_DESC_DE[mv]; break;
+    case LANG_IT: s = MOVE_DESC_IT[mv]; break;
+    case LANG_JA: s = MOVE_DESC_JA[mv]; break;
+    case LANG_KO: s = MOVE_DESC_KO[mv]; break;
+    default: break;
+  }
+  return s && *s ? s : MOVE_DESC[mv];
 }
 
 // Con la ficha abierta solo caben CUATRO filas: la lista va de y=146 a
@@ -6534,11 +6555,14 @@ void drawMoveInfo() {
   setCur(centerX(tec, 1), 326);
   printT(tec);
   // Al cambiar de golpe se vuelve al principio del texto.
-  if (moveDescDe != moveShown) {
+  if (moveDescDe != moveShown || moveDescLang != (uint8_t)gLang) {
     moveDescDe = moveShown;
+    moveDescLang = (uint8_t)gLang;
     moveDescPtr = moveDesc(moveShown);
   }
-  moveDescFin = drawWrapped(moveDescPtr, 344, 25, 18, 2, 2);
+  // 23 colunas: 276 px centrados em 233 = 95..371, dentro da caixa 72..376
+  // (25 passavam da borda direita; igual a ficha do objeto na leva 78)
+  moveDescFin = drawWrapped(moveDescPtr, 344, 23, 18, 2, 2);
   if (moveDescFin && *moveDescFin) flechaMas(358, 386, CARD_SOFT);
 }
 
@@ -7025,11 +7049,16 @@ void renderCard() {
   const bool fichaObj = cardPage == 3 && bagShown &&
                         (ITEM_TBL[bagShown].pocket == BP_HELD ||
                          ITEM_TBL[bagShown].pocket == BP_EVO);
+  // A ficha do golpe (caixa ate y=398) tambem: em 390 o pe caia em cima da
+  // borda dela. Vai logo abaixo, a talla 1 (tocar ali fica fora das filas e
+  // da caixa, e volta).
+  const bool fichaGolpe = cardPage == 2 && moveShown;
   // la embaixo (ficha do objeto aberta) a talla 2 saia do circulo da tela
   // e virava 'toque: ..': vai a talla 1
-  setSize(fichaObj ? 1 : 2);
-  setCur(centerX(T(S_BACK), fichaObj ? 1 : 2), (cardPage == 4 && !bankView) ? CARD_PE_TIME
-                                : fichaObj ? BAGF_VOLTA_Y + 4 : 390);
+  const bool peBaixo = fichaObj || fichaGolpe;
+  setSize(peBaixo ? 1 : 2);
+  setCur(centerX(T(S_BACK), peBaixo ? 1 : 2), (cardPage == 4 && !bankView) ? CARD_PE_TIME
+                                : fichaObj ? BAGF_VOLTA_Y + 4 : fichaGolpe ? 404 : 390);
   printT(T(S_BACK));
   if (!cardSolo) {
     int x0 = 233 - (CARD_SEQ_N - 1) * 7;
@@ -7213,13 +7242,21 @@ const char *drawWrapped(const char *s, int y0, int cols, int lh, int maxLines, u
       unsigned char c = (unsigned char)s[corte];
       int cl = !gCjkFont || c < 0x80 ? 1 : (c & 0xE0) == 0xC0 ? 2 : (c & 0xF0) == 0xE0 ? 3 : 4;
       if (corte + cl > (int)sizeof(linea) - 1) break;
-      char uno[5];
-      memcpy(uno, s + corte, cl);
-      uno[cl] = 0;
-      int cw = gCjkFont ? (int)textW(uno, talla) : LATIN_ADV * talla;
-      if (w + cw > maxW) break;
+      if (gCjkFont) {
+        // Leva 79: a linha INTEIRA (ate esta letra), nao a soma letra a letra.
+        // getTextBounds de UMA letra da a largura da tinta, nao o avanco: um
+        // kana avanca 16 px e a tinta mede menos, o espaco mede 0. Somando, a
+        // linha 'cabia' e saia mais larga que a caixa, e o recortaAlPanel
+        // trocava o fim por '..' (a palavra sumia). Visto com a fonte de
+        // verdade no simulador.
+        memcpy(linea, s, corte + cl);
+        linea[corte + cl] = 0;
+        if ((int)textW(linea, talla) > maxW) break;
+      } else {
+        if (w + LATIN_ADV * talla > maxW) break;
+        w += LATIN_ADV * talla;
+      }
       if (c == ' ') ultimo = corte;
-      w += cw;
       corte += cl;
     }
     if (corte == 0) {               // nem uma letra cabe: pinta uma e segue
@@ -7283,6 +7320,7 @@ int16_t dexTxtDe = 0;
 // version con la flecha no deje el texto de la anterior puesto.
 int8_t dexPag = 0;
 int8_t dexTxtVer = -1;
+uint8_t dexTxtLang = 0xFF;   // el puntero es del idioma en que se saco
 // No es static (igual que openDexEntry) para que la bateria de UI pueda
 // preguntarle que habilidades ensena cada version: es lo unico que
 // distingue leer la tabla de la mega de leer la de su especie base, y a
@@ -7295,9 +7333,10 @@ static void drawDexEntry(int16_t dex, int y0) {
   uint8_t nab = galleryAbils(dex, ab);
   // Cambiar de bicho O de version manda al principio: si no, se seguia
   // leyendo la pagina 3 de la habilidad de otro.
-  if (dexTxtDe != dex || dexTxtVer != galleryVer) {
+  if (dexTxtDe != dex || dexTxtVer != galleryVer || dexTxtLang != (uint8_t)gLang) {
     dexTxtDe = dex;
     dexTxtVer = galleryVer;
+    dexTxtLang = (uint8_t)gLang;
     dexPag = 0;
     dexTxtPtr = dexDesc(dex);
   }

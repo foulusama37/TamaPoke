@@ -116,7 +116,11 @@ $(SKETCH): $(wildcard $(SRC_DIR)/*.ino) ../desktop/tools/gen_sketch.py
 # dependencias, asi que lo incremental se saltaria builds que hacen
 # falta. Tarda, pero no miente.
 .PHONY: uibin ui
-uibin: $(SKETCH)
+# as fontes CJK de verdade para o shim (leva 79); nao vao no git
+$(DSHIM)/u8g2_cjk_dados.inc: ../tools/gen_u8g2_cjk_sim.py ../tools/glifos_cjk.py
+	python ../tools/gen_u8g2_cjk_sim.py
+
+uibin: $(SKETCH) $(DSHIM)/u8g2_cjk_dados.inc
 	@mkdir -p $(BUILD)
 	$(CXX) $(CXXFLAGS) -I $(DSHIM) -I $(SRC_DIR) -o $(UIBIN) $(UISOURCES) $(LDFLAGS)
 
@@ -129,7 +133,7 @@ ui: uibin
 uicover: CXXFLAGS := -std=c++17 -O0 -g -Wall -Wextra -Wno-unused-parameter \
                      --coverage
 uicover: LDFLAGS += --coverage
-uicover: $(SKETCH)
+uicover: $(SKETCH) $(DSHIM)/u8g2_cjk_dados.inc
 	@mkdir -p $(BUILD)/cov
 	$(CXX) $(CXXFLAGS) -I $(DSHIM) -I $(SRC_DIR) -o $(BUILD)/tamapoke_uicov \
 	  $(UISOURCES) $(LDFLAGS)

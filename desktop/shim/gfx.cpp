@@ -241,6 +241,7 @@ void Arduino_Canvas::drawChar(int16_t x, int16_t y, unsigned char ch) {
   }
 }
 size_t Arduino_Canvas::write(uint8_t c) {
+  if (_u8) return writeU8(c);
   if (c == '\n') {
     _cy += (_font ? _font->yAdvance : 8) * _size;
     _cx = 0;
@@ -257,6 +258,7 @@ size_t Arduino_Canvas::write(uint8_t c) {
 }
 void Arduino_Canvas::getTextBounds(const char *s, int16_t x, int16_t y, int16_t *x1, int16_t *y1,
                                    uint16_t *w, uint16_t *h) {
+  if (_u8) { boundsU8(s, x, y, x1, y1, w, h); return; }
   size_t n = s ? strlen(s) : 0;
   if (_font) {
     // Ancho sumando avances y alto/arriba del PRIMER glifo: es lo que el
@@ -306,4 +308,207 @@ extern void simOnFlush(Arduino_Canvas *c);
 void Arduino_Canvas::flush() {
   _frames++;
   simOnFlush(this);
+}
+
+// ---------------------------------------------------------------- U8g2 (CJK)
+// O japones e o coreano: as fontes U8g2 DE VERDADE (u8g2_cjk_dados.inc, que
+// tools/gen_u8g2_cjk_sim.py copia da biblioteca), decodificadas com o codigo
+// da Arduino_GFX 1.6.8 (Arduino_GFX.cpp: setFont(const uint8_t*), write(),
+// drawChar(), charBounds(), u8g2_font_decode_*). Antes o simulador desenhava
+// cada BYTE do UTF-8 com a 5x7 e media 6 px por byte: a previa saia com lixo
+// e os testes de largura mediam um texto que nao existe.
+#include "U8g2lib.h"
+#include "u8g2_cjk_dados.inc"
+
+namespace {
+struct LeBits {
+  const uint8_t *p = nullptr;
+  uint8_t pos = 0;
+  // u8g2_font_decode_get_unsigned_bits
+  uint8_t u(uint8_t cnt) {
+    uint8_t val = *p;
+    val >>= pos;
+    uint8_t pc = (uint8_t)(pos + cnt);
+    if (pc >= 8) {
+      uint8_t s = (uint8_t)(8 - pos);
+      p++;
+      val |= (uint8_t)(*p << s);
+      pc -= 8;
+    }
+    val &= (uint8_t)((1U << cnt) - 1);
+    pos = pc;
+    return val;
+  }
+  // u8g2_font_decode_get_signed_bits
+  int8_t s(uint8_t cnt) {
+    int8_t v = (int8_t)u(cnt);
+    int8_t d = 1;
+    d = (int8_t)(d << (cnt - 1));
+    return (int8_t)(v - d);
+  }
+};
+struct GlifoU8 {
+  uint8_t w = 0, h = 0;
+  int8_t x = 0, y = 0, dx = 0;
+};
+uint16_t palavraU8(const uint8_t *f, uint8_t off) { return (uint16_t)((f[off] << 8) | f[off + 1]); }
+
+// u8g2_font_get_glyph_data + o cabecalho do glifo. Sem o glifo: false (a
+// biblioteca nao desenha nada nem avanca o cursor).
+bool achaGlifoU8(const uint8_t *font, uint16_t enc, GlifoU8 &g, LeBits &lb) {
+  const uint8_t *f = font + 23;
+  const uint8_t *gd = nullptr;
+  if (enc <= 255) {
+    if (enc >= 'a') f += palavraU8(font, 19);
+    else if (enc >= 'A') f += palavraU8(font, 17);
+    for (;;) {
+      if (f[1] == 0) break;
+      if (f[0] == enc) gd = f + 2;
+      f += f[1];
+    }
+  } else {
+    f += palavraU8(font, 21);
+    const uint8_t *t = f;
+    uint16_t e;
+    do {
+      f += palavraU8(t, 0);
+      e = palavraU8(t, 2);
+      t += 4;
+    } while (e < enc);
+    for (;;) {
+      e = palavraU8(f, 0);
+      if (e == 0) break;
+      if (e == enc) { gd = f + 3; break; }
+      f += f[2];
+    }
+  }
+  if (!gd) return false;
+  lb.p = gd;
+  lb.pos = 0;
+  g.w = lb.u(font[4]);
+  g.h = lb.u(font[5]);
+  g.x = lb.s(font[6]);
+  g.y = lb.s(font[7]);
+  g.dx = lb.s(font[8]);
+  return true;
+}
+
+// a maquina de UTF-8 da biblioteca: devolve true quando `enc` esta completo
+bool utf8Passo(uint8_t c, bool utf8, uint8_t &estado, uint16_t &enc) {
+  if (!utf8) { enc = c; estado = 0; return true; }
+  if (estado == 0) {
+    if (c >= 0xfc) { estado = 5; c &= 1; }
+    else if (c >= 0xf8) { estado = 4; c &= 3; }
+    else if (c >= 0xf0) { estado = 3; c &= 7; }
+    else if (c >= 0xe0) { estado = 2; c &= 15; }
+    else if (c >= 0xc0) { estado = 1; c &= 0x01f; }
+    enc = c;
+  } else {
+    estado--;
+    enc = (uint16_t)(enc << 6);
+    enc |= (uint16_t)(c & 0x03f);
+  }
+  return estado == 0;
+}
+}  // namespace
+
+void Arduino_Canvas::setFont(const uint8_t *u8g2) {
+  _font = nullptr;
+  _u8 = u8g2;
+  _u8Estado = 0;
+}
+
+void Arduino_Canvas::drawCharU8(int16_t x, int16_t y, uint16_t enc) {
+  GlifoU8 g;
+  LeBits lb;
+  if (!achaGlifoU8(_u8, enc, g, lb)) return;
+  const int s = _size;
+  const int ty = y - (g.h + g.y) * s;
+  const int tx = x + g.x * s;
+  if (g.w == 0) return;
+  uint8_t dx = 0, dy = 0;
+  // u8g2_font_decode_len
+  auto corre = [&](uint8_t len, bool frente) {
+    uint8_t cnt = len, lx = dx, ly = dy;
+    for (;;) {
+      uint8_t rem = (uint8_t)(g.w - lx);
+      uint8_t cur = cnt < rem ? cnt : rem;
+      if (cur) {
+        int px = tx + lx * s, py = ty + ly * s;
+        if (frente) {
+          fillRect(px, py, cur * s, s, _fg);
+          int f = fueraDelCirculo(px, py);
+          int f2 = fueraDelCirculo(px + cur * s - 1, py + s - 1);
+          if (f2 > f) f = f2;
+          if (f > 0) { _runMal = true; if (f > _runLejos) _runLejos = f; }
+        } else if (_opaqueBg) {
+          fillRect(px, py, cur * s, s, _bg);
+        }
+      }
+      if (cnt < rem) break;
+      cnt = (uint8_t)(cnt - rem);
+      lx = 0;
+      ly++;
+    }
+    lx = (uint8_t)(lx + cnt);
+    dx = lx;
+    dy = ly;
+  };
+  for (;;) {
+    uint8_t a = lb.u(_u8[2]);
+    uint8_t b = lb.u(_u8[3]);
+    do {
+      corre(a, false);
+      corre(b, true);
+    } while (lb.u(1) != 0);
+    if (dy >= g.h) break;
+  }
+}
+
+size_t Arduino_Canvas::writeU8(uint8_t c) {
+  _run += (char)c;
+  if (gTextoTodo.size() > (1u << 20)) gTextoTodo.erase(0, 1u << 19);
+  gTextoTodo += (char)c;
+  if (!utf8Passo(c, _utf8, _u8Estado, _u8Enc)) return 1;
+  if (_u8Enc == '\n') {
+    _cx = 0;
+    _cy += _size * _u8[10];
+    return 1;
+  }
+  if (_u8Enc == '\r') return 1;
+  GlifoU8 g;
+  LeBits lb;
+  if (!achaGlifoU8(_u8, _u8Enc, g, lb)) return 1;   // sem glifo: nada, nem avanca
+  drawCharU8(_cx, _cy, _u8Enc);
+  _cx += _size * g.dx;
+  return 1;
+}
+
+// charBounds + getTextBounds da biblioteca, com a fonte U8g2
+void Arduino_Canvas::boundsU8(const char *str, int16_t x, int16_t y, int16_t *x1, int16_t *y1,
+                              uint16_t *w, uint16_t *h) {
+  const int s = _size;
+  *x1 = x;
+  *y1 = y;
+  *w = *h = 0;
+  int minx = _w - 1, miny = _h - 1, maxx = 0, maxy = 0;
+  uint8_t estado = 0;
+  uint16_t enc = 0;
+  for (const unsigned char *p = (const unsigned char *)str; p && *p; p++) {
+    if (!utf8Passo(*p, _utf8, estado, enc)) continue;
+    if (enc == '\n') { x = 0; y = (int16_t)(y + s * _u8[10]); continue; }
+    if (enc == '\r') continue;
+    GlifoU8 g;
+    LeBits lb;
+    if (!achaGlifoU8(_u8, enc, g, lb)) continue;
+    int gx1 = x + g.x * s, gy1 = y - (g.h + g.y) * s;
+    int gx2 = gx1 + g.w * s - 1, gy2 = gy1 + g.h * s - 1;
+    if (gx1 < minx) minx = gx1;
+    if (gy1 < miny) miny = gy1;
+    if (gx2 > maxx) maxx = gx2;
+    if (gy2 > maxy) maxy = gy2;
+    x = (int16_t)(x + s * g.dx);
+  }
+  if (maxx >= minx) { *x1 = (int16_t)minx; *w = (uint16_t)(maxx - minx + 1); }
+  if (maxy >= miny) { *y1 = (int16_t)miny; *h = (uint16_t)(maxy - miny + 1); }
 }

@@ -39,7 +39,11 @@ $(SKETCH): $(wildcard $(SRC)/*.ino) tools/gen_sketch.py
 	@mkdir -p $(BUILD)
 	python tools/gen_sketch.py
 
-$(BIN): $(SOURCES) $(wildcard shim/*.h) $(SRC)/pet.h $(SRC)/sdmon.h
+# as fontes CJK de verdade (leva 79), copiadas da biblioteca U8g2; nao vao no git
+shim/u8g2_cjk_dados.inc: ../tools/gen_u8g2_cjk_sim.py ../tools/glifos_cjk.py
+	python ../tools/gen_u8g2_cjk_sim.py
+
+$(BIN): $(SOURCES) $(wildcard shim/*.h) $(SRC)/pet.h $(SRC)/sdmon.h shim/u8g2_cjk_dados.inc
 	@mkdir -p $(BUILD)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $(SOURCES)
 
@@ -52,7 +56,7 @@ gif: run
 # ventana nativa: el firmware corriendo con el raton de dedo (solo Windows)
 win: $(WINBIN)
 
-$(WINBIN): $(WINSRC) $(wildcard shim/*.h) $(SRC)/pet.h $(SRC)/sdmon.h
+$(WINBIN): $(WINSRC) $(wildcard shim/*.h) $(SRC)/pet.h $(SRC)/sdmon.h shim/u8g2_cjk_dados.inc
 	@mkdir -p $(BUILD)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $(WINSRC) -lgdi32 -luser32
 

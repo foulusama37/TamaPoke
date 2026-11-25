@@ -88,8 +88,9 @@ public:
   void fillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2,
                     uint16_t color);
 
-  void setFont(const GFXfont *f = nullptr) { _font = f; }
-  void setUTF8Print(bool b) { (void)b; }
+  void setFont(const GFXfont *f = nullptr) { _font = f; _u8 = nullptr; }
+  void setFont(const uint8_t *u8g2);   // fonte U8g2 (japones/coreano), como Arduino_GFX
+  void setUTF8Print(bool b) { _utf8 = b; _u8Estado = 0; }
   void setTextSize(uint8_t s) { _size = s ? s : 1; }
   void setTextColor(uint16_t c) { _fg = c; _bg = c; _opaqueBg = false; }
   void setTextColor(uint16_t c, uint16_t bg) { _fg = c; _bg = bg; _opaqueBg = true; }
@@ -114,7 +115,15 @@ public:
 
 private:
   void drawChar(int16_t x, int16_t y, unsigned char c);
+  void drawCharU8(int16_t x, int16_t y, uint16_t enc);
+  size_t writeU8(uint8_t c);
+  void boundsU8(const char *s, int16_t x, int16_t y, int16_t *x1, int16_t *y1, uint16_t *w,
+                uint16_t *h);
   const GFXfont *_font = nullptr;
+  const uint8_t *_u8 = nullptr;   // fonte U8g2 ativa (nullptr = a classica / GFXfont)
+  bool _utf8 = false;
+  uint8_t _u8Estado = 0;
+  uint16_t _u8Enc = 0;
   int16_t _w, _h;
   uint16_t *_fb = nullptr;
   uint16_t _fg = 0xFFFF, _bg = 0;
