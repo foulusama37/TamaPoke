@@ -34,6 +34,25 @@ placa.
 
 ## 0. Instalar
 
+### O que você precisa
+
+- **A placa: Waveshare ESP32-S3-Touch-AMOLED-1.75.** É um microcontrolador
+  ESP32-S3 (Wi-Fi e Bluetooth, 16 MB de memória) já montado com uma tela
+  **redonda AMOLED de 466×466 sensível ao toque**, relógio de tempo real,
+  leitor de microSD, saída de som e controle de bateria com botão liga/desliga.
+  Não precisa soldar nada. Compre a versão **comum** ou a **-G** (com GPS, que o
+  jogo não usa). **Não compre a -B**: ela vem com uma capa que não cabe na
+  Pokébola. A "1.75**C**" é outra placa. [Loja](https://www.waveshare.com/esp32-s3-touch-amoled-1.75.htm) · [wiki](https://www.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.75)
+- **Bateria (opcional, para jogar sem cabo):** LiPo de 3,7 V **com proteção**,
+  uns 1100 mAh, tamanho **102540**, com plugue **MX1.25** (micro-JST de 1,25 mm).
+  Ela carrega pelo USB da placa. **Confira a polaridade do plugue** (fio
+  vermelho no +) antes de ligar: plugue invertido pode danificar a placa.
+- **Cartão microSD** de 2 GB ou mais.
+- **Carcaça de Pokébola (opcional):** impressa em 3D, do socquique:
+  [MakerWorld](https://makerworld.com/es/models/2937822-tamapoke-a-pokemon-pokeball-tamagotchi).
+
+### Gravar
+
 Tudo sai da página **[Releases](https://github.com/foulusama37/TamaPoke/releases)** do repositório: cada versão tem os
 arquivos prontos. Você precisa de um cartão microSD de 2 GB ou mais: o jogo ocupa 1,4 GB.
 

@@ -34,6 +34,24 @@ the board.
 
 ## 0. Installing
 
+### What you need
+
+- **The board: Waveshare ESP32-S3-Touch-AMOLED-1.75.** An ESP32-S3
+  microcontroller (Wi-Fi and Bluetooth, 16 MB of flash) already built with a
+  **round 466×466 AMOLED touch screen**, real-time clock, microSD reader, audio
+  output and battery management with a power button. No soldering needed. Get
+  the **standard** version or the **-G** (with GPS, which the game does not use).
+  **Do not get the -B**: it ships with a case that does not fit the Pokéball.
+  The "1.75**C**" is a different board. [Store](https://www.waveshare.com/esp32-s3-touch-amoled-1.75.htm) · [wiki](https://www.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.75)
+- **Battery (optional, to play unplugged):** a **protected** 3.7 V LiPo, about
+  1100 mAh, size **102540**, with an **MX1.25** plug (1.25 mm micro-JST). It
+  charges through the board's USB. **Check the plug polarity** (red wire to +)
+  before connecting: a reversed plug can damage the board.
+- **microSD card** of 2 GB or more.
+- **Pokéball case (optional):** 3D printed, by socquique: [MakerWorld](https://makerworld.com/es/models/2937822-tamapoke-a-pokemon-pokeball-tamagotchi).
+
+### Flashing
+
 Everything comes from the repository's **[Releases](https://github.com/foulusama37/TamaPoke/releases)** page: each version
 has the files ready. You need a microSD card of 2 GB or more: the game takes 1.4 GB.
 

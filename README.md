@@ -7,6 +7,7 @@
 > with battles, adventures, regional gyms, board-to-board trading and battles,
 > 8 languages and more.
 >
+> - 🔌 **Hardware:** Waveshare ESP32-S3-Touch-AMOLED-1.75 + microSD (2 GB+) + optional LiPo battery / bateria opcional ([details / detalhes](docs/manual/README.md#what-you-need))
 > - 📦 **Download / Baixar:** [latest Release](https://github.com/foulusama37/TamaPoke/releases/latest) (firmware + SD card pack, sprites included)
 > - 📖 **Manual:** [Português](docs/manual/LEIAME.md) · [English](docs/manual/README.md)
 > - 🐞 **Bugs:** [GitHub issues](https://github.com/foulusama37/TamaPoke/issues) · Discord **Foulu Games**: <https://discord.gg/ueU3a4pSXz>
