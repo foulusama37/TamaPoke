@@ -1,11 +1,11 @@
 # TamaPoke (Foulu's edition)
 
 > 🇧🇷 **Esta é uma versão expandida do TamaPoke** de [socquique](https://github.com/socquique/TamaPoke),
-> com as mecânicas do Pokémon Añil: batalhas, aventura, ginásios por região, troca e
-> batalha entre placas, 8 línguas e muito mais.
+> com batalhas, aventura, ginásios por região, troca e batalha entre placas,
+> 8 línguas e muito mais.
 > 🇺🇸 **This is an expanded edition of [socquique's TamaPoke](https://github.com/socquique/TamaPoke)**
-> with Pokémon Añil mechanics: battles, adventures, regional gyms, board-to-board
-> trading and battles, 8 languages and more.
+> with battles, adventures, regional gyms, board-to-board trading and battles,
+> 8 languages and more.
 >
 > - 📦 **Download / Baixar:** [latest Release](https://github.com/foulusama37/TamaPoke/releases/latest) (firmware + SD card pack, sprites included)
 > - 📖 **Manual:** [Português](docs/manual/LEIAME.md) · [English](docs/manual/README.md)
