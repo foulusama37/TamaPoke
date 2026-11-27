@@ -7213,3 +7213,31 @@ TEST(vistos72, cacar_um_lendario_traz_ele_uma_de_cada_dez_e_so_com_as_insignias)
   double sem = fracaoLendaria72(144, 0);
   CHECK_MSG(sem == 0.0, "sem as insignias o Articuno cacado saiu: " + std::to_string(sem));
 }
+
+
+// Leva 81: um prazo VELHO nao reacende. O coracao da ultima caricia fica
+// guardado; com a placa ligada direto, 24,8 dias depois a resta de 32 bits
+// dava a volta e o coracao (e a comida, a evolucao...) acendia sozinho por
+// mais 24,8 dias, tapando o balao do pedido. E o relogio dos testes, que
+// volta a 0 antes de cada um, fazia o mesmo: era a falha do teste do globo.
+TEST(relogio81, um_prazo_velho_nao_reacende) {
+  Pet p;
+  makePet(p, 4);
+  mockAdvanceMillis(30000000UL);   // 8 h ligado
+  p.caress();
+  CHECK_MSG(p.showHeart(), "premissa: o carinho acende o coracao");
+  mockAdvanceMillis(HEART_MS + 10);
+  CHECK_MSG(!p.showHeart(), "premissa: o coracao apaga sozinho");
+
+  // a placa ligada direto: 2^31 ms depois a conta da a volta
+  mockAdvanceMillis(0x80000000UL);
+  CHECK_MSG(!p.showHeart(), "24,8 dias depois o coracao velho acendeu sozinho");
+
+  // o relogio que volta para tras (o dos testes): o prazo fica 8 h no futuro
+  mockSetMillis(0);
+  CHECK_MSG(!p.showHeart(), "com o relogio de volta a 0 o coracao velho acendeu");
+
+  // e um prazo de verdade continua valendo depois disso tudo
+  p.caress();
+  CHECK_MSG(p.showHeart(), "um carinho novo deixou de acender o coracao");
+}

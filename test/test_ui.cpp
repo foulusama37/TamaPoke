@@ -3614,9 +3614,15 @@ TEST(reacao, el_globo_ensena_la_onomatopeya_de_lo_que_pide) {
   const bool gestosAntes = gestosOn;
   gestosOn = false;
   int saltos = 0;
-  for (; saltos < 400 && pet.showHeart(); saltos++) avanza(60000, 2000);
+  // Leva 81: o relogio volta a 0 antes de cada teste, mas o `pet` e o
+  // mesmo da bateria toda. Um prazo que outro teste deixou (o coracao, a
+  // comida) fica no FUTURO e tapa o pedido: comendo, need() e NONE. O
+  // timeLeft ja descarta prazo de mais de 10 min (leva 81); os de menos
+  // tem de vencer, entao espera-se os dois.
+  for (; saltos < 400 && (pet.showHeart() || pet.eating()); saltos++) avanza(60000, 2000);
   CHECK_MSG(!pet.showHeart(),
             "premissa: o coracao tem que apagar antes de medir o pedido");
+  CHECK_MSG(!pet.eating(), "premissa: comendo ele nao pede nada");
   // Trinta minutos simulados, medido: o prazo do coracao vem de
   // `heartUntil = ceremonyUntil` (coracoes durante toda a despedida,
   // que e proposital) e outro teste deixou a cerimonia pelo caminho.

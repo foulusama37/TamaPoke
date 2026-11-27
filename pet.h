@@ -266,10 +266,20 @@ enum : uint8_t { CATCH_FULL = 0, CATCH_TEAM, CATCH_BANK };
 // resta sin signo, reinterpretada como con signo, es segura frente a esa
 // vuelta mientras el intervalo real sea muy inferior a ~24,8 dias (aqui el
 // temporizador mas largo son ~12 s), sin cambiar como se guarda el deadline.
+//
+// Leva 81: "mientras el intervalo sea inferior a 24,8 dias" valia para el
+// intervalo PEDIDO, no para la EDAD del deadline. Un deadline viejo (el
+// corazon de la ultima caricia) sigue guardado; pasados 24,8 dias de uptime
+// la resta vuelve a salir positiva y el corazon, la comida o la evolucion
+// se encendian SOLOS hasta otros 24,8 dias. Ningun temporizador pide mas de
+// unos segundos, asi que lo que falte mas de TIME_LEFT_MAX es un deadline
+// viejo: cuenta como vencido. En los tests se veia igual: el reloj vuelve a
+// 0 en cada test y un corazon de un test anterior tapaba el globo del pedido.
+#define TIME_LEFT_MAX 600000L   // 10 min; el temporizador mas largo es de 15 s
 static inline uint32_t timeLeft(uint32_t deadline) {
   if (!deadline) return 0;
   int32_t left = (int32_t)(deadline - millis());
-  return left > 0 ? (uint32_t)left : 0;
+  return (left > 0 && left <= TIME_LEFT_MAX) ? (uint32_t)left : 0;
 }
 
 // ceremonias de fin de ciclo
