@@ -35,7 +35,7 @@ placa.
 ## 0. Instalar
 
 Tudo sai da página **[Releases](https://github.com/foulusama37/TamaPoke/releases)** do repositório: cada versão tem os
-arquivos prontos. Você precisa de um cartão microSD (qualquer um de 1 GB ou mais).
+arquivos prontos. Você precisa de um cartão microSD de 2 GB ou mais: o jogo ocupa 1,4 GB.
 
 **1. O cartão SD.** Baixe `TamaPoke-sdcard-vX.YY.zip` e extraia **tudo na raiz**
 do cartão: as pastas `mons`, `snd`, `av`... ficam direto no cartão, não dentro de
