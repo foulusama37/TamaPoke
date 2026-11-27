@@ -27,7 +27,8 @@ the board.
 11. [Connecting two boards: trade and battle](#11-connecting-two-boards-trade-and-battle)
 12. [Evolution, farewell, running away and release](#12-evolution-farewell-running-away-and-release)
 13. [Settings and power](#13-settings-and-power)
-14. [For developers](#14-for-developers)
+14. [Bugs and suggestions](#14-bugs-and-suggestions)
+15. [For developers](#15-for-developers)
 
 ---
 
@@ -470,7 +471,24 @@ The screen dims on its own: after 90 seconds idle, and again after 5 minutes.
 
 ---
 
-## 14. For developers
+## 14. Bugs and suggestions
+
+Found a bug or have an idea? Tell us through one of these:
+
+- **GitHub:** open an *issue* at <https://github.com/foulusama37/TamaPoke/issues>.
+- **Discord:** the **#sugestões-e-bugs-suggestions** channel on the Foulu Games
+  server, <https://discord.gg/ueU3a4pSXz>. Building and flashing questions go to **#tamapoke-ajuda-help**.
+
+To help us find it fast, include:
+
+1. the firmware **version** (Settings: swipe down on the home screen);
+2. **what you did** before it went wrong, step by step;
+3. **what happened** and **what you expected**;
+4. a **photo or video of the screen**, if you can.
+
+Fixes ship in a new Release; nobody needs access to your board or save.
+
+## 15. For developers
 
 **Retaking the photos in this manual** after changing the game (from `test/`, with
 the toolchain on PATH):

@@ -46,7 +46,7 @@
 
 // Version del firmware. Subir este numero en cada release (y manifest.json para
 // el instalador web). Se muestra en la pantalla de ajustes y por serie al arrancar.
-#define FW_VERSION "1.41"
+#define FW_VERSION "1.48"
 
 // RGB de 8 bits al 565 del panel. Arriba del todo porque una macro es
 // texto: usada antes de esta linea, el compilador no la conoce.

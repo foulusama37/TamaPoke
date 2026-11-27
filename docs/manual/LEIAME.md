@@ -27,7 +27,8 @@ placa.
 11. [Conectar duas placas: troca e batalha](#11-conectar-duas-placas-troca-e-batalha)
 12. [Evolução, despedida, fuga e soltar](#12-evolução-despedida-fuga-e-soltar)
 13. [Ajustes e energia](#13-ajustes-e-energia)
-14. [Para quem mexe no código](#14-para-quem-mexe-no-código)
+14. [Bugs e sugestões](#14-bugs-e-sugestões)
+15. [Para quem mexe no código](#15-para-quem-mexe-no-código)
 
 ---
 
@@ -475,7 +476,24 @@ minutos.
 
 ---
 
-## 14. Para quem mexe no código
+## 14. Bugs e sugestões
+
+Achou um defeito ou tem uma ideia? Conte por um destes caminhos:
+
+- **GitHub:** abra uma *issue* em <https://github.com/foulusama37/TamaPoke/issues>.
+- **Discord:** canal **#sugestões-e-bugs** do servidor Foulu Games, <https://discord.gg/ueU3a4pSXz>.
+  Dúvidas de montagem e gravação vão no **#tamapoke-ajuda**.
+
+Para a gente achar o problema rápido, mande:
+
+1. a **versão** do firmware (Ajustes, deslizando para baixo na tela inicial);
+2. **o que você fez** antes de dar errado, passo a passo;
+3. **o que aconteceu** e **o que você esperava**;
+4. uma **foto ou vídeo da tela**, se der.
+
+Sem o save, ninguém mexe na sua placa: as correções saem num Release novo.
+
+## 15. Para quem mexe no código
 
 **Refazer as fotos deste manual** depois de mudar o jogo (de `test/`, com a
 toolchain no PATH):
