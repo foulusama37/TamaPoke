@@ -1,9 +1,9 @@
-# TamaPoke (Foulu's edition)
+# TamaPoke (Precious Edition)
 
-> 🇧🇷 **Esta é uma versão expandida do TamaPoke** de [socquique](https://github.com/socquique/TamaPoke),
+> 🇧🇷 **A Precious Edition é uma versão expandida do TamaPoke** de [socquique](https://github.com/socquique/TamaPoke),
 > com batalhas, aventura, ginásios por região, troca e batalha entre placas,
 > 8 línguas e muito mais.
-> 🇺🇸 **This is an expanded edition of [socquique's TamaPoke](https://github.com/socquique/TamaPoke)**
+> 🇺🇸 **Precious Edition is an expanded edition of [socquique's TamaPoke](https://github.com/socquique/TamaPoke)**
 > with battles, adventures, regional gyms, board-to-board trading and battles,
 > 8 languages and more.
 >
